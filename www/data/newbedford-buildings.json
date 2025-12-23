@@ -1,0 +1,20 @@
+{
+  "buildings": [
+    {
+      "id": "building_001",
+      "name": "Whaling Office",
+      "type": "base",
+      "minPlayer": 1,
+      "maxPlayer": 4,
+      "special": "Allows player to send ships on whaling voyages"
+    },
+    {
+      "id": "building_002",
+      "name": "Town Hall",
+      "type": "rising",
+      "minPlayer": 1,
+      "maxPlayer": 4,
+      "special": "Provides additional action spaces"
+    }
+  ]
+}

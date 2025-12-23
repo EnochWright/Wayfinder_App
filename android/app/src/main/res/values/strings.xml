@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Capacitor PWA App</string>
+    <string name="title_activity_main">Capacitor PWA App</string>
+    <string name="package_name">com.example.capacitorpwa</string>
+    <string name="custom_url_scheme">com.example.capacitorpwa</string>
+</resources>

@@ -1,0 +1,30 @@
+{
+  "name": "wayfinder",
+  "version": "1.0.0",
+  "description": "Your companion app for board games",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx http-server www -p 8080",
+    "build": "echo 'No build step required for vanilla JS'",
+    "sync": "npx cap sync",
+    "open:android": "npx cap open android",
+    "run:android": "npx cap run android",
+    "copy": "npx cap copy",
+    "update": "npx cap update"
+  },
+  "keywords": [
+    "capacitor",
+    "pwa",
+    "android"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@capacitor/cli": "^6.0.0",
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0"
+  }
+}

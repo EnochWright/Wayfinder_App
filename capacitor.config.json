@@ -1,0 +1,6 @@
+{
+  "appId": "com.wayfinder.app",
+  "appName": "Wayfinder",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

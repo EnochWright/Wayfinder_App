@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A basic Capacitor PWA app">
+    <meta name="theme-color" content="#4285f4">
+    
+    <title>Wayfinder</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Wayfinder">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="apple-touch-icon" href="assets/icon.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo">🧭</span>
+                <span class="nav-title">Wayfinder</span>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-page="home">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="games-dropdown">
+                        Games <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="dropdown-menu" id="games-menu">
+                        <li><a href="#newbedford" class="dropdown-item" data-page="newbedford">New Bedford</a></li>
+                        <li><a href="#alchemists" class="dropdown-item" data-page="alchemists">Alchemists</a></li>
+                        <li><a href="#railbaron" class="dropdown-item" data-page="railbaron">Rail Baron</a></li>
+                        <li><a href="#catan" class="dropdown-item" data-page="catan">Catan</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-page="about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        
+        <main id="main-content">
+            <!-- Home Page -->
+            <div id="page-home" class="page active">
+                <header>
+                    <h1>🧭 Wayfinder</h1>
+                    <p class="subtitle">Your companion for board games</p>
+                </header>
+                <div class="card">
+                    <h3>Supported Games</h3>
+                    <ul>
+                        <li>🐋 <strong>New Bedford</strong> - Whaling and town building</li>
+                        <li>🧪 <strong>Alchemists</strong> - Potion brewing and deduction</li>
+                        <li>🚂 <strong>Rail Baron</strong> - Railroad empire building</li>
+                        <li>🏝️ <strong>Catan</strong> - Settlement and resource management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- New Bedford Page -->
+            <div id="page-newbedford" class="page">
+                <div class="card">
+                    <h2>🐋 New Bedford</h2>
+                    <p>Setup and manage your New Bedford game.</p>
+                </div>
+                
+                <!-- Game Setup Form -->
+                <div class="card">
+                    <h3>Game Setup</h3>
+                    
+                    <!-- Expansion Selection (Radio Buttons) -->
+                    <div class="setting-item">
+                        <label class="setting-label">Expansion:</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="expansion" value="base" class="setting-radio" checked>
+                                Base Game
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="expansion" value="rising-tide" class="setting-radio">
+                                Base Game + Rising Tide
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Player Count -->
+                    <div class="setting-item">
+                        <label for="player-count">Number of Players:</label>
+                        <select id="player-count" class="setting-input">
+                            <option value="1">1 Player</option>
+                            <option value="2">2 Players</option>
+                            <option value="3">3 Players</option>
+                            <option value="4">4 Players</option>
+                            <option value="5" disabled>5 Players (Rising Tide only)</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Rising Tide Options (shown when Rising Tide is selected) -->
+                    <div id="rising-tide-options" style="display: none;">
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="ships-log-checkbox" class="setting-checkbox">
+                                Use Ship's Log
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- 2 Player Variant (shown when 2 players selected) -->
+                    <div id="two-player-options" style="display: none;">
+                        <div class="setting-item">
+                            <label>
+                                <input type="checkbox" id="two-player-variant-checkbox" class="setting-checkbox">
+                                Use 2-Player Variant Rules
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- White Whale Promos (Checkboxes) -->
+                    <div class="setting-item">
+                        <label class="setting-label">White Whale Promos:</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="promo" value="ambergris" class="setting-checkbox">
+                                Ambergris
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="promo" value="blue-whale" class="setting-checkbox">
+                                Blue Whale
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="promo" value="castaway" class="setting-checkbox">
+                                Castaway
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="promo" value="white-whale" class="setting-checkbox">
+                                White Whale
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Captains -->
+                    <div class="setting-item">
+                        <label for="ai-captains">AI Captains:</label>
+                        <select id="ai-captains" class="setting-input">
+                            <option value="0">None</option>
+                            <option value="1">1 AI Captain</option>
+                            <option value="2">2 AI Captains</option>
+                            <option value="3">3 AI Captains</option>
+                            <option value="4">4 AI Captains</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Start Button -->
+                    <button class="btn btn-primary" id="start-game-btn">Start Game</button>
+                </div>
+                
+                <!-- Game Summary (shown after setup) -->
+                <div class="card" id="game-summary" style="display: none;">
+                    <div class="card-header-with-button">
+                        <h3>Game Configuration</h3>
+                        <button class="btn btn-secondary" id="reset-setup-btn">Reset Setup</button>
+                    </div>
+                    <div id="game-summary-content"></div>
+                    <button class="btn" id="view-buildings-btn">View Buildings for Setup</button>
+                </div>
+                
+                <!-- Buildings Display -->
+                <div class="card" id="buildings-display" style="display: none;">
+                    <h3>Buildings for Setup</h3>
+                    <div id="buildings-list"></div>
+                </div>
+            </div>
+
+            <!-- Alchemists Page -->
+            <div id="page-alchemists" class="page">
+                <div class="card">
+                    <h2>🧪 Alchemists</h2>
+                    <p>Alchemists companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Ingredient tracking</li>
+                        <li>Potion deduction helper</li>
+                        <li>Theory tracking</li>
+                        <li>Scoring calculator</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rail Baron Page -->
+            <div id="page-railbaron" class="page">
+                <div class="card">
+                    <h2>🚂 Rail Baron</h2>
+                    <p>Rail Baron companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Route calculator</li>
+                        <li>Destination tracker</li>
+                        <li>Railroad ownership tracker</li>
+                        <li>Money management</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Catan Page -->
+            <div id="page-catan" class="page">
+                <div class="card">
+                    <h2>🏝️ Catan</h2>
+                    <p>Catan companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Resource tracker</li>
+                        <li>Development card manager</li>
+                        <li>Victory point calculator</li>
+                        <li>Trade helper</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- About Page -->
+            <div id="page-about" class="page">
+                <div class="card">
+                    <h2>📱 About Wayfinder</h2>
+                    <p>Wayfinder is a multi-game companion app designed to enhance your board gaming experience. It provides tools and features to assist with game setup, gameplay tracking, and scoring across multiple popular board games.</p>
+                    <p><strong>Created by:</strong> Enoch Wright</p>
+                </div>
+                
+                <div class="card">
+                    <h3>⚖️ Legal Notice</h3>
+                    <p>This application is provided free of charge and is released as open-source software. It is offered "as is," without warranty of any kind, express or implied. Use of this application is at your own risk.</p>
+                    <p>All game names and related content are trademarks of their respective publishers. This application is an independent, unofficial companion and is not affiliated with, endorsed by, or sponsored by any game publisher or designer.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <strong>Frontend:</strong> HTML5, CSS3, JavaScript
+                        </div>
+                        <div class="tech-item">
+                            <strong>Runtime:</strong> Capacitor 6.0
+                        </div>
+                        <div class="tech-item">
+                            <strong>PWA:</strong> Service Workers, Web Manifest
+                        </div>
+                        <div class="tech-item">
+                            <strong>Mobile:</strong> Android Native
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Version Information</h3>
+                    <p><strong>App Version:</strong> 1.0.0</p>
+                    <p><strong>Last Updated:</strong> December 2025</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Enoch Wright 2025</p>
+        </footer>
+    </div>
+    
+    <!-- Capacitor Core - Load from CDN for web -->
+    <script src="https://cdn.jsdelivr.net/npm/@capacitor/core@6.0.0/dist/capacitor.js"></script>
+    
+    <!-- Data Manager -->
+    <script src="js/data-manager.js"></script>
+    
+    <!-- Game Modules -->
+    <script src="js/games/newbedford.js"></script>
+    <script src="js/games/alchemists.js"></script>
+    <script src="js/games/railbaron.js"></script>
+    <script src="js/games/catan.js"></script>
+    
+    <!-- App Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>
