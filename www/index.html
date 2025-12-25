@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A basic Capacitor PWA app">
+    <meta name="theme-color" content="#4285f4">
+    
+    <title>Wayfinder</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- iOS Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Wayfinder">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/icon.png">
+    <link rel="apple-touch-icon" href="assets/icon.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-logo">🧭</span>
+                <span class="nav-title">Wayfinder</span>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active" data-page="home">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="games-dropdown">
+                        Games <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <ul class="dropdown-menu" id="games-menu">
+                        <li><a href="#alchemists" class="dropdown-item" data-page="alchemists">Alchemists</a></li>
+                        <li><a href="#catan" class="dropdown-item" data-page="catan">Catan</a></li>
+                        <li><a href="#fleet-card" class="dropdown-item" data-page="fleet-card">Fleet: Card Game</a></li>
+                        <li><a href="#fleet-dice" class="dropdown-item" data-page="fleet-dice">Fleet: Dice Game</a></li>
+                        <li><a href="#newbedford" class="dropdown-item" data-page="newbedford">New Bedford</a></li>
+                        <li><a href="#railbaron" class="dropdown-item" data-page="railbaron">Rail Baron</a></li>
+                        <li><a href="#rising5" class="dropdown-item" data-page="rising5">Rising 5</a></li>
+                        <li><a href="#planetx" class="dropdown-item" data-page="planetx">Search for Planet X</a></li>
+                        <li><a href="#stoneage" class="dropdown-item" data-page="stoneage">Stone Age</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-page="about">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        
+        <main id="main-content">
+            <!-- Home Page -->
+            <div id="page-home" class="page active">
+                <header>
+                    <h1>🧭 Wayfinder</h1>
+                    <p class="subtitle">Your companion for board games</p>
+                </header>
+                <div class="card">
+                    <h3>Supported Games</h3>
+                    <ul>
+                        <li>🧪 <strong>Alchemists</strong> - Potion brewing and deduction</li>
+                        <li>🏝️ <strong>Catan</strong> - Settlement and resource management</li>
+                        <li>🎴 <strong>Fleet: Card Game</strong> - Fishing fleet management</li>
+                        <li>🎲 <strong>Fleet: Dice Game</strong> - Roll and write fishing adventure</li>
+                        <li>🐋 <strong>New Bedford</strong> - Whaling and town building</li>
+                        <li>🚂 <strong>Rail Baron</strong> - Railroad empire building</li>
+                        <li>🔮 <strong>Rising 5</strong> - Cooperative mission adventure</li>
+                        <li>🪐 <strong>Search for Planet X</strong> - Astronomical deduction game</li>
+                        <li>🗿 <strong>Stone Age</strong> - Worker placement and resource gathering</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- New Bedford Page -->
+            <div id="page-newbedford" class="page">
+                <div id="newbedford-content"></div>
+            </div>
+
+            <!-- Alchemists Page -->
+            <div id="page-alchemists" class="page">
+                <div class="card">
+                    <h2>🧪 Alchemists</h2>
+                    <p>Alchemists companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Ingredient tracking</li>
+                        <li>Potion deduction helper</li>
+                        <li>Theory tracking</li>
+                        <li>Scoring calculator</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rail Baron Page -->
+            <div id="page-railbaron" class="page">
+                <div id="game-content"></div>
+            </div>
+
+            <!-- Catan Page -->
+            <div id="page-catan" class="page">
+                <div class="card">
+                    <h2>🏝️ Catan</h2>
+                    <p>Catan companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Resource tracker</li>
+                        <li>Development card manager</li>
+                        <li>Victory point calculator</li>
+                        <li>Trade helper</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rising 5 Page -->
+            <div id="page-rising5" class="page">
+                <div class="card">
+                    <h2>🔮 Rising 5</h2>
+                    <p>Rising 5: Runes of Asteros companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Mission tracker</li>
+                        <li>Character ability reference</li>
+                        <li>Timer and countdown</li>
+                        <li>Rune decoder helper</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Search for Planet X Page -->
+            <div id="page-planetx" class="page">
+                <div class="card">
+                    <h2>🪐 Search for Planet X</h2>
+                    <p>Search for Planet X companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Sector tracking grid</li>
+                        <li>Celestial object deduction helper</li>
+                        <li>Research notes and clues</li>
+                        <li>Theory validation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Fleet: Card Game Page -->
+            <div id="page-fleet-card" class="page">
+                <div class="card">
+                    <h2>🎴 Fleet: The Card Game</h2>
+                    <p>Fleet companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>License tracker</li>
+                        <li>Fleet management</li>
+                        <li>Scoring calculator</li>
+                        <li>Fish market helper</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Fleet: Dice Game Page -->
+            <div id="page-fleet-dice" class="page">
+                <div class="card">
+                    <h2>🎲 Fleet: The Dice Game</h2>
+                    <p>Fleet: The Dice Game companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Score sheet tracker</li>
+                        <li>Dice combination helper</li>
+                        <li>Bonus calculator</li>
+                        <li>End game scoring</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Stone Age Page -->
+            <div id="page-stoneage" class="page">
+                <div class="card">
+                    <h2>🗿 Stone Age</h2>
+                    <p>Stone Age companion features coming soon!</p>
+                </div>
+                <div class="card">
+                    <h3>Planned Features</h3>
+                    <ul>
+                        <li>Resource tracker</li>
+                        <li>Food calculator</li>
+                        <li>Building scoring helper</li>
+                        <li>Civilization card tracker</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- About Page -->
+            <div id="page-about" class="page">
+                <div class="card">
+                    <h2>📱 About Wayfinder</h2>
+                    <p>Wayfinder is a multi-game companion app designed to enhance your board gaming experience. It provides tools and features to assist with game setup, gameplay tracking, and scoring across multiple popular board games.</p>
+                    <p><strong>Created by:</strong> Enoch Wright</p>
+                </div>
+                
+                <div class="card">
+                    <h3>⚖️ Legal Notice</h3>
+                    <p>This application is provided free of charge and is released as open-source software. It is offered "as is," without warranty of any kind, express or implied. Use of this application is at your own risk.</p>
+                    <p>All game names and related content are trademarks of their respective publishers. This application is an independent, unofficial companion and is not affiliated with, endorsed by, or sponsored by any game publisher or designer.</p>
+                </div>
+                
+                <div class="card">
+                    <h3>Technology Stack</h3>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <strong>Frontend:</strong> HTML5, CSS3, JavaScript
+                        </div>
+                        <div class="tech-item">
+                            <strong>Runtime:</strong> Capacitor 6.0
+                        </div>
+                        <div class="tech-item">
+                            <strong>PWA:</strong> Service Workers, Web Manifest
+                        </div>
+                        <div class="tech-item">
+                            <strong>Mobile:</strong> Android Native
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Version Information</h3>
+                    <p><strong>App Version:</strong> 1.0.0</p>
+                    <p><strong>Last Updated:</strong> December 2025</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Enoch Wright 2025</p>
+        </footer>
+    </div>
+    
+    <!-- Capacitor Core - Load from CDN for web -->
+    <script src="https://cdn.jsdelivr.net/npm/@capacitor/core@6.0.0/dist/capacitor.js"></script>
+    
+    <!-- Data Manager -->
+    <script src="js/data-manager.js"></script>
+    
+    <!-- Game Modules -->
+    <script src="js/games/alchemists.js"></script>
+    <script src="js/games/catan.js"></script>
+    <script src="js/games/fleet-card.js"></script>
+    <script src="js/games/fleet-dice.js"></script>
+    <script src="js/games/newbedford.js"></script>
+    <script src="js/games/planetx.js"></script>
+    <script src="js/games/railbaron.js"></script>
+    <script src="js/games/rising5.js"></script>
+    <script src="js/games/stoneage.js"></script>
+    
+    <!-- App Script -->
+    <script src="js/app.js"></script>
+</body>
+</html>

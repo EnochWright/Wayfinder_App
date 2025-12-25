@@ -1,0 +1,31 @@
+{
+  "railroads": [
+    {"id":1,"name":"Atchison, Topeka, and Santa Fe","price":40000},
+    {"id":2,"name":"Atlantic Coast Line","price":12000},
+    {"id":3,"name":"Baltimore and Ohio","price":24000},
+    {"id":4,"name":"Boston and Maine","price":4000},
+    {"id":5,"name":"Chesapeake and Ohio","price":20000},
+    {"id":6,"name":"Chicago, Burlington and Quincy","price":20000},
+    {"id":7,"name":"Chicago, Milwaukee, St. Paul, and Pacific","price":18000},
+    {"id":8,"name":"Chicago, Rock Island, and Pacific","price":29000},
+    {"id":9,"name":"Chicago and North Western","price":14000},
+    {"id":10,"name":"Denver and Rio Grande Western","price":6000},
+    {"id":11,"name":"Great Northern","price":17000},
+    {"id":12,"name":"Gulf, Mobile and Ohio","price":12000},
+    {"id":13,"name":"Illinois Central","price":14000},
+    {"id":14,"name":"Louisville and Nashville","price":18000},
+    {"id":15,"name":"Missouri Pacific","price":21000},
+    {"id":16,"name":"New York, New Haven, and Hartford","price":4000},
+    {"id":17,"name":"New York Central","price":28000},
+    {"id":18,"name":"Norfolk and Western","price":12000},
+    {"id":19,"name":"Northern Pacific","price":14000},
+    {"id":20,"name":"Pennsylvania","price":30000},
+    {"id":21,"name":"Seaboard Air Line","price":14000},
+    {"id":22,"name":"Southern Pacific","price":42000},
+    {"id":23,"name":"Southern Railway","price":20000},
+    {"id":24,"name":"St. Louis & San Francisco","price":19000},
+    {"id":25,"name":"Texas and Pacific","price":10000},
+    {"id":26,"name":"Union Pacific","price":40000},
+    {"id":27,"name":"Western Pacific","price":8000}
+  ]
+}

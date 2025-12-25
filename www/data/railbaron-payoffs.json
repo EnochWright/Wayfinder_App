@@ -1,0 +1,11394 @@
+{
+  "payoffs": [
+    {
+      "start": 1,
+      "end": 1,
+      "payoff": 0
+    },
+    {
+      "start": 1,
+      "end": 2,
+      "payoff": 3500
+    },
+    {
+      "start": 1,
+      "end": 3,
+      "payoff": 2000
+    },
+    {
+      "start": 1,
+      "end": 4,
+      "payoff": 3000
+    },
+    {
+      "start": 1,
+      "end": 5,
+      "payoff": 1500
+    },
+    {
+      "start": 1,
+      "end": 6,
+      "payoff": 2500
+    },
+    {
+      "start": 1,
+      "end": 7,
+      "payoff": 5500
+    },
+    {
+      "start": 1,
+      "end": 8,
+      "payoff": 3000
+    },
+    {
+      "start": 1,
+      "end": 9,
+      "payoff": 3500
+    },
+    {
+      "start": 1,
+      "end": 10,
+      "payoff": 10000
+    },
+    {
+      "start": 1,
+      "end": 11,
+      "payoff": 9500
+    },
+    {
+      "start": 1,
+      "end": 12,
+      "payoff": 7500
+    },
+    {
+      "start": 1,
+      "end": 13,
+      "payoff": 10000
+    },
+    {
+      "start": 1,
+      "end": 14,
+      "payoff": 11000
+    },
+    {
+      "start": 1,
+      "end": 15,
+      "payoff": 8500
+    },
+    {
+      "start": 1,
+      "end": 16,
+      "payoff": 15000
+    },
+    {
+      "start": 1,
+      "end": 17,
+      "payoff": 13500
+    },
+    {
+      "start": 1,
+      "end": 18,
+      "payoff": 6000
+    },
+    {
+      "start": 1,
+      "end": 19,
+      "payoff": 5000
+    },
+    {
+      "start": 1,
+      "end": 20,
+      "payoff": 13500
+    },
+    {
+      "start": 1,
+      "end": 21,
+      "payoff": 8000
+    },
+    {
+      "start": 1,
+      "end": 22,
+      "payoff": 7000
+    },
+    {
+      "start": 1,
+      "end": 23,
+      "payoff": 5000
+    },
+    {
+      "start": 1,
+      "end": 24,
+      "payoff": 6000
+    },
+    {
+      "start": 1,
+      "end": 25,
+      "payoff": 5500
+    },
+    {
+      "start": 1,
+      "end": 26,
+      "payoff": 7500
+    },
+    {
+      "start": 1,
+      "end": 27,
+      "payoff": 9000
+    },
+    {
+      "start": 1,
+      "end": 28,
+      "payoff": 10000
+    },
+    {
+      "start": 1,
+      "end": 29,
+      "payoff": 11000
+    },
+    {
+      "start": 1,
+      "end": 30,
+      "payoff": 17000
+    },
+    {
+      "start": 1,
+      "end": 31,
+      "payoff": 17000
+    },
+    {
+      "start": 1,
+      "end": 32,
+      "payoff": 18500
+    },
+    {
+      "start": 1,
+      "end": 33,
+      "payoff": 13500
+    },
+    {
+      "start": 1,
+      "end": 34,
+      "payoff": 8500
+    },
+    {
+      "start": 1,
+      "end": 35,
+      "payoff": 12500
+    },
+    {
+      "start": 1,
+      "end": 36,
+      "payoff": 10500
+    },
+    {
+      "start": 1,
+      "end": 37,
+      "payoff": 15000
+    },
+    {
+      "start": 1,
+      "end": 38,
+      "payoff": 19500
+    },
+    {
+      "start": 1,
+      "end": 39,
+      "payoff": 16000
+    },
+    {
+      "start": 1,
+      "end": 40,
+      "payoff": 18500
+    },
+    {
+      "start": 1,
+      "end": 41,
+      "payoff": 12000
+    },
+    {
+      "start": 1,
+      "end": 42,
+      "payoff": 14500
+    },
+    {
+      "start": 1,
+      "end": 43,
+      "payoff": 12500
+    },
+    {
+      "start": 1,
+      "end": 44,
+      "payoff": 12500
+    },
+    {
+      "start": 1,
+      "end": 45,
+      "payoff": 15500
+    },
+    {
+      "start": 1,
+      "end": 46,
+      "payoff": 13000
+    },
+    {
+      "start": 1,
+      "end": 47,
+      "payoff": 18500
+    },
+    {
+      "start": 1,
+      "end": 48,
+      "payoff": 12000
+    },
+    {
+      "start": 1,
+      "end": 49,
+      "payoff": 21000
+    },
+    {
+      "start": 1,
+      "end": 50,
+      "payoff": 23500
+    },
+    {
+      "start": 1,
+      "end": 51,
+      "payoff": 18000
+    },
+    {
+      "start": 1,
+      "end": 52,
+      "payoff": 23500
+    },
+    {
+      "start": 1,
+      "end": 53,
+      "payoff": 30000
+    },
+    {
+      "start": 1,
+      "end": 54,
+      "payoff": 17000
+    },
+    {
+      "start": 1,
+      "end": 55,
+      "payoff": 23500
+    },
+    {
+      "start": 1,
+      "end": 56,
+      "payoff": 31500
+    },
+    {
+      "start": 1,
+      "end": 57,
+      "payoff": 26500
+    },
+    {
+      "start": 1,
+      "end": 58,
+      "payoff": 22000
+    },
+    {
+      "start": 1,
+      "end": 59,
+      "payoff": 28000
+    },
+    {
+      "start": 1,
+      "end": 60,
+      "payoff": 30500
+    },
+    {
+      "start": 1,
+      "end": 61,
+      "payoff": 31000
+    },
+    {
+      "start": 1,
+      "end": 62,
+      "payoff": 27500
+    },
+    {
+      "start": 1,
+      "end": 63,
+      "payoff": 25500
+    },
+    {
+      "start": 1,
+      "end": 64,
+      "payoff": 27000
+    },
+    {
+      "start": 1,
+      "end": 65,
+      "payoff": 31500
+    },
+    {
+      "start": 1,
+      "end": 66,
+      "payoff": 31000
+    },
+    {
+      "start": 1,
+      "end": 67,
+      "payoff": 18500
+    },
+    {
+      "start": 2,
+      "end": 2,
+      "payoff": 0
+    },
+    {
+      "start": 2,
+      "end": 3,
+      "payoff": 4000
+    },
+    {
+      "start": 2,
+      "end": 4,
+      "payoff": 4000
+    },
+    {
+      "start": 2,
+      "end": 5,
+      "payoff": 2000
+    },
+    {
+      "start": 2,
+      "end": 6,
+      "payoff": 1000
+    },
+    {
+      "start": 2,
+      "end": 7,
+      "payoff": 3500
+    },
+    {
+      "start": 2,
+      "end": 8,
+      "payoff": 5500
+    },
+    {
+      "start": 2,
+      "end": 9,
+      "payoff": 5000
+    },
+    {
+      "start": 2,
+      "end": 10,
+      "payoff": 7000
+    },
+    {
+      "start": 2,
+      "end": 11,
+      "payoff": 5500
+    },
+    {
+      "start": 2,
+      "end": 12,
+      "payoff": 4000
+    },
+    {
+      "start": 2,
+      "end": 13,
+      "payoff": 6500
+    },
+    {
+      "start": 2,
+      "end": 14,
+      "payoff": 8000
+    },
+    {
+      "start": 2,
+      "end": 15,
+      "payoff": 5500
+    },
+    {
+      "start": 2,
+      "end": 16,
+      "payoff": 11500
+    },
+    {
+      "start": 2,
+      "end": 17,
+      "payoff": 10500
+    },
+    {
+      "start": 2,
+      "end": 18,
+      "payoff": 2500
+    },
+    {
+      "start": 2,
+      "end": 19,
+      "payoff": 1500
+    },
+    {
+      "start": 2,
+      "end": 20,
+      "payoff": 10000
+    },
+    {
+      "start": 2,
+      "end": 21,
+      "payoff": 8000
+    },
+    {
+      "start": 2,
+      "end": 22,
+      "payoff": 6000
+    },
+    {
+      "start": 2,
+      "end": 23,
+      "payoff": 4500
+    },
+    {
+      "start": 2,
+      "end": 24,
+      "payoff": 5000
+    },
+    {
+      "start": 2,
+      "end": 25,
+      "payoff": 6000
+    },
+    {
+      "start": 2,
+      "end": 26,
+      "payoff": 7000
+    },
+    {
+      "start": 2,
+      "end": 27,
+      "payoff": 8000
+    },
+    {
+      "start": 2,
+      "end": 28,
+      "payoff": 9000
+    },
+    {
+      "start": 2,
+      "end": 29,
+      "payoff": 8000
+    },
+    {
+      "start": 2,
+      "end": 30,
+      "payoff": 14500
+    },
+    {
+      "start": 2,
+      "end": 31,
+      "payoff": 14500
+    },
+    {
+      "start": 2,
+      "end": 32,
+      "payoff": 15000
+    },
+    {
+      "start": 2,
+      "end": 33,
+      "payoff": 11000
+    },
+    {
+      "start": 2,
+      "end": 34,
+      "payoff": 7000
+    },
+    {
+      "start": 2,
+      "end": 35,
+      "payoff": 9500
+    },
+    {
+      "start": 2,
+      "end": 36,
+      "payoff": 7500
+    },
+    {
+      "start": 2,
+      "end": 37,
+      "payoff": 11500
+    },
+    {
+      "start": 2,
+      "end": 38,
+      "payoff": 17000
+    },
+    {
+      "start": 2,
+      "end": 39,
+      "payoff": 12500
+    },
+    {
+      "start": 2,
+      "end": 40,
+      "payoff": 18000
+    },
+    {
+      "start": 2,
+      "end": 41,
+      "payoff": 11500
+    },
+    {
+      "start": 2,
+      "end": 42,
+      "payoff": 14500
+    },
+    {
+      "start": 2,
+      "end": 43,
+      "payoff": 12000
+    },
+    {
+      "start": 2,
+      "end": 44,
+      "payoff": 12000
+    },
+    {
+      "start": 2,
+      "end": 45,
+      "payoff": 14500
+    },
+    {
+      "start": 2,
+      "end": 46,
+      "payoff": 13000
+    },
+    {
+      "start": 2,
+      "end": 47,
+      "payoff": 18000
+    },
+    {
+      "start": 2,
+      "end": 48,
+      "payoff": 12000
+    },
+    {
+      "start": 2,
+      "end": 49,
+      "payoff": 21000
+    },
+    {
+      "start": 2,
+      "end": 50,
+      "payoff": 23000
+    },
+    {
+      "start": 2,
+      "end": 51,
+      "payoff": 18000
+    },
+    {
+      "start": 2,
+      "end": 52,
+      "payoff": 23500
+    },
+    {
+      "start": 2,
+      "end": 53,
+      "payoff": 30500
+    },
+    {
+      "start": 2,
+      "end": 54,
+      "payoff": 17000
+    },
+    {
+      "start": 2,
+      "end": 55,
+      "payoff": 23000
+    },
+    {
+      "start": 2,
+      "end": 56,
+      "payoff": 29500
+    },
+    {
+      "start": 2,
+      "end": 57,
+      "payoff": 26500
+    },
+    {
+      "start": 2,
+      "end": 58,
+      "payoff": 21000
+    },
+    {
+      "start": 2,
+      "end": 59,
+      "payoff": 27500
+    },
+    {
+      "start": 2,
+      "end": 60,
+      "payoff": 29000
+    },
+    {
+      "start": 2,
+      "end": 61,
+      "payoff": 30500
+    },
+    {
+      "start": 2,
+      "end": 62,
+      "payoff": 27000
+    },
+    {
+      "start": 2,
+      "end": 63,
+      "payoff": 28500
+    },
+    {
+      "start": 2,
+      "end": 64,
+      "payoff": 30000
+    },
+    {
+      "start": 2,
+      "end": 65,
+      "payoff": 28500
+    },
+    {
+      "start": 2,
+      "end": 66,
+      "payoff": 30500
+    },
+    {
+      "start": 2,
+      "end": 67,
+      "payoff": 18500
+    },
+    {
+      "start": 3,
+      "end": 3,
+      "payoff": 0
+    },
+    {
+      "start": 3,
+      "end": 4,
+      "payoff": 5000
+    },
+    {
+      "start": 3,
+      "end": 5,
+      "payoff": 2500
+    },
+    {
+      "start": 3,
+      "end": 6,
+      "payoff": 3000
+    },
+    {
+      "start": 3,
+      "end": 7,
+      "payoff": 6500
+    },
+    {
+      "start": 3,
+      "end": 8,
+      "payoff": 1000
+    },
+    {
+      "start": 3,
+      "end": 9,
+      "payoff": 4500
+    },
+    {
+      "start": 3,
+      "end": 10,
+      "payoff": 11000
+    },
+    {
+      "start": 3,
+      "end": 11,
+      "payoff": 9500
+    },
+    {
+      "start": 3,
+      "end": 12,
+      "payoff": 8500
+    },
+    {
+      "start": 3,
+      "end": 13,
+      "payoff": 11500
+    },
+    {
+      "start": 3,
+      "end": 14,
+      "payoff": 12000
+    },
+    {
+      "start": 3,
+      "end": 15,
+      "payoff": 9500
+    },
+    {
+      "start": 3,
+      "end": 16,
+      "payoff": 16000
+    },
+    {
+      "start": 3,
+      "end": 17,
+      "payoff": 14500
+    },
+    {
+      "start": 3,
+      "end": 18,
+      "payoff": 7000
+    },
+    {
+      "start": 3,
+      "end": 19,
+      "payoff": 5500
+    },
+    {
+      "start": 3,
+      "end": 20,
+      "payoff": 14000
+    },
+    {
+      "start": 3,
+      "end": 21,
+      "payoff": 10000
+    },
+    {
+      "start": 3,
+      "end": 22,
+      "payoff": 9500
+    },
+    {
+      "start": 3,
+      "end": 23,
+      "payoff": 7000
+    },
+    {
+      "start": 3,
+      "end": 24,
+      "payoff": 8000
+    },
+    {
+      "start": 3,
+      "end": 25,
+      "payoff": 7500
+    },
+    {
+      "start": 3,
+      "end": 26,
+      "payoff": 9500
+    },
+    {
+      "start": 3,
+      "end": 27,
+      "payoff": 11000
+    },
+    {
+      "start": 3,
+      "end": 28,
+      "payoff": 12000
+    },
+    {
+      "start": 3,
+      "end": 29,
+      "payoff": 12000
+    },
+    {
+      "start": 3,
+      "end": 30,
+      "payoff": 18500
+    },
+    {
+      "start": 3,
+      "end": 31,
+      "payoff": 19500
+    },
+    {
+      "start": 3,
+      "end": 32,
+      "payoff": 19500
+    },
+    {
+      "start": 3,
+      "end": 33,
+      "payoff": 15000
+    },
+    {
+      "start": 3,
+      "end": 34,
+      "payoff": 10500
+    },
+    {
+      "start": 3,
+      "end": 35,
+      "payoff": 14000
+    },
+    {
+      "start": 3,
+      "end": 36,
+      "payoff": 12000
+    },
+    {
+      "start": 3,
+      "end": 37,
+      "payoff": 15500
+    },
+    {
+      "start": 3,
+      "end": 38,
+      "payoff": 21000
+    },
+    {
+      "start": 3,
+      "end": 39,
+      "payoff": 16500
+    },
+    {
+      "start": 3,
+      "end": 40,
+      "payoff": 20500
+    },
+    {
+      "start": 3,
+      "end": 41,
+      "payoff": 14000
+    },
+    {
+      "start": 3,
+      "end": 42,
+      "payoff": 16500
+    },
+    {
+      "start": 3,
+      "end": 43,
+      "payoff": 14500
+    },
+    {
+      "start": 3,
+      "end": 44,
+      "payoff": 14000
+    },
+    {
+      "start": 3,
+      "end": 45,
+      "payoff": 17500
+    },
+    {
+      "start": 3,
+      "end": 46,
+      "payoff": 15000
+    },
+    {
+      "start": 3,
+      "end": 47,
+      "payoff": 21000
+    },
+    {
+      "start": 3,
+      "end": 48,
+      "payoff": 14000
+    },
+    {
+      "start": 3,
+      "end": 49,
+      "payoff": 23000
+    },
+    {
+      "start": 3,
+      "end": 50,
+      "payoff": 25500
+    },
+    {
+      "start": 3,
+      "end": 51,
+      "payoff": 20000
+    },
+    {
+      "start": 3,
+      "end": 52,
+      "payoff": 25500
+    },
+    {
+      "start": 3,
+      "end": 53,
+      "payoff": 32000
+    },
+    {
+      "start": 3,
+      "end": 54,
+      "payoff": 20500
+    },
+    {
+      "start": 3,
+      "end": 55,
+      "payoff": 25500
+    },
+    {
+      "start": 3,
+      "end": 56,
+      "payoff": 31500
+    },
+    {
+      "start": 3,
+      "end": 57,
+      "payoff": 28500
+    },
+    {
+      "start": 3,
+      "end": 58,
+      "payoff": 24000
+    },
+    {
+      "start": 3,
+      "end": 59,
+      "payoff": 30000
+    },
+    {
+      "start": 3,
+      "end": 60,
+      "payoff": 32500
+    },
+    {
+      "start": 3,
+      "end": 61,
+      "payoff": 33000
+    },
+    {
+      "start": 3,
+      "end": 62,
+      "payoff": 29500
+    },
+    {
+      "start": 3,
+      "end": 63,
+      "payoff": 30500
+    },
+    {
+      "start": 3,
+      "end": 64,
+      "payoff": 32000
+    },
+    {
+      "start": 3,
+      "end": 65,
+      "payoff": 32500
+    },
+    {
+      "start": 3,
+      "end": 66,
+      "payoff": 33000
+    },
+    {
+      "start": 3,
+      "end": 67,
+      "payoff": 21000
+    },
+    {
+      "start": 4,
+      "end": 4,
+      "payoff": 0
+    },
+    {
+      "start": 4,
+      "end": 5,
+      "payoff": 4000
+    },
+    {
+      "start": 4,
+      "end": 6,
+      "payoff": 4000
+    },
+    {
+      "start": 4,
+      "end": 7,
+      "payoff": 2500
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "payoff": 6000
+    },
+    {
+      "start": 4,
+      "end": 9,
+      "payoff": 4500
+    },
+    {
+      "start": 4,
+      "end": 10,
+      "payoff": 9500
+    },
+    {
+      "start": 4,
+      "end": 11,
+      "payoff": 9500
+    },
+    {
+      "start": 4,
+      "end": 12,
+      "payoff": 8000
+    },
+    {
+      "start": 4,
+      "end": 13,
+      "payoff": 8000
+    },
+    {
+      "start": 4,
+      "end": 14,
+      "payoff": 12000
+    },
+    {
+      "start": 4,
+      "end": 15,
+      "payoff": 7500
+    },
+    {
+      "start": 4,
+      "end": 16,
+      "payoff": 15500
+    },
+    {
+      "start": 4,
+      "end": 17,
+      "payoff": 12000
+    },
+    {
+      "start": 4,
+      "end": 18,
+      "payoff": 6500
+    },
+    {
+      "start": 4,
+      "end": 19,
+      "payoff": 5500
+    },
+    {
+      "start": 4,
+      "end": 20,
+      "payoff": 14000
+    },
+    {
+      "start": 4,
+      "end": 21,
+      "payoff": 5000
+    },
+    {
+      "start": 4,
+      "end": 22,
+      "payoff": 4500
+    },
+    {
+      "start": 4,
+      "end": 23,
+      "payoff": 2000
+    },
+    {
+      "start": 4,
+      "end": 24,
+      "payoff": 3000
+    },
+    {
+      "start": 4,
+      "end": 25,
+      "payoff": 2500
+    },
+    {
+      "start": 4,
+      "end": 26,
+      "payoff": 4500
+    },
+    {
+      "start": 4,
+      "end": 27,
+      "payoff": 6000
+    },
+    {
+      "start": 4,
+      "end": 28,
+      "payoff": 7000
+    },
+    {
+      "start": 4,
+      "end": 29,
+      "payoff": 9000
+    },
+    {
+      "start": 4,
+      "end": 30,
+      "payoff": 14000
+    },
+    {
+      "start": 4,
+      "end": 31,
+      "payoff": 14000
+    },
+    {
+      "start": 4,
+      "end": 32,
+      "payoff": 15500
+    },
+    {
+      "start": 4,
+      "end": 33,
+      "payoff": 10500
+    },
+    {
+      "start": 4,
+      "end": 34,
+      "payoff": 5500
+    },
+    {
+      "start": 4,
+      "end": 35,
+      "payoff": 9500
+    },
+    {
+      "start": 4,
+      "end": 36,
+      "payoff": 7500
+    },
+    {
+      "start": 4,
+      "end": 37,
+      "payoff": 13000
+    },
+    {
+      "start": 4,
+      "end": 38,
+      "payoff": 16500
+    },
+    {
+      "start": 4,
+      "end": 39,
+      "payoff": 14000
+    },
+    {
+      "start": 4,
+      "end": 40,
+      "payoff": 15500
+    },
+    {
+      "start": 4,
+      "end": 41,
+      "payoff": 9000
+    },
+    {
+      "start": 4,
+      "end": 42,
+      "payoff": 11500
+    },
+    {
+      "start": 4,
+      "end": 43,
+      "payoff": 9500
+    },
+    {
+      "start": 4,
+      "end": 44,
+      "payoff": 9000
+    },
+    {
+      "start": 4,
+      "end": 45,
+      "payoff": 12500
+    },
+    {
+      "start": 4,
+      "end": 46,
+      "payoff": 10000
+    },
+    {
+      "start": 4,
+      "end": 47,
+      "payoff": 15500
+    },
+    {
+      "start": 4,
+      "end": 48,
+      "payoff": 9000
+    },
+    {
+      "start": 4,
+      "end": 49,
+      "payoff": 18000
+    },
+    {
+      "start": 4,
+      "end": 50,
+      "payoff": 20500
+    },
+    {
+      "start": 4,
+      "end": 51,
+      "payoff": 15000
+    },
+    {
+      "start": 4,
+      "end": 52,
+      "payoff": 20500
+    },
+    {
+      "start": 4,
+      "end": 53,
+      "payoff": 27000
+    },
+    {
+      "start": 4,
+      "end": 54,
+      "payoff": 14000
+    },
+    {
+      "start": 4,
+      "end": 55,
+      "payoff": 20500
+    },
+    {
+      "start": 4,
+      "end": 56,
+      "payoff": 26500
+    },
+    {
+      "start": 4,
+      "end": 57,
+      "payoff": 23500
+    },
+    {
+      "start": 4,
+      "end": 58,
+      "payoff": 19500
+    },
+    {
+      "start": 4,
+      "end": 59,
+      "payoff": 25000
+    },
+    {
+      "start": 4,
+      "end": 60,
+      "payoff": 27500
+    },
+    {
+      "start": 4,
+      "end": 61,
+      "payoff": 28000
+    },
+    {
+      "start": 4,
+      "end": 62,
+      "payoff": 24500
+    },
+    {
+      "start": 4,
+      "end": 63,
+      "payoff": 25500
+    },
+    {
+      "start": 4,
+      "end": 64,
+      "payoff": 27000
+    },
+    {
+      "start": 4,
+      "end": 65,
+      "payoff": 27000
+    },
+    {
+      "start": 4,
+      "end": 66,
+      "payoff": 28000
+    },
+    {
+      "start": 4,
+      "end": 67,
+      "payoff": 16500
+    },
+    {
+      "start": 5,
+      "end": 5,
+      "payoff": 0
+    },
+    {
+      "start": 5,
+      "end": 6,
+      "payoff": 1000
+    },
+    {
+      "start": 5,
+      "end": 7,
+      "payoff": 4500
+    },
+    {
+      "start": 5,
+      "end": 8,
+      "payoff": 3500
+    },
+    {
+      "start": 5,
+      "end": 9,
+      "payoff": 2000
+    },
+    {
+      "start": 5,
+      "end": 10,
+      "payoff": 8500
+    },
+    {
+      "start": 5,
+      "end": 11,
+      "payoff": 7500
+    },
+    {
+      "start": 5,
+      "end": 12,
+      "payoff": 6000
+    },
+    {
+      "start": 5,
+      "end": 13,
+      "payoff": 8500
+    },
+    {
+      "start": 5,
+      "end": 14,
+      "payoff": 10000
+    },
+    {
+      "start": 5,
+      "end": 15,
+      "payoff": 7500
+    },
+    {
+      "start": 5,
+      "end": 16,
+      "payoff": 13500
+    },
+    {
+      "start": 5,
+      "end": 17,
+      "payoff": 12000
+    },
+    {
+      "start": 5,
+      "end": 18,
+      "payoff": 4500
+    },
+    {
+      "start": 5,
+      "end": 19,
+      "payoff": 3500
+    },
+    {
+      "start": 5,
+      "end": 20,
+      "payoff": 12000
+    },
+    {
+      "start": 5,
+      "end": 21,
+      "payoff": 9000
+    },
+    {
+      "start": 5,
+      "end": 22,
+      "payoff": 7500
+    },
+    {
+      "start": 5,
+      "end": 23,
+      "payoff": 5500
+    },
+    {
+      "start": 5,
+      "end": 24,
+      "payoff": 6500
+    },
+    {
+      "start": 5,
+      "end": 25,
+      "payoff": 6500
+    },
+    {
+      "start": 5,
+      "end": 26,
+      "payoff": 8000
+    },
+    {
+      "start": 5,
+      "end": 27,
+      "payoff": 10000
+    },
+    {
+      "start": 5,
+      "end": 28,
+      "payoff": 10500
+    },
+    {
+      "start": 5,
+      "end": 29,
+      "payoff": 10000
+    },
+    {
+      "start": 5,
+      "end": 30,
+      "payoff": 16000
+    },
+    {
+      "start": 5,
+      "end": 31,
+      "payoff": 16500
+    },
+    {
+      "start": 5,
+      "end": 32,
+      "payoff": 17000
+    },
+    {
+      "start": 5,
+      "end": 33,
+      "payoff": 13000
+    },
+    {
+      "start": 5,
+      "end": 34,
+      "payoff": 8500
+    },
+    {
+      "start": 5,
+      "end": 35,
+      "payoff": 11500
+    },
+    {
+      "start": 5,
+      "end": 36,
+      "payoff": 9500
+    },
+    {
+      "start": 5,
+      "end": 37,
+      "payoff": 13500
+    },
+    {
+      "start": 5,
+      "end": 38,
+      "payoff": 19000
+    },
+    {
+      "start": 5,
+      "end": 39,
+      "payoff": 15500
+    },
+    {
+      "start": 5,
+      "end": 40,
+      "payoff": 19500
+    },
+    {
+      "start": 5,
+      "end": 41,
+      "payoff": 12500
+    },
+    {
+      "start": 5,
+      "end": 42,
+      "payoff": 15500
+    },
+    {
+      "start": 5,
+      "end": 43,
+      "payoff": 13500
+    },
+    {
+      "start": 5,
+      "end": 44,
+      "payoff": 13000
+    },
+    {
+      "start": 5,
+      "end": 45,
+      "payoff": 16000
+    },
+    {
+      "start": 5,
+      "end": 46,
+      "payoff": 14000
+    },
+    {
+      "start": 5,
+      "end": 47,
+      "payoff": 19500
+    },
+    {
+      "start": 5,
+      "end": 48,
+      "payoff": 13000
+    },
+    {
+      "start": 5,
+      "end": 49,
+      "payoff": 22000
+    },
+    {
+      "start": 5,
+      "end": 50,
+      "payoff": 24000
+    },
+    {
+      "start": 5,
+      "end": 51,
+      "payoff": 19000
+    },
+    {
+      "start": 5,
+      "end": 52,
+      "payoff": 24500
+    },
+    {
+      "start": 5,
+      "end": 53,
+      "payoff": 31000
+    },
+    {
+      "start": 5,
+      "end": 54,
+      "payoff": 18000
+    },
+    {
+      "start": 5,
+      "end": 55,
+      "payoff": 24000
+    },
+    {
+      "start": 5,
+      "end": 56,
+      "payoff": 30500
+    },
+    {
+      "start": 5,
+      "end": 57,
+      "payoff": 27500
+    },
+    {
+      "start": 5,
+      "end": 58,
+      "payoff": 23000
+    },
+    {
+      "start": 5,
+      "end": 59,
+      "payoff": 28000
+    },
+    {
+      "start": 5,
+      "end": 60,
+      "payoff": 31000
+    },
+    {
+      "start": 5,
+      "end": 61,
+      "payoff": 31500
+    },
+    {
+      "start": 5,
+      "end": 62,
+      "payoff": 28000
+    },
+    {
+      "start": 5,
+      "end": 63,
+      "payoff": 29500
+    },
+    {
+      "start": 5,
+      "end": 64,
+      "payoff": 31000
+    },
+    {
+      "start": 5,
+      "end": 65,
+      "payoff": 30500
+    },
+    {
+      "start": 5,
+      "end": 66,
+      "payoff": 31500
+    },
+    {
+      "start": 5,
+      "end": 67,
+      "payoff": 20000
+    },
+    {
+      "start": 6,
+      "end": 6,
+      "payoff": 0
+    },
+    {
+      "start": 6,
+      "end": 7,
+      "payoff": 3500
+    },
+    {
+      "start": 6,
+      "end": 8,
+      "payoff": 4500
+    },
+    {
+      "start": 6,
+      "end": 9,
+      "payoff": 1500
+    },
+    {
+      "start": 6,
+      "end": 10,
+      "payoff": 7500
+    },
+    {
+      "start": 6,
+      "end": 11,
+      "payoff": 8000
+    },
+    {
+      "start": 6,
+      "end": 12,
+      "payoff": 5000
+    },
+    {
+      "start": 6,
+      "end": 13,
+      "payoff": 7500
+    },
+    {
+      "start": 6,
+      "end": 14,
+      "payoff": 9000
+    },
+    {
+      "start": 6,
+      "end": 15,
+      "payoff": 6500
+    },
+    {
+      "start": 6,
+      "end": 16,
+      "payoff": 12500
+    },
+    {
+      "start": 6,
+      "end": 17,
+      "payoff": 11000
+    },
+    {
+      "start": 6,
+      "end": 18,
+      "payoff": 3500
+    },
+    {
+      "start": 6,
+      "end": 19,
+      "payoff": 2500
+    },
+    {
+      "start": 6,
+      "end": 20,
+      "payoff": 11000
+    },
+    {
+      "start": 6,
+      "end": 21,
+      "payoff": 8000
+    },
+    {
+      "start": 6,
+      "end": 22,
+      "payoff": 6500
+    },
+    {
+      "start": 6,
+      "end": 23,
+      "payoff": 5000
+    },
+    {
+      "start": 6,
+      "end": 24,
+      "payoff": 5500
+    },
+    {
+      "start": 6,
+      "end": 25,
+      "payoff": 6500
+    },
+    {
+      "start": 6,
+      "end": 26,
+      "payoff": 7000
+    },
+    {
+      "start": 6,
+      "end": 27,
+      "payoff": 9000
+    },
+    {
+      "start": 6,
+      "end": 28,
+      "payoff": 9500
+    },
+    {
+      "start": 6,
+      "end": 29,
+      "payoff": 9000
+    },
+    {
+      "start": 6,
+      "end": 30,
+      "payoff": 15500
+    },
+    {
+      "start": 6,
+      "end": 31,
+      "payoff": 15500
+    },
+    {
+      "start": 6,
+      "end": 32,
+      "payoff": 16000
+    },
+    {
+      "start": 6,
+      "end": 33,
+      "payoff": 12000
+    },
+    {
+      "start": 6,
+      "end": 34,
+      "payoff": 8000
+    },
+    {
+      "start": 6,
+      "end": 35,
+      "payoff": 10500
+    },
+    {
+      "start": 6,
+      "end": 36,
+      "payoff": 8500
+    },
+    {
+      "start": 6,
+      "end": 37,
+      "payoff": 12500
+    },
+    {
+      "start": 6,
+      "end": 38,
+      "payoff": 18000
+    },
+    {
+      "start": 6,
+      "end": 39,
+      "payoff": 13500
+    },
+    {
+      "start": 6,
+      "end": 40,
+      "payoff": 18500
+    },
+    {
+      "start": 6,
+      "end": 41,
+      "payoff": 11500
+    },
+    {
+      "start": 6,
+      "end": 42,
+      "payoff": 14500
+    },
+    {
+      "start": 6,
+      "end": 43,
+      "payoff": 12000
+    },
+    {
+      "start": 6,
+      "end": 44,
+      "payoff": 12000
+    },
+    {
+      "start": 6,
+      "end": 45,
+      "payoff": 15000
+    },
+    {
+      "start": 6,
+      "end": 46,
+      "payoff": 13000
+    },
+    {
+      "start": 6,
+      "end": 47,
+      "payoff": 18500
+    },
+    {
+      "start": 6,
+      "end": 48,
+      "payoff": 12000
+    },
+    {
+      "start": 6,
+      "end": 49,
+      "payoff": 21000
+    },
+    {
+      "start": 6,
+      "end": 50,
+      "payoff": 23500
+    },
+    {
+      "start": 6,
+      "end": 51,
+      "payoff": 18000
+    },
+    {
+      "start": 6,
+      "end": 52,
+      "payoff": 23500
+    },
+    {
+      "start": 6,
+      "end": 53,
+      "payoff": 30000
+    },
+    {
+      "start": 6,
+      "end": 54,
+      "payoff": 17000
+    },
+    {
+      "start": 6,
+      "end": 55,
+      "payoff": 23500
+    },
+    {
+      "start": 6,
+      "end": 56,
+      "payoff": 29500
+    },
+    {
+      "start": 6,
+      "end": 57,
+      "payoff": 26500
+    },
+    {
+      "start": 6,
+      "end": 58,
+      "payoff": 22000
+    },
+    {
+      "start": 6,
+      "end": 59,
+      "payoff": 28000
+    },
+    {
+      "start": 6,
+      "end": 60,
+      "payoff": 30000
+    },
+    {
+      "start": 6,
+      "end": 61,
+      "payoff": 31000
+    },
+    {
+      "start": 6,
+      "end": 62,
+      "payoff": 27000
+    },
+    {
+      "start": 6,
+      "end": 63,
+      "payoff": 28500
+    },
+    {
+      "start": 6,
+      "end": 64,
+      "payoff": 30000
+    },
+    {
+      "start": 6,
+      "end": 65,
+      "payoff": 29500
+    },
+    {
+      "start": 6,
+      "end": 66,
+      "payoff": 31000
+    },
+    {
+      "start": 6,
+      "end": 67,
+      "payoff": 19000
+    },
+    {
+      "start": 7,
+      "end": 7,
+      "payoff": 0
+    },
+    {
+      "start": 7,
+      "end": 8,
+      "payoff": 8000
+    },
+    {
+      "start": 7,
+      "end": 9,
+      "payoff": 3000
+    },
+    {
+      "start": 7,
+      "end": 10,
+      "payoff": 8000
+    },
+    {
+      "start": 7,
+      "end": 11,
+      "payoff": 8000
+    },
+    {
+      "start": 7,
+      "end": 12,
+      "payoff": 6000
+    },
+    {
+      "start": 7,
+      "end": 13,
+      "payoff": 7000
+    },
+    {
+      "start": 7,
+      "end": 14,
+      "payoff": 10500
+    },
+    {
+      "start": 7,
+      "end": 15,
+      "payoff": 6000
+    },
+    {
+      "start": 7,
+      "end": 16,
+      "payoff": 14000
+    },
+    {
+      "start": 7,
+      "end": 17,
+      "payoff": 10500
+    },
+    {
+      "start": 7,
+      "end": 18,
+      "payoff": 5000
+    },
+    {
+      "start": 7,
+      "end": 19,
+      "payoff": 4000
+    },
+    {
+      "start": 7,
+      "end": 20,
+      "payoff": 12500
+    },
+    {
+      "start": 7,
+      "end": 21,
+      "payoff": 4500
+    },
+    {
+      "start": 7,
+      "end": 22,
+      "payoff": 3000
+    },
+    {
+      "start": 7,
+      "end": 23,
+      "payoff": 1500
+    },
+    {
+      "start": 7,
+      "end": 24,
+      "payoff": 2000
+    },
+    {
+      "start": 7,
+      "end": 25,
+      "payoff": 3000
+    },
+    {
+      "start": 7,
+      "end": 26,
+      "payoff": 3500
+    },
+    {
+      "start": 7,
+      "end": 27,
+      "payoff": 5500
+    },
+    {
+      "start": 7,
+      "end": 28,
+      "payoff": 6000
+    },
+    {
+      "start": 7,
+      "end": 29,
+      "payoff": 8000
+    },
+    {
+      "start": 7,
+      "end": 30,
+      "payoff": 13000
+    },
+    {
+      "start": 7,
+      "end": 31,
+      "payoff": 13000
+    },
+    {
+      "start": 7,
+      "end": 32,
+      "payoff": 14500
+    },
+    {
+      "start": 7,
+      "end": 33,
+      "payoff": 9500
+    },
+    {
+      "start": 7,
+      "end": 34,
+      "payoff": 4500
+    },
+    {
+      "start": 7,
+      "end": 35,
+      "payoff": 8000
+    },
+    {
+      "start": 7,
+      "end": 36,
+      "payoff": 6000
+    },
+    {
+      "start": 7,
+      "end": 37,
+      "payoff": 11500
+    },
+    {
+      "start": 7,
+      "end": 38,
+      "payoff": 15500
+    },
+    {
+      "start": 7,
+      "end": 39,
+      "payoff": 12000
+    },
+    {
+      "start": 7,
+      "end": 40,
+      "payoff": 15000
+    },
+    {
+      "start": 7,
+      "end": 41,
+      "payoff": 8500
+    },
+    {
+      "start": 7,
+      "end": 42,
+      "payoff": 11000
+    },
+    {
+      "start": 7,
+      "end": 43,
+      "payoff": 9000
+    },
+    {
+      "start": 7,
+      "end": 44,
+      "payoff": 8500
+    },
+    {
+      "start": 7,
+      "end": 45,
+      "payoff": 11500
+    },
+    {
+      "start": 7,
+      "end": 46,
+      "payoff": 9500
+    },
+    {
+      "start": 7,
+      "end": 47,
+      "payoff": 15000
+    },
+    {
+      "start": 7,
+      "end": 48,
+      "payoff": 8500
+    },
+    {
+      "start": 7,
+      "end": 49,
+      "payoff": 17500
+    },
+    {
+      "start": 7,
+      "end": 50,
+      "payoff": 20000
+    },
+    {
+      "start": 7,
+      "end": 51,
+      "payoff": 14500
+    },
+    {
+      "start": 7,
+      "end": 52,
+      "payoff": 20000
+    },
+    {
+      "start": 7,
+      "end": 53,
+      "payoff": 26500
+    },
+    {
+      "start": 7,
+      "end": 54,
+      "payoff": 13500
+    },
+    {
+      "start": 7,
+      "end": 55,
+      "payoff": 20000
+    },
+    {
+      "start": 7,
+      "end": 56,
+      "payoff": 26000
+    },
+    {
+      "start": 7,
+      "end": 57,
+      "payoff": 23000
+    },
+    {
+      "start": 7,
+      "end": 58,
+      "payoff": 18500
+    },
+    {
+      "start": 7,
+      "end": 59,
+      "payoff": 24500
+    },
+    {
+      "start": 7,
+      "end": 60,
+      "payoff": 26500
+    },
+    {
+      "start": 7,
+      "end": 61,
+      "payoff": 27500
+    },
+    {
+      "start": 7,
+      "end": 62,
+      "payoff": 23500
+    },
+    {
+      "start": 7,
+      "end": 63,
+      "payoff": 25000
+    },
+    {
+      "start": 7,
+      "end": 64,
+      "payoff": 26500
+    },
+    {
+      "start": 7,
+      "end": 65,
+      "payoff": 26000
+    },
+    {
+      "start": 7,
+      "end": 66,
+      "payoff": 27500
+    },
+    {
+      "start": 7,
+      "end": 67,
+      "payoff": 15500
+    },
+    {
+      "start": 8,
+      "end": 8,
+      "payoff": 0
+    },
+    {
+      "start": 8,
+      "end": 9,
+      "payoff": 5500
+    },
+    {
+      "start": 8,
+      "end": 10,
+      "payoff": 12000
+    },
+    {
+      "start": 8,
+      "end": 11,
+      "payoff": 11000
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "payoff": 9500
+    },
+    {
+      "start": 8,
+      "end": 13,
+      "payoff": 12000
+    },
+    {
+      "start": 8,
+      "end": 14,
+      "payoff": 13000
+    },
+    {
+      "start": 8,
+      "end": 15,
+      "payoff": 10500
+    },
+    {
+      "start": 8,
+      "end": 16,
+      "payoff": 17000
+    },
+    {
+      "start": 8,
+      "end": 17,
+      "payoff": 14500
+    },
+    {
+      "start": 8,
+      "end": 18,
+      "payoff": 8000
+    },
+    {
+      "start": 8,
+      "end": 19,
+      "payoff": 7000
+    },
+    {
+      "start": 8,
+      "end": 20,
+      "payoff": 15000
+    },
+    {
+      "start": 8,
+      "end": 21,
+      "payoff": 11500
+    },
+    {
+      "start": 8,
+      "end": 22,
+      "payoff": 10500
+    },
+    {
+      "start": 8,
+      "end": 23,
+      "payoff": 8000
+    },
+    {
+      "start": 8,
+      "end": 24,
+      "payoff": 9500
+    },
+    {
+      "start": 8,
+      "end": 25,
+      "payoff": 8500
+    },
+    {
+      "start": 8,
+      "end": 26,
+      "payoff": 10500
+    },
+    {
+      "start": 8,
+      "end": 27,
+      "payoff": 12000
+    },
+    {
+      "start": 8,
+      "end": 28,
+      "payoff": 13000
+    },
+    {
+      "start": 8,
+      "end": 29,
+      "payoff": 13500
+    },
+    {
+      "start": 8,
+      "end": 30,
+      "payoff": 19500
+    },
+    {
+      "start": 8,
+      "end": 31,
+      "payoff": 20500
+    },
+    {
+      "start": 8,
+      "end": 32,
+      "payoff": 20500
+    },
+    {
+      "start": 8,
+      "end": 33,
+      "payoff": 18000
+    },
+    {
+      "start": 8,
+      "end": 34,
+      "payoff": 11500
+    },
+    {
+      "start": 8,
+      "end": 35,
+      "payoff": 15000
+    },
+    {
+      "start": 8,
+      "end": 36,
+      "payoff": 13000
+    },
+    {
+      "start": 8,
+      "end": 37,
+      "payoff": 16500
+    },
+    {
+      "start": 8,
+      "end": 38,
+      "payoff": 22500
+    },
+    {
+      "start": 8,
+      "end": 39,
+      "payoff": 18000
+    },
+    {
+      "start": 8,
+      "end": 40,
+      "payoff": 21500
+    },
+    {
+      "start": 8,
+      "end": 41,
+      "payoff": 15000
+    },
+    {
+      "start": 8,
+      "end": 42,
+      "payoff": 17500
+    },
+    {
+      "start": 8,
+      "end": 43,
+      "payoff": 16000
+    },
+    {
+      "start": 8,
+      "end": 44,
+      "payoff": 15500
+    },
+    {
+      "start": 8,
+      "end": 45,
+      "payoff": 18500
+    },
+    {
+      "start": 8,
+      "end": 46,
+      "payoff": 16000
+    },
+    {
+      "start": 8,
+      "end": 47,
+      "payoff": 22000
+    },
+    {
+      "start": 8,
+      "end": 48,
+      "payoff": 15500
+    },
+    {
+      "start": 8,
+      "end": 49,
+      "payoff": 24000
+    },
+    {
+      "start": 8,
+      "end": 50,
+      "payoff": 26500
+    },
+    {
+      "start": 8,
+      "end": 51,
+      "payoff": 21500
+    },
+    {
+      "start": 8,
+      "end": 52,
+      "payoff": 27000
+    },
+    {
+      "start": 8,
+      "end": 53,
+      "payoff": 33500
+    },
+    {
+      "start": 8,
+      "end": 54,
+      "payoff": 21500
+    },
+    {
+      "start": 8,
+      "end": 55,
+      "payoff": 26500
+    },
+    {
+      "start": 8,
+      "end": 56,
+      "payoff": 32500
+    },
+    {
+      "start": 8,
+      "end": 57,
+      "payoff": 29500
+    },
+    {
+      "start": 8,
+      "end": 58,
+      "payoff": 25500
+    },
+    {
+      "start": 8,
+      "end": 59,
+      "payoff": 26000
+    },
+    {
+      "start": 8,
+      "end": 60,
+      "payoff": 33500
+    },
+    {
+      "start": 8,
+      "end": 61,
+      "payoff": 34000
+    },
+    {
+      "start": 8,
+      "end": 62,
+      "payoff": 30500
+    },
+    {
+      "start": 8,
+      "end": 63,
+      "payoff": 31500
+    },
+    {
+      "start": 8,
+      "end": 64,
+      "payoff": 33500
+    },
+    {
+      "start": 8,
+      "end": 65,
+      "payoff": 33500
+    },
+    {
+      "start": 8,
+      "end": 66,
+      "payoff": 34000
+    },
+    {
+      "start": 8,
+      "end": 67,
+      "payoff": 22000
+    },
+    {
+      "start": 9,
+      "end": 9,
+      "payoff": 0
+    },
+    {
+      "start": 9,
+      "end": 10,
+      "payoff": 6500
+    },
+    {
+      "start": 9,
+      "end": 11,
+      "payoff": 5000
+    },
+    {
+      "start": 9,
+      "end": 12,
+      "payoff": 4000
+    },
+    {
+      "start": 9,
+      "end": 13,
+      "payoff": 6000
+    },
+    {
+      "start": 9,
+      "end": 14,
+      "payoff": 6000
+    },
+    {
+      "start": 9,
+      "end": 15,
+      "payoff": 5000
+    },
+    {
+      "start": 9,
+      "end": 16,
+      "payoff": 11000
+    },
+    {
+      "start": 9,
+      "end": 17,
+      "payoff": 10000
+    },
+    {
+      "start": 9,
+      "end": 18,
+      "payoff": 2500
+    },
+    {
+      "start": 9,
+      "end": 19,
+      "payoff": 1000
+    },
+    {
+      "start": 9,
+      "end": 20,
+      "payoff": 9500
+    },
+    {
+      "start": 9,
+      "end": 21,
+      "payoff": 7500
+    },
+    {
+      "start": 9,
+      "end": 22,
+      "payoff": 5500
+    },
+    {
+      "start": 9,
+      "end": 23,
+      "payoff": 4500
+    },
+    {
+      "start": 9,
+      "end": 24,
+      "payoff": 5000
+    },
+    {
+      "start": 9,
+      "end": 25,
+      "payoff": 6000
+    },
+    {
+      "start": 9,
+      "end": 26,
+      "payoff": 6500
+    },
+    {
+      "start": 9,
+      "end": 27,
+      "payoff": 8500
+    },
+    {
+      "start": 9,
+      "end": 28,
+      "payoff": 9000
+    },
+    {
+      "start": 9,
+      "end": 29,
+      "payoff": 7500
+    },
+    {
+      "start": 9,
+      "end": 30,
+      "payoff": 14000
+    },
+    {
+      "start": 9,
+      "end": 31,
+      "payoff": 14000
+    },
+    {
+      "start": 9,
+      "end": 32,
+      "payoff": 15000
+    },
+    {
+      "start": 9,
+      "end": 33,
+      "payoff": 10500
+    },
+    {
+      "start": 9,
+      "end": 34,
+      "payoff": 6500
+    },
+    {
+      "start": 9,
+      "end": 35,
+      "payoff": 9500
+    },
+    {
+      "start": 9,
+      "end": 36,
+      "payoff": 7000
+    },
+    {
+      "start": 9,
+      "end": 37,
+      "payoff": 11000
+    },
+    {
+      "start": 9,
+      "end": 38,
+      "payoff": 17000
+    },
+    {
+      "start": 9,
+      "end": 39,
+      "payoff": 12000
+    },
+    {
+      "start": 9,
+      "end": 40,
+      "payoff": 18000
+    },
+    {
+      "start": 9,
+      "end": 41,
+      "payoff": 11000
+    },
+    {
+      "start": 9,
+      "end": 42,
+      "payoff": 14000
+    },
+    {
+      "start": 9,
+      "end": 43,
+      "payoff": 11500
+    },
+    {
+      "start": 9,
+      "end": 44,
+      "payoff": 11500
+    },
+    {
+      "start": 9,
+      "end": 45,
+      "payoff": 14000
+    },
+    {
+      "start": 9,
+      "end": 46,
+      "payoff": 12500
+    },
+    {
+      "start": 9,
+      "end": 47,
+      "payoff": 18000
+    },
+    {
+      "start": 9,
+      "end": 48,
+      "payoff": 11500
+    },
+    {
+      "start": 9,
+      "end": 49,
+      "payoff": 20500
+    },
+    {
+      "start": 9,
+      "end": 50,
+      "payoff": 22500
+    },
+    {
+      "start": 9,
+      "end": 51,
+      "payoff": 17500
+    },
+    {
+      "start": 9,
+      "end": 52,
+      "payoff": 23000
+    },
+    {
+      "start": 9,
+      "end": 53,
+      "payoff": 30000
+    },
+    {
+      "start": 9,
+      "end": 54,
+      "payoff": 18000
+    },
+    {
+      "start": 9,
+      "end": 55,
+      "payoff": 23000
+    },
+    {
+      "start": 9,
+      "end": 56,
+      "payoff": 29000
+    },
+    {
+      "start": 9,
+      "end": 57,
+      "payoff": 26000
+    },
+    {
+      "start": 9,
+      "end": 58,
+      "payoff": 20500
+    },
+    {
+      "start": 9,
+      "end": 59,
+      "payoff": 27500
+    },
+    {
+      "start": 9,
+      "end": 60,
+      "payoff": 29000
+    },
+    {
+      "start": 9,
+      "end": 61,
+      "payoff": 30500
+    },
+    {
+      "start": 9,
+      "end": 62,
+      "payoff": 26500
+    },
+    {
+      "start": 9,
+      "end": 63,
+      "payoff": 28000
+    },
+    {
+      "start": 9,
+      "end": 64,
+      "payoff": 29500
+    },
+    {
+      "start": 9,
+      "end": 65,
+      "payoff": 28500
+    },
+    {
+      "start": 9,
+      "end": 66,
+      "payoff": 30500
+    },
+    {
+      "start": 9,
+      "end": 67,
+      "payoff": 18000
+    },
+    {
+      "start": 10,
+      "end": 10,
+      "payoff": 0
+    },
+    {
+      "start": 10,
+      "end": 11,
+      "payoff": 3000
+    },
+    {
+      "start": 10,
+      "end": 12,
+      "payoff": 2500
+    },
+    {
+      "start": 10,
+      "end": 13,
+      "payoff": 1500
+    },
+    {
+      "start": 10,
+      "end": 14,
+      "payoff": 3500
+    },
+    {
+      "start": 10,
+      "end": 15,
+      "payoff": 2000
+    },
+    {
+      "start": 10,
+      "end": 16,
+      "payoff": 7000
+    },
+    {
+      "start": 10,
+      "end": 17,
+      "payoff": 3500
+    },
+    {
+      "start": 10,
+      "end": 18,
+      "payoff": 5500
+    },
+    {
+      "start": 10,
+      "end": 19,
+      "payoff": 6000
+    },
+    {
+      "start": 10,
+      "end": 20,
+      "payoff": 5500
+    },
+    {
+      "start": 10,
+      "end": 21,
+      "payoff": 7500
+    },
+    {
+      "start": 10,
+      "end": 22,
+      "payoff": 5000
+    },
+    {
+      "start": 10,
+      "end": 23,
+      "payoff": 7500
+    },
+    {
+      "start": 10,
+      "end": 24,
+      "payoff": 6000
+    },
+    {
+      "start": 10,
+      "end": 25,
+      "payoff": 7500
+    },
+    {
+      "start": 10,
+      "end": 26,
+      "payoff": 6000
+    },
+    {
+      "start": 10,
+      "end": 27,
+      "payoff": 8000
+    },
+    {
+      "start": 10,
+      "end": 28,
+      "payoff": 6000
+    },
+    {
+      "start": 10,
+      "end": 29,
+      "payoff": 1500
+    },
+    {
+      "start": 10,
+      "end": 30,
+      "payoff": 8000
+    },
+    {
+      "start": 10,
+      "end": 31,
+      "payoff": 8000
+    },
+    {
+      "start": 10,
+      "end": 32,
+      "payoff": 8500
+    },
+    {
+      "start": 10,
+      "end": 33,
+      "payoff": 5500
+    },
+    {
+      "start": 10,
+      "end": 34,
+      "payoff": 4500
+    },
+    {
+      "start": 10,
+      "end": 35,
+      "payoff": 4000
+    },
+    {
+      "start": 10,
+      "end": 36,
+      "payoff": 3000
+    },
+    {
+      "start": 10,
+      "end": 37,
+      "payoff": 5000
+    },
+    {
+      "start": 10,
+      "end": 38,
+      "payoff": 10500
+    },
+    {
+      "start": 10,
+      "end": 39,
+      "payoff": 6500
+    },
+    {
+      "start": 10,
+      "end": 40,
+      "payoff": 15500
+    },
+    {
+      "start": 10,
+      "end": 41,
+      "payoff": 9500
+    },
+    {
+      "start": 10,
+      "end": 42,
+      "payoff": 13500
+    },
+    {
+      "start": 10,
+      "end": 43,
+      "payoff": 9000
+    },
+    {
+      "start": 10,
+      "end": 44,
+      "payoff": 11500
+    },
+    {
+      "start": 10,
+      "end": 45,
+      "payoff": 9000
+    },
+    {
+      "start": 10,
+      "end": 46,
+      "payoff": 10000
+    },
+    {
+      "start": 10,
+      "end": 47,
+      "payoff": 15000
+    },
+    {
+      "start": 10,
+      "end": 48,
+      "payoff": 11500
+    },
+    {
+      "start": 10,
+      "end": 49,
+      "payoff": 19000
+    },
+    {
+      "start": 10,
+      "end": 50,
+      "payoff": 21500
+    },
+    {
+      "start": 10,
+      "end": 51,
+      "payoff": 25500
+    },
+    {
+      "start": 10,
+      "end": 52,
+      "payoff": 21000
+    },
+    {
+      "start": 10,
+      "end": 53,
+      "payoff": 28000
+    },
+    {
+      "start": 10,
+      "end": 54,
+      "payoff": 16000
+    },
+    {
+      "start": 10,
+      "end": 55,
+      "payoff": 20500
+    },
+    {
+      "start": 10,
+      "end": 56,
+      "payoff": 28000
+    },
+    {
+      "start": 10,
+      "end": 57,
+      "payoff": 28000
+    },
+    {
+      "start": 10,
+      "end": 58,
+      "payoff": 14500
+    },
+    {
+      "start": 10,
+      "end": 59,
+      "payoff": 23000
+    },
+    {
+      "start": 10,
+      "end": 60,
+      "payoff": 23000
+    },
+    {
+      "start": 10,
+      "end": 61,
+      "payoff": 27000
+    },
+    {
+      "start": 10,
+      "end": 62,
+      "payoff": 19000
+    },
+    {
+      "start": 10,
+      "end": 63,
+      "payoff": 26000
+    },
+    {
+      "start": 10,
+      "end": 64,
+      "payoff": 27000
+    },
+    {
+      "start": 10,
+      "end": 65,
+      "payoff": 22500
+    },
+    {
+      "start": 10,
+      "end": 66,
+      "payoff": 27000
+    },
+    {
+      "start": 10,
+      "end": 67,
+      "payoff": 13000
+    },
+    {
+      "start": 11,
+      "end": 11,
+      "payoff": 0
+    },
+    {
+      "start": 11,
+      "end": 12,
+      "payoff": 2500
+    },
+    {
+      "start": 11,
+      "end": 13,
+      "payoff": 4500
+    },
+    {
+      "start": 11,
+      "end": 14,
+      "payoff": 2500
+    },
+    {
+      "start": 11,
+      "end": 15,
+      "payoff": 4000
+    },
+    {
+      "start": 11,
+      "end": 16,
+      "payoff": 6000
+    },
+    {
+      "start": 11,
+      "end": 17,
+      "payoff": 6000
+    },
+    {
+      "start": 11,
+      "end": 18,
+      "payoff": 4500
+    },
+    {
+      "start": 11,
+      "end": 19,
+      "payoff": 4000
+    },
+    {
+      "start": 11,
+      "end": 20,
+      "payoff": 4500
+    },
+    {
+      "start": 11,
+      "end": 21,
+      "payoff": 10000
+    },
+    {
+      "start": 11,
+      "end": 22,
+      "payoff": 7000
+    },
+    {
+      "start": 11,
+      "end": 23,
+      "payoff": 9500
+    },
+    {
+      "start": 11,
+      "end": 24,
+      "payoff": 8500
+    },
+    {
+      "start": 11,
+      "end": 25,
+      "payoff": 10000
+    },
+    {
+      "start": 11,
+      "end": 26,
+      "payoff": 8000
+    },
+    {
+      "start": 11,
+      "end": 27,
+      "payoff": 11000
+    },
+    {
+      "start": 11,
+      "end": 28,
+      "payoff": 9000
+    },
+    {
+      "start": 11,
+      "end": 29,
+      "payoff": 5000
+    },
+    {
+      "start": 11,
+      "end": 30,
+      "payoff": 11500
+    },
+    {
+      "start": 11,
+      "end": 31,
+      "payoff": 11500
+    },
+    {
+      "start": 11,
+      "end": 32,
+      "payoff": 11500
+    },
+    {
+      "start": 11,
+      "end": 33,
+      "payoff": 8500
+    },
+    {
+      "start": 11,
+      "end": 34,
+      "payoff": 7000
+    },
+    {
+      "start": 11,
+      "end": 35,
+      "payoff": 7500
+    },
+    {
+      "start": 11,
+      "end": 36,
+      "payoff": 6000
+    },
+    {
+      "start": 11,
+      "end": 37,
+      "payoff": 7500
+    },
+    {
+      "start": 11,
+      "end": 38,
+      "payoff": 13500
+    },
+    {
+      "start": 11,
+      "end": 39,
+      "payoff": 9500
+    },
+    {
+      "start": 11,
+      "end": 40,
+      "payoff": 18500
+    },
+    {
+      "start": 11,
+      "end": 41,
+      "payoff": 13000
+    },
+    {
+      "start": 11,
+      "end": 42,
+      "payoff": 16500
+    },
+    {
+      "start": 11,
+      "end": 43,
+      "payoff": 12000
+    },
+    {
+      "start": 11,
+      "end": 44,
+      "payoff": 14000
+    },
+    {
+      "start": 11,
+      "end": 45,
+      "payoff": 12000
+    },
+    {
+      "start": 11,
+      "end": 46,
+      "payoff": 13500
+    },
+    {
+      "start": 11,
+      "end": 47,
+      "payoff": 18500
+    },
+    {
+      "start": 11,
+      "end": 48,
+      "payoff": 14000
+    },
+    {
+      "start": 11,
+      "end": 49,
+      "payoff": 22500
+    },
+    {
+      "start": 11,
+      "end": 50,
+      "payoff": 26000
+    },
+    {
+      "start": 11,
+      "end": 51,
+      "payoff": 19000
+    },
+    {
+      "start": 11,
+      "end": 52,
+      "payoff": 24000
+    },
+    {
+      "start": 11,
+      "end": 53,
+      "payoff": 31000
+    },
+    {
+      "start": 11,
+      "end": 54,
+      "payoff": 19000
+    },
+    {
+      "start": 11,
+      "end": 55,
+      "payoff": 23500
+    },
+    {
+      "start": 11,
+      "end": 56,
+      "payoff": 31500
+    },
+    {
+      "start": 11,
+      "end": 57,
+      "payoff": 28000
+    },
+    {
+      "start": 11,
+      "end": 58,
+      "payoff": 19000
+    },
+    {
+      "start": 11,
+      "end": 59,
+      "payoff": 26500
+    },
+    {
+      "start": 11,
+      "end": 60,
+      "payoff": 26000
+    },
+    {
+      "start": 11,
+      "end": 61,
+      "payoff": 30500
+    },
+    {
+      "start": 11,
+      "end": 62,
+      "payoff": 22500
+    },
+    {
+      "start": 11,
+      "end": 63,
+      "payoff": 29500
+    },
+    {
+      "start": 11,
+      "end": 64,
+      "payoff": 31000
+    },
+    {
+      "start": 11,
+      "end": 65,
+      "payoff": 26000
+    },
+    {
+      "start": 11,
+      "end": 66,
+      "payoff": 30500
+    },
+    {
+      "start": 11,
+      "end": 67,
+      "payoff": 16000
+    },
+    {
+      "start": 12,
+      "end": 12,
+      "payoff": 0
+    },
+    {
+      "start": 12,
+      "end": 13,
+      "payoff": 4000
+    },
+    {
+      "start": 12,
+      "end": 14,
+      "payoff": 4000
+    },
+    {
+      "start": 12,
+      "end": 15,
+      "payoff": 2500
+    },
+    {
+      "start": 12,
+      "end": 16,
+      "payoff": 7500
+    },
+    {
+      "start": 12,
+      "end": 17,
+      "payoff": 6000
+    },
+    {
+      "start": 12,
+      "end": 18,
+      "payoff": 4000
+    },
+    {
+      "start": 12,
+      "end": 19,
+      "payoff": 3500
+    },
+    {
+      "start": 12,
+      "end": 20,
+      "payoff": 6000
+    },
+    {
+      "start": 12,
+      "end": 21,
+      "payoff": 8500
+    },
+    {
+      "start": 12,
+      "end": 22,
+      "payoff": 5500
+    },
+    {
+      "start": 12,
+      "end": 23,
+      "payoff": 6500
+    },
+    {
+      "start": 12,
+      "end": 24,
+      "payoff": 6000
+    },
+    {
+      "start": 12,
+      "end": 25,
+      "payoff": 8000
+    },
+    {
+      "start": 12,
+      "end": 26,
+      "payoff": 6500
+    },
+    {
+      "start": 12,
+      "end": 27,
+      "payoff": 9500
+    },
+    {
+      "start": 12,
+      "end": 28,
+      "payoff": 8000
+    },
+    {
+      "start": 12,
+      "end": 29,
+      "payoff": 4000
+    },
+    {
+      "start": 12,
+      "end": 30,
+      "payoff": 11000
+    },
+    {
+      "start": 12,
+      "end": 31,
+      "payoff": 11000
+    },
+    {
+      "start": 12,
+      "end": 32,
+      "payoff": 11000
+    },
+    {
+      "start": 12,
+      "end": 33,
+      "payoff": 8500
+    },
+    {
+      "start": 12,
+      "end": 34,
+      "payoff": 5500
+    },
+    {
+      "start": 12,
+      "end": 35,
+      "payoff": 7000
+    },
+    {
+      "start": 12,
+      "end": 36,
+      "payoff": 5000
+    },
+    {
+      "start": 12,
+      "end": 37,
+      "payoff": 7500
+    },
+    {
+      "start": 12,
+      "end": 38,
+      "payoff": 13500
+    },
+    {
+      "start": 12,
+      "end": 39,
+      "payoff": 9000
+    },
+    {
+      "start": 12,
+      "end": 40,
+      "payoff": 18000
+    },
+    {
+      "start": 12,
+      "end": 41,
+      "payoff": 11500
+    },
+    {
+      "start": 12,
+      "end": 42,
+      "payoff": 15000
+    },
+    {
+      "start": 12,
+      "end": 43,
+      "payoff": 11000
+    },
+    {
+      "start": 12,
+      "end": 44,
+      "payoff": 12500
+    },
+    {
+      "start": 12,
+      "end": 45,
+      "payoff": 11500
+    },
+    {
+      "start": 12,
+      "end": 46,
+      "payoff": 12500
+    },
+    {
+      "start": 12,
+      "end": 47,
+      "payoff": 18000
+    },
+    {
+      "start": 12,
+      "end": 48,
+      "payoff": 12500
+    },
+    {
+      "start": 12,
+      "end": 49,
+      "payoff": 21000
+    },
+    {
+      "start": 12,
+      "end": 50,
+      "payoff": 17500
+    },
+    {
+      "start": 12,
+      "end": 51,
+      "payoff": 17500
+    },
+    {
+      "start": 12,
+      "end": 52,
+      "payoff": 23000
+    },
+    {
+      "start": 12,
+      "end": 53,
+      "payoff": 30500
+    },
+    {
+      "start": 12,
+      "end": 54,
+      "payoff": 18000
+    },
+    {
+      "start": 12,
+      "end": 55,
+      "payoff": 22500
+    },
+    {
+      "start": 12,
+      "end": 56,
+      "payoff": 30000
+    },
+    {
+      "start": 12,
+      "end": 57,
+      "payoff": 27000
+    },
+    {
+      "start": 12,
+      "end": 58,
+      "payoff": 17500
+    },
+    {
+      "start": 12,
+      "end": 59,
+      "payoff": 26000
+    },
+    {
+      "start": 12,
+      "end": 60,
+      "payoff": 25500
+    },
+    {
+      "start": 12,
+      "end": 61,
+      "payoff": 30000
+    },
+    {
+      "start": 12,
+      "end": 62,
+      "payoff": 24000
+    },
+    {
+      "start": 12,
+      "end": 63,
+      "payoff": 27500
+    },
+    {
+      "start": 12,
+      "end": 64,
+      "payoff": 29000
+    },
+    {
+      "start": 12,
+      "end": 65,
+      "payoff": 25500
+    },
+    {
+      "start": 12,
+      "end": 66,
+      "payoff": 30000
+    },
+    {
+      "start": 12,
+      "end": 67,
+      "payoff": 15500
+    },
+    {
+      "start": 13,
+      "end": 13,
+      "payoff": 0
+    },
+    {
+      "start": 13,
+      "end": 14,
+      "payoff": 5000
+    },
+    {
+      "start": 13,
+      "end": 15,
+      "payoff": 1000
+    },
+    {
+      "start": 13,
+      "end": 16,
+      "payoff": 8500
+    },
+    {
+      "start": 13,
+      "end": 17,
+      "payoff": 5000
+    },
+    {
+      "start": 13,
+      "end": 18,
+      "payoff": 6500
+    },
+    {
+      "start": 13,
+      "end": 19,
+      "payoff": 6000
+    },
+    {
+      "start": 13,
+      "end": 20,
+      "payoff": 2000
+    },
+    {
+      "start": 13,
+      "end": 21,
+      "payoff": 6000
+    },
+    {
+      "start": 13,
+      "end": 22,
+      "payoff": 3500
+    },
+    {
+      "start": 13,
+      "end": 23,
+      "payoff": 6000
+    },
+    {
+      "start": 13,
+      "end": 24,
+      "payoff": 4500
+    },
+    {
+      "start": 13,
+      "end": 25,
+      "payoff": 6000
+    },
+    {
+      "start": 13,
+      "end": 26,
+      "payoff": 4500
+    },
+    {
+      "start": 13,
+      "end": 27,
+      "payoff": 7000
+    },
+    {
+      "start": 13,
+      "end": 28,
+      "payoff": 4500
+    },
+    {
+      "start": 13,
+      "end": 29,
+      "payoff": 1500
+    },
+    {
+      "start": 13,
+      "end": 30,
+      "payoff": 9000
+    },
+    {
+      "start": 13,
+      "end": 31,
+      "payoff": 9000
+    },
+    {
+      "start": 13,
+      "end": 32,
+      "payoff": 8500
+    },
+    {
+      "start": 13,
+      "end": 33,
+      "payoff": 5500
+    },
+    {
+      "start": 13,
+      "end": 34,
+      "payoff": 3000
+    },
+    {
+      "start": 13,
+      "end": 35,
+      "payoff": 4000
+    },
+    {
+      "start": 13,
+      "end": 36,
+      "payoff": 1500
+    },
+    {
+      "start": 13,
+      "end": 37,
+      "payoff": 6500
+    },
+    {
+      "start": 13,
+      "end": 38,
+      "payoff": 10500
+    },
+    {
+      "start": 13,
+      "end": 39,
+      "payoff": 7000
+    },
+    {
+      "start": 13,
+      "end": 40,
+      "payoff": 14000
+    },
+    {
+      "start": 13,
+      "end": 41,
+      "payoff": 8000
+    },
+    {
+      "start": 13,
+      "end": 42,
+      "payoff": 12500
+    },
+    {
+      "start": 13,
+      "end": 43,
+      "payoff": 7500
+    },
+    {
+      "start": 13,
+      "end": 44,
+      "payoff": 10000
+    },
+    {
+      "start": 13,
+      "end": 45,
+      "payoff": 9000
+    },
+    {
+      "start": 13,
+      "end": 46,
+      "payoff": 9000
+    },
+    {
+      "start": 13,
+      "end": 47,
+      "payoff": 14000
+    },
+    {
+      "start": 13,
+      "end": 48,
+      "payoff": 10000
+    },
+    {
+      "start": 13,
+      "end": 49,
+      "payoff": 18000
+    },
+    {
+      "start": 13,
+      "end": 50,
+      "payoff": 14000
+    },
+    {
+      "start": 13,
+      "end": 51,
+      "payoff": 14000
+    },
+    {
+      "start": 13,
+      "end": 52,
+      "payoff": 21500
+    },
+    {
+      "start": 13,
+      "end": 53,
+      "payoff": 26500
+    },
+    {
+      "start": 13,
+      "end": 54,
+      "payoff": 14500
+    },
+    {
+      "start": 13,
+      "end": 55,
+      "payoff": 20500
+    },
+    {
+      "start": 13,
+      "end": 56,
+      "payoff": 27000
+    },
+    {
+      "start": 13,
+      "end": 57,
+      "payoff": 18500
+    },
+    {
+      "start": 13,
+      "end": 58,
+      "payoff": 15500
+    },
+    {
+      "start": 13,
+      "end": 59,
+      "payoff": 24000
+    },
+    {
+      "start": 13,
+      "end": 60,
+      "payoff": 23500
+    },
+    {
+      "start": 13,
+      "end": 61,
+      "payoff": 27000
+    },
+    {
+      "start": 13,
+      "end": 62,
+      "payoff": 19000
+    },
+    {
+      "start": 13,
+      "end": 63,
+      "payoff": 24500
+    },
+    {
+      "start": 13,
+      "end": 64,
+      "payoff": 26000
+    },
+    {
+      "start": 13,
+      "end": 65,
+      "payoff": 23500
+    },
+    {
+      "start": 13,
+      "end": 66,
+      "payoff": 27000
+    },
+    {
+      "start": 13,
+      "end": 67,
+      "payoff": 13000
+    },
+    {
+      "start": 14,
+      "end": 14,
+      "payoff": 0
+    },
+    {
+      "start": 14,
+      "end": 15,
+      "payoff": 5500
+    },
+    {
+      "start": 14,
+      "end": 16,
+      "payoff": 3000
+    },
+    {
+      "start": 14,
+      "end": 17,
+      "payoff": 4000
+    },
+    {
+      "start": 14,
+      "end": 18,
+      "payoff": 6000
+    },
+    {
+      "start": 14,
+      "end": 19,
+      "payoff": 6500
+    },
+    {
+      "start": 14,
+      "end": 20,
+      "payoff": 2000
+    },
+    {
+      "start": 14,
+      "end": 21,
+      "payoff": 11000
+    },
+    {
+      "start": 14,
+      "end": 22,
+      "payoff": 8500
+    },
+    {
+      "start": 14,
+      "end": 23,
+      "payoff": 11000
+    },
+    {
+      "start": 14,
+      "end": 24,
+      "payoff": 9500
+    },
+    {
+      "start": 14,
+      "end": 25,
+      "payoff": 11000
+    },
+    {
+      "start": 14,
+      "end": 26,
+      "payoff": 9500
+    },
+    {
+      "start": 14,
+      "end": 27,
+      "payoff": 11500
+    },
+    {
+      "start": 14,
+      "end": 28,
+      "payoff": 9000
+    },
+    {
+      "start": 14,
+      "end": 29,
+      "payoff": 4500
+    },
+    {
+      "start": 14,
+      "end": 30,
+      "payoff": 11000
+    },
+    {
+      "start": 14,
+      "end": 31,
+      "payoff": 11000
+    },
+    {
+      "start": 14,
+      "end": 32,
+      "payoff": 9500
+    },
+    {
+      "start": 14,
+      "end": 33,
+      "payoff": 8000
+    },
+    {
+      "start": 14,
+      "end": 34,
+      "payoff": 8000
+    },
+    {
+      "start": 14,
+      "end": 35,
+      "payoff": 7000
+    },
+    {
+      "start": 14,
+      "end": 36,
+      "payoff": 6500
+    },
+    {
+      "start": 14,
+      "end": 37,
+      "payoff": 6000
+    },
+    {
+      "start": 14,
+      "end": 38,
+      "payoff": 12000
+    },
+    {
+      "start": 14,
+      "end": 39,
+      "payoff": 9000
+    },
+    {
+      "start": 14,
+      "end": 40,
+      "payoff": 18000
+    },
+    {
+      "start": 14,
+      "end": 41,
+      "payoff": 13000
+    },
+    {
+      "start": 14,
+      "end": 42,
+      "payoff": 17000
+    },
+    {
+      "start": 14,
+      "end": 43,
+      "payoff": 11500
+    },
+    {
+      "start": 14,
+      "end": 44,
+      "payoff": 15000
+    },
+    {
+      "start": 14,
+      "end": 45,
+      "payoff": 12000
+    },
+    {
+      "start": 14,
+      "end": 46,
+      "payoff": 13500
+    },
+    {
+      "start": 14,
+      "end": 47,
+      "payoff": 18000
+    },
+    {
+      "start": 14,
+      "end": 48,
+      "payoff": 15000
+    },
+    {
+      "start": 14,
+      "end": 49,
+      "payoff": 22500
+    },
+    {
+      "start": 14,
+      "end": 50,
+      "payoff": 24500
+    },
+    {
+      "start": 14,
+      "end": 51,
+      "payoff": 18500
+    },
+    {
+      "start": 14,
+      "end": 52,
+      "payoff": 23500
+    },
+    {
+      "start": 14,
+      "end": 53,
+      "payoff": 31500
+    },
+    {
+      "start": 14,
+      "end": 54,
+      "payoff": 19000
+    },
+    {
+      "start": 14,
+      "end": 55,
+      "payoff": 23500
+    },
+    {
+      "start": 14,
+      "end": 56,
+      "payoff": 31500
+    },
+    {
+      "start": 14,
+      "end": 57,
+      "payoff": 28000
+    },
+    {
+      "start": 14,
+      "end": 58,
+      "payoff": 17500
+    },
+    {
+      "start": 14,
+      "end": 59,
+      "payoff": 26000
+    },
+    {
+      "start": 14,
+      "end": 60,
+      "payoff": 26000
+    },
+    {
+      "start": 14,
+      "end": 61,
+      "payoff": 30000
+    },
+    {
+      "start": 14,
+      "end": 62,
+      "payoff": 22000
+    },
+    {
+      "start": 14,
+      "end": 63,
+      "payoff": 27500
+    },
+    {
+      "start": 14,
+      "end": 64,
+      "payoff": 29000
+    },
+    {
+      "start": 14,
+      "end": 65,
+      "payoff": 25500
+    },
+    {
+      "start": 14,
+      "end": 66,
+      "payoff": 30000
+    },
+    {
+      "start": 14,
+      "end": 67,
+      "payoff": 16000
+    },
+    {
+      "start": 15,
+      "end": 15,
+      "payoff": 0
+    },
+    {
+      "start": 15,
+      "end": 16,
+      "payoff": 9000
+    },
+    {
+      "start": 15,
+      "end": 17,
+      "payoff": 5500
+    },
+    {
+      "start": 15,
+      "end": 18,
+      "payoff": 5500
+    },
+    {
+      "start": 15,
+      "end": 19,
+      "payoff": 5000
+    },
+    {
+      "start": 15,
+      "end": 20,
+      "payoff": 7000
+    },
+    {
+      "start": 15,
+      "end": 21,
+      "payoff": 5500
+    },
+    {
+      "start": 15,
+      "end": 22,
+      "payoff": 3000
+    },
+    {
+      "start": 15,
+      "end": 23,
+      "payoff": 5500
+    },
+    {
+      "start": 15,
+      "end": 24,
+      "payoff": 4000
+    },
+    {
+      "start": 15,
+      "end": 25,
+      "payoff": 5000
+    },
+    {
+      "start": 15,
+      "end": 26,
+      "payoff": 4000
+    },
+    {
+      "start": 15,
+      "end": 27,
+      "payoff": 6500
+    },
+    {
+      "start": 15,
+      "end": 28,
+      "payoff": 5500
+    },
+    {
+      "start": 15,
+      "end": 29,
+      "payoff": 2500
+    },
+    {
+      "start": 15,
+      "end": 30,
+      "payoff": 9000
+    },
+    {
+      "start": 15,
+      "end": 31,
+      "payoff": 9000
+    },
+    {
+      "start": 15,
+      "end": 32,
+      "payoff": 9500
+    },
+    {
+      "start": 15,
+      "end": 33,
+      "payoff": 5500
+    },
+    {
+      "start": 15,
+      "end": 34,
+      "payoff": 3000
+    },
+    {
+      "start": 15,
+      "end": 35,
+      "payoff": 4000
+    },
+    {
+      "start": 15,
+      "end": 36,
+      "payoff": 2000
+    },
+    {
+      "start": 15,
+      "end": 37,
+      "payoff": 6000
+    },
+    {
+      "start": 15,
+      "end": 38,
+      "payoff": 11500
+    },
+    {
+      "start": 15,
+      "end": 39,
+      "payoff": 8000
+    },
+    {
+      "start": 15,
+      "end": 40,
+      "payoff": 14500
+    },
+    {
+      "start": 15,
+      "end": 41,
+      "payoff": 9000
+    },
+    {
+      "start": 15,
+      "end": 42,
+      "payoff": 12000
+    },
+    {
+      "start": 15,
+      "end": 43,
+      "payoff": 8000
+    },
+    {
+      "start": 15,
+      "end": 44,
+      "payoff": 9500
+    },
+    {
+      "start": 15,
+      "end": 45,
+      "payoff": 9000
+    },
+    {
+      "start": 15,
+      "end": 46,
+      "payoff": 9500
+    },
+    {
+      "start": 15,
+      "end": 47,
+      "payoff": 14500
+    },
+    {
+      "start": 15,
+      "end": 48,
+      "payoff": 9500
+    },
+    {
+      "start": 15,
+      "end": 49,
+      "payoff": 18500
+    },
+    {
+      "start": 15,
+      "end": 50,
+      "payoff": 21000
+    },
+    {
+      "start": 15,
+      "end": 51,
+      "payoff": 14500
+    },
+    {
+      "start": 15,
+      "end": 52,
+      "payoff": 20500
+    },
+    {
+      "start": 15,
+      "end": 53,
+      "payoff": 27500
+    },
+    {
+      "start": 15,
+      "end": 54,
+      "payoff": 15000
+    },
+    {
+      "start": 15,
+      "end": 55,
+      "payoff": 20000
+    },
+    {
+      "start": 15,
+      "end": 56,
+      "payoff": 27000
+    },
+    {
+      "start": 15,
+      "end": 57,
+      "payoff": 24000
+    },
+    {
+      "start": 15,
+      "end": 58,
+      "payoff": 15500
+    },
+    {
+      "start": 15,
+      "end": 59,
+      "payoff": 24500
+    },
+    {
+      "start": 15,
+      "end": 60,
+      "payoff": 23500
+    },
+    {
+      "start": 15,
+      "end": 61,
+      "payoff": 27000
+    },
+    {
+      "start": 15,
+      "end": 62,
+      "payoff": 21500
+    },
+    {
+      "start": 15,
+      "end": 63,
+      "payoff": 25000
+    },
+    {
+      "start": 15,
+      "end": 64,
+      "payoff": 26500
+    },
+    {
+      "start": 15,
+      "end": 65,
+      "payoff": 23500
+    },
+    {
+      "start": 15,
+      "end": 66,
+      "payoff": 27000
+    },
+    {
+      "start": 15,
+      "end": 67,
+      "payoff": 13000
+    },
+    {
+      "start": 16,
+      "end": 16,
+      "payoff": 0
+    },
+    {
+      "start": 16,
+      "end": 17,
+      "payoff": 8500
+    },
+    {
+      "start": 16,
+      "end": 18,
+      "payoff": 9500
+    },
+    {
+      "start": 16,
+      "end": 19,
+      "payoff": 10000
+    },
+    {
+      "start": 16,
+      "end": 20,
+      "payoff": 2000
+    },
+    {
+      "start": 16,
+      "end": 21,
+      "payoff": 14500
+    },
+    {
+      "start": 16,
+      "end": 22,
+      "payoff": 12000
+    },
+    {
+      "start": 16,
+      "end": 23,
+      "payoff": 14500
+    },
+    {
+      "start": 16,
+      "end": 24,
+      "payoff": 13000
+    },
+    {
+      "start": 16,
+      "end": 25,
+      "payoff": 14500
+    },
+    {
+      "start": 16,
+      "end": 26,
+      "payoff": 13000
+    },
+    {
+      "start": 16,
+      "end": 27,
+      "payoff": 15500
+    },
+    {
+      "start": 16,
+      "end": 28,
+      "payoff": 13000
+    },
+    {
+      "start": 16,
+      "end": 29,
+      "payoff": 8000
+    },
+    {
+      "start": 16,
+      "end": 30,
+      "payoff": 14500
+    },
+    {
+      "start": 16,
+      "end": 31,
+      "payoff": 14500
+    },
+    {
+      "start": 16,
+      "end": 32,
+      "payoff": 13500
+    },
+    {
+      "start": 16,
+      "end": 33,
+      "payoff": 11500
+    },
+    {
+      "start": 16,
+      "end": 34,
+      "payoff": 12000
+    },
+    {
+      "start": 16,
+      "end": 35,
+      "payoff": 10500
+    },
+    {
+      "start": 16,
+      "end": 36,
+      "payoff": 10000
+    },
+    {
+      "start": 16,
+      "end": 37,
+      "payoff": 10000
+    },
+    {
+      "start": 16,
+      "end": 38,
+      "payoff": 15500
+    },
+    {
+      "start": 16,
+      "end": 39,
+      "payoff": 12500
+    },
+    {
+      "start": 16,
+      "end": 40,
+      "payoff": 22000
+    },
+    {
+      "start": 16,
+      "end": 41,
+      "payoff": 16500
+    },
+    {
+      "start": 16,
+      "end": 42,
+      "payoff": 21000
+    },
+    {
+      "start": 16,
+      "end": 43,
+      "payoff": 15500
+    },
+    {
+      "start": 16,
+      "end": 44,
+      "payoff": 18500
+    },
+    {
+      "start": 16,
+      "end": 45,
+      "payoff": 15500
+    },
+    {
+      "start": 16,
+      "end": 46,
+      "payoff": 17000
+    },
+    {
+      "start": 16,
+      "end": 47,
+      "payoff": 21500
+    },
+    {
+      "start": 16,
+      "end": 48,
+      "payoff": 18500
+    },
+    {
+      "start": 16,
+      "end": 49,
+      "payoff": 26000
+    },
+    {
+      "start": 16,
+      "end": 50,
+      "payoff": 28500
+    },
+    {
+      "start": 16,
+      "end": 51,
+      "payoff": 22000
+    },
+    {
+      "start": 16,
+      "end": 52,
+      "payoff": 27500
+    },
+    {
+      "start": 16,
+      "end": 53,
+      "payoff": 35000
+    },
+    {
+      "start": 16,
+      "end": 54,
+      "payoff": 22500
+    },
+    {
+      "start": 16,
+      "end": 55,
+      "payoff": 27000
+    },
+    {
+      "start": 16,
+      "end": 56,
+      "payoff": 35000
+    },
+    {
+      "start": 16,
+      "end": 57,
+      "payoff": 32000
+    },
+    {
+      "start": 16,
+      "end": 58,
+      "payoff": 21500
+    },
+    {
+      "start": 16,
+      "end": 59,
+      "payoff": 30000
+    },
+    {
+      "start": 16,
+      "end": 60,
+      "payoff": 29500
+    },
+    {
+      "start": 16,
+      "end": 61,
+      "payoff": 33500
+    },
+    {
+      "start": 16,
+      "end": 62,
+      "payoff": 26000
+    },
+    {
+      "start": 16,
+      "end": 63,
+      "payoff": 33000
+    },
+    {
+      "start": 16,
+      "end": 64,
+      "payoff": 33500
+    },
+    {
+      "start": 16,
+      "end": 65,
+      "payoff": 29000
+    },
+    {
+      "start": 16,
+      "end": 66,
+      "payoff": 33500
+    },
+    {
+      "start": 16,
+      "end": 67,
+      "payoff": 19500
+    },
+    {
+      "start": 17,
+      "end": 17,
+      "payoff": 0
+    },
+    {
+      "start": 17,
+      "end": 18,
+      "payoff": 9500
+    },
+    {
+      "start": 17,
+      "end": 19,
+      "payoff": 9500
+    },
+    {
+      "start": 17,
+      "end": 20,
+      "payoff": 6500
+    },
+    {
+      "start": 17,
+      "end": 21,
+      "payoff": 8500
+    },
+    {
+      "start": 17,
+      "end": 22,
+      "payoff": 7500
+    },
+    {
+      "start": 17,
+      "end": 23,
+      "payoff": 10000
+    },
+    {
+      "start": 17,
+      "end": 24,
+      "payoff": 8000
+    },
+    {
+      "start": 17,
+      "end": 25,
+      "payoff": 10000
+    },
+    {
+      "start": 17,
+      "end": 26,
+      "payoff": 8000
+    },
+    {
+      "start": 17,
+      "end": 27,
+      "payoff": 9000
+    },
+    {
+      "start": 17,
+      "end": 28,
+      "payoff": 6500
+    },
+    {
+      "start": 17,
+      "end": 29,
+      "payoff": 3000
+    },
+    {
+      "start": 17,
+      "end": 30,
+      "payoff": 6000
+    },
+    {
+      "start": 17,
+      "end": 31,
+      "payoff": 6000
+    },
+    {
+      "start": 17,
+      "end": 32,
+      "payoff": 5000
+    },
+    {
+      "start": 17,
+      "end": 33,
+      "payoff": 5000
+    },
+    {
+      "start": 17,
+      "end": 34,
+      "payoff": 5500
+    },
+    {
+      "start": 17,
+      "end": 35,
+      "payoff": 3500
+    },
+    {
+      "start": 17,
+      "end": 36,
+      "payoff": 5000
+    },
+    {
+      "start": 17,
+      "end": 37,
+      "payoff": 1500
+    },
+    {
+      "start": 17,
+      "end": 38,
+      "payoff": 7000
+    },
+    {
+      "start": 17,
+      "end": 39,
+      "payoff": 4500
+    },
+    {
+      "start": 17,
+      "end": 40,
+      "payoff": 15000
+    },
+    {
+      "start": 17,
+      "end": 41,
+      "payoff": 10000
+    },
+    {
+      "start": 17,
+      "end": 42,
+      "payoff": 14500
+    },
+    {
+      "start": 17,
+      "end": 43,
+      "payoff": 8500
+    },
+    {
+      "start": 17,
+      "end": 44,
+      "payoff": 12500
+    },
+    {
+      "start": 17,
+      "end": 45,
+      "payoff": 8000
+    },
+    {
+      "start": 17,
+      "end": 46,
+      "payoff": 10500
+    },
+    {
+      "start": 17,
+      "end": 47,
+      "payoff": 14000
+    },
+    {
+      "start": 17,
+      "end": 48,
+      "payoff": 12500
+    },
+    {
+      "start": 17,
+      "end": 49,
+      "payoff": 19000
+    },
+    {
+      "start": 17,
+      "end": 50,
+      "payoff": 21000
+    },
+    {
+      "start": 17,
+      "end": 51,
+      "payoff": 15500
+    },
+    {
+      "start": 17,
+      "end": 52,
+      "payoff": 22500
+    },
+    {
+      "start": 17,
+      "end": 53,
+      "payoff": 28500
+    },
+    {
+      "start": 17,
+      "end": 54,
+      "payoff": 16000
+    },
+    {
+      "start": 17,
+      "end": 55,
+      "payoff": 19500
+    },
+    {
+      "start": 17,
+      "end": 56,
+      "payoff": 28000
+    },
+    {
+      "start": 17,
+      "end": 57,
+      "payoff": 25000
+    },
+    {
+      "start": 17,
+      "end": 58,
+      "payoff": 13000
+    },
+    {
+      "start": 17,
+      "end": 59,
+      "payoff": 21500
+    },
+    {
+      "start": 17,
+      "end": 60,
+      "payoff": 21000
+    },
+    {
+      "start": 17,
+      "end": 61,
+      "payoff": 26000
+    },
+    {
+      "start": 17,
+      "end": 62,
+      "payoff": 17500
+    },
+    {
+      "start": 17,
+      "end": 63,
+      "payoff": 25000
+    },
+    {
+      "start": 17,
+      "end": 64,
+      "payoff": 26000
+    },
+    {
+      "start": 17,
+      "end": 65,
+      "payoff": 21000
+    },
+    {
+      "start": 17,
+      "end": 66,
+      "payoff": 26000
+    },
+    {
+      "start": 17,
+      "end": 67,
+      "payoff": 11500
+    },
+    {
+      "start": 18,
+      "end": 18,
+      "payoff": 0
+    },
+    {
+      "start": 18,
+      "end": 19,
+      "payoff": 1000
+    },
+    {
+      "start": 18,
+      "end": 20,
+      "payoff": 8000
+    },
+    {
+      "start": 18,
+      "end": 21,
+      "payoff": 9500
+    },
+    {
+      "start": 18,
+      "end": 22,
+      "payoff": 7000
+    },
+    {
+      "start": 18,
+      "end": 23,
+      "payoff": 6500
+    },
+    {
+      "start": 18,
+      "end": 24,
+      "payoff": 7000
+    },
+    {
+      "start": 18,
+      "end": 25,
+      "payoff": 8000
+    },
+    {
+      "start": 18,
+      "end": 26,
+      "payoff": 8000
+    },
+    {
+      "start": 18,
+      "end": 27,
+      "payoff": 10500
+    },
+    {
+      "start": 18,
+      "end": 28,
+      "payoff": 10000
+    },
+    {
+      "start": 18,
+      "end": 29,
+      "payoff": 7000
+    },
+    {
+      "start": 18,
+      "end": 30,
+      "payoff": 14000
+    },
+    {
+      "start": 18,
+      "end": 31,
+      "payoff": 14000
+    },
+    {
+      "start": 18,
+      "end": 32,
+      "payoff": 14500
+    },
+    {
+      "start": 18,
+      "end": 33,
+      "payoff": 11000
+    },
+    {
+      "start": 18,
+      "end": 34,
+      "payoff": 8000
+    },
+    {
+      "start": 18,
+      "end": 35,
+      "payoff": 9500
+    },
+    {
+      "start": 18,
+      "end": 36,
+      "payoff": 8000
+    },
+    {
+      "start": 18,
+      "end": 37,
+      "payoff": 10000
+    },
+    {
+      "start": 18,
+      "end": 38,
+      "payoff": 16000
+    },
+    {
+      "start": 18,
+      "end": 39,
+      "payoff": 12000
+    },
+    {
+      "start": 18,
+      "end": 40,
+      "payoff": 19000
+    },
+    {
+      "start": 18,
+      "end": 41,
+      "payoff": 13000
+    },
+    {
+      "start": 18,
+      "end": 42,
+      "payoff": 16000
+    },
+    {
+      "start": 18,
+      "end": 43,
+      "payoff": 13000
+    },
+    {
+      "start": 18,
+      "end": 44,
+      "payoff": 13500
+    },
+    {
+      "start": 18,
+      "end": 45,
+      "payoff": 15000
+    },
+    {
+      "start": 18,
+      "end": 46,
+      "payoff": 14000
+    },
+    {
+      "start": 18,
+      "end": 47,
+      "payoff": 19000
+    },
+    {
+      "start": 18,
+      "end": 48,
+      "payoff": 13500
+    },
+    {
+      "start": 18,
+      "end": 49,
+      "payoff": 22000
+    },
+    {
+      "start": 18,
+      "end": 50,
+      "payoff": 25000
+    },
+    {
+      "start": 18,
+      "end": 51,
+      "payoff": 19000
+    },
+    {
+      "start": 18,
+      "end": 52,
+      "payoff": 24500
+    },
+    {
+      "start": 18,
+      "end": 53,
+      "payoff": 32000
+    },
+    {
+      "start": 18,
+      "end": 54,
+      "payoff": 19500
+    },
+    {
+      "start": 18,
+      "end": 55,
+      "payoff": 24500
+    },
+    {
+      "start": 18,
+      "end": 56,
+      "payoff": 31000
+    },
+    {
+      "start": 18,
+      "end": 57,
+      "payoff": 28000
+    },
+    {
+      "start": 18,
+      "end": 58,
+      "payoff": 21000
+    },
+    {
+      "start": 18,
+      "end": 59,
+      "payoff": 29000
+    },
+    {
+      "start": 18,
+      "end": 60,
+      "payoff": 29500
+    },
+    {
+      "start": 18,
+      "end": 61,
+      "payoff": 32000
+    },
+    {
+      "start": 18,
+      "end": 62,
+      "payoff": 26500
+    },
+    {
+      "start": 18,
+      "end": 63,
+      "payoff": 28500
+    },
+    {
+      "start": 18,
+      "end": 64,
+      "payoff": 31000
+    },
+    {
+      "start": 18,
+      "end": 65,
+      "payoff": 28000
+    },
+    {
+      "start": 18,
+      "end": 66,
+      "payoff": 32000
+    },
+    {
+      "start": 18,
+      "end": 67,
+      "payoff": 18500
+    },
+    {
+      "start": 19,
+      "end": 19,
+      "payoff": 0
+    },
+    {
+      "start": 19,
+      "end": 20,
+      "payoff": 8500
+    },
+    {
+      "start": 19,
+      "end": 21,
+      "payoff": 8500
+    },
+    {
+      "start": 19,
+      "end": 22,
+      "payoff": 6000
+    },
+    {
+      "start": 19,
+      "end": 23,
+      "payoff": 5500
+    },
+    {
+      "start": 19,
+      "end": 24,
+      "payoff": 5500
+    },
+    {
+      "start": 19,
+      "end": 25,
+      "payoff": 7000
+    },
+    {
+      "start": 19,
+      "end": 26,
+      "payoff": 7000
+    },
+    {
+      "start": 19,
+      "end": 27,
+      "payoff": 9500
+    },
+    {
+      "start": 19,
+      "end": 28,
+      "payoff": 9000
+    },
+    {
+      "start": 19,
+      "end": 29,
+      "payoff": 7500
+    },
+    {
+      "start": 19,
+      "end": 30,
+      "payoff": 14000
+    },
+    {
+      "start": 19,
+      "end": 31,
+      "payoff": 14000
+    },
+    {
+      "start": 19,
+      "end": 32,
+      "payoff": 14500
+    },
+    {
+      "start": 19,
+      "end": 33,
+      "payoff": 10500
+    },
+    {
+      "start": 19,
+      "end": 34,
+      "payoff": 7000
+    },
+    {
+      "start": 19,
+      "end": 35,
+      "payoff": 9000
+    },
+    {
+      "start": 19,
+      "end": 36,
+      "payoff": 7000
+    },
+    {
+      "start": 19,
+      "end": 37,
+      "payoff": 10500
+    },
+    {
+      "start": 19,
+      "end": 38,
+      "payoff": 16500
+    },
+    {
+      "start": 19,
+      "end": 39,
+      "payoff": 12000
+    },
+    {
+      "start": 19,
+      "end": 40,
+      "payoff": 18500
+    },
+    {
+      "start": 19,
+      "end": 41,
+      "payoff": 12000
+    },
+    {
+      "start": 19,
+      "end": 42,
+      "payoff": 15000
+    },
+    {
+      "start": 19,
+      "end": 43,
+      "payoff": 12000
+    },
+    {
+      "start": 19,
+      "end": 44,
+      "payoff": 12500
+    },
+    {
+      "start": 19,
+      "end": 45,
+      "payoff": 14000
+    },
+    {
+      "start": 19,
+      "end": 46,
+      "payoff": 13500
+    },
+    {
+      "start": 19,
+      "end": 47,
+      "payoff": 18500
+    },
+    {
+      "start": 19,
+      "end": 48,
+      "payoff": 12500
+    },
+    {
+      "start": 19,
+      "end": 49,
+      "payoff": 21500
+    },
+    {
+      "start": 19,
+      "end": 50,
+      "payoff": 23500
+    },
+    {
+      "start": 19,
+      "end": 51,
+      "payoff": 18500
+    },
+    {
+      "start": 19,
+      "end": 52,
+      "payoff": 24000
+    },
+    {
+      "start": 19,
+      "end": 53,
+      "payoff": 31000
+    },
+    {
+      "start": 19,
+      "end": 54,
+      "payoff": 19000
+    },
+    {
+      "start": 19,
+      "end": 55,
+      "payoff": 23500
+    },
+    {
+      "start": 19,
+      "end": 56,
+      "payoff": 30000
+    },
+    {
+      "start": 19,
+      "end": 57,
+      "payoff": 27000
+    },
+    {
+      "start": 19,
+      "end": 58,
+      "payoff": 20500
+    },
+    {
+      "start": 19,
+      "end": 59,
+      "payoff": 28000
+    },
+    {
+      "start": 19,
+      "end": 60,
+      "payoff": 28500
+    },
+    {
+      "start": 19,
+      "end": 61,
+      "payoff": 31000
+    },
+    {
+      "start": 19,
+      "end": 62,
+      "payoff": 26500
+    },
+    {
+      "start": 19,
+      "end": 63,
+      "payoff": 28000
+    },
+    {
+      "start": 19,
+      "end": 64,
+      "payoff": 30500
+    },
+    {
+      "start": 19,
+      "end": 65,
+      "payoff": 28500
+    },
+    {
+      "start": 19,
+      "end": 66,
+      "payoff": 31000
+    },
+    {
+      "start": 19,
+      "end": 67,
+      "payoff": 18000
+    },
+    {
+      "start": 20,
+      "end": 20,
+      "payoff": 0
+    },
+    {
+      "start": 20,
+      "end": 21,
+      "payoff": 12500
+    },
+    {
+      "start": 20,
+      "end": 22,
+      "payoff": 10000
+    },
+    {
+      "start": 20,
+      "end": 23,
+      "payoff": 12500
+    },
+    {
+      "start": 20,
+      "end": 24,
+      "payoff": 11500
+    },
+    {
+      "start": 20,
+      "end": 25,
+      "payoff": 12500
+    },
+    {
+      "start": 20,
+      "end": 26,
+      "payoff": 11000
+    },
+    {
+      "start": 20,
+      "end": 27,
+      "payoff": 13500
+    },
+    {
+      "start": 20,
+      "end": 28,
+      "payoff": 11000
+    },
+    {
+      "start": 20,
+      "end": 29,
+      "payoff": 6000
+    },
+    {
+      "start": 20,
+      "end": 30,
+      "payoff": 12500
+    },
+    {
+      "start": 20,
+      "end": 31,
+      "payoff": 12500
+    },
+    {
+      "start": 20,
+      "end": 32,
+      "payoff": 11500
+    },
+    {
+      "start": 20,
+      "end": 33,
+      "payoff": 9500
+    },
+    {
+      "start": 20,
+      "end": 34,
+      "payoff": 10000
+    },
+    {
+      "start": 20,
+      "end": 35,
+      "payoff": 8500
+    },
+    {
+      "start": 20,
+      "end": 36,
+      "payoff": 8000
+    },
+    {
+      "start": 20,
+      "end": 37,
+      "payoff": 8000
+    },
+    {
+      "start": 20,
+      "end": 38,
+      "payoff": 13500
+    },
+    {
+      "start": 20,
+      "end": 39,
+      "payoff": 11000
+    },
+    {
+      "start": 20,
+      "end": 40,
+      "payoff": 20000
+    },
+    {
+      "start": 20,
+      "end": 41,
+      "payoff": 14500
+    },
+    {
+      "start": 20,
+      "end": 42,
+      "payoff": 19000
+    },
+    {
+      "start": 20,
+      "end": 43,
+      "payoff": 13500
+    },
+    {
+      "start": 20,
+      "end": 44,
+      "payoff": 16500
+    },
+    {
+      "start": 20,
+      "end": 45,
+      "payoff": 13500
+    },
+    {
+      "start": 20,
+      "end": 46,
+      "payoff": 15000
+    },
+    {
+      "start": 20,
+      "end": 47,
+      "payoff": 20000
+    },
+    {
+      "start": 20,
+      "end": 48,
+      "payoff": 16500
+    },
+    {
+      "start": 20,
+      "end": 49,
+      "payoff": 24000
+    },
+    {
+      "start": 20,
+      "end": 50,
+      "payoff": 26500
+    },
+    {
+      "start": 20,
+      "end": 51,
+      "payoff": 15000
+    },
+    {
+      "start": 20,
+      "end": 52,
+      "payoff": 25500
+    },
+    {
+      "start": 20,
+      "end": 53,
+      "payoff": 33000
+    },
+    {
+      "start": 20,
+      "end": 54,
+      "payoff": 20500
+    },
+    {
+      "start": 20,
+      "end": 55,
+      "payoff": 25000
+    },
+    {
+      "start": 20,
+      "end": 56,
+      "payoff": 33000
+    },
+    {
+      "start": 20,
+      "end": 57,
+      "payoff": 30000
+    },
+    {
+      "start": 20,
+      "end": 58,
+      "payoff": 19500
+    },
+    {
+      "start": 20,
+      "end": 59,
+      "payoff": 28500
+    },
+    {
+      "start": 20,
+      "end": 60,
+      "payoff": 27500
+    },
+    {
+      "start": 20,
+      "end": 61,
+      "payoff": 31500
+    },
+    {
+      "start": 20,
+      "end": 62,
+      "payoff": 24000
+    },
+    {
+      "start": 20,
+      "end": 63,
+      "payoff": 31000
+    },
+    {
+      "start": 20,
+      "end": 64,
+      "payoff": 31500
+    },
+    {
+      "start": 20,
+      "end": 65,
+      "payoff": 27000
+    },
+    {
+      "start": 20,
+      "end": 66,
+      "payoff": 31500
+    },
+    {
+      "start": 20,
+      "end": 67,
+      "payoff": 17500
+    },
+    {
+      "start": 21,
+      "end": 21,
+      "payoff": 0
+    },
+    {
+      "start": 21,
+      "end": 22,
+      "payoff": 3000
+    },
+    {
+      "start": 21,
+      "end": 23,
+      "payoff": 3500
+    },
+    {
+      "start": 21,
+      "end": 24,
+      "payoff": 3500
+    },
+    {
+      "start": 21,
+      "end": 25,
+      "payoff": 2500
+    },
+    {
+      "start": 21,
+      "end": 26,
+      "payoff": 2000
+    },
+    {
+      "start": 21,
+      "end": 27,
+      "payoff": 1000
+    },
+    {
+      "start": 21,
+      "end": 28,
+      "payoff": 3000
+    },
+    {
+      "start": 21,
+      "end": 29,
+      "payoff": 6500
+    },
+    {
+      "start": 21,
+      "end": 30,
+      "payoff": 9500
+    },
+    {
+      "start": 21,
+      "end": 31,
+      "payoff": 9500
+    },
+    {
+      "start": 21,
+      "end": 32,
+      "payoff": 12000
+    },
+    {
+      "start": 21,
+      "end": 33,
+      "payoff": 6500
+    },
+    {
+      "start": 21,
+      "end": 34,
+      "payoff": 3000
+    },
+    {
+      "start": 21,
+      "end": 35,
+      "payoff": 5500
+    },
+    {
+      "start": 21,
+      "end": 36,
+      "payoff": 4500
+    },
+    {
+      "start": 21,
+      "end": 37,
+      "payoff": 9000
+    },
+    {
+      "start": 21,
+      "end": 38,
+      "payoff": 12000
+    },
+    {
+      "start": 21,
+      "end": 39,
+      "payoff": 8500
+    },
+    {
+      "start": 21,
+      "end": 40,
+      "payoff": 10500
+    },
+    {
+      "start": 21,
+      "end": 41,
+      "payoff": 3500
+    },
+    {
+      "start": 21,
+      "end": 42,
+      "payoff": 6500
+    },
+    {
+      "start": 21,
+      "end": 43,
+      "payoff": 4500
+    },
+    {
+      "start": 21,
+      "end": 44,
+      "payoff": 4000
+    },
+    {
+      "start": 21,
+      "end": 45,
+      "payoff": 8000
+    },
+    {
+      "start": 21,
+      "end": 46,
+      "payoff": 5000
+    },
+    {
+      "start": 21,
+      "end": 47,
+      "payoff": 10500
+    },
+    {
+      "start": 21,
+      "end": 48,
+      "payoff": 4000
+    },
+    {
+      "start": 21,
+      "end": 49,
+      "payoff": 13000
+    },
+    {
+      "start": 21,
+      "end": 50,
+      "payoff": 15000
+    },
+    {
+      "start": 21,
+      "end": 51,
+      "payoff": 10000
+    },
+    {
+      "start": 21,
+      "end": 52,
+      "payoff": 15000
+    },
+    {
+      "start": 21,
+      "end": 53,
+      "payoff": 22000
+    },
+    {
+      "start": 21,
+      "end": 54,
+      "payoff": 9000
+    },
+    {
+      "start": 21,
+      "end": 55,
+      "payoff": 15000
+    },
+    {
+      "start": 21,
+      "end": 56,
+      "payoff": 21500
+    },
+    {
+      "start": 21,
+      "end": 57,
+      "payoff": 18500
+    },
+    {
+      "start": 21,
+      "end": 58,
+      "payoff": 14000
+    },
+    {
+      "start": 21,
+      "end": 59,
+      "payoff": 19500
+    },
+    {
+      "start": 21,
+      "end": 60,
+      "payoff": 22500
+    },
+    {
+      "start": 21,
+      "end": 61,
+      "payoff": 22500
+    },
+    {
+      "start": 21,
+      "end": 62,
+      "payoff": 19500
+    },
+    {
+      "start": 21,
+      "end": 63,
+      "payoff": 20000
+    },
+    {
+      "start": 21,
+      "end": 64,
+      "payoff": 22000
+    },
+    {
+      "start": 21,
+      "end": 65,
+      "payoff": 22000
+    },
+    {
+      "start": 21,
+      "end": 66,
+      "payoff": 22500
+    },
+    {
+      "start": 21,
+      "end": 67,
+      "payoff": 11000
+    },
+    {
+      "start": 22,
+      "end": 22,
+      "payoff": 0
+    },
+    {
+      "start": 22,
+      "end": 23,
+      "payoff": 2500
+    },
+    {
+      "start": 22,
+      "end": 24,
+      "payoff": 1000
+    },
+    {
+      "start": 22,
+      "end": 25,
+      "payoff": 2500
+    },
+    {
+      "start": 22,
+      "end": 26,
+      "payoff": 1000
+    },
+    {
+      "start": 22,
+      "end": 27,
+      "payoff": 3500
+    },
+    {
+      "start": 22,
+      "end": 28,
+      "payoff": 3500
+    },
+    {
+      "start": 22,
+      "end": 29,
+      "payoff": 5000
+    },
+    {
+      "start": 22,
+      "end": 30,
+      "payoff": 9500
+    },
+    {
+      "start": 22,
+      "end": 31,
+      "payoff": 9500
+    },
+    {
+      "start": 22,
+      "end": 32,
+      "payoff": 12500
+    },
+    {
+      "start": 22,
+      "end": 33,
+      "payoff": 6500
+    },
+    {
+      "start": 22,
+      "end": 34,
+      "payoff": 1000
+    },
+    {
+      "start": 22,
+      "end": 35,
+      "payoff": 5000
+    },
+    {
+      "start": 22,
+      "end": 36,
+      "payoff": 3000
+    },
+    {
+      "start": 22,
+      "end": 37,
+      "payoff": 8500
+    },
+    {
+      "start": 22,
+      "end": 38,
+      "payoff": 12500
+    },
+    {
+      "start": 22,
+      "end": 39,
+      "payoff": 8500
+    },
+    {
+      "start": 22,
+      "end": 40,
+      "payoff": 12500
+    },
+    {
+      "start": 22,
+      "end": 41,
+      "payoff": 6500
+    },
+    {
+      "start": 22,
+      "end": 42,
+      "payoff": 9000
+    },
+    {
+      "start": 22,
+      "end": 43,
+      "payoff": 6000
+    },
+    {
+      "start": 22,
+      "end": 44,
+      "payoff": 7000
+    },
+    {
+      "start": 22,
+      "end": 45,
+      "payoff": 9000
+    },
+    {
+      "start": 22,
+      "end": 46,
+      "payoff": 7500
+    },
+    {
+      "start": 22,
+      "end": 47,
+      "payoff": 12500
+    },
+    {
+      "start": 22,
+      "end": 48,
+      "payoff": 7000
+    },
+    {
+      "start": 22,
+      "end": 49,
+      "payoff": 15500
+    },
+    {
+      "start": 22,
+      "end": 50,
+      "payoff": 18000
+    },
+    {
+      "start": 22,
+      "end": 51,
+      "payoff": 12500
+    },
+    {
+      "start": 22,
+      "end": 52,
+      "payoff": 18000
+    },
+    {
+      "start": 22,
+      "end": 53,
+      "payoff": 24500
+    },
+    {
+      "start": 22,
+      "end": 54,
+      "payoff": 12000
+    },
+    {
+      "start": 22,
+      "end": 55,
+      "payoff": 18000
+    },
+    {
+      "start": 22,
+      "end": 56,
+      "payoff": 24000
+    },
+    {
+      "start": 22,
+      "end": 57,
+      "payoff": 21000
+    },
+    {
+      "start": 22,
+      "end": 58,
+      "payoff": 15500
+    },
+    {
+      "start": 22,
+      "end": 59,
+      "payoff": 22500
+    },
+    {
+      "start": 22,
+      "end": 60,
+      "payoff": 23500
+    },
+    {
+      "start": 22,
+      "end": 61,
+      "payoff": 25500
+    },
+    {
+      "start": 22,
+      "end": 62,
+      "payoff": 21000
+    },
+    {
+      "start": 22,
+      "end": 63,
+      "payoff": 23000
+    },
+    {
+      "start": 22,
+      "end": 64,
+      "payoff": 24500
+    },
+    {
+      "start": 22,
+      "end": 65,
+      "payoff": 23500
+    },
+    {
+      "start": 22,
+      "end": 66,
+      "payoff": 25500
+    },
+    {
+      "start": 22,
+      "end": 67,
+      "payoff": 12500
+    },
+    {
+      "start": 23,
+      "end": 23,
+      "payoff": 0
+    },
+    {
+      "start": 23,
+      "end": 24,
+      "payoff": 1500
+    },
+    {
+      "start": 23,
+      "end": 25,
+      "payoff": 1500
+    },
+    {
+      "start": 23,
+      "end": 26,
+      "payoff": 3000
+    },
+    {
+      "start": 23,
+      "end": 27,
+      "payoff": 4000
+    },
+    {
+      "start": 23,
+      "end": 28,
+      "payoff": 5000
+    },
+    {
+      "start": 23,
+      "end": 29,
+      "payoff": 7500
+    },
+    {
+      "start": 23,
+      "end": 30,
+      "payoff": 12500
+    },
+    {
+      "start": 23,
+      "end": 31,
+      "payoff": 12500
+    },
+    {
+      "start": 23,
+      "end": 32,
+      "payoff": 13500
+    },
+    {
+      "start": 23,
+      "end": 33,
+      "payoff": 9000
+    },
+    {
+      "start": 23,
+      "end": 34,
+      "payoff": 3500
+    },
+    {
+      "start": 23,
+      "end": 35,
+      "payoff": 7000
+    },
+    {
+      "start": 23,
+      "end": 36,
+      "payoff": 5500
+    },
+    {
+      "start": 23,
+      "end": 37,
+      "payoff": 11000
+    },
+    {
+      "start": 23,
+      "end": 38,
+      "payoff": 14500
+    },
+    {
+      "start": 23,
+      "end": 39,
+      "payoff": 11000
+    },
+    {
+      "start": 23,
+      "end": 40,
+      "payoff": 13500
+    },
+    {
+      "start": 23,
+      "end": 41,
+      "payoff": 7000
+    },
+    {
+      "start": 23,
+      "end": 42,
+      "payoff": 10000
+    },
+    {
+      "start": 23,
+      "end": 43,
+      "payoff": 8000
+    },
+    {
+      "start": 23,
+      "end": 44,
+      "payoff": 7500
+    },
+    {
+      "start": 23,
+      "end": 45,
+      "payoff": 10500
+    },
+    {
+      "start": 23,
+      "end": 46,
+      "payoff": 8500
+    },
+    {
+      "start": 23,
+      "end": 47,
+      "payoff": 13500
+    },
+    {
+      "start": 23,
+      "end": 48,
+      "payoff": 7500
+    },
+    {
+      "start": 23,
+      "end": 49,
+      "payoff": 16000
+    },
+    {
+      "start": 23,
+      "end": 50,
+      "payoff": 18500
+    },
+    {
+      "start": 23,
+      "end": 51,
+      "payoff": 13500
+    },
+    {
+      "start": 23,
+      "end": 52,
+      "payoff": 19000
+    },
+    {
+      "start": 23,
+      "end": 53,
+      "payoff": 25500
+    },
+    {
+      "start": 23,
+      "end": 54,
+      "payoff": 12500
+    },
+    {
+      "start": 23,
+      "end": 55,
+      "payoff": 18500
+    },
+    {
+      "start": 23,
+      "end": 56,
+      "payoff": 25000
+    },
+    {
+      "start": 23,
+      "end": 57,
+      "payoff": 21500
+    },
+    {
+      "start": 23,
+      "end": 58,
+      "payoff": 17500
+    },
+    {
+      "start": 23,
+      "end": 59,
+      "payoff": 23000
+    },
+    {
+      "start": 23,
+      "end": 60,
+      "payoff": 25500
+    },
+    {
+      "start": 23,
+      "end": 61,
+      "payoff": 26000
+    },
+    {
+      "start": 23,
+      "end": 62,
+      "payoff": 22500
+    },
+    {
+      "start": 23,
+      "end": 63,
+      "payoff": 23500
+    },
+    {
+      "start": 23,
+      "end": 64,
+      "payoff": 25000
+    },
+    {
+      "start": 23,
+      "end": 65,
+      "payoff": 25000
+    },
+    {
+      "start": 23,
+      "end": 66,
+      "payoff": 26000
+    },
+    {
+      "start": 23,
+      "end": 67,
+      "payoff": 14500
+    },
+    {
+      "start": 24,
+      "end": 24,
+      "payoff": 0
+    },
+    {
+      "start": 24,
+      "end": 25,
+      "payoff": 2000
+    },
+    {
+      "start": 24,
+      "end": 26,
+      "payoff": 1500
+    },
+    {
+      "start": 24,
+      "end": 27,
+      "payoff": 4000
+    },
+    {
+      "start": 24,
+      "end": 28,
+      "payoff": 4000
+    },
+    {
+      "start": 24,
+      "end": 29,
+      "payoff": 6000
+    },
+    {
+      "start": 24,
+      "end": 30,
+      "payoff": 11000
+    },
+    {
+      "start": 24,
+      "end": 31,
+      "payoff": 11000
+    },
+    {
+      "start": 24,
+      "end": 32,
+      "payoff": 13000
+    },
+    {
+      "start": 24,
+      "end": 33,
+      "payoff": 6500
+    },
+    {
+      "start": 24,
+      "end": 34,
+      "payoff": 2500
+    },
+    {
+      "start": 24,
+      "end": 35,
+      "payoff": 6000
+    },
+    {
+      "start": 24,
+      "end": 36,
+      "payoff": 4000
+    },
+    {
+      "start": 24,
+      "end": 37,
+      "payoff": 9500
+    },
+    {
+      "start": 24,
+      "end": 38,
+      "payoff": 13500
+    },
+    {
+      "start": 24,
+      "end": 39,
+      "payoff": 11500
+    },
+    {
+      "start": 24,
+      "end": 40,
+      "payoff": 13000
+    },
+    {
+      "start": 24,
+      "end": 41,
+      "payoff": 7000
+    },
+    {
+      "start": 24,
+      "end": 42,
+      "payoff": 9500
+    },
+    {
+      "start": 24,
+      "end": 43,
+      "payoff": 6500
+    },
+    {
+      "start": 24,
+      "end": 44,
+      "payoff": 7500
+    },
+    {
+      "start": 24,
+      "end": 45,
+      "payoff": 10000
+    },
+    {
+      "start": 24,
+      "end": 46,
+      "payoff": 8000
+    },
+    {
+      "start": 24,
+      "end": 47,
+      "payoff": 13000
+    },
+    {
+      "start": 24,
+      "end": 48,
+      "payoff": 7500
+    },
+    {
+      "start": 24,
+      "end": 49,
+      "payoff": 16000
+    },
+    {
+      "start": 24,
+      "end": 50,
+      "payoff": 18500
+    },
+    {
+      "start": 24,
+      "end": 51,
+      "payoff": 13000
+    },
+    {
+      "start": 24,
+      "end": 52,
+      "payoff": 18500
+    },
+    {
+      "start": 24,
+      "end": 53,
+      "payoff": 25500
+    },
+    {
+      "start": 24,
+      "end": 54,
+      "payoff": 13500
+    },
+    {
+      "start": 24,
+      "end": 55,
+      "payoff": 18000
+    },
+    {
+      "start": 24,
+      "end": 56,
+      "payoff": 25000
+    },
+    {
+      "start": 24,
+      "end": 57,
+      "payoff": 21500
+    },
+    {
+      "start": 24,
+      "end": 58,
+      "payoff": 17000
+    },
+    {
+      "start": 24,
+      "end": 59,
+      "payoff": 22500
+    },
+    {
+      "start": 24,
+      "end": 60,
+      "payoff": 24000
+    },
+    {
+      "start": 24,
+      "end": 61,
+      "payoff": 26500
+    },
+    {
+      "start": 24,
+      "end": 62,
+      "payoff": 21500
+    },
+    {
+      "start": 24,
+      "end": 63,
+      "payoff": 23500
+    },
+    {
+      "start": 24,
+      "end": 64,
+      "payoff": 25000
+    },
+    {
+      "start": 24,
+      "end": 65,
+      "payoff": 24000
+    },
+    {
+      "start": 24,
+      "end": 66,
+      "payoff": 26500
+    },
+    {
+      "start": 24,
+      "end": 67,
+      "payoff": 14000
+    },
+    {
+      "start": 25,
+      "end": 25,
+      "payoff": 0
+    },
+    {
+      "start": 25,
+      "end": 26,
+      "payoff": 3000
+    },
+    {
+      "start": 25,
+      "end": 27,
+      "payoff": 3500
+    },
+    {
+      "start": 25,
+      "end": 28,
+      "payoff": 5000
+    },
+    {
+      "start": 25,
+      "end": 29,
+      "payoff": 7500
+    },
+    {
+      "start": 25,
+      "end": 30,
+      "payoff": 12000
+    },
+    {
+      "start": 25,
+      "end": 31,
+      "payoff": 12000
+    },
+    {
+      "start": 25,
+      "end": 32,
+      "payoff": 13500
+    },
+    {
+      "start": 25,
+      "end": 33,
+      "payoff": 9000
+    },
+    {
+      "start": 25,
+      "end": 34,
+      "payoff": 3500
+    },
+    {
+      "start": 25,
+      "end": 35,
+      "payoff": 7500
+    },
+    {
+      "start": 25,
+      "end": 36,
+      "payoff": 5500
+    },
+    {
+      "start": 25,
+      "end": 37,
+      "payoff": 11000
+    },
+    {
+      "start": 25,
+      "end": 38,
+      "payoff": 14000
+    },
+    {
+      "start": 25,
+      "end": 39,
+      "payoff": 10500
+    },
+    {
+      "start": 25,
+      "end": 40,
+      "payoff": 13000
+    },
+    {
+      "start": 25,
+      "end": 41,
+      "payoff": 6500
+    },
+    {
+      "start": 25,
+      "end": 42,
+      "payoff": 9000
+    },
+    {
+      "start": 25,
+      "end": 43,
+      "payoff": 7000
+    },
+    {
+      "start": 25,
+      "end": 44,
+      "payoff": 6500
+    },
+    {
+      "start": 25,
+      "end": 45,
+      "payoff": 10500
+    },
+    {
+      "start": 25,
+      "end": 46,
+      "payoff": 7500
+    },
+    {
+      "start": 25,
+      "end": 47,
+      "payoff": 13000
+    },
+    {
+      "start": 25,
+      "end": 48,
+      "payoff": 6500
+    },
+    {
+      "start": 25,
+      "end": 49,
+      "payoff": 15500
+    },
+    {
+      "start": 25,
+      "end": 50,
+      "payoff": 18000
+    },
+    {
+      "start": 25,
+      "end": 51,
+      "payoff": 12500
+    },
+    {
+      "start": 25,
+      "end": 52,
+      "payoff": 18000
+    },
+    {
+      "start": 25,
+      "end": 53,
+      "payoff": 25000
+    },
+    {
+      "start": 25,
+      "end": 54,
+      "payoff": 13000
+    },
+    {
+      "start": 25,
+      "end": 55,
+      "payoff": 18000
+    },
+    {
+      "start": 25,
+      "end": 56,
+      "payoff": 24000
+    },
+    {
+      "start": 25,
+      "end": 57,
+      "payoff": 21000
+    },
+    {
+      "start": 25,
+      "end": 58,
+      "payoff": 16500
+    },
+    {
+      "start": 25,
+      "end": 59,
+      "payoff": 22500
+    },
+    {
+      "start": 25,
+      "end": 60,
+      "payoff": 25000
+    },
+    {
+      "start": 25,
+      "end": 61,
+      "payoff": 25500
+    },
+    {
+      "start": 25,
+      "end": 62,
+      "payoff": 22000
+    },
+    {
+      "start": 25,
+      "end": 63,
+      "payoff": 23000
+    },
+    {
+      "start": 25,
+      "end": 64,
+      "payoff": 24500
+    },
+    {
+      "start": 25,
+      "end": 65,
+      "payoff": 24500
+    },
+    {
+      "start": 25,
+      "end": 66,
+      "payoff": 25500
+    },
+    {
+      "start": 25,
+      "end": 67,
+      "payoff": 14000
+    },
+    {
+      "start": 26,
+      "end": 26,
+      "payoff": 0
+    },
+    {
+      "start": 26,
+      "end": 27,
+      "payoff": 2500
+    },
+    {
+      "start": 26,
+      "end": 28,
+      "payoff": 2500
+    },
+    {
+      "start": 26,
+      "end": 29,
+      "payoff": 5000
+    },
+    {
+      "start": 26,
+      "end": 30,
+      "payoff": 9500
+    },
+    {
+      "start": 26,
+      "end": 31,
+      "payoff": 9500
+    },
+    {
+      "start": 26,
+      "end": 32,
+      "payoff": 11000
+    },
+    {
+      "start": 26,
+      "end": 33,
+      "payoff": 5000
+    },
+    {
+      "start": 26,
+      "end": 34,
+      "payoff": 1000
+    },
+    {
+      "start": 26,
+      "end": 35,
+      "payoff": 5000
+    },
+    {
+      "start": 26,
+      "end": 36,
+      "payoff": 3000
+    },
+    {
+      "start": 26,
+      "end": 37,
+      "payoff": 8500
+    },
+    {
+      "start": 26,
+      "end": 38,
+      "payoff": 11500
+    },
+    {
+      "start": 26,
+      "end": 39,
+      "payoff": 9000
+    },
+    {
+      "start": 26,
+      "end": 40,
+      "payoff": 11500
+    },
+    {
+      "start": 26,
+      "end": 41,
+      "payoff": 5500
+    },
+    {
+      "start": 26,
+      "end": 42,
+      "payoff": 8000
+    },
+    {
+      "start": 26,
+      "end": 43,
+      "payoff": 5000
+    },
+    {
+      "start": 26,
+      "end": 44,
+      "payoff": 6000
+    },
+    {
+      "start": 26,
+      "end": 45,
+      "payoff": 7500
+    },
+    {
+      "start": 26,
+      "end": 46,
+      "payoff": 6500
+    },
+    {
+      "start": 26,
+      "end": 47,
+      "payoff": 11500
+    },
+    {
+      "start": 26,
+      "end": 48,
+      "payoff": 6000
+    },
+    {
+      "start": 26,
+      "end": 49,
+      "payoff": 14500
+    },
+    {
+      "start": 26,
+      "end": 50,
+      "payoff": 17000
+    },
+    {
+      "start": 26,
+      "end": 51,
+      "payoff": 11500
+    },
+    {
+      "start": 26,
+      "end": 52,
+      "payoff": 17000
+    },
+    {
+      "start": 26,
+      "end": 53,
+      "payoff": 24500
+    },
+    {
+      "start": 26,
+      "end": 54,
+      "payoff": 11000
+    },
+    {
+      "start": 26,
+      "end": 55,
+      "payoff": 17000
+    },
+    {
+      "start": 26,
+      "end": 56,
+      "payoff": 23000
+    },
+    {
+      "start": 26,
+      "end": 57,
+      "payoff": 20000
+    },
+    {
+      "start": 26,
+      "end": 58,
+      "payoff": 15000
+    },
+    {
+      "start": 26,
+      "end": 59,
+      "payoff": 21500
+    },
+    {
+      "start": 26,
+      "end": 60,
+      "payoff": 22500
+    },
+    {
+      "start": 26,
+      "end": 61,
+      "payoff": 24500
+    },
+    {
+      "start": 26,
+      "end": 62,
+      "payoff": 20000
+    },
+    {
+      "start": 26,
+      "end": 63,
+      "payoff": 22000
+    },
+    {
+      "start": 26,
+      "end": 64,
+      "payoff": 23500
+    },
+    {
+      "start": 26,
+      "end": 65,
+      "payoff": 22500
+    },
+    {
+      "start": 26,
+      "end": 66,
+      "payoff": 24500
+    },
+    {
+      "start": 26,
+      "end": 67,
+      "payoff": 11500
+    },
+    {
+      "start": 27,
+      "end": 27,
+      "payoff": 0
+    },
+    {
+      "start": 27,
+      "end": 28,
+      "payoff": 3500
+    },
+    {
+      "start": 27,
+      "end": 29,
+      "payoff": 7500
+    },
+    {
+      "start": 27,
+      "end": 30,
+      "payoff": 10500
+    },
+    {
+      "start": 27,
+      "end": 31,
+      "payoff": 10500
+    },
+    {
+      "start": 27,
+      "end": 32,
+      "payoff": 11000
+    },
+    {
+      "start": 27,
+      "end": 33,
+      "payoff": 7500
+    },
+    {
+      "start": 27,
+      "end": 34,
+      "payoff": 4000
+    },
+    {
+      "start": 27,
+      "end": 35,
+      "payoff": 6000
+    },
+    {
+      "start": 27,
+      "end": 36,
+      "payoff": 5500
+    },
+    {
+      "start": 27,
+      "end": 37,
+      "payoff": 10000
+    },
+    {
+      "start": 27,
+      "end": 38,
+      "payoff": 13000
+    },
+    {
+      "start": 27,
+      "end": 39,
+      "payoff": 8500
+    },
+    {
+      "start": 27,
+      "end": 40,
+      "payoff": 10500
+    },
+    {
+      "start": 27,
+      "end": 41,
+      "payoff": 3500
+    },
+    {
+      "start": 27,
+      "end": 42,
+      "payoff": 5500
+    },
+    {
+      "start": 27,
+      "end": 43,
+      "payoff": 5500
+    },
+    {
+      "start": 27,
+      "end": 44,
+      "payoff": 3500
+    },
+    {
+      "start": 27,
+      "end": 45,
+      "payoff": 8500
+    },
+    {
+      "start": 27,
+      "end": 46,
+      "payoff": 5000
+    },
+    {
+      "start": 27,
+      "end": 47,
+      "payoff": 11500
+    },
+    {
+      "start": 27,
+      "end": 48,
+      "payoff": 3500
+    },
+    {
+      "start": 27,
+      "end": 49,
+      "payoff": 12000
+    },
+    {
+      "start": 27,
+      "end": 50,
+      "payoff": 14500
+    },
+    {
+      "start": 27,
+      "end": 51,
+      "payoff": 10000
+    },
+    {
+      "start": 27,
+      "end": 52,
+      "payoff": 15500
+    },
+    {
+      "start": 27,
+      "end": 53,
+      "payoff": 21500
+    },
+    {
+      "start": 27,
+      "end": 54,
+      "payoff": 9000
+    },
+    {
+      "start": 27,
+      "end": 55,
+      "payoff": 15000
+    },
+    {
+      "start": 27,
+      "end": 56,
+      "payoff": 21000
+    },
+    {
+      "start": 27,
+      "end": 57,
+      "payoff": 18000
+    },
+    {
+      "start": 27,
+      "end": 58,
+      "payoff": 14500
+    },
+    {
+      "start": 27,
+      "end": 59,
+      "payoff": 19500
+    },
+    {
+      "start": 27,
+      "end": 60,
+      "payoff": 22500
+    },
+    {
+      "start": 27,
+      "end": 61,
+      "payoff": 22500
+    },
+    {
+      "start": 27,
+      "end": 62,
+      "payoff": 19500
+    },
+    {
+      "start": 27,
+      "end": 63,
+      "payoff": 20500
+    },
+    {
+      "start": 27,
+      "end": 64,
+      "payoff": 22000
+    },
+    {
+      "start": 27,
+      "end": 65,
+      "payoff": 23000
+    },
+    {
+      "start": 27,
+      "end": 66,
+      "payoff": 22500
+    },
+    {
+      "start": 27,
+      "end": 67,
+      "payoff": 11000
+    },
+    {
+      "start": 28,
+      "end": 28,
+      "payoff": 0
+    },
+    {
+      "start": 28,
+      "end": 29,
+      "payoff": 5000
+    },
+    {
+      "start": 28,
+      "end": 30,
+      "payoff": 7000
+    },
+    {
+      "start": 28,
+      "end": 31,
+      "payoff": 7000
+    },
+    {
+      "start": 28,
+      "end": 32,
+      "payoff": 9000
+    },
+    {
+      "start": 28,
+      "end": 33,
+      "payoff": 3500
+    },
+    {
+      "start": 28,
+      "end": 34,
+      "payoff": 8500
+    },
+    {
+      "start": 28,
+      "end": 35,
+      "payoff": 9000
+    },
+    {
+      "start": 28,
+      "end": 36,
+      "payoff": 7000
+    },
+    {
+      "start": 28,
+      "end": 37,
+      "payoff": 5000
+    },
+    {
+      "start": 28,
+      "end": 38,
+      "payoff": 9000
+    },
+    {
+      "start": 28,
+      "end": 39,
+      "payoff": 8500
+    },
+    {
+      "start": 28,
+      "end": 40,
+      "payoff": 9000
+    },
+    {
+      "start": 28,
+      "end": 41,
+      "payoff": 3500
+    },
+    {
+      "start": 28,
+      "end": 42,
+      "payoff": 8000
+    },
+    {
+      "start": 28,
+      "end": 43,
+      "payoff": 3000
+    },
+    {
+      "start": 28,
+      "end": 44,
+      "payoff": 5500
+    },
+    {
+      "start": 28,
+      "end": 45,
+      "payoff": 5500
+    },
+    {
+      "start": 28,
+      "end": 46,
+      "payoff": 4000
+    },
+    {
+      "start": 28,
+      "end": 47,
+      "payoff": 9000
+    },
+    {
+      "start": 28,
+      "end": 48,
+      "payoff": 5500
+    },
+    {
+      "start": 28,
+      "end": 49,
+      "payoff": 13000
+    },
+    {
+      "start": 28,
+      "end": 50,
+      "payoff": 15500
+    },
+    {
+      "start": 28,
+      "end": 51,
+      "payoff": 10000
+    },
+    {
+      "start": 28,
+      "end": 52,
+      "payoff": 14500
+    },
+    {
+      "start": 28,
+      "end": 53,
+      "payoff": 22000
+    },
+    {
+      "start": 28,
+      "end": 54,
+      "payoff": 9500
+    },
+    {
+      "start": 28,
+      "end": 55,
+      "payoff": 14500
+    },
+    {
+      "start": 28,
+      "end": 56,
+      "payoff": 22000
+    },
+    {
+      "start": 28,
+      "end": 57,
+      "payoff": 19000
+    },
+    {
+      "start": 28,
+      "end": 58,
+      "payoff": 12000
+    },
+    {
+      "start": 28,
+      "end": 59,
+      "payoff": 19000
+    },
+    {
+      "start": 28,
+      "end": 60,
+      "payoff": 20500
+    },
+    {
+      "start": 28,
+      "end": 61,
+      "payoff": 22000
+    },
+    {
+      "start": 28,
+      "end": 62,
+      "payoff": 18000
+    },
+    {
+      "start": 28,
+      "end": 63,
+      "payoff": 20500
+    },
+    {
+      "start": 28,
+      "end": 64,
+      "payoff": 21000
+    },
+    {
+      "start": 28,
+      "end": 65,
+      "payoff": 20000
+    },
+    {
+      "start": 28,
+      "end": 66,
+      "payoff": 22000
+    },
+    {
+      "start": 28,
+      "end": 67,
+      "payoff": 9500
+    },
+    {
+      "start": 29,
+      "end": 29,
+      "payoff": 0
+    },
+    {
+      "start": 29,
+      "end": 30,
+      "payoff": 6500
+    },
+    {
+      "start": 29,
+      "end": 31,
+      "payoff": 6500
+    },
+    {
+      "start": 29,
+      "end": 32,
+      "payoff": 7000
+    },
+    {
+      "start": 29,
+      "end": 33,
+      "payoff": 4000
+    },
+    {
+      "start": 29,
+      "end": 34,
+      "payoff": 4000
+    },
+    {
+      "start": 29,
+      "end": 35,
+      "payoff": 2500
+    },
+    {
+      "start": 29,
+      "end": 36,
+      "payoff": 2000
+    },
+    {
+      "start": 29,
+      "end": 37,
+      "payoff": 3500
+    },
+    {
+      "start": 29,
+      "end": 38,
+      "payoff": 9500
+    },
+    {
+      "start": 29,
+      "end": 39,
+      "payoff": 4500
+    },
+    {
+      "start": 29,
+      "end": 40,
+      "payoff": 13500
+    },
+    {
+      "start": 29,
+      "end": 41,
+      "payoff": 8000
+    },
+    {
+      "start": 29,
+      "end": 42,
+      "payoff": 13000
+    },
+    {
+      "start": 29,
+      "end": 43,
+      "payoff": 7500
+    },
+    {
+      "start": 29,
+      "end": 44,
+      "payoff": 10500
+    },
+    {
+      "start": 29,
+      "end": 45,
+      "payoff": 7500
+    },
+    {
+      "start": 29,
+      "end": 46,
+      "payoff": 9000
+    },
+    {
+      "start": 29,
+      "end": 47,
+      "payoff": 13500
+    },
+    {
+      "start": 29,
+      "end": 48,
+      "payoff": 10500
+    },
+    {
+      "start": 29,
+      "end": 49,
+      "payoff": 18000
+    },
+    {
+      "start": 29,
+      "end": 50,
+      "payoff": 20000
+    },
+    {
+      "start": 29,
+      "end": 51,
+      "payoff": 14000
+    },
+    {
+      "start": 29,
+      "end": 52,
+      "payoff": 20500
+    },
+    {
+      "start": 29,
+      "end": 53,
+      "payoff": 26500
+    },
+    {
+      "start": 29,
+      "end": 54,
+      "payoff": 14500
+    },
+    {
+      "start": 29,
+      "end": 55,
+      "payoff": 19000
+    },
+    {
+      "start": 29,
+      "end": 56,
+      "payoff": 27000
+    },
+    {
+      "start": 29,
+      "end": 57,
+      "payoff": 24000
+    },
+    {
+      "start": 29,
+      "end": 58,
+      "payoff": 13000
+    },
+    {
+      "start": 29,
+      "end": 59,
+      "payoff": 23500
+    },
+    {
+      "start": 29,
+      "end": 60,
+      "payoff": 21000
+    },
+    {
+      "start": 29,
+      "end": 61,
+      "payoff": 25500
+    },
+    {
+      "start": 29,
+      "end": 62,
+      "payoff": 17500
+    },
+    {
+      "start": 29,
+      "end": 63,
+      "payoff": 23000
+    },
+    {
+      "start": 29,
+      "end": 64,
+      "payoff": 24000
+    },
+    {
+      "start": 29,
+      "end": 65,
+      "payoff": 21000
+    },
+    {
+      "start": 29,
+      "end": 66,
+      "payoff": 25500
+    },
+    {
+      "start": 29,
+      "end": 67,
+      "payoff": 11500
+    },
+    {
+      "start": 30,
+      "end": 30,
+      "payoff": 0
+    },
+    {
+      "start": 30,
+      "end": 31,
+      "payoff": 500
+    },
+    {
+      "start": 30,
+      "end": 32,
+      "payoff": 2500
+    },
+    {
+      "start": 30,
+      "end": 33,
+      "payoff": 3500
+    },
+    {
+      "start": 30,
+      "end": 34,
+      "payoff": 8500
+    },
+    {
+      "start": 30,
+      "end": 35,
+      "payoff": 9000
+    },
+    {
+      "start": 30,
+      "end": 36,
+      "payoff": 7000
+    },
+    {
+      "start": 30,
+      "end": 37,
+      "payoff": 5000
+    },
+    {
+      "start": 30,
+      "end": 38,
+      "payoff": 2500
+    },
+    {
+      "start": 30,
+      "end": 39,
+      "payoff": 2000
+    },
+    {
+      "start": 30,
+      "end": 40,
+      "payoff": 8500
+    },
+    {
+      "start": 30,
+      "end": 41,
+      "payoff": 7500
+    },
+    {
+      "start": 30,
+      "end": 42,
+      "payoff": 12500
+    },
+    {
+      "start": 30,
+      "end": 43,
+      "payoff": 5000
+    },
+    {
+      "start": 30,
+      "end": 44,
+      "payoff": 10000
+    },
+    {
+      "start": 30,
+      "end": 45,
+      "payoff": 2500
+    },
+    {
+      "start": 30,
+      "end": 46,
+      "payoff": 7000
+    },
+    {
+      "start": 30,
+      "end": 47,
+      "payoff": 7500
+    },
+    {
+      "start": 30,
+      "end": 48,
+      "payoff": 10000
+    },
+    {
+      "start": 30,
+      "end": 49,
+      "payoff": 15000
+    },
+    {
+      "start": 30,
+      "end": 50,
+      "payoff": 17500
+    },
+    {
+      "start": 30,
+      "end": 51,
+      "payoff": 11500
+    },
+    {
+      "start": 30,
+      "end": 52,
+      "payoff": 15000
+    },
+    {
+      "start": 30,
+      "end": 53,
+      "payoff": 22500
+    },
+    {
+      "start": 30,
+      "end": 54,
+      "payoff": 12500
+    },
+    {
+      "start": 30,
+      "end": 55,
+      "payoff": 13500
+    },
+    {
+      "start": 30,
+      "end": 56,
+      "payoff": 24000
+    },
+    {
+      "start": 30,
+      "end": 57,
+      "payoff": 21000
+    },
+    {
+      "start": 30,
+      "end": 58,
+      "payoff": 6500
+    },
+    {
+      "start": 30,
+      "end": 59,
+      "payoff": 16000
+    },
+    {
+      "start": 30,
+      "end": 60,
+      "payoff": 14500
+    },
+    {
+      "start": 30,
+      "end": 61,
+      "payoff": 19500
+    },
+    {
+      "start": 30,
+      "end": 62,
+      "payoff": 11000
+    },
+    {
+      "start": 30,
+      "end": 63,
+      "payoff": 19000
+    },
+    {
+      "start": 30,
+      "end": 64,
+      "payoff": 19500
+    },
+    {
+      "start": 30,
+      "end": 65,
+      "payoff": 14500
+    },
+    {
+      "start": 30,
+      "end": 66,
+      "payoff": 19500
+    },
+    {
+      "start": 30,
+      "end": 67,
+      "payoff": 5000
+    },
+    {
+      "start": 31,
+      "end": 31,
+      "payoff": 0
+    },
+    {
+      "start": 31,
+      "end": 32,
+      "payoff": 2500
+    },
+    {
+      "start": 31,
+      "end": 33,
+      "payoff": 4000
+    },
+    {
+      "start": 31,
+      "end": 34,
+      "payoff": 8500
+    },
+    {
+      "start": 31,
+      "end": 35,
+      "payoff": 9000
+    },
+    {
+      "start": 31,
+      "end": 36,
+      "payoff": 7000
+    },
+    {
+      "start": 31,
+      "end": 37,
+      "payoff": 5000
+    },
+    {
+      "start": 31,
+      "end": 38,
+      "payoff": 2500
+    },
+    {
+      "start": 31,
+      "end": 39,
+      "payoff": 2000
+    },
+    {
+      "start": 31,
+      "end": 40,
+      "payoff": 8500
+    },
+    {
+      "start": 31,
+      "end": 41,
+      "payoff": 7500
+    },
+    {
+      "start": 31,
+      "end": 42,
+      "payoff": 12500
+    },
+    {
+      "start": 31,
+      "end": 43,
+      "payoff": 5000
+    },
+    {
+      "start": 31,
+      "end": 44,
+      "payoff": 10000
+    },
+    {
+      "start": 31,
+      "end": 45,
+      "payoff": 2500
+    },
+    {
+      "start": 31,
+      "end": 46,
+      "payoff": 7000
+    },
+    {
+      "start": 31,
+      "end": 47,
+      "payoff": 7500
+    },
+    {
+      "start": 31,
+      "end": 48,
+      "payoff": 10000
+    },
+    {
+      "start": 31,
+      "end": 49,
+      "payoff": 15000
+    },
+    {
+      "start": 31,
+      "end": 50,
+      "payoff": 17500
+    },
+    {
+      "start": 31,
+      "end": 51,
+      "payoff": 11500
+    },
+    {
+      "start": 31,
+      "end": 52,
+      "payoff": 15000
+    },
+    {
+      "start": 31,
+      "end": 53,
+      "payoff": 22500
+    },
+    {
+      "start": 31,
+      "end": 54,
+      "payoff": 12500
+    },
+    {
+      "start": 31,
+      "end": 55,
+      "payoff": 13500
+    },
+    {
+      "start": 31,
+      "end": 56,
+      "payoff": 24000
+    },
+    {
+      "start": 31,
+      "end": 57,
+      "payoff": 21000
+    },
+    {
+      "start": 31,
+      "end": 58,
+      "payoff": 6500
+    },
+    {
+      "start": 31,
+      "end": 59,
+      "payoff": 16000
+    },
+    {
+      "start": 31,
+      "end": 60,
+      "payoff": 14500
+    },
+    {
+      "start": 31,
+      "end": 61,
+      "payoff": 19500
+    },
+    {
+      "start": 31,
+      "end": 62,
+      "payoff": 11000
+    },
+    {
+      "start": 31,
+      "end": 63,
+      "payoff": 19000
+    },
+    {
+      "start": 31,
+      "end": 64,
+      "payoff": 19500
+    },
+    {
+      "start": 31,
+      "end": 65,
+      "payoff": 14500
+    },
+    {
+      "start": 31,
+      "end": 66,
+      "payoff": 19500
+    },
+    {
+      "start": 31,
+      "end": 67,
+      "payoff": 5000
+    },
+    {
+      "start": 32,
+      "end": 32,
+      "payoff": 0
+    },
+    {
+      "start": 32,
+      "end": 33,
+      "payoff": 4500
+    },
+    {
+      "start": 32,
+      "end": 34,
+      "payoff": 10000
+    },
+    {
+      "start": 32,
+      "end": 35,
+      "payoff": 6000
+    },
+    {
+      "start": 32,
+      "end": 36,
+      "payoff": 8500
+    },
+    {
+      "start": 32,
+      "end": 37,
+      "payoff": 3500
+    },
+    {
+      "start": 32,
+      "end": 38,
+      "payoff": 2000
+    },
+    {
+      "start": 32,
+      "end": 39,
+      "payoff": 2500
+    },
+    {
+      "start": 32,
+      "end": 40,
+      "payoff": 11000
+    },
+    {
+      "start": 32,
+      "end": 41,
+      "payoff": 10000
+    },
+    {
+      "start": 32,
+      "end": 42,
+      "payoff": 15000
+    },
+    {
+      "start": 32,
+      "end": 43,
+      "payoff": 8000
+    },
+    {
+      "start": 32,
+      "end": 44,
+      "payoff": 12000
+    },
+    {
+      "start": 32,
+      "end": 45,
+      "payoff": 5000
+    },
+    {
+      "start": 32,
+      "end": 46,
+      "payoff": 9000
+    },
+    {
+      "start": 32,
+      "end": 47,
+      "payoff": 10000
+    },
+    {
+      "start": 32,
+      "end": 48,
+      "payoff": 12000
+    },
+    {
+      "start": 32,
+      "end": 49,
+      "payoff": 17500
+    },
+    {
+      "start": 32,
+      "end": 50,
+      "payoff": 20000
+    },
+    {
+      "start": 32,
+      "end": 51,
+      "payoff": 14000
+    },
+    {
+      "start": 32,
+      "end": 52,
+      "payoff": 17000
+    },
+    {
+      "start": 32,
+      "end": 53,
+      "payoff": 25000
+    },
+    {
+      "start": 32,
+      "end": 54,
+      "payoff": 15000
+    },
+    {
+      "start": 32,
+      "end": 55,
+      "payoff": 16000
+    },
+    {
+      "start": 32,
+      "end": 56,
+      "payoff": 26000
+    },
+    {
+      "start": 32,
+      "end": 57,
+      "payoff": 23000
+    },
+    {
+      "start": 32,
+      "end": 58,
+      "payoff": 8500
+    },
+    {
+      "start": 32,
+      "end": 59,
+      "payoff": 17000
+    },
+    {
+      "start": 32,
+      "end": 60,
+      "payoff": 16500
+    },
+    {
+      "start": 32,
+      "end": 61,
+      "payoff": 21000
+    },
+    {
+      "start": 32,
+      "end": 62,
+      "payoff": 13000
+    },
+    {
+      "start": 32,
+      "end": 63,
+      "payoff": 22000
+    },
+    {
+      "start": 32,
+      "end": 64,
+      "payoff": 21000
+    },
+    {
+      "start": 32,
+      "end": 65,
+      "payoff": 16000
+    },
+    {
+      "start": 32,
+      "end": 66,
+      "payoff": 21000
+    },
+    {
+      "start": 32,
+      "end": 67,
+      "payoff": 8000
+    },
+    {
+      "start": 33,
+      "end": 33,
+      "payoff": 0
+    },
+    {
+      "start": 33,
+      "end": 34,
+      "payoff": 5000
+    },
+    {
+      "start": 33,
+      "end": 35,
+      "payoff": 1500
+    },
+    {
+      "start": 33,
+      "end": 36,
+      "payoff": 3500
+    },
+    {
+      "start": 33,
+      "end": 37,
+      "payoff": 4500
+    },
+    {
+      "start": 33,
+      "end": 38,
+      "payoff": 6000
+    },
+    {
+      "start": 33,
+      "end": 39,
+      "payoff": 2000
+    },
+    {
+      "start": 33,
+      "end": 40,
+      "payoff": 11000
+    },
+    {
+      "start": 33,
+      "end": 41,
+      "payoff": 7000
+    },
+    {
+      "start": 33,
+      "end": 42,
+      "payoff": 12000
+    },
+    {
+      "start": 33,
+      "end": 43,
+      "payoff": 5000
+    },
+    {
+      "start": 33,
+      "end": 44,
+      "payoff": 9500
+    },
+    {
+      "start": 33,
+      "end": 45,
+      "payoff": 3500
+    },
+    {
+      "start": 33,
+      "end": 46,
+      "payoff": 7000
+    },
+    {
+      "start": 33,
+      "end": 47,
+      "payoff": 10000
+    },
+    {
+      "start": 33,
+      "end": 48,
+      "payoff": 9500
+    },
+    {
+      "start": 33,
+      "end": 49,
+      "payoff": 15500
+    },
+    {
+      "start": 33,
+      "end": 50,
+      "payoff": 18000
+    },
+    {
+      "start": 33,
+      "end": 51,
+      "payoff": 11500
+    },
+    {
+      "start": 33,
+      "end": 52,
+      "payoff": 16000
+    },
+    {
+      "start": 33,
+      "end": 53,
+      "payoff": 24500
+    },
+    {
+      "start": 33,
+      "end": 54,
+      "payoff": 12500
+    },
+    {
+      "start": 33,
+      "end": 55,
+      "payoff": 16000
+    },
+    {
+      "start": 33,
+      "end": 56,
+      "payoff": 26500
+    },
+    {
+      "start": 33,
+      "end": 57,
+      "payoff": 23000
+    },
+    {
+      "start": 33,
+      "end": 58,
+      "payoff": 10000
+    },
+    {
+      "start": 33,
+      "end": 59,
+      "payoff": 19000
+    },
+    {
+      "start": 33,
+      "end": 60,
+      "payoff": 18500
+    },
+    {
+      "start": 33,
+      "end": 61,
+      "payoff": 21500
+    },
+    {
+      "start": 33,
+      "end": 62,
+      "payoff": 16000
+    },
+    {
+      "start": 33,
+      "end": 63,
+      "payoff": 21500
+    },
+    {
+      "start": 33,
+      "end": 64,
+      "payoff": 21500
+    },
+    {
+      "start": 33,
+      "end": 65,
+      "payoff": 18000
+    },
+    {
+      "start": 33,
+      "end": 66,
+      "payoff": 21500
+    },
+    {
+      "start": 33,
+      "end": 67,
+      "payoff": 7500
+    },
+    {
+      "start": 34,
+      "end": 34,
+      "payoff": 0
+    },
+    {
+      "start": 34,
+      "end": 35,
+      "payoff": 4000
+    },
+    {
+      "start": 34,
+      "end": 36,
+      "payoff": 2000
+    },
+    {
+      "start": 34,
+      "end": 37,
+      "payoff": 7500
+    },
+    {
+      "start": 34,
+      "end": 38,
+      "payoff": 11500
+    },
+    {
+      "start": 34,
+      "end": 39,
+      "payoff": 8000
+    },
+    {
+      "start": 34,
+      "end": 40,
+      "payoff": 12000
+    },
+    {
+      "start": 34,
+      "end": 41,
+      "payoff": 6000
+    },
+    {
+      "start": 34,
+      "end": 42,
+      "payoff": 9500
+    },
+    {
+      "start": 34,
+      "end": 43,
+      "payoff": 5500
+    },
+    {
+      "start": 34,
+      "end": 44,
+      "payoff": 7000
+    },
+    {
+      "start": 34,
+      "end": 45,
+      "payoff": 8500
+    },
+    {
+      "start": 34,
+      "end": 46,
+      "payoff": 7000
+    },
+    {
+      "start": 34,
+      "end": 47,
+      "payoff": 12000
+    },
+    {
+      "start": 34,
+      "end": 48,
+      "payoff": 7000
+    },
+    {
+      "start": 34,
+      "end": 49,
+      "payoff": 16000
+    },
+    {
+      "start": 34,
+      "end": 50,
+      "payoff": 18000
+    },
+    {
+      "start": 34,
+      "end": 51,
+      "payoff": 12000
+    },
+    {
+      "start": 34,
+      "end": 52,
+      "payoff": 17500
+    },
+    {
+      "start": 34,
+      "end": 53,
+      "payoff": 24500
+    },
+    {
+      "start": 34,
+      "end": 54,
+      "payoff": 12500
+    },
+    {
+      "start": 34,
+      "end": 55,
+      "payoff": 17000
+    },
+    {
+      "start": 34,
+      "end": 56,
+      "payoff": 25000
+    },
+    {
+      "start": 34,
+      "end": 57,
+      "payoff": 22000
+    },
+    {
+      "start": 34,
+      "end": 58,
+      "payoff": 15000
+    },
+    {
+      "start": 34,
+      "end": 59,
+      "payoff": 21500
+    },
+    {
+      "start": 34,
+      "end": 60,
+      "payoff": 23000
+    },
+    {
+      "start": 34,
+      "end": 61,
+      "payoff": 24500
+    },
+    {
+      "start": 34,
+      "end": 62,
+      "payoff": 22500
+    },
+    {
+      "start": 34,
+      "end": 63,
+      "payoff": 22500
+    },
+    {
+      "start": 34,
+      "end": 64,
+      "payoff": 24000
+    },
+    {
+      "start": 34,
+      "end": 65,
+      "payoff": 22500
+    },
+    {
+      "start": 34,
+      "end": 66,
+      "payoff": 24500
+    },
+    {
+      "start": 34,
+      "end": 67,
+      "payoff": 12000
+    },
+    {
+      "start": 35,
+      "end": 35,
+      "payoff": 0
+    },
+    {
+      "start": 35,
+      "end": 36,
+      "payoff": 2500
+    },
+    {
+      "start": 35,
+      "end": 37,
+      "payoff": 4000
+    },
+    {
+      "start": 35,
+      "end": 38,
+      "payoff": 7500
+    },
+    {
+      "start": 35,
+      "end": 39,
+      "payoff": 4000
+    },
+    {
+      "start": 35,
+      "end": 40,
+      "payoff": 11000
+    },
+    {
+      "start": 35,
+      "end": 41,
+      "payoff": 6500
+    },
+    {
+      "start": 35,
+      "end": 42,
+      "payoff": 11000
+    },
+    {
+      "start": 35,
+      "end": 43,
+      "payoff": 5000
+    },
+    {
+      "start": 35,
+      "end": 44,
+      "payoff": 9000
+    },
+    {
+      "start": 35,
+      "end": 45,
+      "payoff": 5000
+    },
+    {
+      "start": 35,
+      "end": 46,
+      "payoff": 6500
+    },
+    {
+      "start": 35,
+      "end": 47,
+      "payoff": 11000
+    },
+    {
+      "start": 35,
+      "end": 48,
+      "payoff": 9000
+    },
+    {
+      "start": 35,
+      "end": 49,
+      "payoff": 15500
+    },
+    {
+      "start": 35,
+      "end": 50,
+      "payoff": 17500
+    },
+    {
+      "start": 35,
+      "end": 51,
+      "payoff": 12000
+    },
+    {
+      "start": 35,
+      "end": 52,
+      "payoff": 17000
+    },
+    {
+      "start": 35,
+      "end": 53,
+      "payoff": 25000
+    },
+    {
+      "start": 35,
+      "end": 54,
+      "payoff": 12500
+    },
+    {
+      "start": 35,
+      "end": 55,
+      "payoff": 16500
+    },
+    {
+      "start": 35,
+      "end": 56,
+      "payoff": 24500
+    },
+    {
+      "start": 35,
+      "end": 57,
+      "payoff": 21500
+    },
+    {
+      "start": 35,
+      "end": 58,
+      "payoff": 11500
+    },
+    {
+      "start": 35,
+      "end": 59,
+      "payoff": 21000
+    },
+    {
+      "start": 35,
+      "end": 60,
+      "payoff": 19500
+    },
+    {
+      "start": 35,
+      "end": 61,
+      "payoff": 23000
+    },
+    {
+      "start": 35,
+      "end": 62,
+      "payoff": 17500
+    },
+    {
+      "start": 35,
+      "end": 63,
+      "payoff": 20500
+    },
+    {
+      "start": 35,
+      "end": 64,
+      "payoff": 22000
+    },
+    {
+      "start": 35,
+      "end": 65,
+      "payoff": 19000
+    },
+    {
+      "start": 35,
+      "end": 66,
+      "payoff": 23000
+    },
+    {
+      "start": 35,
+      "end": 67,
+      "payoff": 8500
+    },
+    {
+      "start": 36,
+      "end": 36,
+      "payoff": 0
+    },
+    {
+      "start": 36,
+      "end": 37,
+      "payoff": 5500
+    },
+    {
+      "start": 36,
+      "end": 38,
+      "payoff": 10000
+    },
+    {
+      "start": 36,
+      "end": 39,
+      "payoff": 6500
+    },
+    {
+      "start": 36,
+      "end": 40,
+      "payoff": 12500
+    },
+    {
+      "start": 36,
+      "end": 41,
+      "payoff": 6500
+    },
+    {
+      "start": 36,
+      "end": 42,
+      "payoff": 11000
+    },
+    {
+      "start": 36,
+      "end": 43,
+      "payoff": 6000
+    },
+    {
+      "start": 36,
+      "end": 44,
+      "payoff": 8500
+    },
+    {
+      "start": 36,
+      "end": 45,
+      "payoff": 7500
+    },
+    {
+      "start": 36,
+      "end": 46,
+      "payoff": 7500
+    },
+    {
+      "start": 36,
+      "end": 47,
+      "payoff": 12500
+    },
+    {
+      "start": 36,
+      "end": 48,
+      "payoff": 8500
+    },
+    {
+      "start": 36,
+      "end": 49,
+      "payoff": 16500
+    },
+    {
+      "start": 36,
+      "end": 50,
+      "payoff": 18500
+    },
+    {
+      "start": 36,
+      "end": 51,
+      "payoff": 12500
+    },
+    {
+      "start": 36,
+      "end": 52,
+      "payoff": 19000
+    },
+    {
+      "start": 36,
+      "end": 53,
+      "payoff": 25000
+    },
+    {
+      "start": 36,
+      "end": 54,
+      "payoff": 13000
+    },
+    {
+      "start": 36,
+      "end": 55,
+      "payoff": 19000
+    },
+    {
+      "start": 36,
+      "end": 56,
+      "payoff": 25500
+    },
+    {
+      "start": 36,
+      "end": 57,
+      "payoff": 22500
+    },
+    {
+      "start": 36,
+      "end": 58,
+      "payoff": 13500
+    },
+    {
+      "start": 36,
+      "end": 59,
+      "payoff": 22000
+    },
+    {
+      "start": 36,
+      "end": 60,
+      "payoff": 22000
+    },
+    {
+      "start": 36,
+      "end": 61,
+      "payoff": 25500
+    },
+    {
+      "start": 36,
+      "end": 62,
+      "payoff": 19500
+    },
+    {
+      "start": 36,
+      "end": 63,
+      "payoff": 23000
+    },
+    {
+      "start": 36,
+      "end": 64,
+      "payoff": 24500
+    },
+    {
+      "start": 36,
+      "end": 65,
+      "payoff": 21500
+    },
+    {
+      "start": 36,
+      "end": 66,
+      "payoff": 25500
+    },
+    {
+      "start": 36,
+      "end": 67,
+      "payoff": 11000
+    },
+    {
+      "start": 37,
+      "end": 37,
+      "payoff": 0
+    },
+    {
+      "start": 37,
+      "end": 38,
+      "payoff": 5500
+    },
+    {
+      "start": 37,
+      "end": 39,
+      "payoff": 3000
+    },
+    {
+      "start": 37,
+      "end": 40,
+      "payoff": 13500
+    },
+    {
+      "start": 37,
+      "end": 41,
+      "payoff": 10500
+    },
+    {
+      "start": 37,
+      "end": 42,
+      "payoff": 15000
+    },
+    {
+      "start": 37,
+      "end": 43,
+      "payoff": 8500
+    },
+    {
+      "start": 37,
+      "end": 44,
+      "payoff": 12500
+    },
+    {
+      "start": 37,
+      "end": 45,
+      "payoff": 7500
+    },
+    {
+      "start": 37,
+      "end": 46,
+      "payoff": 10500
+    },
+    {
+      "start": 37,
+      "end": 47,
+      "payoff": 13500
+    },
+    {
+      "start": 37,
+      "end": 48,
+      "payoff": 12500
+    },
+    {
+      "start": 37,
+      "end": 49,
+      "payoff": 19000
+    },
+    {
+      "start": 37,
+      "end": 50,
+      "payoff": 21500
+    },
+    {
+      "start": 37,
+      "end": 51,
+      "payoff": 15500
+    },
+    {
+      "start": 37,
+      "end": 52,
+      "payoff": 18500
+    },
+    {
+      "start": 37,
+      "end": 53,
+      "payoff": 27500
+    },
+    {
+      "start": 37,
+      "end": 54,
+      "payoff": 15500
+    },
+    {
+      "start": 37,
+      "end": 55,
+      "payoff": 18500
+    },
+    {
+      "start": 37,
+      "end": 56,
+      "payoff": 29000
+    },
+    {
+      "start": 37,
+      "end": 57,
+      "payoff": 26000
+    },
+    {
+      "start": 37,
+      "end": 58,
+      "payoff": 11500
+    },
+    {
+      "start": 37,
+      "end": 59,
+      "payoff": 20000
+    },
+    {
+      "start": 37,
+      "end": 60,
+      "payoff": 19500
+    },
+    {
+      "start": 37,
+      "end": 61,
+      "payoff": 24500
+    },
+    {
+      "start": 37,
+      "end": 62,
+      "payoff": 16000
+    },
+    {
+      "start": 37,
+      "end": 63,
+      "payoff": 22000
+    },
+    {
+      "start": 37,
+      "end": 64,
+      "payoff": 23500
+    },
+    {
+      "start": 37,
+      "end": 65,
+      "payoff": 19500
+    },
+    {
+      "start": 37,
+      "end": 66,
+      "payoff": 24500
+    },
+    {
+      "start": 37,
+      "end": 67,
+      "payoff": 10000
+    },
+    {
+      "start": 38,
+      "end": 38,
+      "payoff": 0
+    },
+    {
+      "start": 38,
+      "end": 39,
+      "payoff": 5000
+    },
+    {
+      "start": 38,
+      "end": 40,
+      "payoff": 11000
+    },
+    {
+      "start": 38,
+      "end": 41,
+      "payoff": 10000
+    },
+    {
+      "start": 38,
+      "end": 42,
+      "payoff": 15000
+    },
+    {
+      "start": 38,
+      "end": 43,
+      "payoff": 8000
+    },
+    {
+      "start": 38,
+      "end": 44,
+      "payoff": 12500
+    },
+    {
+      "start": 38,
+      "end": 45,
+      "payoff": 5000
+    },
+    {
+      "start": 38,
+      "end": 46,
+      "payoff": 10000
+    },
+    {
+      "start": 38,
+      "end": 47,
+      "payoff": 9500
+    },
+    {
+      "start": 38,
+      "end": 48,
+      "payoff": 12500
+    },
+    {
+      "start": 38,
+      "end": 49,
+      "payoff": 17500
+    },
+    {
+      "start": 38,
+      "end": 50,
+      "payoff": 19500
+    },
+    {
+      "start": 38,
+      "end": 51,
+      "payoff": 14000
+    },
+    {
+      "start": 38,
+      "end": 52,
+      "payoff": 17500
+    },
+    {
+      "start": 38,
+      "end": 53,
+      "payoff": 25000
+    },
+    {
+      "start": 38,
+      "end": 54,
+      "payoff": 15000
+    },
+    {
+      "start": 38,
+      "end": 55,
+      "payoff": 16000
+    },
+    {
+      "start": 38,
+      "end": 56,
+      "payoff": 26500
+    },
+    {
+      "start": 38,
+      "end": 57,
+      "payoff": 23500
+    },
+    {
+      "start": 38,
+      "end": 58,
+      "payoff": 6000
+    },
+    {
+      "start": 38,
+      "end": 59,
+      "payoff": 14500
+    },
+    {
+      "start": 38,
+      "end": 60,
+      "payoff": 14500
+    },
+    {
+      "start": 38,
+      "end": 61,
+      "payoff": 19000
+    },
+    {
+      "start": 38,
+      "end": 62,
+      "payoff": 10500
+    },
+    {
+      "start": 38,
+      "end": 63,
+      "payoff": 20000
+    },
+    {
+      "start": 38,
+      "end": 64,
+      "payoff": 19000
+    },
+    {
+      "start": 38,
+      "end": 65,
+      "payoff": 17000
+    },
+    {
+      "start": 38,
+      "end": 66,
+      "payoff": 19000
+    },
+    {
+      "start": 38,
+      "end": 67,
+      "payoff": 7000
+    },
+    {
+      "start": 39,
+      "end": 39,
+      "payoff": 0
+    },
+    {
+      "start": 39,
+      "end": 40,
+      "payoff": 10000
+    },
+    {
+      "start": 39,
+      "end": 41,
+      "payoff": 8000
+    },
+    {
+      "start": 39,
+      "end": 42,
+      "payoff": 13000
+    },
+    {
+      "start": 39,
+      "end": 43,
+      "payoff": 5500
+    },
+    {
+      "start": 39,
+      "end": 44,
+      "payoff": 6000
+    },
+    {
+      "start": 39,
+      "end": 45,
+      "payoff": 10500
+    },
+    {
+      "start": 39,
+      "end": 46,
+      "payoff": 7500
+    },
+    {
+      "start": 39,
+      "end": 47,
+      "payoff": 10000
+    },
+    {
+      "start": 39,
+      "end": 48,
+      "payoff": 10500
+    },
+    {
+      "start": 39,
+      "end": 49,
+      "payoff": 16000
+    },
+    {
+      "start": 39,
+      "end": 50,
+      "payoff": 18500
+    },
+    {
+      "start": 39,
+      "end": 51,
+      "payoff": 12500
+    },
+    {
+      "start": 39,
+      "end": 52,
+      "payoff": 15500
+    },
+    {
+      "start": 39,
+      "end": 53,
+      "payoff": 24000
+    },
+    {
+      "start": 39,
+      "end": 54,
+      "payoff": 13000
+    },
+    {
+      "start": 39,
+      "end": 55,
+      "payoff": 15000
+    },
+    {
+      "start": 39,
+      "end": 56,
+      "payoff": 26000
+    },
+    {
+      "start": 39,
+      "end": 57,
+      "payoff": 22500
+    },
+    {
+      "start": 39,
+      "end": 58,
+      "payoff": 8500
+    },
+    {
+      "start": 39,
+      "end": 59,
+      "payoff": 17000
+    },
+    {
+      "start": 39,
+      "end": 60,
+      "payoff": 16500
+    },
+    {
+      "start": 39,
+      "end": 61,
+      "payoff": 21500
+    },
+    {
+      "start": 39,
+      "end": 62,
+      "payoff": 13000
+    },
+    {
+      "start": 39,
+      "end": 63,
+      "payoff": 21000
+    },
+    {
+      "start": 39,
+      "end": 64,
+      "payoff": 21500
+    },
+    {
+      "start": 39,
+      "end": 65,
+      "payoff": 16500
+    },
+    {
+      "start": 39,
+      "end": 66,
+      "payoff": 21500
+    },
+    {
+      "start": 39,
+      "end": 67,
+      "payoff": 6500
+    },
+    {
+      "start": 40,
+      "end": 40,
+      "payoff": 0
+    },
+    {
+      "start": 40,
+      "end": 41,
+      "payoff": 7000
+    },
+    {
+      "start": 40,
+      "end": 42,
+      "payoff": 11500
+    },
+    {
+      "start": 40,
+      "end": 43,
+      "payoff": 6500
+    },
+    {
+      "start": 40,
+      "end": 44,
+      "payoff": 9000
+    },
+    {
+      "start": 40,
+      "end": 45,
+      "payoff": 7500
+    },
+    {
+      "start": 40,
+      "end": 46,
+      "payoff": 5500
+    },
+    {
+      "start": 40,
+      "end": 47,
+      "payoff": 1000
+    },
+    {
+      "start": 40,
+      "end": 48,
+      "payoff": 9000
+    },
+    {
+      "start": 40,
+      "end": 49,
+      "payoff": 6500
+    },
+    {
+      "start": 40,
+      "end": 50,
+      "payoff": 9000
+    },
+    {
+      "start": 40,
+      "end": 51,
+      "payoff": 3500
+    },
+    {
+      "start": 40,
+      "end": 52,
+      "payoff": 6000
+    },
+    {
+      "start": 40,
+      "end": 53,
+      "payoff": 13500
+    },
+    {
+      "start": 40,
+      "end": 54,
+      "payoff": 5500
+    },
+    {
+      "start": 40,
+      "end": 55,
+      "payoff": 5500
+    },
+    {
+      "start": 40,
+      "end": 56,
+      "payoff": 15500
+    },
+    {
+      "start": 40,
+      "end": 57,
+      "payoff": 12500
+    },
+    {
+      "start": 40,
+      "end": 58,
+      "payoff": 7500
+    },
+    {
+      "start": 40,
+      "end": 59,
+      "payoff": 10000
+    },
+    {
+      "start": 40,
+      "end": 60,
+      "payoff": 13500
+    },
+    {
+      "start": 40,
+      "end": 61,
+      "payoff": 13500
+    },
+    {
+      "start": 40,
+      "end": 62,
+      "payoff": 10500
+    },
+    {
+      "start": 40,
+      "end": 63,
+      "payoff": 11500
+    },
+    {
+      "start": 40,
+      "end": 64,
+      "payoff": 13000
+    },
+    {
+      "start": 40,
+      "end": 65,
+      "payoff": 14500
+    },
+    {
+      "start": 40,
+      "end": 66,
+      "payoff": 13500
+    },
+    {
+      "start": 40,
+      "end": 67,
+      "payoff": 4500
+    },
+    {
+      "start": 41,
+      "end": 41,
+      "payoff": 0
+    },
+    {
+      "start": 41,
+      "end": 42,
+      "payoff": 5000
+    },
+    {
+      "start": 41,
+      "end": 43,
+      "payoff": 2000
+    },
+    {
+      "start": 41,
+      "end": 44,
+      "payoff": 2500
+    },
+    {
+      "start": 41,
+      "end": 45,
+      "payoff": 5500
+    },
+    {
+      "start": 41,
+      "end": 46,
+      "payoff": 1500
+    },
+    {
+      "start": 41,
+      "end": 47,
+      "payoff": 7000
+    },
+    {
+      "start": 41,
+      "end": 48,
+      "payoff": 2500
+    },
+    {
+      "start": 41,
+      "end": 49,
+      "payoff": 10500
+    },
+    {
+      "start": 41,
+      "end": 50,
+      "payoff": 14000
+    },
+    {
+      "start": 41,
+      "end": 51,
+      "payoff": 6500
+    },
+    {
+      "start": 41,
+      "end": 52,
+      "payoff": 12000
+    },
+    {
+      "start": 41,
+      "end": 53,
+      "payoff": 19000
+    },
+    {
+      "start": 41,
+      "end": 54,
+      "payoff": 7000
+    },
+    {
+      "start": 41,
+      "end": 55,
+      "payoff": 11500
+    },
+    {
+      "start": 41,
+      "end": 56,
+      "payoff": 19500
+    },
+    {
+      "start": 41,
+      "end": 57,
+      "payoff": 16500
+    },
+    {
+      "start": 41,
+      "end": 58,
+      "payoff": 11500
+    },
+    {
+      "start": 41,
+      "end": 59,
+      "payoff": 16000
+    },
+    {
+      "start": 41,
+      "end": 60,
+      "payoff": 19500
+    },
+    {
+      "start": 41,
+      "end": 61,
+      "payoff": 19000
+    },
+    {
+      "start": 41,
+      "end": 62,
+      "payoff": 17000
+    },
+    {
+      "start": 41,
+      "end": 63,
+      "payoff": 17000
+    },
+    {
+      "start": 41,
+      "end": 64,
+      "payoff": 18000
+    },
+    {
+      "start": 41,
+      "end": 65,
+      "payoff": 20500
+    },
+    {
+      "start": 41,
+      "end": 66,
+      "payoff": 19000
+    },
+    {
+      "start": 41,
+      "end": 67,
+      "payoff": 9000
+    },
+    {
+      "start": 42,
+      "end": 42,
+      "payoff": 0
+    },
+    {
+      "start": 42,
+      "end": 43,
+      "payoff": 7000
+    },
+    {
+      "start": 42,
+      "end": 44,
+      "payoff": 2500
+    },
+    {
+      "start": 42,
+      "end": 45,
+      "payoff": 10500
+    },
+    {
+      "start": 42,
+      "end": 46,
+      "payoff": 6000
+    },
+    {
+      "start": 42,
+      "end": 47,
+      "payoff": 12500
+    },
+    {
+      "start": 42,
+      "end": 48,
+      "payoff": 2500
+    },
+    {
+      "start": 42,
+      "end": 49,
+      "payoff": 6500
+    },
+    {
+      "start": 42,
+      "end": 50,
+      "payoff": 9000
+    },
+    {
+      "start": 42,
+      "end": 51,
+      "payoff": 7500
+    },
+    {
+      "start": 42,
+      "end": 52,
+      "payoff": 13500
+    },
+    {
+      "start": 42,
+      "end": 53,
+      "payoff": 16000
+    },
+    {
+      "start": 42,
+      "end": 54,
+      "payoff": 4500
+    },
+    {
+      "start": 42,
+      "end": 55,
+      "payoff": 13000
+    },
+    {
+      "start": 42,
+      "end": 56,
+      "payoff": 15000
+    },
+    {
+      "start": 42,
+      "end": 57,
+      "payoff": 12000
+    },
+    {
+      "start": 42,
+      "end": 58,
+      "payoff": 16500
+    },
+    {
+      "start": 42,
+      "end": 59,
+      "payoff": 17500
+    },
+    {
+      "start": 42,
+      "end": 60,
+      "payoff": 21000
+    },
+    {
+      "start": 42,
+      "end": 61,
+      "payoff": 20500
+    },
+    {
+      "start": 42,
+      "end": 62,
+      "payoff": 22000
+    },
+    {
+      "start": 42,
+      "end": 63,
+      "payoff": 15000
+    },
+    {
+      "start": 42,
+      "end": 64,
+      "payoff": 20000
+    },
+    {
+      "start": 42,
+      "end": 65,
+      "payoff": 22000
+    },
+    {
+      "start": 42,
+      "end": 66,
+      "payoff": 20500
+    },
+    {
+      "start": 42,
+      "end": 67,
+      "payoff": 14000
+    },
+    {
+      "start": 43,
+      "end": 43,
+      "payoff": 0
+    },
+    {
+      "start": 43,
+      "end": 44,
+      "payoff": 5000
+    },
+    {
+      "start": 43,
+      "end": 45,
+      "payoff": 3500
+    },
+    {
+      "start": 43,
+      "end": 46,
+      "payoff": 2000
+    },
+    {
+      "start": 43,
+      "end": 47,
+      "payoff": 6000
+    },
+    {
+      "start": 43,
+      "end": 48,
+      "payoff": 5000
+    },
+    {
+      "start": 43,
+      "end": 49,
+      "payoff": 10500
+    },
+    {
+      "start": 43,
+      "end": 50,
+      "payoff": 13000
+    },
+    {
+      "start": 43,
+      "end": 51,
+      "payoff": 7000
+    },
+    {
+      "start": 43,
+      "end": 52,
+      "payoff": 12500
+    },
+    {
+      "start": 43,
+      "end": 53,
+      "payoff": 19500
+    },
+    {
+      "start": 43,
+      "end": 54,
+      "payoff": 7500
+    },
+    {
+      "start": 43,
+      "end": 55,
+      "payoff": 12000
+    },
+    {
+      "start": 43,
+      "end": 56,
+      "payoff": 19500
+    },
+    {
+      "start": 43,
+      "end": 57,
+      "payoff": 16500
+    },
+    {
+      "start": 43,
+      "end": 58,
+      "payoff": 9500
+    },
+    {
+      "start": 43,
+      "end": 59,
+      "payoff": 16500
+    },
+    {
+      "start": 43,
+      "end": 60,
+      "payoff": 17500
+    },
+    {
+      "start": 43,
+      "end": 61,
+      "payoff": 19500
+    },
+    {
+      "start": 43,
+      "end": 62,
+      "payoff": 15000
+    },
+    {
+      "start": 43,
+      "end": 63,
+      "payoff": 17500
+    },
+    {
+      "start": 43,
+      "end": 64,
+      "payoff": 19000
+    },
+    {
+      "start": 43,
+      "end": 65,
+      "payoff": 17500
+    },
+    {
+      "start": 43,
+      "end": 66,
+      "payoff": 19500
+    },
+    {
+      "start": 43,
+      "end": 67,
+      "payoff": 6500
+    },
+    {
+      "start": 44,
+      "end": 44,
+      "payoff": 0
+    },
+    {
+      "start": 44,
+      "end": 45,
+      "payoff": 8000
+    },
+    {
+      "start": 44,
+      "end": 46,
+      "payoff": 3500
+    },
+    {
+      "start": 44,
+      "end": 47,
+      "payoff": 9500
+    },
+    {
+      "start": 44,
+      "end": 48,
+      "payoff": 0
+    },
+    {
+      "start": 44,
+      "end": 49,
+      "payoff": 9000
+    },
+    {
+      "start": 44,
+      "end": 50,
+      "payoff": 11000
+    },
+    {
+      "start": 44,
+      "end": 51,
+      "payoff": 8000
+    },
+    {
+      "start": 44,
+      "end": 52,
+      "payoff": 13500
+    },
+    {
+      "start": 44,
+      "end": 53,
+      "payoff": 18000
+    },
+    {
+      "start": 44,
+      "end": 54,
+      "payoff": 5000
+    },
+    {
+      "start": 44,
+      "end": 55,
+      "payoff": 13500
+    },
+    {
+      "start": 44,
+      "end": 56,
+      "payoff": 17500
+    },
+    {
+      "start": 44,
+      "end": 57,
+      "payoff": 14500
+    },
+    {
+      "start": 44,
+      "end": 58,
+      "payoff": 14000
+    },
+    {
+      "start": 44,
+      "end": 59,
+      "payoff": 18000
+    },
+    {
+      "start": 44,
+      "end": 60,
+      "payoff": 21500
+    },
+    {
+      "start": 44,
+      "end": 61,
+      "payoff": 21000
+    },
+    {
+      "start": 44,
+      "end": 62,
+      "payoff": 19500
+    },
+    {
+      "start": 44,
+      "end": 63,
+      "payoff": 19000
+    },
+    {
+      "start": 44,
+      "end": 64,
+      "payoff": 20500
+    },
+    {
+      "start": 44,
+      "end": 65,
+      "payoff": 22500
+    },
+    {
+      "start": 44,
+      "end": 66,
+      "payoff": 21000
+    },
+    {
+      "start": 44,
+      "end": 67,
+      "payoff": 11500
+    },
+    {
+      "start": 45,
+      "end": 45,
+      "payoff": 0
+    },
+    {
+      "start": 45,
+      "end": 46,
+      "payoff": 5500
+    },
+    {
+      "start": 45,
+      "end": 47,
+      "payoff": 7000
+    },
+    {
+      "start": 45,
+      "end": 48,
+      "payoff": 8000
+    },
+    {
+      "start": 45,
+      "end": 49,
+      "payoff": 14000
+    },
+    {
+      "start": 45,
+      "end": 50,
+      "payoff": 16500
+    },
+    {
+      "start": 45,
+      "end": 51,
+      "payoff": 10500
+    },
+    {
+      "start": 45,
+      "end": 52,
+      "payoff": 12500
+    },
+    {
+      "start": 45,
+      "end": 53,
+      "payoff": 21500
+    },
+    {
+      "start": 45,
+      "end": 54,
+      "payoff": 9000
+    },
+    {
+      "start": 45,
+      "end": 55,
+      "payoff": 12500
+    },
+    {
+      "start": 45,
+      "end": 56,
+      "payoff": 23000
+    },
+    {
+      "start": 45,
+      "end": 57,
+      "payoff": 20000
+    },
+    {
+      "start": 45,
+      "end": 58,
+      "payoff": 7000
+    },
+    {
+      "start": 45,
+      "end": 59,
+      "payoff": 15500
+    },
+    {
+      "start": 45,
+      "end": 60,
+      "payoff": 15000
+    },
+    {
+      "start": 45,
+      "end": 61,
+      "payoff": 18000
+    },
+    {
+      "start": 45,
+      "end": 62,
+      "payoff": 12500
+    },
+    {
+      "start": 45,
+      "end": 63,
+      "payoff": 16000
+    },
+    {
+      "start": 45,
+      "end": 64,
+      "payoff": 17500
+    },
+    {
+      "start": 45,
+      "end": 65,
+      "payoff": 14500
+    },
+    {
+      "start": 45,
+      "end": 66,
+      "payoff": 18000
+    },
+    {
+      "start": 45,
+      "end": 67,
+      "payoff": 4000
+    },
+    {
+      "start": 46,
+      "end": 46,
+      "payoff": 0
+    },
+    {
+      "start": 46,
+      "end": 47,
+      "payoff": 5500
+    },
+    {
+      "start": 46,
+      "end": 48,
+      "payoff": 3500
+    },
+    {
+      "start": 46,
+      "end": 49,
+      "payoff": 9000
+    },
+    {
+      "start": 46,
+      "end": 50,
+      "payoff": 11500
+    },
+    {
+      "start": 46,
+      "end": 51,
+      "payoff": 5000
+    },
+    {
+      "start": 46,
+      "end": 52,
+      "payoff": 10500
+    },
+    {
+      "start": 46,
+      "end": 53,
+      "payoff": 17500
+    },
+    {
+      "start": 46,
+      "end": 54,
+      "payoff": 5500
+    },
+    {
+      "start": 46,
+      "end": 55,
+      "payoff": 10500
+    },
+    {
+      "start": 46,
+      "end": 56,
+      "payoff": 18000
+    },
+    {
+      "start": 46,
+      "end": 57,
+      "payoff": 15000
+    },
+    {
+      "start": 46,
+      "end": 58,
+      "payoff": 11500
+    },
+    {
+      "start": 46,
+      "end": 59,
+      "payoff": 15000
+    },
+    {
+      "start": 46,
+      "end": 60,
+      "payoff": 18000
+    },
+    {
+      "start": 46,
+      "end": 61,
+      "payoff": 17500
+    },
+    {
+      "start": 46,
+      "end": 62,
+      "payoff": 16000
+    },
+    {
+      "start": 46,
+      "end": 63,
+      "payoff": 15500
+    },
+    {
+      "start": 46,
+      "end": 64,
+      "payoff": 17000
+    },
+    {
+      "start": 46,
+      "end": 65,
+      "payoff": 19000
+    },
+    {
+      "start": 46,
+      "end": 66,
+      "payoff": 17500
+    },
+    {
+      "start": 46,
+      "end": 67,
+      "payoff": 8500
+    },
+    {
+      "start": 47,
+      "end": 47,
+      "payoff": 0
+    },
+    {
+      "start": 47,
+      "end": 48,
+      "payoff": 9500
+    },
+    {
+      "start": 47,
+      "end": 49,
+      "payoff": 7500
+    },
+    {
+      "start": 47,
+      "end": 50,
+      "payoff": 10000
+    },
+    {
+      "start": 47,
+      "end": 51,
+      "payoff": 4500
+    },
+    {
+      "start": 47,
+      "end": 52,
+      "payoff": 7500
+    },
+    {
+      "start": 47,
+      "end": 53,
+      "payoff": 14500
+    },
+    {
+      "start": 47,
+      "end": 54,
+      "payoff": 6500
+    },
+    {
+      "start": 47,
+      "end": 55,
+      "payoff": 6500
+    },
+    {
+      "start": 47,
+      "end": 56,
+      "payoff": 16000
+    },
+    {
+      "start": 47,
+      "end": 57,
+      "payoff": 13000
+    },
+    {
+      "start": 47,
+      "end": 58,
+      "payoff": 6000
+    },
+    {
+      "start": 47,
+      "end": 59,
+      "payoff": 11000
+    },
+    {
+      "start": 47,
+      "end": 60,
+      "payoff": 13500
+    },
+    {
+      "start": 47,
+      "end": 61,
+      "payoff": 14000
+    },
+    {
+      "start": 47,
+      "end": 62,
+      "payoff": 9500
+    },
+    {
+      "start": 47,
+      "end": 63,
+      "payoff": 12000
+    },
+    {
+      "start": 47,
+      "end": 64,
+      "payoff": 13500
+    },
+    {
+      "start": 47,
+      "end": 65,
+      "payoff": 13500
+    },
+    {
+      "start": 47,
+      "end": 66,
+      "payoff": 14000
+    },
+    {
+      "start": 47,
+      "end": 67,
+      "payoff": 3500
+    },
+    {
+      "start": 48,
+      "end": 48,
+      "payoff": 0
+    },
+    {
+      "start": 48,
+      "end": 49,
+      "payoff": 9000
+    },
+    {
+      "start": 48,
+      "end": 50,
+      "payoff": 11000
+    },
+    {
+      "start": 48,
+      "end": 51,
+      "payoff": 8000
+    },
+    {
+      "start": 48,
+      "end": 52,
+      "payoff": 13500
+    },
+    {
+      "start": 48,
+      "end": 53,
+      "payoff": 18000
+    },
+    {
+      "start": 48,
+      "end": 54,
+      "payoff": 5000
+    },
+    {
+      "start": 48,
+      "end": 55,
+      "payoff": 13500
+    },
+    {
+      "start": 48,
+      "end": 56,
+      "payoff": 17500
+    },
+    {
+      "start": 48,
+      "end": 57,
+      "payoff": 14500
+    },
+    {
+      "start": 48,
+      "end": 58,
+      "payoff": 14000
+    },
+    {
+      "start": 48,
+      "end": 59,
+      "payoff": 18000
+    },
+    {
+      "start": 48,
+      "end": 60,
+      "payoff": 21500
+    },
+    {
+      "start": 48,
+      "end": 61,
+      "payoff": 21000
+    },
+    {
+      "start": 48,
+      "end": 62,
+      "payoff": 19500
+    },
+    {
+      "start": 48,
+      "end": 63,
+      "payoff": 19000
+    },
+    {
+      "start": 48,
+      "end": 64,
+      "payoff": 20500
+    },
+    {
+      "start": 48,
+      "end": 65,
+      "payoff": 22500
+    },
+    {
+      "start": 48,
+      "end": 66,
+      "payoff": 21000
+    },
+    {
+      "start": 48,
+      "end": 67,
+      "payoff": 11000
+    },
+    {
+      "start": 49,
+      "end": 49,
+      "payoff": 0
+    },
+    {
+      "start": 49,
+      "end": 50,
+      "payoff": 2500
+    },
+    {
+      "start": 49,
+      "end": 51,
+      "payoff": 3500
+    },
+    {
+      "start": 49,
+      "end": 52,
+      "payoff": 5000
+    },
+    {
+      "start": 49,
+      "end": 53,
+      "payoff": 9500
+    },
+    {
+      "start": 49,
+      "end": 54,
+      "payoff": 5000
+    },
+    {
+      "start": 49,
+      "end": 55,
+      "payoff": 6500
+    },
+    {
+      "start": 49,
+      "end": 56,
+      "payoff": 9000
+    },
+    {
+      "start": 49,
+      "end": 57,
+      "payoff": 6000
+    },
+    {
+      "start": 49,
+      "end": 58,
+      "payoff": 14000
+    },
+    {
+      "start": 49,
+      "end": 59,
+      "payoff": 11000
+    },
+    {
+      "start": 49,
+      "end": 60,
+      "payoff": 14500
+    },
+    {
+      "start": 49,
+      "end": 61,
+      "payoff": 14000
+    },
+    {
+      "start": 49,
+      "end": 62,
+      "payoff": 19000
+    },
+    {
+      "start": 49,
+      "end": 63,
+      "payoff": 12000
+    },
+    {
+      "start": 49,
+      "end": 64,
+      "payoff": 13500
+    },
+    {
+      "start": 49,
+      "end": 65,
+      "payoff": 15500
+    },
+    {
+      "start": 49,
+      "end": 66,
+      "payoff": 14000
+    },
+    {
+      "start": 49,
+      "end": 67,
+      "payoff": 11000
+    },
+    {
+      "start": 50,
+      "end": 50,
+      "payoff": 0
+    },
+    {
+      "start": 50,
+      "end": 51,
+      "payoff": 5500
+    },
+    {
+      "start": 50,
+      "end": 52,
+      "payoff": 2500
+    },
+    {
+      "start": 50,
+      "end": 53,
+      "payoff": 7000
+    },
+    {
+      "start": 50,
+      "end": 54,
+      "payoff": 7500
+    },
+    {
+      "start": 50,
+      "end": 55,
+      "payoff": 4500
+    },
+    {
+      "start": 50,
+      "end": 56,
+      "payoff": 6500
+    },
+    {
+      "start": 50,
+      "end": 57,
+      "payoff": 3500
+    },
+    {
+      "start": 50,
+      "end": 58,
+      "payoff": 16000
+    },
+    {
+      "start": 50,
+      "end": 59,
+      "payoff": 9000
+    },
+    {
+      "start": 50,
+      "end": 60,
+      "payoff": 12000
+    },
+    {
+      "start": 50,
+      "end": 61,
+      "payoff": 12000
+    },
+    {
+      "start": 50,
+      "end": 62,
+      "payoff": 16500
+    },
+    {
+      "start": 50,
+      "end": 63,
+      "payoff": 9500
+    },
+    {
+      "start": 50,
+      "end": 64,
+      "payoff": 11000
+    },
+    {
+      "start": 50,
+      "end": 65,
+      "payoff": 13000
+    },
+    {
+      "start": 50,
+      "end": 66,
+      "payoff": 12000
+    },
+    {
+      "start": 50,
+      "end": 67,
+      "payoff": 13500
+    },
+    {
+      "start": 51,
+      "end": 51,
+      "payoff": 0
+    },
+    {
+      "start": 51,
+      "end": 52,
+      "payoff": 7500
+    },
+    {
+      "start": 51,
+      "end": 53,
+      "payoff": 13000
+    },
+    {
+      "start": 51,
+      "end": 54,
+      "payoff": 3000
+    },
+    {
+      "start": 51,
+      "end": 55,
+      "payoff": 7500
+    },
+    {
+      "start": 51,
+      "end": 56,
+      "payoff": 12500
+    },
+    {
+      "start": 51,
+      "end": 57,
+      "payoff": 9000
+    },
+    {
+      "start": 51,
+      "end": 58,
+      "payoff": 9500
+    },
+    {
+      "start": 51,
+      "end": 59,
+      "payoff": 12000
+    },
+    {
+      "start": 51,
+      "end": 60,
+      "payoff": 15000
+    },
+    {
+      "start": 51,
+      "end": 61,
+      "payoff": 15000
+    },
+    {
+      "start": 51,
+      "end": 62,
+      "payoff": 14000
+    },
+    {
+      "start": 51,
+      "end": 63,
+      "payoff": 12500
+    },
+    {
+      "start": 51,
+      "end": 64,
+      "payoff": 14000
+    },
+    {
+      "start": 51,
+      "end": 65,
+      "payoff": 16500
+    },
+    {
+      "start": 51,
+      "end": 66,
+      "payoff": 15000
+    },
+    {
+      "start": 51,
+      "end": 67,
+      "payoff": 8000
+    },
+    {
+      "start": 52,
+      "end": 52,
+      "payoff": 0
+    },
+    {
+      "start": 52,
+      "end": 53,
+      "payoff": 7000
+    },
+    {
+      "start": 52,
+      "end": 54,
+      "payoff": 10000
+    },
+    {
+      "start": 52,
+      "end": 55,
+      "payoff": 1500
+    },
+    {
+      "start": 52,
+      "end": 56,
+      "payoff": 9000
+    },
+    {
+      "start": 52,
+      "end": 57,
+      "payoff": 6000
+    },
+    {
+      "start": 52,
+      "end": 58,
+      "payoff": 13500
+    },
+    {
+      "start": 52,
+      "end": 59,
+      "payoff": 6000
+    },
+    {
+      "start": 52,
+      "end": 60,
+      "payoff": 9000
+    },
+    {
+      "start": 52,
+      "end": 61,
+      "payoff": 9000
+    },
+    {
+      "start": 52,
+      "end": 62,
+      "payoff": 14000
+    },
+    {
+      "start": 52,
+      "end": 63,
+      "payoff": 7000
+    },
+    {
+      "start": 52,
+      "end": 64,
+      "payoff": 8500
+    },
+    {
+      "start": 52,
+      "end": 65,
+      "payoff": 11000
+    },
+    {
+      "start": 52,
+      "end": 66,
+      "payoff": 9000
+    },
+    {
+      "start": 52,
+      "end": 67,
+      "payoff": 11000
+    },
+    {
+      "start": 53,
+      "end": 53,
+      "payoff": 0
+    },
+    {
+      "start": 53,
+      "end": 54,
+      "payoff": 14500
+    },
+    {
+      "start": 53,
+      "end": 55,
+      "payoff": 9000
+    },
+    {
+      "start": 53,
+      "end": 56,
+      "payoff": 2000
+    },
+    {
+      "start": 53,
+      "end": 57,
+      "payoff": 3500
+    },
+    {
+      "start": 53,
+      "end": 58,
+      "payoff": 20000
+    },
+    {
+      "start": 53,
+      "end": 59,
+      "payoff": 13500
+    },
+    {
+      "start": 53,
+      "end": 60,
+      "payoff": 12000
+    },
+    {
+      "start": 53,
+      "end": 61,
+      "payoff": 7000
+    },
+    {
+      "start": 53,
+      "end": 62,
+      "payoff": 16000
+    },
+    {
+      "start": 53,
+      "end": 63,
+      "payoff": 7500
+    },
+    {
+      "start": 53,
+      "end": 64,
+      "payoff": 6500
+    },
+    {
+      "start": 53,
+      "end": 65,
+      "payoff": 13000
+    },
+    {
+      "start": 53,
+      "end": 66,
+      "payoff": 7000
+    },
+    {
+      "start": 53,
+      "end": 67,
+      "payoff": 18500
+    },
+    {
+      "start": 54,
+      "end": 54,
+      "payoff": 0
+    },
+    {
+      "start": 54,
+      "end": 55,
+      "payoff": 9500
+    },
+    {
+      "start": 54,
+      "end": 56,
+      "payoff": 14000
+    },
+    {
+      "start": 54,
+      "end": 57,
+      "payoff": 11000
+    },
+    {
+      "start": 54,
+      "end": 58,
+      "payoff": 13000
+    },
+    {
+      "start": 54,
+      "end": 59,
+      "payoff": 14000
+    },
+    {
+      "start": 54,
+      "end": 60,
+      "payoff": 17500
+    },
+    {
+      "start": 54,
+      "end": 61,
+      "payoff": 17500
+    },
+    {
+      "start": 54,
+      "end": 62,
+      "payoff": 16000
+    },
+    {
+      "start": 54,
+      "end": 63,
+      "payoff": 15500
+    },
+    {
+      "start": 54,
+      "end": 64,
+      "payoff": 17000
+    },
+    {
+      "start": 54,
+      "end": 65,
+      "payoff": 18500
+    },
+    {
+      "start": 54,
+      "end": 66,
+      "payoff": 17500
+    },
+    {
+      "start": 54,
+      "end": 67,
+      "payoff": 11000
+    },
+    {
+      "start": 55,
+      "end": 55,
+      "payoff": 0
+    },
+    {
+      "start": 55,
+      "end": 56,
+      "payoff": 10500
+    },
+    {
+      "start": 55,
+      "end": 57,
+      "payoff": 8000
+    },
+    {
+      "start": 55,
+      "end": 58,
+      "payoff": 12500
+    },
+    {
+      "start": 55,
+      "end": 59,
+      "payoff": 4500
+    },
+    {
+      "start": 55,
+      "end": 60,
+      "payoff": 8000
+    },
+    {
+      "start": 55,
+      "end": 61,
+      "payoff": 8000
+    },
+    {
+      "start": 55,
+      "end": 62,
+      "payoff": 12000
+    },
+    {
+      "start": 55,
+      "end": 63,
+      "payoff": 5500
+    },
+    {
+      "start": 55,
+      "end": 64,
+      "payoff": 7000
+    },
+    {
+      "start": 55,
+      "end": 65,
+      "payoff": 9000
+    },
+    {
+      "start": 55,
+      "end": 66,
+      "payoff": 8000
+    },
+    {
+      "start": 55,
+      "end": 67,
+      "payoff": 9500
+    },
+    {
+      "start": 56,
+      "end": 56,
+      "payoff": 0
+    },
+    {
+      "start": 56,
+      "end": 57,
+      "payoff": 3000
+    },
+    {
+      "start": 56,
+      "end": 58,
+      "payoff": 22000
+    },
+    {
+      "start": 56,
+      "end": 59,
+      "payoff": 15000
+    },
+    {
+      "start": 56,
+      "end": 60,
+      "payoff": 13500
+    },
+    {
+      "start": 56,
+      "end": 61,
+      "payoff": 9000
+    },
+    {
+      "start": 56,
+      "end": 62,
+      "payoff": 18000
+    },
+    {
+      "start": 56,
+      "end": 63,
+      "payoff": 9500
+    },
+    {
+      "start": 56,
+      "end": 64,
+      "payoff": 8500
+    },
+    {
+      "start": 56,
+      "end": 65,
+      "payoff": 15000
+    },
+    {
+      "start": 56,
+      "end": 66,
+      "payoff": 9000
+    },
+    {
+      "start": 56,
+      "end": 67,
+      "payoff": 20500
+    },
+    {
+      "start": 57,
+      "end": 57,
+      "payoff": 0
+    },
+    {
+      "start": 57,
+      "end": 58,
+      "payoff": 20000
+    },
+    {
+      "start": 57,
+      "end": 59,
+      "payoff": 17000
+    },
+    {
+      "start": 57,
+      "end": 60,
+      "payoff": 15500
+    },
+    {
+      "start": 57,
+      "end": 61,
+      "payoff": 11000
+    },
+    {
+      "start": 57,
+      "end": 62,
+      "payoff": 20000
+    },
+    {
+      "start": 57,
+      "end": 63,
+      "payoff": 11000
+    },
+    {
+      "start": 57,
+      "end": 64,
+      "payoff": 10000
+    },
+    {
+      "start": 57,
+      "end": 65,
+      "payoff": 17000
+    },
+    {
+      "start": 57,
+      "end": 66,
+      "payoff": 17000
+    },
+    {
+      "start": 57,
+      "end": 67,
+      "payoff": 17500
+    },
+    {
+      "start": 58,
+      "end": 58,
+      "payoff": 0
+    },
+    {
+      "start": 58,
+      "end": 59,
+      "payoff": 13000
+    },
+    {
+      "start": 58,
+      "end": 60,
+      "payoff": 8000
+    },
+    {
+      "start": 58,
+      "end": 61,
+      "payoff": 13000
+    },
+    {
+      "start": 58,
+      "end": 62,
+      "payoff": 4500
+    },
+    {
+      "start": 58,
+      "end": 63,
+      "payoff": 10500
+    },
+    {
+      "start": 58,
+      "end": 64,
+      "payoff": 12000
+    },
+    {
+      "start": 58,
+      "end": 65,
+      "payoff": 8000
+    },
+    {
+      "start": 58,
+      "end": 66,
+      "payoff": 13000
+    },
+    {
+      "start": 58,
+      "end": 67,
+      "payoff": 3500
+    },
+    {
+      "start": 59,
+      "end": 59,
+      "payoff": 0
+    },
+    {
+      "start": 59,
+      "end": 60,
+      "payoff": 3000
+    },
+    {
+      "start": 59,
+      "end": 61,
+      "payoff": 6500
+    },
+    {
+      "start": 59,
+      "end": 62,
+      "payoff": 7500
+    },
+    {
+      "start": 59,
+      "end": 63,
+      "payoff": 8000
+    },
+    {
+      "start": 59,
+      "end": 64,
+      "payoff": 6500
+    },
+    {
+      "start": 59,
+      "end": 65,
+      "payoff": 4500
+    },
+    {
+      "start": 59,
+      "end": 66,
+      "payoff": 6500
+    },
+    {
+      "start": 59,
+      "end": 67,
+      "payoff": 9500
+    },
+    {
+      "start": 60,
+      "end": 60,
+      "payoff": 0
+    },
+    {
+      "start": 60,
+      "end": 61,
+      "payoff": 4500
+    },
+    {
+      "start": 60,
+      "end": 62,
+      "payoff": 4500
+    },
+    {
+      "start": 60,
+      "end": 63,
+      "payoff": 6000
+    },
+    {
+      "start": 60,
+      "end": 64,
+      "payoff": 5000
+    },
+    {
+      "start": 60,
+      "end": 65,
+      "payoff": 1500
+    },
+    {
+      "start": 60,
+      "end": 66,
+      "payoff": 4500
+    },
+    {
+      "start": 60,
+      "end": 67,
+      "payoff": 11500
+    },
+    {
+      "start": 61,
+      "end": 61,
+      "payoff": 0
+    },
+    {
+      "start": 61,
+      "end": 62,
+      "payoff": 9000
+    },
+    {
+      "start": 61,
+      "end": 63,
+      "payoff": 2500
+    },
+    {
+      "start": 61,
+      "end": 64,
+      "payoff": 1000
+    },
+    {
+      "start": 61,
+      "end": 65,
+      "payoff": 6000
+    },
+    {
+      "start": 61,
+      "end": 66,
+      "payoff": 0
+    },
+    {
+      "start": 61,
+      "end": 67,
+      "payoff": 14500
+    },
+    {
+      "start": 62,
+      "end": 62,
+      "payoff": 0
+    },
+    {
+      "start": 62,
+      "end": 63,
+      "payoff": 10500
+    },
+    {
+      "start": 62,
+      "end": 64,
+      "payoff": 9000
+    },
+    {
+      "start": 62,
+      "end": 65,
+      "payoff": 4000
+    },
+    {
+      "start": 62,
+      "end": 66,
+      "payoff": 9000
+    },
+    {
+      "start": 62,
+      "end": 67,
+      "payoff": 8500
+    },
+    {
+      "start": 63,
+      "end": 63,
+      "payoff": 0
+    },
+    {
+      "start": 63,
+      "end": 64,
+      "payoff": 1500
+    },
+    {
+      "start": 63,
+      "end": 65,
+      "payoff": 8500
+    },
+    {
+      "start": 63,
+      "end": 66,
+      "payoff": 2500
+    },
+    {
+      "start": 63,
+      "end": 67,
+      "payoff": 15500
+    },
+    {
+      "start": 64,
+      "end": 64,
+      "payoff": 0
+    },
+    {
+      "start": 64,
+      "end": 65,
+      "payoff": 6500
+    },
+    {
+      "start": 64,
+      "end": 66,
+      "payoff": 1000
+    },
+    {
+      "start": 64,
+      "end": 67,
+      "payoff": 14500
+    },
+    {
+      "start": 65,
+      "end": 65,
+      "payoff": 0
+    },
+    {
+      "start": 65,
+      "end": 66,
+      "payoff": 6000
+    },
+    {
+      "start": 65,
+      "end": 67,
+      "payoff": 11000
+    },
+    {
+      "start": 66,
+      "end": 66,
+      "payoff": 0
+    },
+    {
+      "start": 66,
+      "end": 67,
+      "payoff": 14500
+    },
+    {
+      "start": 67,
+      "end": 67,
+      "payoff": 0
+    }
+  ]
+}
