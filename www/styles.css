@@ -265,6 +265,12 @@ body {
     flex-direction: column;
 }
 
+/* Override container width for map viewer */
+.container:has(#map-viewer-container) {
+    max-width: none;
+    padding: 20px;
+}
+
 header {
     text-align: center;
     padding: 40px 20px;
@@ -797,6 +803,19 @@ select[multiple] option:checked {
 .rail-baron-container {
     max-width: 900px;
     margin: 0 auto;
+    transition: max-width 0.3s ease;
+}
+
+.rail-baron-container.width-normal {
+    max-width: 900px;
+}
+
+.rail-baron-container.width-wide {
+    max-width: 1400px;
+}
+
+.rail-baron-container.width-full {
+    max-width: 95%;
 }
 
 .rail-baron-container h2 {
@@ -813,6 +832,15 @@ select[multiple] option:checked {
     font-size: 1.1rem;
 }
 
+.map-viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 .back-button {
     background: var(--background-color);
     color: var(--text-color);
@@ -822,7 +850,6 @@ select[multiple] option:checked {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 20px;
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -834,6 +861,38 @@ select[multiple] option:checked {
     border-color: var(--primary-color);
     color: var(--primary-color);
     transform: translateX(-3px);
+}
+
+.width-toggle-buttons {
+    display: flex;
+    gap: 8px;
+    background: var(--background-color);
+    padding: 4px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+.width-toggle-btn {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.width-toggle-btn:hover {
+    background: rgba(66, 133, 244, 0.1);
+    color: var(--primary-color);
+}
+
+.width-toggle-btn.active {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .rail-baron-menu {
@@ -1190,19 +1249,310 @@ select[multiple] option:checked {
 
 .history-entry {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
     background: var(--background-color);
     border-radius: 8px;
     margin-bottom: 10px;
-    transition: transform 0.2s ease;
-    flex-wrap: wrap;
+    transition: all 0.2s ease;
+    border-left: 4px solid var(--primary-color);
 }
 
 .history-entry:hover {
     transform: translateX(5px);
     background: #e3f2fd;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.history-main {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.history-details {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.history-detail-label {
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 0.85rem;
+}
+
+.history-dice-value {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    padding: 2px 8px;
+    background: rgba(66, 133, 244, 0.1);
+    border-radius: 4px;
+}
+
+.history-parity {
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.history-parity.odd {
+    background: #fff3e0;
+    color: #e65100;
+    border: 1px solid #ffb74d;
+}
+
+.history-parity.even {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #81c784;
+}
+
+.history-detail-separator {
+    color: var(--text-light);
+    font-weight: bold;
+    margin: 0 4px;
+}
+
+/* Railroad Information Page Styles */
+.railroad-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.railroad-selector label {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.railroad-dropdown {
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 3px solid #ddd;
+    border-radius: 12px;
+    background: white;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.railroad-dropdown:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.railroad-dropdown:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1);
+}
+
+.railroad-info-display {
+    animation: fadeIn 0.3s ease;
+}
+
+.railroad-detail-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary-color);
+}
+
+.railroad-detail-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.railroad-detail-header h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.railroad-detail-price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.railroad-detail-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.railroad-detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 15px;
+    background: var(--background-color);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.railroad-detail-label {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.railroad-detail-value {
+    color: var(--text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 28px;
+}
+
+.railroad-current-status {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+/* Responsive Railroad Info Styles */
+@media (max-width: 768px) {
+    .railroad-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+    
+    .railroad-detail-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .railroad-detail-price {
+        font-size: 1.1rem;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .railroad-detail-body {
+        padding: 20px;
+    }
+    
+    .railroad-detail-label {
+        font-size: 1rem;
+    }
+    
+    .railroad-detail-value {
+        font-size: 0.95rem;
+        padding-left: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .railroad-dropdown {
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+    
+    .railroad-detail-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .railroad-detail-item {
+        padding: 12px;
+    }
+    
+    .railroad-detail-value {
+        padding-left: 20px;
+    }
+}
+
+/* City Railroads List Styles */
+.city-railroads-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-left: 28px;
+    margin-top: 10px;
+}
+
+.city-railroad-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.city-railroad-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .city-railroads-list {
+        padding-left: 24px;
+    }
+    
+    .city-railroad-badge {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .city-railroads-list {
+        padding-left: 20px;
+    }
+    
+    .city-railroad-badge {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+}
+
+/* Railroad Abbreviation Styles */
+.railroad-abbr {
+    font-size: 0.85em;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.railroad-abbr-header {
+    font-size: 0.7em;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.badge-abbr {
+    font-size: 0.85em;
+    opacity: 0.9;
+    font-weight: 400;
 }
 
 .history-time {
@@ -1475,6 +1825,28 @@ select[multiple] option:checked {
         font-size: 1.5rem;
     }
     
+    .rail-baron-container.width-wide,
+    .rail-baron-container.width-full {
+        max-width: 100%;
+    }
+    
+    .map-viewer-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .width-toggle-buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .width-toggle-btn {
+        flex: 1;
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
     .rail-baron-menu {
         max-width: 100%;
     }
@@ -1627,5 +1999,334 @@ select[multiple] option:checked {
     
     .city-region-title {
         font-size: 1.1rem;
+    }
+}
+
+/* Map Viewer Styles */
+.map-viewer-section {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-canvas-wrapper {
+    position: relative;
+    background: #f5f5f5;
+    border-bottom: 2px solid #e0e0e0;
+    overflow: hidden;
+    max-height: 70vh;
+}
+
+.map-zoom-controls {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.zoom-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--primary-color);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.zoom-btn:hover {
+    background: #3367d6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.zoom-btn:active {
+    transform: scale(0.95);
+}
+
+.zoom-level {
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 5px 0;
+    background: var(--background-color);
+    border-radius: 6px;
+}
+
+.map-loading {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-light);
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.map-canvas {
+    position: relative;
+    display: block;
+    transition: transform 0.1s ease-out;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.map-base-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    pointer-events: none;
+}
+
+.map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.map-overlay.hidden {
+    opacity: 0;
+}
+
+.map-controls-panel {
+    padding: 25px;
+    background: #fafafa;
+}
+
+.controls-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.controls-header h3 {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1.3rem;
+}
+
+.toggle-all-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn.show-all {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.toggle-btn.show-all:hover {
+    background: #2d8f47;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-btn.hide-all {
+    background: #ea4335;
+    color: white;
+}
+
+.toggle-btn.hide-all:hover {
+    background: #c5221f;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.railroad-toggles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.railroad-toggles::-webkit-scrollbar {
+    width: 8px;
+}
+
+.railroad-toggles::-webkit-scrollbar-track {
+    background: var(--background-color);
+    border-radius: 4px;
+}
+
+.railroad-toggles::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.railroad-toggles::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+.railroad-toggle-item {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.railroad-toggle-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+}
+
+.railroad-toggle-item:has(.railroad-checkbox:checked) {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
+}
+
+.railroad-checkbox {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+.railroad-label {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.railroad-name {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.railroad-price {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* Responsive Map Viewer Styles */
+@media (max-width: 768px) {
+    .map-canvas-wrapper {
+        max-height: 50vh;
+    }
+    
+    .map-zoom-controls {
+        top: 10px;
+        right: 10px;
+        padding: 8px;
+        gap: 6px;
+    }
+    
+    .zoom-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.3rem;
+    }
+    
+    .zoom-level {
+        font-size: 0.8rem;
+        padding: 4px 0;
+    }
+    
+    .map-controls-panel {
+        padding: 20px;
+    }
+    
+    .controls-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .toggle-all-buttons {
+        width: 100%;
+    }
+    
+    .toggle-btn {
+        flex: 1;
+    }
+    
+    .railroad-toggles {
+        grid-template-columns: 1fr;
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-controls-panel {
+        padding: 15px;
+    }
+    
+    .controls-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .toggle-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .railroad-toggle-item {
+        padding: 12px;
+    }
+    
+    .railroad-name {
+        font-size: 0.9rem;
+    }
+    
+    .railroad-price {
+        font-size: 0.8rem;
     }
 }
