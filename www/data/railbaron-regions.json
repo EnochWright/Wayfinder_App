@@ -1,11 +1,11 @@
 {
   "regions": [
-    {"id":1,"region":"North East"},
-    {"id":2,"region":"South East"},
-    {"id":3,"region":"North Central"},
-    {"id":4,"region":"South Central"},
-    {"id":5,"region":"Plains"},
-    {"id":6,"region":"North West"},
-    {"id":7,"region":"South West"}
+    {"id":1,"region":"NorthEast","possibilities":15,"percentage":"20.8%"},
+    {"id":2,"region":"SouthEast","possibilities":12,"percentage":"16.7%"},
+    {"id":3,"region":"NorthCentral","possibilities":11,"percentage":"15.3%"},
+    {"id":4,"region":"SouthCentral","possibilities":9,"percentage":"12.5%"},
+    {"id":5,"region":"Plains","possibilities":8,"percentage":"11.1%"},
+    {"id":6,"region":"NorthWest","possibilities":8,"percentage":"11.1%"},
+    {"id":7,"region":"SouthWest","possibilities":9,"percentage":"12.5%"}
   ]
 }

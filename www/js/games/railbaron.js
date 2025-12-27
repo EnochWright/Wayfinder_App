@@ -138,6 +138,12 @@ class RailBaronGame {
                         <span class="menu-desc">View city information</span>
                     </button>
                     
+                    <button class="rail-baron-menu-btn" id="btn-regions">
+                        <span class="menu-icon">🗺️</span>
+                        <span class="menu-title">Regions</span>
+                        <span class="menu-desc">View region information</span>
+                    </button>
+                    
                     <button class="rail-baron-menu-btn" id="btn-roll-play" disabled>
                         <span class="menu-icon">🎮</span>
                         <span class="menu-title">Roll and Play</span>
@@ -167,6 +173,105 @@ class RailBaronGame {
         document.getElementById('btn-cities')?.addEventListener('click', () => {
             this.showCitiesPage();
         });
+        
+        document.getElementById('btn-regions')?.addEventListener('click', () => {
+            this.showRegionsPage();
+        });
+    }
+
+    async showRegionsPage() {
+        const container = document.getElementById('game-content');
+        
+        // Load region and city data
+        let regions = [];
+        let cities = [];
+        try {
+            const [regionsData, citiesData] = await Promise.all([
+                fetch('data/railbaron-regions.json').then(r => r.json()),
+                fetch('data/railbaron-locations.json').then(r => r.json())
+            ]);
+            regions = regionsData.regions;
+            cities = citiesData.locations;
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
+
+        container.innerHTML = `
+            <div class="rail-baron-container">
+                <button class="back-button" id="back-to-menu">← Back to Menu</button>
+                <h2>🗺️ Region Information</h2>
+                <p class="subtitle">Select a region to view its details and cities</p>
+                
+                <div class="roll-section">
+                    <div class="railroad-selector">
+                        <label for="region-select">Choose a Region:</label>
+                        <select id="region-select" class="railroad-dropdown">
+                            <option value="">-- Select a Region --</option>
+                            ${regions.map(region =>
+                                `<option value="${region.id}">${region.region}</option>`
+                            ).join('')}
+                        </select>
+                    </div>
+                    
+                    <div id="region-info" class="railroad-info-display"></div>
+                </div>
+            </div>
+        `;
+
+        // Add event listeners
+        document.getElementById('back-to-menu')?.addEventListener('click', () => {
+            this.showMainMenu();
+        });
+
+        document.getElementById('region-select')?.addEventListener('change', (e) => {
+            const regionId = parseInt(e.target.value);
+            if (regionId) {
+                const region = regions.find(r => r.id === regionId);
+                this.displayRegionInfo(region, cities);
+            } else {
+                document.getElementById('region-info').innerHTML = '';
+            }
+        });
+    }
+
+    displayRegionInfo(region, cities) {
+        const infoDiv = document.getElementById('region-info');
+        
+        // Find all cities in this region
+        const regionCities = cities
+            .filter(city => city.region === region.region)
+            .map(city => city.location)
+            .sort();
+        
+        infoDiv.innerHTML = `
+            <div class="railroad-detail-card">
+                <div class="railroad-detail-header">
+                    <h3>${region.region}</h3>
+                    <span class="railroad-detail-price">${region.percentage} Probability</span>
+                </div>
+                
+                <div class="railroad-detail-body">
+                    <div class="railroad-detail-item">
+                        <span class="railroad-detail-label">🎲 Possibilities:</span>
+                        <span class="railroad-detail-value">${region.possibilities} ways to roll this region</span>
+                    </div>
+                    
+                    <div class="railroad-detail-item">
+                        <span class="railroad-detail-label">📊 Percentage:</span>
+                        <span class="railroad-detail-value">${region.percentage} chance of rolling this region</span>
+                    </div>
+                    
+                    <div class="railroad-detail-item">
+                        <span class="railroad-detail-label">🏙️ Cities in Region (${regionCities.length}):</span>
+                        <div class="city-railroads-list">
+                            ${regionCities.map(cityName =>
+                                `<span class="city-railroad-badge">${cityName}</span>`
+                            ).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
     }
 
     async showCitiesPage() {
@@ -186,6 +291,9 @@ class RailBaronGame {
             console.error('Error loading data:', error);
         }
 
+        // Sort cities alphabetically by location name
+        const sortedCities = [...cities].sort((a, b) => a.location.localeCompare(b.location));
+
         container.innerHTML = `
             <div class="rail-baron-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
@@ -197,7 +305,7 @@ class RailBaronGame {
                         <label for="city-select">Choose a City:</label>
                         <select id="city-select" class="railroad-dropdown">
                             <option value="">-- Select a City --</option>
-                            ${cities.map(city =>
+                            ${sortedCities.map(city =>
                                 `<option value="${city.id}">${city.location}</option>`
                             ).join('')}
                         </select>
@@ -242,7 +350,22 @@ class RailBaronGame {
                 
                 <div class="railroad-detail-body">
                     <div class="railroad-detail-item">
-                        <span class="railroad-detail-label">🚂 Railroads Serving This City:</span>
+                        <span class="railroad-detail-label">🎲 Possibilities:</span>
+                        <span class="railroad-detail-value">${city.possibilities} ways to roll this city</span>
+                    </div>
+                    
+                    <div class="railroad-detail-item">
+                        <span class="railroad-detail-label">📊 Region Percentage:</span>
+                        <span class="railroad-detail-value">${city.regionPercentage} chance within ${city.region}</span>
+                    </div>
+                    
+                    <div class="railroad-detail-item">
+                        <span class="railroad-detail-label">🗺️ Map Percentage:</span>
+                        <span class="railroad-detail-value">${city.mapPercentage} chance overall</span>
+                    </div>
+                    
+                    <div class="railroad-detail-item">
+                        <span class="railroad-detail-label"> Railroads Serving This City (${cityRailroads.length}):</span>
                         <div class="city-railroads-list">
                             ${cityRailroads.map(rr =>
                                 `<span class="city-railroad-badge">${rr.name} <span class="badge-abbr">(${rr.abbr})</span></span>`
