@@ -1,6 +1,8 @@
-# Capacitor PWA App
+# Wayfinder - Board Game Companion App
 
-A basic Capacitor application that works as both a Progressive Web App (PWA) and an Android app, built with vanilla JavaScript, HTML, and CSS.
+A comprehensive board game companion app that works as both a Progressive Web App (PWA) and an Android app. Features utilities for multiple board games including Rail Baron, Catan, New Bedford, and more.
+
+🌐 **Live Version**: [https://wayfinder.enochwright.com](https://wayfinder.enochwright.com)
 
 ## 📋 Features
 
@@ -85,18 +87,33 @@ npm run run:android
 
 ```
 .
-├── www/                    # Web assets directory
-│   ├── index.html         # Main HTML file
-│   ├── styles.css         # Styles
-│   ├── manifest.json      # PWA manifest
-│   ├── service-worker.js  # Service worker for PWA
+├── www/                           # Web assets directory
+│   ├── index.html                # Main HTML file
+│   ├── styles.css                # Global styles
+│   ├── manifest.json             # PWA manifest
+│   ├── service-worker.js         # Service worker for offline support
 │   ├── js/
-│   │   ├── app.js         # Main application logic
-│   │   └── capacitor.js   # Capacitor initialization
-│   └── assets/            # Icons and images
-├── android/               # Android native project (generated)
-├── capacitor.config.json  # Capacitor configuration
-└── package.json          # Node dependencies and scripts
+│   │   ├── app.js                # Main application logic
+│   │   ├── capacitor.js          # Capacitor initialization
+│   │   ├── data-manager.js       # Data loading utilities
+│   │   └── games/                # Game-specific modules
+│   │       ├── railbaron.js      # Rail Baron game utilities
+│   │       ├── catan.js          # Catan resource tracker
+│   │       ├── newbedford.js     # New Bedford building reference
+│   │       ├── alchemists.js     # Alchemists ingredient tracker
+│   │       └── ...               # Other game modules
+│   ├── data/                     # Game data (JSON files)
+│   │   ├── railbaron-*.json      # Rail Baron data files
+│   │   ├── catan-*.json          # Catan data
+│   │   └── ...                   # Other game data
+│   └── assets/                   # Images and static assets
+│       └── railbaron/
+│           ├── images/           # Game images
+│           └── map/              # Map and railroad overlays
+├── android/                      # Android native project
+├── screenshots/                  # App screenshots
+├── capacitor.config.json         # Capacitor configuration
+└── package.json                  # Node dependencies and scripts
 ```
 
 ## 📱 PWA Installation
@@ -115,56 +132,6 @@ When running as a web app, users can install it as a PWA:
 - `npm run run:android` - Build and run on Android device/emulator
 - `npm run copy` - Copy web assets to native platforms
 - `npm run update` - Update Capacitor dependencies
-
-## 🎨 Customization
-
-### Adding Icons
-
-Replace the placeholder icons in `www/assets/`:
-- `icon-192.png` - 192x192 pixels
-- `icon-512.png` - 512x512 pixels
-- `icon.png` - General purpose icon
-
-### Modifying App Info
-
-Edit [`capacitor.config.json`](capacitor.config.json:1) to change:
-- `appId` - Your app's unique identifier
-- `appName` - Your app's display name
-
-### Styling
-
-Edit [`www/styles.css`](www/styles.css:1) to customize the appearance.
-
-### Adding Functionality
-
-Edit [`www/js/app.js`](www/js/app.js:1) to add new features.
-
-## 🔌 Adding Capacitor Plugins
-
-To add native functionality, install Capacitor plugins:
-
-```bash
-npm install @capacitor/camera
-npm run sync
-```
-
-Then use in your code:
-```javascript
-import { Camera } from '@capacitor/camera';
-
-const photo = await Camera.getPhoto({
-  quality: 90,
-  allowEditing: true,
-  resultType: CameraResultType.Uri
-});
-```
-
-Popular plugins:
-- [@capacitor/camera](https://capacitorjs.com/docs/apis/camera) - Camera and photos
-- [@capacitor/geolocation](https://capacitorjs.com/docs/apis/geolocation) - GPS location
-- [@capacitor/storage](https://capacitorjs.com/docs/apis/storage) - Key-value storage
-- [@capacitor/network](https://capacitorjs.com/docs/apis/network) - Network status
-- [@capacitor/device](https://capacitorjs.com/docs/apis/device) - Device information
 
 ## 🐛 Troubleshooting
 
