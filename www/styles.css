@@ -466,6 +466,7 @@ footer {
 
 .page.active {
     display: block;
+    scroll-margin-top: var(--nav-height);
 }
 
 @keyframes fadeIn {
@@ -804,6 +805,7 @@ select[multiple] option:checked {
     max-width: 900px;
     margin: 0 auto;
     transition: max-width 0.3s ease;
+    padding-top: 10px;
 }
 
 .rail-baron-container.width-normal {
@@ -854,6 +856,7 @@ select[multiple] option:checked {
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: 25px;
 }
 
 .back-button:hover {

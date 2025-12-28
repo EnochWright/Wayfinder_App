@@ -182,8 +182,10 @@ async function switchPage(pageName) {
     if (targetPage) {
         targetPage.classList.add('active');
         
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Scroll to top after page is shown (prevents flash)
+        requestAnimationFrame(() => {
+            window.scrollTo(0, 0);
+        });
     }
 }
 

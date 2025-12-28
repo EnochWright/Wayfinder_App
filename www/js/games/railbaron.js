@@ -104,8 +104,9 @@ class RailBaronGame {
         const container = document.getElementById('game-content');
         container.innerHTML = `
             <div class="rail-baron-container">
-                <h2>🚂 Rail Baron</h2>
-                <p class="subtitle">Select a tool to get started</p>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="assets/railbaron/images/railbarontext.png" alt="Rail Baron" style="max-width: 300px; width: 100%; height: auto;">
+                </div>
                 
                 <div class="rail-baron-menu">
                     <button class="rail-baron-menu-btn" id="btn-destination">
@@ -142,12 +143,6 @@ class RailBaronGame {
                         <span class="menu-icon">🗺️</span>
                         <span class="menu-title">Regions</span>
                         <span class="menu-desc">View region information</span>
-                    </button>
-                    
-                    <button class="rail-baron-menu-btn" id="btn-roll-play" disabled>
-                        <span class="menu-icon">🎮</span>
-                        <span class="menu-title">Roll and Play</span>
-                        <span class="menu-desc">Coming soon</span>
                     </button>
                 </div>
             </div>
@@ -397,7 +392,10 @@ class RailBaronGame {
         container.innerHTML = `
             <div class="rail-baron-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
-                <h2>🚂 Railroad Information</h2>
+                <div style="text-align: center; margin-bottom: 20px;">
+                    <img src="assets/railbaron/images/steamengine.png" alt="Steam Engine" style="max-width: 250px; width: 100%; height: auto; margin-bottom: 0px;">
+                    <h2 style="margin: 0;">Railroad Information</h2>
+                </div>
                 <p class="subtitle">Select a railroad to view its history and details</p>
                 
                 <div class="roll-section">
@@ -874,13 +872,15 @@ class RailBaronGame {
             }
         });
     }
-
-    showPayoffChart() {
-        const container = document.getElementById('game-content');
-        container.innerHTML = `
+showPayoffChart() {
+    const container = document.getElementById('game-content');
+    container.innerHTML = `
             <div class="rail-baron-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
-                <h2>Payoff Chart</h2>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 0px;">
+                    <img src="assets/railbaron/images/baron.png" alt="Baron" style="max-width: 100px; height: auto;">
+                    <h2 style="margin: 0;">Payoff Chart</h2>
+                </div>
                 <p class="subtitle">Select two cities to see the payoff</p>
                 
                 <div class="roll-section">
@@ -1018,13 +1018,12 @@ class RailBaronGame {
             `;
         }
     }
-
-    showDestinationRoller() {
-        const container = document.getElementById('game-content');
-        container.innerHTML = `
+showDestinationRoller() {
+    const container = document.getElementById('game-content');
+    container.innerHTML = `
             <div class="rail-baron-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
-                <h2>Rail Baron Destination Roller</h2>
+                <h2>🎲 Destination Roller</h2>
                 
                 <!-- Step 1: Roll for Region -->
                 <div class="roll-section">
