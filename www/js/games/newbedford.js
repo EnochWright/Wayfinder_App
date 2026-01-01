@@ -2,59 +2,71 @@
 // Handles all New Bedford specific functionality
 
 class NewBedfordGame {
-    constructor() {
-        this.currentPhase = 'setup'; // setup, gameplay, scoring
-        this.gameConfig = null;
+  constructor() {
+    this.currentPhase = "setup"; // setup, gameplay, scoring
+    this.gameConfig = null;
+    this.configVisible = false;
+    this.buildingsVisible = false;
+  }
+
+  // ===== DATA METHODS =====
+
+  // Parse cost code (e.g., "3W" -> "3 Wood", "2F" -> "2 Food")
+  parseCostCode(code) {
+      const resourceMap = {
+          'W': 'Wood',
+          'F': 'Food',
+          'B': 'Brick',
+          'M': 'Money',
+          'G': 'Goods'
+      };
+      
+      const match = code.match(/^(\d+)([A-Z])$/);
+      if (match) {
+          const amount = match[1];
+          const resource = resourceMap[match[2]] || match[2];
+          return `${amount} ${resource}`;
+      }
+      return code; // Return as-is if doesn't match pattern
+  }
+
+  // Get buildings from data manager
+  async getBuildings() {
+    // Load buildings data if not already loaded
+    if (!window.dataManager.isLoaded("newbedford", "buildings")) {
+      await window.dataManager.loadGameData(
+        "newbedford",
+        "buildings",
+        "./data/newbedford-buildings.json"
+      );
+    }
+    return window.dataManager.getData("newbedford", "buildings");
+  }
+
+  // ===== UI INITIALIZATION =====
+
+  // Initialize the New Bedford page
+  init() {
+    console.log("Initializing New Bedford game...");
+    this.setupUI();
+  }
+
+  setupUI() {
+    const container = document.getElementById("newbedford-content");
+    if (!container) {
+      // Fallback to old event listeners if container doesn't exist
+      this.setupEventListeners();
+      return;
     }
 
-    // Get buildings from data manager
-    async getBuildings() {
-        // Load buildings data if not already loaded
-        if (!window.dataManager.isLoaded('newbedford', 'buildings')) {
-            await window.dataManager.loadGameData('newbedford', 'buildings', './data/newbedford-buildings.json');
-        }
-        return window.dataManager.getData('newbedford', 'buildings');
-    }
+    this.showMainMenu();
+  }
 
-    // Get building by ID
-    getBuildingById(id) {
-        return this.getBuildings().find(building => building.id === id);
-    }
+  showMainMenu() {
+    const container = document.getElementById("newbedford-content");
+    if (!container) return;
 
-    // Get buildings by type
-    getBuildingsByType(type) {
-        return this.getBuildings().filter(building => building.type === type);
-    }
-
-    // Get buildings by player count
-    getBuildingsByPlayerCount(playerCount) {
-        return this.getBuildings().filter(building =>
-            building.minPlayer <= playerCount && building.maxPlayer >= playerCount
-        );
-    }
-
-    // Initialize the New Bedford page
-    init() {
-        console.log('Initializing New Bedford game...');
-        this.setupUI();
-    }
-
-    setupUI() {
-        const container = document.getElementById('newbedford-content');
-        if (!container) {
-            // Fallback to old event listeners if container doesn't exist
-            this.setupEventListeners();
-            return;
-        }
-
-        this.showMainMenu();
-    }
-
-    showMainMenu() {
-        const container = document.getElementById('newbedford-content');
-        if (!container) return;
-
-        container.innerHTML = `
+    container.innerHTML = `
             <div class="rail-baron-container">
                 <h2>New Bedford</h2>
                 
@@ -65,42 +77,49 @@ class NewBedfordGame {
                         <span class="menu-desc">Configure game setup and/or use app to play</span>
                     </button>
                     
-                    <button class="rail-baron-menu-btn" id="btn-score-calc" disabled>
+                    <button class="rail-baron-menu-btn" id="btn-score-calc">
                         <span class="menu-icon">🧮</span>
                         <span class="menu-title">Score Calculator</span>
-                        <span class="menu-desc">Coming soon</span>
+                        <span class="menu-desc">Calculate final game scores</span>
                     </button>
                     
-                    <button class="rail-baron-menu-btn" id="btn-buildings" disabled>
+                    <button class="rail-baron-menu-btn" id="btn-buildings">
                         <span class="menu-icon">🏛️</span>
-                        <span class="menu-title">Buildings</span>
-                        <span class="menu-desc">Coming soon</span>
+                        <span class="menu-title">Buildings Reference</span>
+                        <span class="menu-desc">View all buildings with details</span>
                     </button>
                 </div>
             </div>
         `;
 
-        // Attach menu button listeners
-        document.getElementById('btn-setup-play')?.addEventListener('click', () => {
-            this.showSetupPlay();
-        });
-    }
+    // Attach menu button listeners
+    document.getElementById("btn-setup-play")?.addEventListener("click", () => {
+      this.showSetupPlay();
+    });
+    
+    document.getElementById("btn-buildings")?.addEventListener("click", () => {
+      this.showBuildingsReference();
+    });
+    
+    document.getElementById("btn-score-calc")?.addEventListener("click", () => {
+      this.showScoreCalculator();
+    });
+  }
 
-    showSetupPlay() {
-        const container = document.getElementById('newbedford-content');
-        if (!container) return;
+  showSetupPlay() {
+    const container = document.getElementById("newbedford-content");
+    if (!container) return;
 
-        // Save current game state before rebuilding
-        const savedGameConfig = this.gameConfig;
-        const savedPhase = this.currentPhase;
+    // Save current game state before rebuilding
+    const savedGameConfig = this.gameConfig;
+    const savedPhase = this.currentPhase;
 
-        container.innerHTML = `
+    container.innerHTML = `
             <div class="rail-baron-container">
                 <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; align-items: center;">
                     <button class="back-button" id="back-to-menu">← Back to Menu</button>
                     <button class="back-button" id="toggle-config-btn" style="display: none; background: var(--secondary-color);">Config</button>
                     <button class="back-button" id="toggle-buildings-btn" style="display: none; background: var(--secondary-color);">Buildings</button>
-                    <button class="back-button" id="reset-setup-btn-top" style="display: none; background: #ea4335;">Reset</button>
                 </div>
                
                 
@@ -223,12 +242,15 @@ class NewBedfordGame {
                     </div>
                     
                     <!-- Show Buildings Button -->
-                    <button class="btn btn-primary" id="start-game-btn">Show Buildings</button>
+                    <button class="btn btn-primary" id="start-game-btn">Next</button>
                 </div>
                 
                 <!-- Game Summary (shown after setup) -->
                 <div class="roll-section" id="game-summary" style="display: none;">
-                    <h3>Game Configuration</h3>
+                    <div class="card-header-with-button">
+                        <h3>Game Configuration</h3>
+                        <button class="btn btn-secondary" id="reset-setup-btn-config" style="background: #ea4335; color: white; padding: 8px 16px; font-size: 0.9rem;">Reset</button>
+                    </div>
                     <div id="game-summary-content"></div>
                 </div>
                 
@@ -249,786 +271,1619 @@ class NewBedfordGame {
             </div>
         `;
 
-        // Attach back button listener
-        document.getElementById('back-to-menu')?.addEventListener('click', () => {
-            this.showMainMenu();
-        });
+    // Attach back button listener
+    document.getElementById("back-to-menu")?.addEventListener("click", () => {
+      this.showMainMenu();
+    });
 
-        // Attach toggle buttons listeners
-        document.getElementById('toggle-config-btn')?.addEventListener('click', () => {
-            this.toggleConfiguration();
-        });
+    // Attach toggle buttons listeners
+    document
+      .getElementById("toggle-config-btn")
+      ?.addEventListener("click", () => {
+        this.toggleConfiguration();
+      });
 
-        document.getElementById('toggle-buildings-btn')?.addEventListener('click', () => {
-            this.toggleBuildings();
-        });
+    document
+      .getElementById("toggle-buildings-btn")
+      ?.addEventListener("click", () => {
+        this.toggleBuildings();
+      });
 
-        // Attach Start Game button listener
-        document.getElementById('start-game-btn-final')?.addEventListener('click', () => {
-            this.startGameplay();
-        });
+    // Attach Start Game button listener
+    document
+      .getElementById("start-game-btn-final")
+      ?.addEventListener("click", () => {
+        this.startGameplay();
+      });
 
-        // Attach Reset Setup button listener (top navigation)
-        document.getElementById('reset-setup-btn-top')?.addEventListener('click', () => {
-            this.resetSetup();
-        });
+    this.setupEventListeners();
 
-        this.setupEventListeners();
+    // Restore game state if it existed
+    if (savedGameConfig) {
+      this.gameConfig = savedGameConfig;
+      this.currentPhase = savedPhase;
 
-        // Restore game state if it existed
-        if (savedGameConfig) {
-            this.gameConfig = savedGameConfig;
-            this.currentPhase = savedPhase;
-            
-            // Hide setup section
-            const setupSection = document.getElementById('setup-section');
-            if (setupSection) setupSection.style.display = 'none';
-            
-            // Show game summary and buildings
-            this.displayGameSummary();
-            this.displayBuildings();
-            
-            // Show appropriate buttons based on phase
-            const toggleConfigBtn = document.getElementById('toggle-config-btn');
-            const toggleBuildingsBtn = document.getElementById('toggle-buildings-btn');
-            const resetBtn = document.getElementById('reset-setup-btn-top');
-            
-            if (savedPhase === 'gameplay') {
-                // In gameplay - show toggle buttons
-                if (toggleConfigBtn) toggleConfigBtn.style.display = 'inline-block';
-                if (toggleBuildingsBtn) toggleBuildingsBtn.style.display = 'inline-block';
-                if (resetBtn) resetBtn.style.display = 'inline-block';
-                
-                // Show gameplay section
-                const gameplaySection = document.getElementById('gameplay-section');
-                if (gameplaySection) gameplaySection.style.display = 'block';
-            } else {
-                // In setup - show config and reset buttons
-                if (toggleConfigBtn) toggleConfigBtn.style.display = 'inline-block';
-                if (resetBtn) resetBtn.style.display = 'inline-block';
-                
-                // Hide config by default
-                const gameSummary = document.getElementById('game-summary');
-                if (gameSummary) gameSummary.style.display = 'none';
-            }
-        }
+      // Hide setup section
+      const setupSection = document.getElementById("setup-section");
+      if (setupSection) setupSection.style.display = "none";
+
+      // Show appropriate buttons based on phase
+      const toggleConfigBtn = document.getElementById("toggle-config-btn");
+      const toggleBuildingsBtn = document.getElementById(
+        "toggle-buildings-btn"
+      );
+
+      if (savedPhase === "gameplay") {
+        // In gameplay - show toggle buttons
+        if (toggleConfigBtn) toggleConfigBtn.style.display = "inline-block";
+        if (toggleBuildingsBtn)
+          toggleBuildingsBtn.style.display = "inline-block";
+
+        // Rebuild game summary and buildings (but don't show them)
+        this.displayGameSummary();
+        this.displayBuildings();
+
+        // Restore visibility state from instance variables
+        const gameSummary = document.getElementById("game-summary");
+        const buildingsSection = document.getElementById("buildings-section");
+        if (gameSummary)
+          gameSummary.style.display = this.configVisible ? "block" : "none";
+        if (buildingsSection)
+          buildingsSection.style.display = this.buildingsVisible
+            ? "block"
+            : "none";
+
+        // Rebuild and show gameplay section
+        this.rebuildGameplaySection();
+      } else {
+        // In setup - show config button
+        if (toggleConfigBtn) toggleConfigBtn.style.display = "inline-block";
+
+        // Show game summary and buildings
+        this.displayGameSummary();
+        this.displayBuildings();
+
+        // Hide config by default
+        const gameSummary = document.getElementById("game-summary");
+        if (gameSummary) gameSummary.style.display = "none";
+      }
     }
+  }
 
-    // Set up event listeners for New Bedford page
-    setupEventListeners() {
-        // Expansion radio buttons - show/hide Rising Tide options and enable/disable 5 players
-        const expansionRadios = document.querySelectorAll('input[name="expansion"]');
-        expansionRadios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                this.handleExpansionChange();
-                this.handleFourPlayerVariantVisibility();
-            });
-        });
+  async showBuildingsReference() {
+      const container = document.getElementById('newbedford-content');
+      if (!container) return;
 
-        // Player count - show/hide variant options and update AI Captains
-        const playerCount = document.getElementById('player-count');
-        if (playerCount) {
-            playerCount.addEventListener('change', () => {
-                this.handlePlayerCountChange();
-                this.handleFourPlayerVariantVisibility();
-                this.updateAICaptainsOptions();
-                this.handleTurnersMillVisibility();
-            });
-        }
+      container.innerHTML = `
+          <div class="rail-baron-container">
+              <button class="back-button" id="back-to-menu-buildings">← Back to Menu</button>
+              <h2>Buildings Reference</h2>
+              <p class="subtitle">All buildings with complete details</p>
+              
+              <div class="roll-section">
+                  <div id="buildings-reference-list" style="display: flex; flex-direction: column; gap: 12px;"></div>
+              </div>
+          </div>
+      `;
 
-        // AI Captains - show/hide Turner's Mill option
-        const aiCaptainsSelect = document.getElementById('ai-captains');
-        if (aiCaptainsSelect) {
-            aiCaptainsSelect.addEventListener('change', () => {
-                this.handleTurnersMillVisibility();
-            });
-        }
+      // Attach back button listener
+      document.getElementById('back-to-menu-buildings')?.addEventListener('click', () => {
+          this.showMainMenu();
+      });
 
-        // Start Game button
-        const startGameBtn = document.getElementById('start-game-btn');
-        if (startGameBtn) {
-            startGameBtn.addEventListener('click', () => this.startGame());
-        }
+      // Load and display all buildings
+      const allBuildings = await this.getBuildings();
+      
+      // Sort buildings by type then alphabetically
+      const sortedBuildings = [...allBuildings].sort((a, b) => {
+          const typeOrder = { 'action': 1, 'ships-log': 2, 'lonely-ocean': 3, 'victory': 4 };
+          const typeA = typeOrder[a.type] || 99;
+          const typeB = typeOrder[b.type] || 99;
+          
+          if (typeA !== typeB) {
+              return typeA - typeB;
+          }
+          
+          return a.name.localeCompare(b.name);
+      });
 
-        // Game Setup Help button
-        const gameSetupHelpBtn = document.getElementById('game-setup-help');
-        if (gameSetupHelpBtn) {
-            gameSetupHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showGameSetupModal();
-            });
-        }
+      const buildingsList = document.getElementById('buildings-reference-list');
+      if (!buildingsList) return;
 
-        // Variant Setup Help button
-        const variantSetupHelpBtn = document.getElementById('variant-setup-help');
-        if (variantSetupHelpBtn) {
-            variantSetupHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showVariantSetupModal();
-            });
-        }
+      // Create building cards
+      sortedBuildings.forEach(building => {
+          const buildingCard = document.createElement('div');
+          buildingCard.className = 'building-card';
+          
+          // Add special class based on type
+          if (building.type === 'action') {
+              buildingCard.classList.add('building-card-action');
+          } else if (building.type === 'victory') {
+              buildingCard.classList.add('building-card-victory');
+          } else if (building.type === 'ships-log') {
+              buildingCard.classList.add('building-card-ships-log');
+          } else if (building.type === 'lonely-ocean') {
+              buildingCard.classList.add('building-card-lonely-ocean');
+          }
+          
+          buildingCard.innerHTML = `
+              <div class="building-header">
+                  <h4>${building.name}</h4>
+                  <span class="building-type building-type-${building.type}">${building.type}</span>
+              </div>
+              <div class="building-details">
+                  <p><strong>Players:</strong> ${building.players}${building.usable2p ? ' (2P Variant)' : ''}${building.usable4p ? ' (4P Variant)' : ''}</p>
+                  <p><strong>Game:</strong> ${building.game === 'base' ? 'Base Game' : 'Rising Tide'}</p>
+                  <p><strong>Points:</strong> ${building.points}${building.points === '1+' ? ' (variable - see benefit)' : ''}</p>
+                  ${building.cost && building.cost.length > 0 ? `<p><strong>Cost:</strong> ${building.cost.map(c => this.parseCostCode(c)).join(', ')}</p>` : ''}
+                  ${building.benefit ? `<p><strong>Benefit:</strong> ${building.benefit}</p>` : ''}
+              </div>
+          `;
+          buildingsList.appendChild(buildingCard);
+      });
+  }
 
-        // 2-Player Variant Help button
-        const twoPlayerVariantHelpBtn = document.getElementById('two-player-variant-help');
-        if (twoPlayerVariantHelpBtn) {
-            twoPlayerVariantHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showTwoPlayerVariantModal();
-            });
-        }
+  async showScoreCalculator() {
+      const container = document.getElementById('newbedford-content');
+      if (!container) return;
 
-        // 4-Player Variant Help button
-        const fourPlayerVariantHelpBtn = document.getElementById('four-player-variant-help');
-        if (fourPlayerVariantHelpBtn) {
-            fourPlayerVariantHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showFourPlayerVariantModal();
-            });
-        }
+      // Initialize whale counts and building count
+      this.whaleScores = {
+          rightWhales: 0,
+          bowheadWhales: 0,
+          spermWhales: 0,
+          blueWhale: 0,
+          whiteWhale: 0
+      };
+      this.totalBuildings = 0;
+      this.totalMoney = 0;
 
-        // White Whale Promo Help buttons
-        const ambergrisHelpBtn = document.getElementById('ambergris-help');
-        if (ambergrisHelpBtn) {
-            ambergrisHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showPromoModal('ambergris');
-            });
-        }
+      container.innerHTML = `
+          <div class="rail-baron-container">
+              <button class="back-button" id="back-to-menu-score">← Back to Menu</button>
+              <h2>Score Calculator</h2>
+              <p class="subtitle">Calculate your final score</p>
+              
+              <div class="roll-section">
+                  <h3>Whale Tokens</h3>
+                  <div class="dice-value-selector" style="margin-bottom: 15px;">
+                      <label>Right Whales (1 point each):</label>
+                      <button class="dice-value-btn" id="right-whales-btn">
+                          <span class="dice-value-display" id="right-whales-value">0</span>
+                      </button>
+                  </div>
+                  <div class="dice-value-selector" style="margin-bottom: 15px;">
+                      <label>Bowhead Whales (2 points each):</label>
+                      <button class="dice-value-btn" id="bowhead-whales-btn">
+                          <span class="dice-value-display" id="bowhead-whales-value">0</span>
+                      </button>
+                  </div>
+                  <div class="dice-value-selector" style="margin-bottom: 15px;">
+                      <label>Sperm Whales (4 points each):</label>
+                      <button class="dice-value-btn" id="sperm-whales-btn">
+                          <span class="dice-value-display" id="sperm-whales-value">0</span>
+                      </button>
+                  </div>
+                  <div class="dice-value-selector" style="margin-bottom: 15px;">
+                      <label>Blue Whale (6 points):</label>
+                      <button class="dice-value-btn" id="blue-whale-btn">
+                          <span class="dice-value-display" id="blue-whale-value">0</span>
+                      </button>
+                  </div>
+                  <div class="dice-value-selector" style="margin-bottom: 15px;">
+                      <label>White Whale (4 points):</label>
+                      <button class="dice-value-btn" id="white-whale-btn">
+                          <span class="dice-value-display" id="white-whale-value">0</span>
+                      </button>
+                  </div>
+              </div>
+              
+              <div class="roll-section">
+                  <h3>Buildings</h3>
+                  <div class="dice-value-selector">
+                      <label>Total Buildings Owned:</label>
+                      <button class="dice-value-btn" id="total-buildings-btn">
+                          <span class="dice-value-display" id="total-buildings-value">0</span>
+                      </button>
+                  </div>
+              </div>
+              
+              <div class="roll-section">
+                  <h3>Victory Buildings</h3>
+                  <p style="color: var(--text-light); margin-bottom: 15px;">Click any Victory Buildings you own:</p>
+                  <div id="victory-buildings-list"></div>
+              </div>
+              
+              <div class="roll-section">
+                  <h3>Money</h3>
+                  <div class="dice-value-selector">
+                      <label>Total Money ($5 = 1 point):</label>
+                      <button class="dice-value-btn" id="total-money-btn">
+                          <span class="dice-value-display" id="total-money-value">$0</span>
+                      </button>
+                  </div>
+              </div>
+              
+              <button class="btn btn-primary" id="calculate-score-btn" style="width: 100%; margin-top: 20px;">Calculate Score</button>
+              
+              <div class="roll-section" id="score-result" style="display: none;">
+                  <h3>Final Score</h3>
+                  <div id="score-breakdown"></div>
+              </div>
+          </div>
+      `;
 
-        const blueWhaleHelpBtn = document.getElementById('blue-whale-help');
-        if (blueWhaleHelpBtn) {
-            blueWhaleHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showPromoModal('blue-whale');
-            });
-        }
+      // Attach back button listener
+      document.getElementById('back-to-menu-score')?.addEventListener('click', () => {
+          this.showMainMenu();
+      });
 
-        const castawayHelpBtn = document.getElementById('castaway-help');
-        if (castawayHelpBtn) {
-            castawayHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showPromoModal('castaway');
-            });
-        }
+      // Attach whale button listeners
+      this.attachWhaleButtonListeners();
+      
+      // Attach buildings button listener
+      const buildingsBtn = document.getElementById('total-buildings-btn');
+      if (buildingsBtn) {
+          buildingsBtn.addEventListener('click', () => {
+              this.showBuildingsPickerModal();
+          });
+      }
+      
+      // Attach money button listener
+      const moneyBtn = document.getElementById('total-money-btn');
+      if (moneyBtn) {
+          moneyBtn.addEventListener('click', () => {
+              this.showMoneyPickerModal();
+          });
+      }
 
-        const whiteWhaleHelpBtn = document.getElementById('white-whale-help');
-        if (whiteWhaleHelpBtn) {
-            whiteWhaleHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showPromoModal('white-whale');
-            });
-        }
+      // Load victory buildings and ships-log buildings with variable scoring (like Newspaper)
+      const allBuildings = await this.getBuildings();
+      const scoringBuildings = allBuildings.filter(b =>
+          b.type === 'victory' || (b.type === 'ships-log' && b.points === '1+')
+      ).sort((a, b) => a.name.localeCompare(b.name));
+      
+      const victoryList = document.getElementById('victory-buildings-list');
+      if (victoryList) {
+          scoringBuildings.forEach(building => {
+              const buildingBtn = document.createElement('button');
+              buildingBtn.className = 'building-select-btn';
+              buildingBtn.setAttribute('data-building-id', building.id);
+              buildingBtn.setAttribute('data-building-name', building.name);
+              buildingBtn.setAttribute('data-building-points', building.points);
+              buildingBtn.setAttribute('data-building-benefit', building.benefit);
+              buildingBtn.innerHTML = `
+                  <div>
+                      <strong>${building.name}</strong> (${building.points} points)
+                      <br><span style="font-size: 0.9rem; color: var(--text-light);">${building.benefit}</span>
+                  </div>
+              `;
+              buildingBtn.addEventListener('click', () => {
+                  this.handleVictoryBuildingClick(building);
+              });
+              victoryList.appendChild(buildingBtn);
+          });
+      }
 
-        // Turner's Mill Help button
-        const turnersMillHelpBtn = document.getElementById('turners-mill-help');
-        if (turnersMillHelpBtn) {
-            turnersMillHelpBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                this.showTurnersMillModal();
-            });
-        }
+      // Attach calculate button listener
+      document.getElementById('calculate-score-btn')?.addEventListener('click', () => {
+          this.calculateFinalScore();
+      });
+  }
 
-        // Initialize on load
+  attachWhaleButtonListeners() {
+      const whaleButtons = [
+          { id: 'right-whales', key: 'rightWhales', name: 'Right Whales', points: 1, max: 36 },
+          { id: 'bowhead-whales', key: 'bowheadWhales', name: 'Bowhead Whales', points: 2, max: 20 },
+          { id: 'sperm-whales', key: 'spermWhales', name: 'Sperm Whales', points: 4, max: 4 },
+          { id: 'blue-whale', key: 'blueWhale', name: 'Blue Whale', points: 6, max: 1 },
+          { id: 'white-whale', key: 'whiteWhale', name: 'White Whale', points: 4, max: 1 }
+      ];
+
+      whaleButtons.forEach(whale => {
+          const btn = document.getElementById(`${whale.id}-btn`);
+          if (btn) {
+              btn.addEventListener('click', () => {
+                  this.showWhalePickerModal(whale);
+              });
+          }
+      });
+  }
+
+  showWhalePickerModal(whale) {
+      const currentValue = this.whaleScores[whale.key];
+      const maxValue = whale.max || 36;
+      
+      const modalHTML = `
+          <div class="dice-modal show" id="whale-picker-modal">
+              <div class="dice-modal-overlay"></div>
+              <div class="dice-modal-content" style="max-height: 85vh; display: flex; flex-direction: column;">
+                  <h3 style="margin: 0 0 10px 0;">${whale.name}</h3>
+                  <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 15px;">
+                      ${whale.points} point${whale.points !== 1 ? 's' : ''} ${maxValue > 1 ? 'each' : ''}
+                  </p>
+                  <div style="overflow-y: auto; flex: 1; margin-bottom: 15px; padding-top: 2px;">
+                      <div class="whale-picker-grid">
+                          ${Array.from({length: maxValue + 1}, (_, i) => `
+                              <button class="dice-picker-btn ${i === currentValue ? 'selected' : ''}" data-value="${i}">
+                                  ${i}
+                              </button>
+                          `).join('')}
+                      </div>
+                  </div>
+                  <button class="btn btn-secondary" id="close-whale-picker" style="width: 100%;">
+                      Done
+                  </button>
+              </div>
+          </div>
+      `;
+
+      document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+      const modal = document.getElementById('whale-picker-modal');
+      const overlay = modal.querySelector('.dice-modal-overlay');
+      const closeBtn = document.getElementById('close-whale-picker');
+      const pickerBtns = modal.querySelectorAll('.dice-picker-btn');
+
+      pickerBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+              const value = parseInt(btn.getAttribute('data-value'));
+              this.whaleScores[whale.key] = value;
+              
+              // Update display
+              const displayElement = document.getElementById(`${whale.id}-value`);
+              if (displayElement) {
+                  displayElement.textContent = value;
+              }
+
+              // Update button selection
+              pickerBtns.forEach(b => b.classList.remove('selected'));
+              btn.classList.add('selected');
+          });
+      });
+
+      const closeModal = () => {
+          modal.remove();
+      };
+
+      overlay.addEventListener('click', closeModal);
+      closeBtn.addEventListener('click', closeModal);
+  }
+
+  showBuildingsPickerModal() {
+      const currentValue = this.totalBuildings;
+      const maxValue = 20;
+      
+      const modalHTML = `
+          <div class="dice-modal show" id="buildings-picker-modal">
+              <div class="dice-modal-overlay"></div>
+              <div class="dice-modal-content" style="max-height: 85vh; display: flex; flex-direction: column;">
+                  <h3 style="margin: 0 0 10px 0;">Total Buildings Owned</h3>
+                  <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 15px;">
+                      1 point each
+                  </p>
+                  <div style="overflow-y: auto; flex: 1; margin-bottom: 15px; padding-top: 2px;">
+                      <div class="whale-picker-grid">
+                          ${Array.from({length: maxValue + 1}, (_, i) => `
+                              <button class="dice-picker-btn ${i === currentValue ? 'selected' : ''}" data-value="${i}">
+                                  ${i}
+                              </button>
+                          `).join('')}
+                      </div>
+                  </div>
+                  <button class="btn btn-secondary" id="close-buildings-picker" style="width: 100%;">
+                      Done
+                  </button>
+              </div>
+          </div>
+      `;
+
+      document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+      const modal = document.getElementById('buildings-picker-modal');
+      const overlay = modal.querySelector('.dice-modal-overlay');
+      const closeBtn = document.getElementById('close-buildings-picker');
+      const pickerBtns = modal.querySelectorAll('.dice-picker-btn');
+
+      pickerBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+              const value = parseInt(btn.getAttribute('data-value'));
+              this.totalBuildings = value;
+              
+              // Update display
+              const displayElement = document.getElementById('total-buildings-value');
+              if (displayElement) {
+                  displayElement.textContent = value;
+              }
+
+              // Update button selection
+              pickerBtns.forEach(b => b.classList.remove('selected'));
+              btn.classList.add('selected');
+          });
+      });
+
+      const closeModal = () => {
+          modal.remove();
+      };
+
+      overlay.addEventListener('click', closeModal);
+      closeBtn.addEventListener('click', closeModal);
+  }
+
+  showMoneyPickerModal() {
+      const currentValue = this.totalMoney;
+      
+      const modalHTML = `
+          <div class="dice-modal show" id="money-picker-modal">
+              <div class="dice-modal-overlay"></div>
+              <div class="dice-modal-content" style="max-height: 85vh; display: flex; flex-direction: column;">
+                  <h3 style="margin: 0 0 10px 0;">Total Money</h3>
+                  <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 15px;">
+                      $5 = 1 point
+                  </p>
+                  <div style="overflow-y: auto; overflow-x: hidden; flex: 1; margin-bottom: 15px; padding-top: 2px;">
+                      <div class="money-picker-grid">
+                          ${Array.from({length: 11}, (_, i) => {
+                              const value = i * 5;
+                              return `
+                                  <button class="dice-picker-btn ${value === currentValue ? 'selected' : ''}" data-value="${value}">
+                                      $${value}
+                                  </button>
+                              `;
+                          }).join('')}
+                      </div>
+                  </div>
+                  <button class="btn btn-secondary" id="close-money-picker" style="width: 100%;">
+                      Done
+                  </button>
+              </div>
+          </div>
+      `;
+
+      document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+      const modal = document.getElementById('money-picker-modal');
+      const overlay = modal.querySelector('.dice-modal-overlay');
+      const closeBtn = document.getElementById('close-money-picker');
+      const pickerBtns = modal.querySelectorAll('.dice-picker-btn');
+
+      pickerBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+              const value = parseInt(btn.getAttribute('data-value'));
+              this.totalMoney = value;
+              
+              // Update display
+              const displayElement = document.getElementById('total-money-value');
+              if (displayElement) {
+                  displayElement.textContent = `$${value}`;
+              }
+
+              // Update button selection
+              pickerBtns.forEach(b => b.classList.remove('selected'));
+              btn.classList.add('selected');
+          });
+      });
+
+      const closeModal = () => {
+          modal.remove();
+      };
+
+      overlay.addEventListener('click', closeModal);
+      closeBtn.addEventListener('click', closeModal);
+  }
+
+  handleVictoryBuildingClick(building) {
+      // Buildings that use values already on the page (auto-calculate)
+      // Candleworks: 6, Counting House: 13, Dressmaker: 17, Municipal Office: 32
+      const autoCalculateBuildings = [6, 13, 17, 32];
+      
+      // Buildings that need additional input
+      const variableBuildings = {
+          33: { type: 'shipsLogPages', label: 'Ship\'s Log Pages', max: 20 }, // Newspaper
+          36: { type: 'dhmgBuildings', label: 'Buildings with DHMG Symbol', max: 20 }, // Publishing House
+          40: { type: 'goods', label: 'Goods', max: 20 } // Salvage Yard
+      };
+
+      if (autoCalculateBuildings.includes(building.id)) {
+          // Just toggle selection - will auto-calculate using existing values
+          const btn = document.querySelector(`[data-building-id="${building.id}"]`);
+          if (btn) {
+              btn.classList.toggle('selected');
+          }
+      } else if (variableBuildings[building.id]) {
+          this.showVariableBuildingModal(building, variableBuildings[building.id]);
+      } else {
+          // Fixed point building - just toggle selection
+          const btn = document.querySelector(`[data-building-id="${building.id}"]`);
+          if (btn) {
+              btn.classList.toggle('selected');
+          }
+      }
+  }
+
+  showVariableBuildingModal(building, variableInfo) {
+      const btn = document.querySelector(`[data-building-id="${building.id}"]`);
+      const isSelected = btn?.classList.contains('selected');
+      const currentValue = parseInt(btn?.getAttribute('data-variable-count') || 0);
+      const maxValue = variableInfo.max || 20;
+      
+      const modalHTML = `
+          <div class="dice-modal show" id="variable-building-modal">
+              <div class="dice-modal-overlay"></div>
+              <div class="dice-modal-content" style="max-height: 85vh; display: flex; flex-direction: column;">
+                  <h3 style="margin: 0 0 10px 0;">${building.name}</h3>
+                  <p style="color: var(--text-light); margin-bottom: 15px; line-height: 1.6; text-align: center;">
+                      ${building.benefit}
+                  </p>
+                  <p style="text-align: center; font-size: 1.1rem; color: var(--text-color); margin-bottom: 15px; font-weight: 600;">
+                      How many ${variableInfo.label}?
+                  </p>
+                  <div style="overflow-y: auto; flex: 1; margin-bottom: 15px; padding-top: 2px;">
+                      <div class="whale-picker-grid">
+                          ${Array.from({length: maxValue + 1}, (_, i) => `
+                              <button class="dice-picker-btn ${i === currentValue ? 'selected' : ''}" data-value="${i}">
+                                  ${i}
+                              </button>
+                          `).join('')}
+                      </div>
+                  </div>
+                  <div style="display: flex; gap: 8px; width: 100%;">
+                      ${isSelected ? `
+                      <button class="btn btn-secondary" id="remove-variable" style="flex: 1; background: #ea4335; min-width: 0; padding: 12px 8px; font-size: 0.95rem;">
+                          Remove
+                      </button>
+                      ` : ''}
+                      <button class="btn btn-secondary" id="cancel-variable" style="flex: 1; min-width: 0; padding: 12px 8px; font-size: 0.95rem;">
+                          Cancel
+                      </button>
+                      <button class="btn btn-primary" id="confirm-variable" style="flex: 1; min-width: 0; padding: 12px 8px; font-size: 0.95rem;">
+                          Confirm
+                      </button>
+                  </div>
+              </div>
+          </div>
+      `;
+
+      document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+      const modal = document.getElementById('variable-building-modal');
+      const overlay = modal.querySelector('.dice-modal-overlay');
+      const cancelBtn = document.getElementById('cancel-variable');
+      const confirmBtn = document.getElementById('confirm-variable');
+      const removeBtn = document.getElementById('remove-variable');
+      const pickerBtns = modal.querySelectorAll('.dice-picker-btn');
+      
+      let selectedValue = currentValue;
+
+      pickerBtns.forEach(pickerBtn => {
+          pickerBtn.addEventListener('click', () => {
+              selectedValue = parseInt(pickerBtn.getAttribute('data-value'));
+              
+              // Update button selection
+              pickerBtns.forEach(b => b.classList.remove('selected'));
+              pickerBtn.classList.add('selected');
+          });
+      });
+
+      const closeModal = () => {
+          modal.remove();
+      };
+
+      cancelBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', closeModal);
+
+      if (removeBtn) {
+          removeBtn.addEventListener('click', () => {
+              if (btn) {
+                  btn.classList.remove('selected');
+                  btn.removeAttribute('data-variable-count');
+              }
+              closeModal();
+          });
+      }
+
+      confirmBtn.addEventListener('click', () => {
+          if (btn) {
+              btn.classList.add('selected');
+              btn.setAttribute('data-variable-count', selectedValue);
+          }
+          closeModal();
+      });
+  }
+
+  calculateFinalScore() {
+      // Get whale points from stored values
+      const rightWhales = this.whaleScores.rightWhales;
+      const bowheadWhales = this.whaleScores.bowheadWhales;
+      const spermWhales = this.whaleScores.spermWhales;
+      const blueWhale = this.whaleScores.blueWhale;
+      const whiteWhale = this.whaleScores.whiteWhale;
+      
+      // Get building count from stored value
+      const totalBuildings = this.totalBuildings;
+      
+      // Get money from stored value
+      const totalMoney = this.totalMoney;
+      
+      // Get selected victory buildings
+      const selectedVictoryBuildings = [];
+      document.querySelectorAll('.building-select-btn.selected').forEach(btn => {
+          const buildingId = btn.getAttribute('data-building-id');
+          const buildingName = btn.getAttribute('data-building-name');
+          const buildingPoints = btn.getAttribute('data-building-points');
+          const variableCount = parseInt(btn.getAttribute('data-variable-count') || 0);
+          
+          selectedVictoryBuildings.push({
+              id: buildingId,
+              name: buildingName,
+              points: buildingPoints,
+              variableCount: variableCount
+          });
+      });
+      
+      // Calculate whale points
+      const whalePoints = (rightWhales * 1) + (bowheadWhales * 2) + (spermWhales * 4) +
+                         (blueWhale * 6) + (whiteWhale * 4);
+      
+      const buildingPoints = totalBuildings;
+      const moneyPoints = Math.floor(totalMoney / 5);
+      
+      // Calculate victory building points
+      let victoryPoints = 0;
+      let victoryBreakdown = [];
+      
+      selectedVictoryBuildings.forEach(vb => {
+          let points = 0;
+          const buildingId = parseInt(vb.id);
+          
+          // Handle variable scoring buildings
+          if (buildingId === 6) {
+              // Candleworks: 1 point per Sperm Whale (use value from page)
+              const count = spermWhales;
+              points = count;
+              victoryBreakdown.push(`${vb.name}: ${points} pts (${count} Sperm Whales)`);
+          } else if (buildingId === 13) {
+              // Counting House: 1 point per 2 Right Whales (use value from page)
+              const count = rightWhales;
+              points = Math.floor(count / 2);
+              victoryBreakdown.push(`${vb.name}: ${points} pts (${count} Right Whales)`);
+          } else if (buildingId === 17) {
+              // Dressmaker: 1 point per 2 Bowhead Whales (use value from page)
+              const count = bowheadWhales;
+              points = Math.floor(count / 2);
+              victoryBreakdown.push(`${vb.name}: ${points} pts (${count} Bowhead Whales)`);
+          } else if (buildingId === 32) {
+              // Municipal Office: 1 point per 4 buildings (use value from page)
+              const count = totalBuildings;
+              points = Math.floor(count / 4);
+              victoryBreakdown.push(`${vb.name}: ${points} pts (${count} Buildings)`);
+          } else if (buildingId === 33) {
+              // Newspaper: 1 point per 2 Ship's Log pages (needs user input)
+              points = Math.floor(vb.variableCount / 2);
+              victoryBreakdown.push(`${vb.name}: ${points} pts (${vb.variableCount} Ship's Log Pages)`);
+          } else if (buildingId === 36) {
+              // Publishing House: 1 point per DHMG Symbol building (needs user input)
+              points = vb.variableCount;
+              victoryBreakdown.push(`${vb.name}: ${points} pts (${vb.variableCount} DHMG Buildings)`);
+          } else if (buildingId === 40) {
+              // Salvage Yard: 1 point per 2 Goods (needs user input)
+              points = Math.floor(vb.variableCount / 2);
+              victoryBreakdown.push(`${vb.name}: ${points} pts (${vb.variableCount} Goods)`);
+          } else {
+              // Fixed point buildings (includes Mansion, Seamen's Bethel, Shanty, etc.)
+              // Subtract 1 because the base building point is already counted in "Total Buildings"
+              points = Math.max(0, (parseInt(vb.points) || 0) - 1);
+              victoryBreakdown.push(`${vb.name}: ${points} pts`);
+          }
+          
+          victoryPoints += points;
+      });
+      
+      const totalScore = whalePoints + buildingPoints + victoryPoints + moneyPoints;
+      
+      // Display results
+      const scoreResult = document.getElementById('score-result');
+      const scoreBreakdown = document.getElementById('score-breakdown');
+      
+      if (scoreResult && scoreBreakdown) {
+          let whaleBreakdown = [];
+          if (rightWhales > 0) whaleBreakdown.push(`${rightWhales} Right (${rightWhales * 1})`);
+          if (bowheadWhales > 0) whaleBreakdown.push(`${bowheadWhales} Bowhead (${bowheadWhales * 2})`);
+          if (spermWhales > 0) whaleBreakdown.push(`${spermWhales} Sperm (${spermWhales * 4})`);
+          if (blueWhale > 0) whaleBreakdown.push(`${blueWhale} Blue Whale (6)`);
+          if (whiteWhale > 0) whaleBreakdown.push(`${whiteWhale} White Whale (4)`);
+          
+          scoreBreakdown.innerHTML = `
+              <div class="summary-item">
+                  <span class="summary-label">Whale Points:</span>
+                  <span class="summary-value">${whalePoints}</span>
+              </div>
+              ${whaleBreakdown.length > 0 ? `
+              <div style="font-size: 0.9rem; color: var(--text-light); margin-left: 20px; margin-bottom: 10px;">
+                  ${whaleBreakdown.join(', ')}
+              </div>
+              ` : ''}
+              <div class="summary-item">
+                  <span class="summary-label">Building Points:</span>
+                  <span class="summary-value">${buildingPoints}</span>
+              </div>
+              <div class="summary-item">
+                  <span class="summary-label">Victory Building Points:</span>
+                  <span class="summary-value">${victoryPoints}</span>
+              </div>
+              ${victoryBreakdown.length > 0 ? `
+              <div style="font-size: 0.9rem; color: var(--text-light); margin-left: 20px; margin-bottom: 10px;">
+                  ${victoryBreakdown.join('<br>')}
+              </div>
+              ` : ''}
+              <div class="summary-item">
+                  <span class="summary-label">Money Points:</span>
+                  <span class="summary-value">${moneyPoints} ($${totalMoney})</span>
+              </div>
+              <div class="summary-item" style="border-top: 3px solid var(--primary-color); padding-top: 15px; margin-top: 15px;">
+                  <span class="summary-label" style="font-size: 1.3rem;">TOTAL SCORE:</span>
+                  <span class="summary-value" style="font-size: 1.5rem; font-weight: bold;">${totalScore}</span>
+              </div>
+          `;
+          scoreResult.style.display = 'block';
+          scoreResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+  }
+
+  // ===== EVENT HANDLERS =====
+
+  // Set up event listeners for New Bedford page
+  setupEventListeners() {
+    // Expansion radio buttons - show/hide Rising Tide options and enable/disable 5 players
+    const expansionRadios = document.querySelectorAll(
+      'input[name="expansion"]'
+    );
+    expansionRadios.forEach((radio) => {
+      radio.addEventListener("change", () => {
         this.handleExpansionChange();
+        this.handleFourPlayerVariantVisibility();
+      });
+    });
+
+    // Player count - show/hide variant options and update AI Captains
+    const playerCount = document.getElementById("player-count");
+    if (playerCount) {
+      playerCount.addEventListener("change", () => {
+        this.handlePlayerCountChange();
         this.handleFourPlayerVariantVisibility();
         this.updateAICaptainsOptions();
         this.handleTurnersMillVisibility();
+      });
     }
 
-    // Handle expansion selection change
-    handleExpansionChange() {
-        const expansionRadio = document.querySelector('input[name="expansion"]:checked');
-        const risingTideOptions = document.getElementById('rising-tide-options');
-        const playerCountSelect = document.getElementById('player-count');
-        const fivePlayerOption = playerCountSelect?.querySelector('option[value="5"]');
-        
-        if (expansionRadio && risingTideOptions) {
-            const isRisingTide = expansionRadio.value === 'rising-tide';
-            
-            // Show/hide Rising Tide options
-            risingTideOptions.style.display = isRisingTide ? 'block' : 'none';
-            
-            // Enable/disable 5 player option
-            if (fivePlayerOption) {
-                fivePlayerOption.disabled = !isRisingTide;
-                fivePlayerOption.textContent = isRisingTide ? '5 Players' : '5 Players (Rising Tide only)';
-                
-                // If 5 players is currently selected and we switch to base game, change to 4 players
-                if (!isRisingTide && playerCountSelect.value === '5') {
-                    playerCountSelect.value = '4';
-                    this.handlePlayerCountChange();
-                    this.updateAICaptainsOptions();
-                }
-            }
-        }
+    // AI Captains - show/hide Turner's Mill option
+    const aiCaptainsSelect = document.getElementById("ai-captains");
+    if (aiCaptainsSelect) {
+      aiCaptainsSelect.addEventListener("change", () => {
+        this.handleTurnersMillVisibility();
+      });
     }
 
-    // Handle player count change
-    handlePlayerCountChange() {
-        const playerCount = document.getElementById('player-count');
-        const twoPlayerOptions = document.getElementById('two-player-options');
-        
-        if (playerCount && twoPlayerOptions) {
-            if (playerCount.value === '2') {
-                twoPlayerOptions.style.display = 'block';
-            } else {
-                twoPlayerOptions.style.display = 'none';
-            }
-        }
+    // Start Game button
+    const startGameBtn = document.getElementById("start-game-btn");
+    if (startGameBtn) {
+      startGameBtn.addEventListener("click", () => this.startGame());
     }
 
-    // Handle 4-player variant visibility (only show when 4 players AND Rising Tide selected)
-    handleFourPlayerVariantVisibility() {
-        const playerCount = document.getElementById('player-count');
-        const expansionRadio = document.querySelector('input[name="expansion"]:checked');
-        const fourPlayerOptions = document.getElementById('four-player-options');
-        
-        if (playerCount && expansionRadio && fourPlayerOptions) {
-            const isFourPlayers = playerCount.value === '4';
-            const isRisingTide = expansionRadio.value === 'rising-tide';
-            
-            if (isFourPlayers && isRisingTide) {
-                fourPlayerOptions.style.display = 'block';
-            } else {
-                fourPlayerOptions.style.display = 'none';
-            }
-        }
+    // Reset Setup button (in config section)
+    const resetSetupBtn = document.getElementById("reset-setup-btn-config");
+    if (resetSetupBtn) {
+      resetSetupBtn.addEventListener("click", () => this.resetSetup());
     }
 
-    // Handle Turner's Mill visibility (only show when AI Captains > 0)
-    handleTurnersMillVisibility() {
-        const aiCaptainsSelect = document.getElementById('ai-captains');
-        const turnersMillOptions = document.getElementById('turners-mill-options');
-        
-        if (aiCaptainsSelect && turnersMillOptions) {
-            const aiCaptains = parseInt(aiCaptainsSelect.value);
-            
-            if (aiCaptains > 0) {
-                turnersMillOptions.style.display = 'block';
-            } else {
-                turnersMillOptions.style.display = 'none';
-            }
-        }
+    // Game Setup Help button
+    const gameSetupHelpBtn = document.getElementById("game-setup-help");
+    if (gameSetupHelpBtn) {
+      gameSetupHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showGameSetupModal();
+      });
     }
 
-    // Update AI Captains options based on player count
-    updateAICaptainsOptions() {
-        const playerCount = parseInt(document.getElementById('player-count')?.value || 2);
-        const aiCaptainsSelect = document.getElementById('ai-captains');
-        
-        if (!aiCaptainsSelect) return;
-        
-        const maxAI = playerCount - 1;
-        const currentValue = parseInt(aiCaptainsSelect.value);
-        
-        // Clear and rebuild options
-        aiCaptainsSelect.innerHTML = '';
-        
-        for (let i = 0; i <= maxAI; i++) {
-            const option = document.createElement('option');
-            option.value = i;
-            option.textContent = i === 0 ? 'None' : `${i} AI Captain${i > 1 ? 's' : ''}`;
-            aiCaptainsSelect.appendChild(option);
-        }
-        
-        // Restore previous value if still valid, otherwise set to 0
-        if (currentValue <= maxAI) {
-            aiCaptainsSelect.value = currentValue;
-        } else {
-            aiCaptainsSelect.value = 0;
-        }
+    // Variant Setup Help button
+    const variantSetupHelpBtn = document.getElementById("variant-setup-help");
+    if (variantSetupHelpBtn) {
+      variantSetupHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showVariantSetupModal();
+      });
     }
 
-    // Start the game with selected configuration
-    startGame() {
-        // Gather all configuration
-        const expansionRadio = document.querySelector('input[name="expansion"]:checked');
-        const expansion = expansionRadio?.value;
-        const playerCount = parseInt(document.getElementById('player-count')?.value);
-        const shipsLog = document.getElementById('ships-log-checkbox')?.checked;
-        const variantSetup = document.getElementById('variant-setup-checkbox')?.checked;
-        const twoPlayerVariant = document.getElementById('two-player-variant-checkbox')?.checked;
-        const fourPlayerVariant = document.getElementById('four-player-variant-checkbox')?.checked;
-        const aiCaptains = parseInt(document.getElementById('ai-captains')?.value);
-        const turnersMill = document.getElementById('turners-mill-checkbox')?.checked;
-        
-        // Get selected promos from checkboxes
-        const promoCheckboxes = document.querySelectorAll('input[name="promo"]:checked');
-        const selectedPromos = Array.from(promoCheckboxes).map(cb => cb.value);
-
-        // Store configuration
-        this.gameConfig = {
-            expansion,
-            playerCount,
-            shipsLog: expansion === 'rising-tide' ? shipsLog : false,
-            variantSetup: expansion === 'rising-tide' ? variantSetup : false,
-            twoPlayerVariant: playerCount === 2 ? twoPlayerVariant : false,
-            fourPlayerVariant: (playerCount === 4 && expansion === 'rising-tide') ? fourPlayerVariant : false,
-            promos: selectedPromos,
-            aiCaptains,
-            turnersMill: aiCaptains > 0 ? turnersMill : false
-        };
-
-        console.log('Game configuration:', this.gameConfig);
-
-        // Hide the setup section
-        const setupSection = document.getElementById('setup-section');
-        if (setupSection) {
-            setupSection.style.display = 'none';
-        }
-
-        // Display game summary (but hide it by default)
-        this.displayGameSummary();
-        const gameSummary = document.getElementById('game-summary');
-        if (gameSummary) {
-            gameSummary.style.display = 'none';
-        }
-
-        // Display buildings based on configuration
-        this.displayBuildings();
-
-        // Show Config and Reset buttons
-        const toggleConfigBtn = document.getElementById('toggle-config-btn');
-        const resetBtn = document.getElementById('reset-setup-btn-top');
-        if (toggleConfigBtn) toggleConfigBtn.style.display = 'inline-block';
-        if (resetBtn) resetBtn.style.display = 'inline-block';
-
-        // Show notification
-        if (window.showNotification) {
-            window.showNotification('Buildings loaded!');
-        }
+    // 2-Player Variant Help button
+    const twoPlayerVariantHelpBtn = document.getElementById(
+      "two-player-variant-help"
+    );
+    if (twoPlayerVariantHelpBtn) {
+      twoPlayerVariantHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showTwoPlayerVariantModal();
+      });
     }
 
-    // Reset setup - go back to setup form
-    resetSetup() {
-        // Show the setup section
-        const setupSection = document.getElementById('setup-section');
-        if (setupSection) {
-            setupSection.style.display = 'block';
-        }
-
-        // Hide game summary, buildings section, and gameplay section
-        const gameSummary = document.getElementById('game-summary');
-        const buildingsSection = document.getElementById('buildings-section');
-        const gameplaySection = document.getElementById('gameplay-section');
-        
-        if (gameSummary) {
-            gameSummary.style.display = 'none';
-        }
-        
-        if (buildingsSection) {
-            buildingsSection.style.display = 'none';
-        }
-        
-        if (gameplaySection) {
-            gameplaySection.style.display = 'none';
-        }
-
-        // Hide all top navigation buttons
-        const toggleConfigBtn = document.getElementById('toggle-config-btn');
-        const toggleBuildingsBtn = document.getElementById('toggle-buildings-btn');
-        const resetBtn = document.getElementById('reset-setup-btn-top');
-        
-        if (toggleConfigBtn) toggleConfigBtn.style.display = 'none';
-        if (toggleBuildingsBtn) toggleBuildingsBtn.style.display = 'none';
-        if (resetBtn) resetBtn.style.display = 'none';
-
-        // Reset game phase to setup
-        this.currentPhase = 'setup';
-
-        // Clear game configuration
-        this.gameConfig = null;
-
-        // Scroll to top of setup form
-        setupSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-        // Show notification
-        if (window.showNotification) {
-            window.showNotification('Setup reset - configure your game again');
-        }
+    // 4-Player Variant Help button
+    const fourPlayerVariantHelpBtn = document.getElementById(
+      "four-player-variant-help"
+    );
+    if (fourPlayerVariantHelpBtn) {
+      fourPlayerVariantHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showFourPlayerVariantModal();
+      });
     }
 
-    // Display game configuration summary
-    displayGameSummary() {
-        const gameSummary = document.getElementById('game-summary');
-        const summaryContent = document.getElementById('game-summary-content');
+    // White Whale Promo Help buttons
+    const ambergrisHelpBtn = document.getElementById("ambergris-help");
+    if (ambergrisHelpBtn) {
+      ambergrisHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showPromoModal("ambergris");
+      });
+    }
 
-        if (!gameSummary || !summaryContent || !this.gameConfig) return;
+    const blueWhaleHelpBtn = document.getElementById("blue-whale-help");
+    if (blueWhaleHelpBtn) {
+      blueWhaleHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showPromoModal("blue-whale");
+      });
+    }
 
-        // Build summary HTML
-        let html = '';
-        
-        html += `<div class="summary-item">
+    const castawayHelpBtn = document.getElementById("castaway-help");
+    if (castawayHelpBtn) {
+      castawayHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showPromoModal("castaway");
+      });
+    }
+
+    const whiteWhaleHelpBtn = document.getElementById("white-whale-help");
+    if (whiteWhaleHelpBtn) {
+      whiteWhaleHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showPromoModal("white-whale");
+      });
+    }
+
+    // Turner's Mill Help button
+    const turnersMillHelpBtn = document.getElementById("turners-mill-help");
+    if (turnersMillHelpBtn) {
+      turnersMillHelpBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.showTurnersMillModal();
+      });
+    }
+
+    // Initialize on load
+    this.handleExpansionChange();
+    this.handleFourPlayerVariantVisibility();
+    this.updateAICaptainsOptions();
+    this.handleTurnersMillVisibility();
+  }
+
+  // Handle expansion selection change
+  handleExpansionChange() {
+    const expansionRadio = document.querySelector(
+      'input[name="expansion"]:checked'
+    );
+    const risingTideOptions = document.getElementById("rising-tide-options");
+    const playerCountSelect = document.getElementById("player-count");
+    const fivePlayerOption =
+      playerCountSelect?.querySelector('option[value="5"]');
+
+    if (expansionRadio && risingTideOptions) {
+      const isRisingTide = expansionRadio.value === "rising-tide";
+
+      // Show/hide Rising Tide options
+      risingTideOptions.style.display = isRisingTide ? "block" : "none";
+
+      // Enable/disable 5 player option
+      if (fivePlayerOption) {
+        fivePlayerOption.disabled = !isRisingTide;
+        fivePlayerOption.textContent = isRisingTide
+          ? "5 Players"
+          : "5 Players (Rising Tide only)";
+
+        // If 5 players is currently selected and we switch to base game, change to 4 players
+        if (!isRisingTide && playerCountSelect.value === "5") {
+          playerCountSelect.value = "4";
+          this.handlePlayerCountChange();
+          this.updateAICaptainsOptions();
+        }
+      }
+    }
+  }
+
+  // Handle player count change
+  handlePlayerCountChange() {
+    const playerCount = document.getElementById("player-count");
+    const twoPlayerOptions = document.getElementById("two-player-options");
+
+    if (playerCount && twoPlayerOptions) {
+      if (playerCount.value === "2") {
+        twoPlayerOptions.style.display = "block";
+      } else {
+        twoPlayerOptions.style.display = "none";
+      }
+    }
+  }
+
+  // Handle 4-player variant visibility (only show when 4 players AND Rising Tide selected)
+  handleFourPlayerVariantVisibility() {
+    const playerCount = document.getElementById("player-count");
+    const expansionRadio = document.querySelector(
+      'input[name="expansion"]:checked'
+    );
+    const fourPlayerOptions = document.getElementById("four-player-options");
+
+    if (playerCount && expansionRadio && fourPlayerOptions) {
+      const isFourPlayers = playerCount.value === "4";
+      const isRisingTide = expansionRadio.value === "rising-tide";
+
+      if (isFourPlayers && isRisingTide) {
+        fourPlayerOptions.style.display = "block";
+      } else {
+        fourPlayerOptions.style.display = "none";
+      }
+    }
+  }
+
+  // Handle Turner's Mill visibility (only show when AI Captains > 0)
+  handleTurnersMillVisibility() {
+    const aiCaptainsSelect = document.getElementById("ai-captains");
+    const turnersMillOptions = document.getElementById("turners-mill-options");
+
+    if (aiCaptainsSelect && turnersMillOptions) {
+      const aiCaptains = parseInt(aiCaptainsSelect.value);
+
+      if (aiCaptains > 0) {
+        turnersMillOptions.style.display = "block";
+      } else {
+        turnersMillOptions.style.display = "none";
+      }
+    }
+  }
+
+  // Update AI Captains options based on player count
+  updateAICaptainsOptions() {
+    const playerCount = parseInt(
+      document.getElementById("player-count")?.value || 2
+    );
+    const aiCaptainsSelect = document.getElementById("ai-captains");
+
+    if (!aiCaptainsSelect) return;
+
+    const maxAI = playerCount - 1;
+    const currentValue = parseInt(aiCaptainsSelect.value);
+
+    // Clear and rebuild options
+    aiCaptainsSelect.innerHTML = "";
+
+    for (let i = 0; i <= maxAI; i++) {
+      const option = document.createElement("option");
+      option.value = i;
+      option.textContent =
+        i === 0 ? "None" : `${i} AI Captain${i > 1 ? "s" : ""}`;
+      aiCaptainsSelect.appendChild(option);
+    }
+
+    // Restore previous value if still valid, otherwise set to 0
+    if (currentValue <= maxAI) {
+      aiCaptainsSelect.value = currentValue;
+    } else {
+      aiCaptainsSelect.value = 0;
+    }
+  }
+
+  // Start the game with selected configuration
+  startGame() {
+    // Gather all configuration
+    const expansionRadio = document.querySelector(
+      'input[name="expansion"]:checked'
+    );
+    const expansion = expansionRadio?.value;
+    const playerCount = parseInt(
+      document.getElementById("player-count")?.value
+    );
+    const shipsLog = document.getElementById("ships-log-checkbox")?.checked;
+    const variantSetup = document.getElementById(
+      "variant-setup-checkbox"
+    )?.checked;
+    const twoPlayerVariant = document.getElementById(
+      "two-player-variant-checkbox"
+    )?.checked;
+    const fourPlayerVariant = document.getElementById(
+      "four-player-variant-checkbox"
+    )?.checked;
+    const aiCaptains = parseInt(document.getElementById("ai-captains")?.value);
+    const turnersMill = document.getElementById(
+      "turners-mill-checkbox"
+    )?.checked;
+
+    // Get selected promos from checkboxes
+    const promoCheckboxes = document.querySelectorAll(
+      'input[name="promo"]:checked'
+    );
+    const selectedPromos = Array.from(promoCheckboxes).map((cb) => cb.value);
+
+    // Store configuration
+    this.gameConfig = {
+      expansion,
+      playerCount,
+      shipsLog: expansion === "rising-tide" ? shipsLog : false,
+      variantSetup: expansion === "rising-tide" ? variantSetup : false,
+      twoPlayerVariant: playerCount === 2 ? twoPlayerVariant : false,
+      fourPlayerVariant:
+        playerCount === 4 && expansion === "rising-tide"
+          ? fourPlayerVariant
+          : false,
+      promos: selectedPromos,
+      aiCaptains,
+      turnersMill: aiCaptains > 0 ? turnersMill : false,
+    };
+
+    console.log("Game configuration:", this.gameConfig);
+
+    // Hide the setup section
+    const setupSection = document.getElementById("setup-section");
+    if (setupSection) {
+      setupSection.style.display = "none";
+    }
+
+    // Display game summary (but hide it by default)
+    this.displayGameSummary();
+    const gameSummary = document.getElementById("game-summary");
+    if (gameSummary) {
+      gameSummary.style.display = "none";
+    }
+
+    // Display buildings based on configuration
+    this.displayBuildings();
+
+    // Show Config button
+    const toggleConfigBtn = document.getElementById("toggle-config-btn");
+    if (toggleConfigBtn) toggleConfigBtn.style.display = "inline-block";
+  }
+
+  // Reset setup - go back to setup form
+  resetSetup() {
+    // Show the setup section
+    const setupSection = document.getElementById("setup-section");
+    if (setupSection) {
+      setupSection.style.display = "block";
+    }
+
+    // Hide game summary, buildings section, and gameplay section
+    const gameSummary = document.getElementById("game-summary");
+    const buildingsSection = document.getElementById("buildings-section");
+    const gameplaySection = document.getElementById("gameplay-section");
+
+    if (gameSummary) {
+      gameSummary.style.display = "none";
+    }
+
+    if (buildingsSection) {
+      buildingsSection.style.display = "none";
+    }
+
+    if (gameplaySection) {
+      gameplaySection.style.display = "none";
+    }
+
+    // Hide all top navigation buttons
+    const toggleConfigBtn = document.getElementById("toggle-config-btn");
+    const toggleBuildingsBtn = document.getElementById("toggle-buildings-btn");
+
+    if (toggleConfigBtn) toggleConfigBtn.style.display = "none";
+    if (toggleBuildingsBtn) toggleBuildingsBtn.style.display = "none";
+
+    // Reset game phase to setup
+    this.currentPhase = "setup";
+
+    // Clear game configuration
+    this.gameConfig = null;
+
+    // Scroll to top of setup form
+    setupSection?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // ===== GAME SETUP METHODS =====
+
+  // Display game configuration summary
+  displayGameSummary() {
+    const gameSummary = document.getElementById("game-summary");
+    const summaryContent = document.getElementById("game-summary-content");
+
+    if (!gameSummary || !summaryContent || !this.gameConfig) return;
+
+    // Build summary HTML
+    let html = "";
+
+    html += `<div class="summary-item">
             <span class="summary-label">Expansion:</span>
-            <span class="summary-value">${this.gameConfig.expansion === 'rising-tide' ? 'Base + Rising Tide' : 'Base Game'}</span>
+            <span class="summary-value">${
+              this.gameConfig.expansion === "rising-tide"
+                ? "Base + Rising Tide"
+                : "Base Game"
+            }</span>
         </div>`;
-        
-        html += `<div class="summary-item">
+
+    html += `<div class="summary-item">
             <span class="summary-label">Players:</span>
             <span class="summary-value">${this.gameConfig.playerCount}</span>
         </div>`;
-        
-        if (this.gameConfig.expansion === 'rising-tide' && this.gameConfig.shipsLog) {
-            html += `<div class="summary-item">
+
+    if (
+      this.gameConfig.expansion === "rising-tide" &&
+      this.gameConfig.shipsLog
+    ) {
+      html += `<div class="summary-item">
                 <span class="summary-label">Ship's Log:</span>
                 <span class="summary-value">Enabled</span>
             </div>`;
-        }
-        
-        if (this.gameConfig.expansion === 'rising-tide' && this.gameConfig.variantSetup) {
-            html += `<div class="summary-item">
+    }
+
+    if (
+      this.gameConfig.expansion === "rising-tide" &&
+      this.gameConfig.variantSetup
+    ) {
+      html += `<div class="summary-item">
                 <span class="summary-label">Variant Setup:</span>
                 <span class="summary-value">Enabled</span>
             </div>`;
-        }
-        
-        if (this.gameConfig.playerCount === 2 && this.gameConfig.twoPlayerVariant) {
-            html += `<div class="summary-item">
+    }
+
+    if (this.gameConfig.playerCount === 2 && this.gameConfig.twoPlayerVariant) {
+      html += `<div class="summary-item">
                 <span class="summary-label">2-Player Variant:</span>
                 <span class="summary-value">Enabled</span>
             </div>`;
-        }
-        
-        if (this.gameConfig.playerCount === 4 && this.gameConfig.fourPlayerVariant) {
-            html += `<div class="summary-item">
+    }
+
+    if (
+      this.gameConfig.playerCount === 4 &&
+      this.gameConfig.fourPlayerVariant
+    ) {
+      html += `<div class="summary-item">
                 <span class="summary-label">4-Player Variant:</span>
                 <span class="summary-value">Enabled</span>
             </div>`;
-        }
-        
-        if (this.gameConfig.promos.length > 0) {
-            html += `<div class="summary-item">
+    }
+
+    if (this.gameConfig.promos.length > 0) {
+      html += `<div class="summary-item">
                 <span class="summary-label">Promos:</span>
-                <span class="summary-value">${this.gameConfig.promos.map(p => p.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase())).join(', ')}</span>
+                <span class="summary-value">${this.gameConfig.promos
+                  .map((p) =>
+                    p.replace("-", " ").replace(/\b\w/g, (l) => l.toUpperCase())
+                  )
+                  .join(", ")}</span>
             </div>`;
-        }
-        
-        if (this.gameConfig.aiCaptains > 0) {
-            html += `<div class="summary-item">
+    }
+
+    if (this.gameConfig.aiCaptains > 0) {
+      html += `<div class="summary-item">
                 <span class="summary-label">AI Captains:</span>
                 <span class="summary-value">${this.gameConfig.aiCaptains}</span>
             </div>`;
-        }
-        
-        if (this.gameConfig.aiCaptains > 0 && this.gameConfig.turnersMill) {
-            html += `<div class="summary-item">
+    }
+
+    if (this.gameConfig.aiCaptains > 0 && this.gameConfig.turnersMill) {
+      html += `<div class="summary-item">
                 <span class="summary-label">Turner's Mill:</span>
                 <span class="summary-value">Enabled</span>
             </div>`;
-        }
-
-        summaryContent.innerHTML = html;
-        gameSummary.style.display = 'block';
-        gameSummary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    // Randomly select buildings from pool
-    selectRandomBuildings(buildingPool, actionCount, victoryCount) {
-        // Separate action, ships-log, lonely-ocean, and victory buildings
-        const actionBuildings = buildingPool.filter(b => b.type === 'action');
-        const shipsLogBuildings = buildingPool.filter(b => b.type === 'ships-log');
-        const lonelyOceanBuildings = buildingPool.filter(b => b.type === 'lonely-ocean');
-        const victoryBuildings = buildingPool.filter(b => b.type === 'victory');
-        
-        // If using variant setup, don't enforce half-and-half split
-        if (this.gameConfig.variantSetup && this.gameConfig.expansion === 'rising-tide') {
-            // Random mix - just select randomly from pools
-            const selectedActions = this.shuffleArray([...actionBuildings]).slice(0, actionCount);
-            const selectedVictory = this.shuffleArray([...victoryBuildings]).slice(0, victoryCount);
-            // Only include ships-log if enabled
-            const selectedShipsLog = this.gameConfig.shipsLog ? shipsLogBuildings : [];
-            // Only include lonely-ocean (Turner's Mill) if enabled
-            const selectedLonelyOcean = this.gameConfig.turnersMill ? lonelyOceanBuildings : [];
-            return [...selectedActions, ...selectedShipsLog, ...selectedLonelyOcean, ...selectedVictory];
-        }
-        
-        // Standard setup - enforce half base, half expansion if using Rising Tide
-        if (this.gameConfig.expansion === 'rising-tide') {
-            // Split action buildings by game
-            const baseActions = actionBuildings.filter(b => b.game === 'base');
-            const expansionActions = actionBuildings.filter(b => b.game === 'rising-tide');
-            
-            // Split victory buildings by game
-            const baseVictory = victoryBuildings.filter(b => b.game === 'base');
-            const expansionVictory = victoryBuildings.filter(b => b.game === 'rising-tide');
-            
-            // Select half from each (including victory in the split)
-            const halfActions = Math.floor(actionCount / 2);
-            const halfVictory = Math.floor(victoryCount / 2);
-            
-            const selectedBaseActions = this.shuffleArray([...baseActions]).slice(0, halfActions);
-            const selectedExpActions = this.shuffleArray([...expansionActions]).slice(0, actionCount - halfActions);
-            
-            const selectedBaseVictory = this.shuffleArray([...baseVictory]).slice(0, halfVictory);
-            const selectedExpVictory = this.shuffleArray([...expansionVictory]).slice(0, victoryCount - halfVictory);
-            
-            // Only include ships-log if enabled
-            const selectedShipsLog = this.gameConfig.shipsLog ? shipsLogBuildings : [];
-            // Only include lonely-ocean (Turner's Mill) if enabled
-            const selectedLonelyOcean = this.gameConfig.turnersMill ? lonelyOceanBuildings : [];
-            return [...selectedBaseActions, ...selectedExpActions, ...selectedShipsLog, ...selectedLonelyOcean, ...selectedBaseVictory, ...selectedExpVictory];
-        }
-        
-        // Base game only - just select randomly
-        const selectedActions = this.shuffleArray([...actionBuildings]).slice(0, actionCount);
-        const selectedVictory = this.shuffleArray([...victoryBuildings]).slice(0, victoryCount);
-        // Only include ships-log if enabled
-        const selectedShipsLog = this.gameConfig.shipsLog ? shipsLogBuildings : [];
-        // Only include lonely-ocean (Turner's Mill) if enabled
-        const selectedLonelyOcean = this.gameConfig.turnersMill ? lonelyOceanBuildings : [];
-        return [...selectedActions, ...selectedShipsLog, ...selectedLonelyOcean, ...selectedVictory];
+    summaryContent.innerHTML = html;
+    // Only auto-show if not in gameplay phase
+    if (this.currentPhase !== "gameplay") {
+      gameSummary.style.display = "block";
+      gameSummary.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
-    
-    // Shuffle array helper (Fisher-Yates shuffle)
-    shuffleArray(array) {
-        const shuffled = [...array];
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        return shuffled;
+  }
+
+  // Randomly select buildings from pool
+  selectRandomBuildings(buildingPool, actionCount, victoryCount) {
+    // Separate action, ships-log, lonely-ocean, and victory buildings
+    const actionBuildings = buildingPool.filter((b) => b.type === "action");
+    const shipsLogBuildings = buildingPool.filter(
+      (b) => b.type === "ships-log"
+    );
+    const lonelyOceanBuildings = buildingPool.filter(
+      (b) => b.type === "lonely-ocean"
+    );
+    const victoryBuildings = buildingPool.filter((b) => b.type === "victory");
+
+    // If using variant setup, don't enforce half-and-half split
+    if (
+      this.gameConfig.variantSetup &&
+      this.gameConfig.expansion === "rising-tide"
+    ) {
+      // Random mix - just select randomly from pools
+      const selectedActions = this.shuffleArray([...actionBuildings]).slice(
+        0,
+        actionCount
+      );
+      const selectedVictory = this.shuffleArray([...victoryBuildings]).slice(
+        0,
+        victoryCount
+      );
+      // Only include ships-log if enabled
+      const selectedShipsLog = this.gameConfig.shipsLog
+        ? shipsLogBuildings
+        : [];
+      // Only include lonely-ocean (Turner's Mill) if enabled
+      const selectedLonelyOcean = this.gameConfig.turnersMill
+        ? lonelyOceanBuildings
+        : [];
+      return [
+        ...selectedActions,
+        ...selectedShipsLog,
+        ...selectedLonelyOcean,
+        ...selectedVictory,
+      ];
     }
 
-    // Create ocean bag based on player count and promos
-    createOceanBag() {
-        const oceanBag = [];
-        
-        // Determine player count for bag (5 players use 4-player amount)
-        const bagPlayerCount = this.gameConfig.playerCount === 5 ? 4 : this.gameConfig.playerCount;
-        
-        // Check if Blue Whale promo is used (affects whale counts)
-        const hasBlueWhale = this.gameConfig.promos.includes('blue-whale');
-        
-        // Add base whales and sea tokens per player
-        // 1 Sperm Whale per player
-        for (let i = 0; i < bagPlayerCount; i++) {
-            oceanBag.push('SW'); // Sperm Whale
-        }
-        
-        // 4 Empty Sea Tokens per player
-        for (let i = 0; i < bagPlayerCount * 4; i++) {
-            oceanBag.push('ES'); // Empty Sea
-        }
-        
-        // 5 Bowhead Whales per player (minus 2 if Blue Whale is used)
-        const bowheadCount = (bagPlayerCount * 5) - (hasBlueWhale ? 2 : 0);
-        for (let i = 0; i < bowheadCount; i++) {
-            oceanBag.push('BW'); // Bowhead Whale
-        }
-        
-        // 9 Right Whales per player (minus 2 if Blue Whale is used)
-        const rightWhaleCount = (bagPlayerCount * 9) - (hasBlueWhale ? 2 : 0);
-        for (let i = 0; i < rightWhaleCount; i++) {
-            oceanBag.push('RW'); // Right Whale
-        }
-        
-        // Add White Whale promo tiles if selected
-        if (this.gameConfig.promos.includes('ambergris')) {
-            oceanBag.push('AM'); // Ambergris
-        }
-        if (hasBlueWhale) {
-            oceanBag.push('BlW'); // Blue Whale
-        }
-        if (this.gameConfig.promos.includes('castaway')) {
-            oceanBag.push('CA'); // Castaway
-        }
-        if (this.gameConfig.promos.includes('white-whale')) {
-            oceanBag.push('WW'); // White Whale
-        }
-        
-        return oceanBag;
+    // Standard setup - enforce half base, half expansion if using Rising Tide
+    if (this.gameConfig.expansion === "rising-tide") {
+      // Split action buildings by game
+      const baseActions = actionBuildings.filter((b) => b.game === "base");
+      const expansionActions = actionBuildings.filter(
+        (b) => b.game === "rising-tide"
+      );
+
+      // Split victory buildings by game
+      const baseVictory = victoryBuildings.filter((b) => b.game === "base");
+      const expansionVictory = victoryBuildings.filter(
+        (b) => b.game === "rising-tide"
+      );
+
+      // Select half from each (including victory in the split)
+      const halfActions = Math.floor(actionCount / 2);
+      const halfVictory = Math.floor(victoryCount / 2);
+
+      const selectedBaseActions = this.shuffleArray([...baseActions]).slice(
+        0,
+        halfActions
+      );
+      const selectedExpActions = this.shuffleArray([...expansionActions]).slice(
+        0,
+        actionCount - halfActions
+      );
+
+      const selectedBaseVictory = this.shuffleArray([...baseVictory]).slice(
+        0,
+        halfVictory
+      );
+      const selectedExpVictory = this.shuffleArray([...expansionVictory]).slice(
+        0,
+        victoryCount - halfVictory
+      );
+
+      // Only include ships-log if enabled
+      const selectedShipsLog = this.gameConfig.shipsLog
+        ? shipsLogBuildings
+        : [];
+      // Only include lonely-ocean (Turner's Mill) if enabled
+      const selectedLonelyOcean = this.gameConfig.turnersMill
+        ? lonelyOceanBuildings
+        : [];
+      return [
+        ...selectedBaseActions,
+        ...selectedExpActions,
+        ...selectedShipsLog,
+        ...selectedLonelyOcean,
+        ...selectedBaseVictory,
+        ...selectedExpVictory,
+      ];
     }
 
-    // Display buildings based on game configuration
-    async displayBuildings() {
-        const buildingsSection = document.getElementById('buildings-section');
-        const buildingsList = document.getElementById('buildings-list');
+    // Base game only - just select randomly
+    const selectedActions = this.shuffleArray([...actionBuildings]).slice(
+      0,
+      actionCount
+    );
+    const selectedVictory = this.shuffleArray([...victoryBuildings]).slice(
+      0,
+      victoryCount
+    );
+    // Only include ships-log if enabled
+    const selectedShipsLog = this.gameConfig.shipsLog ? shipsLogBuildings : [];
+    // Only include lonely-ocean (Turner's Mill) if enabled
+    const selectedLonelyOcean = this.gameConfig.turnersMill
+      ? lonelyOceanBuildings
+      : [];
+    return [
+      ...selectedActions,
+      ...selectedShipsLog,
+      ...selectedLonelyOcean,
+      ...selectedVictory,
+    ];
+  }
 
-        if (!buildingsList || !this.gameConfig) {
-            console.log('Cannot display buildings: missing configuration');
-            return;
+  // Shuffle array helper (Fisher-Yates shuffle)
+  shuffleArray(array) {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  // Create ocean bag based on player count and promos
+  createOceanBag() {
+    const oceanBag = [];
+
+    // Determine player count for bag (5 players use 4-player amount)
+    const bagPlayerCount =
+      this.gameConfig.playerCount === 5 ? 4 : this.gameConfig.playerCount;
+
+    // Check if Blue Whale promo is used (affects whale counts)
+    const hasBlueWhale = this.gameConfig.promos.includes("blue-whale");
+
+    // Add base whales and sea tokens per player
+    // 1 Sperm Whale per player
+    for (let i = 0; i < bagPlayerCount; i++) {
+      oceanBag.push("SW"); // Sperm Whale
+    }
+
+    // 4 Empty Sea Tokens per player
+    for (let i = 0; i < bagPlayerCount * 4; i++) {
+      oceanBag.push("ES"); // Empty Sea
+    }
+
+    // 5 Bowhead Whales per player (minus 2 if Blue Whale is used)
+    const bowheadCount = bagPlayerCount * 5 - (hasBlueWhale ? 2 : 0);
+    for (let i = 0; i < bowheadCount; i++) {
+      oceanBag.push("BW"); // Bowhead Whale
+    }
+
+    // 9 Right Whales per player (minus 2 if Blue Whale is used)
+    const rightWhaleCount = bagPlayerCount * 9 - (hasBlueWhale ? 2 : 0);
+    for (let i = 0; i < rightWhaleCount; i++) {
+      oceanBag.push("RW"); // Right Whale
+    }
+
+    // Add White Whale promo tiles if selected
+    if (this.gameConfig.promos.includes("ambergris")) {
+      oceanBag.push("AM"); // Ambergris
+    }
+    if (hasBlueWhale) {
+      oceanBag.push("BlW"); // Blue Whale
+    }
+    if (this.gameConfig.promos.includes("castaway")) {
+      oceanBag.push("CA"); // Castaway
+    }
+    if (this.gameConfig.promos.includes("white-whale")) {
+      oceanBag.push("WW"); // White Whale
+    }
+
+    return oceanBag;
+  }
+
+  // Display buildings based on game configuration
+  async displayBuildings() {
+    const buildingsSection = document.getElementById("buildings-section");
+    const buildingsList = document.getElementById("buildings-list");
+
+    if (!buildingsList || !this.gameConfig) {
+      console.log("Cannot display buildings: missing configuration");
+      return;
+    }
+
+    // Get all buildings
+    const allBuildings = await this.getBuildings();
+
+    // Determine building counts based on player count
+    // Total = actionCount + victoryCount
+    let actionCount, victoryCount;
+    switch (this.gameConfig.playerCount) {
+      case 2:
+        actionCount = 8;
+        victoryCount = 4;
+        break;
+      case 3:
+        actionCount = 16;
+        victoryCount = 4;
+        break;
+      case 4:
+        actionCount = 16;
+        victoryCount = 4;
+        break;
+      case 5:
+        actionCount = 20;
+        victoryCount = 5;
+        break;
+      default:
+        actionCount = 8;
+        victoryCount = 4;
+    }
+
+    // Filter buildings based on game configuration to create the pool
+    let buildingPool = allBuildings.filter((building) => {
+      // Filter by expansion
+      if (
+        this.gameConfig.expansion === "base" &&
+        building.game === "rising-tide"
+      ) {
+        return false;
+      }
+
+      // Filter by 2-player variant
+      if (this.gameConfig.playerCount === 2) {
+        if (this.gameConfig.twoPlayerVariant) {
+          // If using 2-player variant, include buildings for 2 players OR marked as usable2p
+          if (building.players === 2) {
+            return true; // Always include 2-player buildings
+          }
+          if (building.players === 3 && building.usable2p) {
+            return true; // Include 3-player buildings marked as usable in 2p variant
+          }
+          return false; // Exclude everything else
+        } else {
+          // If not using variant, only include buildings for exactly 2 players
+          if (building.players !== 2) {
+            return false;
+          }
         }
-
-        // Get all buildings
-        const allBuildings = await this.getBuildings();
-        
-        // Determine building counts based on player count
-        // Total = actionCount + victoryCount
-        let actionCount, victoryCount;
-        switch(this.gameConfig.playerCount) {
-            case 2:
-                actionCount = 8;
-                victoryCount = 4;
-                break;
-            case 3:
-                actionCount = 16;
-                victoryCount = 4;
-                break;
-            case 4:
-                actionCount = 16;
-                victoryCount = 4;
-                break;
-            case 5:
-                actionCount = 20;
-                victoryCount = 5;
-                break;
-            default:
-                actionCount = 8;
-                victoryCount = 4;
+      } else if (
+        this.gameConfig.playerCount === 4 &&
+        this.gameConfig.fourPlayerVariant
+      ) {
+        // 4-player variant: include 4-player buildings OR 5-player buildings marked as usable4p
+        if (building.players === 4) {
+          return true; // Always include 4-player buildings
         }
-        
-        // Filter buildings based on game configuration to create the pool
-        let buildingPool = allBuildings.filter(building => {
-            // Filter by expansion
-            if (this.gameConfig.expansion === 'base' && building.game === 'rising-tide') {
-                return false;
-            }
-            
-            // Filter by 2-player variant
-            if (this.gameConfig.playerCount === 2) {
-                if (this.gameConfig.twoPlayerVariant) {
-                    // If using 2-player variant, include buildings for 2 players OR marked as usable2p
-                    if (building.players === 2) {
-                        return true; // Always include 2-player buildings
-                    }
-                    if (building.players === 3 && building.usable2p) {
-                        return true; // Include 3-player buildings marked as usable in 2p variant
-                    }
-                    return false; // Exclude everything else
-                } else {
-                    // If not using variant, only include buildings for exactly 2 players
-                    if (building.players !== 2) {
-                        return false;
-                    }
-                }
-            } else if (this.gameConfig.playerCount === 4 && this.gameConfig.fourPlayerVariant) {
-                // 4-player variant: include 4-player buildings OR 5-player buildings marked as usable4p
-                if (building.players === 4) {
-                    return true; // Always include 4-player buildings
-                }
-                if (building.players === 5 && building.usable4p) {
-                    return true; // Include 5-player buildings marked as usable in 4p variant
-                }
-                if (building.players < 4) {
-                    return true; // Include buildings for fewer players
-                }
-                return false; // Exclude other 5-player buildings
-            } else {
-                // For other player counts, filter by player count normally
-                if (building.players > this.gameConfig.playerCount) {
-                    return false;
-                }
-            }
-            
-            // Filter by Ship's Log
-            if (!this.gameConfig.shipsLog && building.type === 'ships-log') {
-                return false;
-            }
-            
-            // Filter by Turner's Mill (Lonely Ocean type)
-            if (!this.gameConfig.turnersMill && building.type === 'lonely-ocean') {
-                return false;
-            }
-            
-            return true;
-        });
-        
-        // Randomly select buildings from the pool
-        let filteredBuildings = this.selectRandomBuildings(buildingPool, actionCount, victoryCount);
-
-        // Store selected building IDs in game config
-        this.gameConfig.selectedBuildings = filteredBuildings.map(b => b.id);
-        
-        // Create ocean bag
-        this.gameConfig.oceanBag = this.createOceanBag();
-        
-        console.log('Selected building IDs:', this.gameConfig.selectedBuildings);
-        console.log('Ocean Bag:', this.gameConfig.oceanBag);
-
-        // Clear previous content
-        buildingsList.innerHTML = '';
-
-        if (filteredBuildings.length === 0) {
-            buildingsList.innerHTML = '<p>No buildings available for this configuration.</p>';
-            if (buildingsSection) buildingsSection.style.display = 'block';
-            return;
+        if (building.players === 5 && building.usable4p) {
+          return true; // Include 5-player buildings marked as usable in 4p variant
         }
+        if (building.players < 4) {
+          return true; // Include buildings for fewer players
+        }
+        return false; // Exclude other 5-player buildings
+      } else {
+        // For other player counts, filter by player count normally
+        if (building.players > this.gameConfig.playerCount) {
+          return false;
+        }
+      }
 
-        // Sort buildings: Action first, then Ships-Log, then Lonely Ocean, then Victory, alphabetically within each type
-        filteredBuildings.sort((a, b) => {
-            // Define type order
-            const typeOrder = { 'action': 1, 'ships-log': 2, 'lonely-ocean': 3, 'victory': 4 };
-            const typeA = typeOrder[a.type] || 99;
-            const typeB = typeOrder[b.type] || 99;
-            
-            // First sort by type
-            if (typeA !== typeB) {
-                return typeA - typeB;
-            }
-            
-            // Then sort alphabetically within same type
-            return a.name.localeCompare(b.name);
-        });
+      // Filter by Ship's Log
+      if (!this.gameConfig.shipsLog && building.type === "ships-log") {
+        return false;
+      }
 
-        // Create building cards
-        filteredBuildings.forEach(building => {
-            const buildingCard = document.createElement('div');
-            buildingCard.className = 'building-card';
-            
-            // Add special class for victory, ships-log, and lonely-ocean buildings
-            if (building.type === 'victory') {
-                buildingCard.classList.add('building-card-victory');
-            } else if (building.type === 'ships-log') {
-                buildingCard.classList.add('building-card-ships-log');
-            } else if (building.type === 'lonely-ocean') {
-                buildingCard.classList.add('building-card-lonely-ocean');
-            }
-            
-            buildingCard.innerHTML = `
+      // Filter by Turner's Mill (Lonely Ocean type)
+      if (!this.gameConfig.turnersMill && building.type === "lonely-ocean") {
+        return false;
+      }
+
+      return true;
+    });
+
+    // Randomly select buildings from the pool
+    let filteredBuildings = this.selectRandomBuildings(
+      buildingPool,
+      actionCount,
+      victoryCount
+    );
+
+    // Store selected building IDs in game config
+    this.gameConfig.selectedBuildings = filteredBuildings.map((b) => b.id);
+
+    // Create ocean bag
+    this.gameConfig.oceanBag = this.createOceanBag();
+
+    console.log("Selected building IDs:", this.gameConfig.selectedBuildings);
+    console.log("Ocean Bag:", this.gameConfig.oceanBag);
+
+    // Clear previous content
+    buildingsList.innerHTML = "";
+
+    if (filteredBuildings.length === 0) {
+      buildingsList.innerHTML =
+        "<p>No buildings available for this configuration.</p>";
+      if (buildingsSection) buildingsSection.style.display = "block";
+      return;
+    }
+
+    // Sort buildings: Action first, then Ships-Log, then Lonely Ocean, then Victory, alphabetically within each type
+    filteredBuildings.sort((a, b) => {
+      // Define type order
+      const typeOrder = {
+        action: 1,
+        "ships-log": 2,
+        "lonely-ocean": 3,
+        victory: 4,
+      };
+      const typeA = typeOrder[a.type] || 99;
+      const typeB = typeOrder[b.type] || 99;
+
+      // First sort by type
+      if (typeA !== typeB) {
+        return typeA - typeB;
+      }
+
+      // Then sort alphabetically within same type
+      return a.name.localeCompare(b.name);
+    });
+
+    // Create building cards
+    filteredBuildings.forEach((building) => {
+      const buildingCard = document.createElement("div");
+      buildingCard.className = "building-card";
+
+      // Add special class for victory, ships-log, and lonely-ocean buildings
+      if (building.type === "victory") {
+        buildingCard.classList.add("building-card-victory");
+      } else if (building.type === "ships-log") {
+        buildingCard.classList.add("building-card-ships-log");
+      } else if (building.type === "lonely-ocean") {
+        buildingCard.classList.add("building-card-lonely-ocean");
+      }
+
+      buildingCard.innerHTML = `
                 <div class="building-header">
                     <h4>${building.name}</h4>
-                    <span class="building-type building-type-${building.type}">${building.type}</span>
+                    <span class="building-type building-type-${
+                      building.type
+                    }">${building.type}</span>
                 </div>
                 <div class="building-content">
                     <div class="building-details">
-                        <p><strong>Players:</strong> ${building.players}${building.usable2p ? ' (2P Variant)' : ''}</p>
-                        <p><strong>Game:</strong> ${building.game === 'base' ? 'Base Game' : 'Rising Tide'}</p>
+                        <p><strong>Players:</strong> ${building.players}${
+        building.usable2p ? " (2P Variant)" : ""
+      }</p>
+                        <p><strong>Game:</strong> ${
+                          building.game === "base" ? "Base Game" : "Rising Tide"
+                        }</p>
                     </div>
                     <div class="building-checkbox-wrapper">
-                        <input type="checkbox" id="building-check-${building.id}" class="building-found-checkbox">
+                        <input type="checkbox" id="building-check-${
+                          building.id
+                        }" class="building-found-checkbox">
                     </div>
                 </div>
             `;
-            buildingsList.appendChild(buildingCard);
-        });
+      buildingsList.appendChild(buildingCard);
+    });
 
-        // Add count summary before the grid
-        const countSummary = document.createElement('p');
-        countSummary.style.cssText = 'text-align: center; font-weight: 600; color: var(--primary-color); margin-bottom: 20px; font-size: 1.1rem; grid-column: 1 / -1;';
-        countSummary.textContent = `Total Buildings: ${filteredBuildings.length}`;
-        buildingsList.appendChild(countSummary);
+    // Add count summary before the grid
+    const countSummary = document.createElement("p");
+    countSummary.style.cssText =
+      "text-align: center; font-weight: 600; color: var(--primary-color); margin-bottom: 20px; font-size: 1.1rem; grid-column: 1 / -1;";
+    countSummary.textContent = `Total Buildings: ${filteredBuildings.length}`;
+    buildingsList.appendChild(countSummary);
 
-        // Show/hide Start Game button based on phase
-        const startGameBtn = document.getElementById('start-game-btn-final');
-        if (startGameBtn) {
-            if (this.currentPhase === 'gameplay') {
-                startGameBtn.style.display = 'none';
-            } else {
-                startGameBtn.style.display = 'block';
-            }
-        }
-
-        // Show the buildings section
-        if (buildingsSection) {
-            buildingsSection.style.display = 'block';
-            buildingsSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+    // Show/hide Start Game button based on phase
+    const startGameBtn = document.getElementById("start-game-btn-final");
+    if (startGameBtn) {
+      if (this.currentPhase === "gameplay") {
+        startGameBtn.style.display = "none";
+      } else {
+        startGameBtn.style.display = "block";
+      }
     }
 
-    // Show Game Setup Modal
-    showGameSetupModal() {
-        // Create modal HTML
-        const modalHTML = `
+    // Show the buildings section (only if not in gameplay phase during restoration)
+    if (buildingsSection && this.currentPhase !== "gameplay") {
+      buildingsSection.style.display = "block";
+      buildingsSection.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }
+
+  // ===== MODAL METHODS =====
+
+  // Show Game Setup Modal
+  showGameSetupModal() {
+    // Create modal HTML
+    const modalHTML = `
             <div class="dice-modal show" id="game-setup-modal">
                 <div class="dice-modal-overlay"></div>
                 <div class="dice-modal-content" style="max-width: 600px; max-height: 80vh; overflow-y: auto;">
@@ -1042,27 +1897,27 @@ class NewBedfordGame {
                 </div>
             </div>
         `;
-        
-        // Add modal to body
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        // Add event listeners
-        const modal = document.getElementById('game-setup-modal');
-        const overlay = modal.querySelector('.dice-modal-overlay');
-        const closeBtn = document.getElementById('close-game-setup-modal');
-        
-        const closeModal = () => {
-            modal.remove();
-        };
-        
-        overlay.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-    }
 
-    // Show Variant Setup Modal
-    showVariantSetupModal() {
-        // Create modal HTML
-        const modalHTML = `
+    // Add modal to body
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+    // Add event listeners
+    const modal = document.getElementById("game-setup-modal");
+    const overlay = modal.querySelector(".dice-modal-overlay");
+    const closeBtn = document.getElementById("close-game-setup-modal");
+
+    const closeModal = () => {
+      modal.remove();
+    };
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Show Variant Setup Modal
+  showVariantSetupModal() {
+    // Create modal HTML
+    const modalHTML = `
             <div class="dice-modal show" id="variant-setup-modal">
                 <div class="dice-modal-overlay"></div>
                 <div class="dice-modal-content">
@@ -1076,27 +1931,27 @@ class NewBedfordGame {
                 </div>
             </div>
         `;
-        
-        // Add modal to body
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        // Add event listeners
-        const modal = document.getElementById('variant-setup-modal');
-        const overlay = modal.querySelector('.dice-modal-overlay');
-        const closeBtn = document.getElementById('close-variant-modal');
-        
-        const closeModal = () => {
-            modal.remove();
-        };
-        
-        overlay.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-    }
 
-    // Show 2-Player Variant Modal
-    showTwoPlayerVariantModal() {
-        // Create modal HTML
-        const modalHTML = `
+    // Add modal to body
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+    // Add event listeners
+    const modal = document.getElementById("variant-setup-modal");
+    const overlay = modal.querySelector(".dice-modal-overlay");
+    const closeBtn = document.getElementById("close-variant-modal");
+
+    const closeModal = () => {
+      modal.remove();
+    };
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Show 2-Player Variant Modal
+  showTwoPlayerVariantModal() {
+    // Create modal HTML
+    const modalHTML = `
             <div class="dice-modal show" id="two-player-variant-modal">
                 <div class="dice-modal-overlay"></div>
                 <div class="dice-modal-content">
@@ -1114,27 +1969,27 @@ class NewBedfordGame {
                 </div>
             </div>
         `;
-        
-        // Add modal to body
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        // Add event listeners
-        const modal = document.getElementById('two-player-variant-modal');
-        const overlay = modal.querySelector('.dice-modal-overlay');
-        const closeBtn = document.getElementById('close-two-player-modal');
-        
-        const closeModal = () => {
-            modal.remove();
-        };
-        
-        overlay.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-    }
 
-    // Show 4-Player Variant Modal
-    showFourPlayerVariantModal() {
-        // Create modal HTML
-        const modalHTML = `
+    // Add modal to body
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+    // Add event listeners
+    const modal = document.getElementById("two-player-variant-modal");
+    const overlay = modal.querySelector(".dice-modal-overlay");
+    const closeBtn = document.getElementById("close-two-player-modal");
+
+    const closeModal = () => {
+      modal.remove();
+    };
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Show 4-Player Variant Modal
+  showFourPlayerVariantModal() {
+    // Create modal HTML
+    const modalHTML = `
             <div class="dice-modal show" id="four-player-variant-modal">
                 <div class="dice-modal-overlay"></div>
                 <div class="dice-modal-content">
@@ -1152,48 +2007,50 @@ class NewBedfordGame {
                 </div>
             </div>
         `;
-        
-        // Add modal to body
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        // Add event listeners
-        const modal = document.getElementById('four-player-variant-modal');
-        const overlay = modal.querySelector('.dice-modal-overlay');
-        const closeBtn = document.getElementById('close-four-player-modal');
-        
-        const closeModal = () => {
-            modal.remove();
-        };
-        
-        overlay.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-    }
 
-    // Show White Whale Promo Modal
-    showPromoModal(promoType) {
-        const promoInfo = {
-            'ambergris': {
-                title: 'Ambergris',
-                description: 'Ambergris is worth no points. Instead, it earns $8 when the ship carrying it Returns. This money may be used to pay for whales on the same ship. Money is not received until the ship Returns.'
-            },
-            'blue-whale': {
-                title: 'Blue Whale',
-                description: 'Blue Whale costs $12 to lay and is worth 6 points. It requires 2 less tokens of Right and Bowhead whales to be removed from the ocean bag during setup.'
-            },
-            'castaway': {
-                title: 'Castaway',
-                description: 'Castaway promo tile information coming soon.'
-            },
-            'white-whale': {
-                title: 'White Whale',
-                description: 'White Whale promo tile information coming soon.'
-            }
-        };
+    // Add modal to body
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
 
-        const promo = promoInfo[promoType];
-        
-        // Create modal HTML
-        const modalHTML = `
+    // Add event listeners
+    const modal = document.getElementById("four-player-variant-modal");
+    const overlay = modal.querySelector(".dice-modal-overlay");
+    const closeBtn = document.getElementById("close-four-player-modal");
+
+    const closeModal = () => {
+      modal.remove();
+    };
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Show White Whale Promo Modal
+  showPromoModal(promoType) {
+    const promoInfo = {
+      ambergris: {
+        title: "Ambergris",
+        description:
+          "Ambergris is worth no points. Instead, it earns $8 when the ship carrying it Returns. This money may be used to pay for whales on the same ship. Money is not received until the ship Returns.",
+      },
+      "blue-whale": {
+        title: "Blue Whale",
+        description:
+          "Blue Whale costs $12 to lay and is worth 6 points. It requires 2 less tokens of Right and Bowhead whales to be removed from the ocean bag during setup.",
+      },
+      castaway: {
+        title: "Castaway",
+        description: "Castaway promo tile information coming soon.",
+      },
+      "white-whale": {
+        title: "White Whale",
+        description: "White Whale promo tile information coming soon.",
+      },
+    };
+
+    const promo = promoInfo[promoType];
+
+    // Create modal HTML
+    const modalHTML = `
             <div class="dice-modal show" id="promo-modal">
                 <div class="dice-modal-overlay"></div>
                 <div class="dice-modal-content">
@@ -1207,27 +2064,27 @@ class NewBedfordGame {
                 </div>
             </div>
         `;
-        
-        // Add modal to body
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        // Add event listeners
-        const modal = document.getElementById('promo-modal');
-        const overlay = modal.querySelector('.dice-modal-overlay');
-        const closeBtn = document.getElementById('close-promo-modal');
-        
-        const closeModal = () => {
-            modal.remove();
-        };
-        
-        overlay.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-    }
 
-    // Show Turner's Mill Modal
-    showTurnersMillModal() {
-        // Create modal HTML
-        const modalHTML = `
+    // Add modal to body
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+    // Add event listeners
+    const modal = document.getElementById("promo-modal");
+    const overlay = modal.querySelector(".dice-modal-overlay");
+    const closeBtn = document.getElementById("close-promo-modal");
+
+    const closeModal = () => {
+      modal.remove();
+    };
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Show Turner's Mill Modal
+  showTurnersMillModal() {
+    // Create modal HTML
+    const modalHTML = `
             <div class="dice-modal show" id="turners-mill-modal">
                 <div class="dice-modal-overlay"></div>
                 <div class="dice-modal-content">
@@ -1244,106 +2101,127 @@ class NewBedfordGame {
                 </div>
             </div>
         `;
-        
-        // Add modal to body
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        // Add event listeners
-        const modal = document.getElementById('turners-mill-modal');
-        const overlay = modal.querySelector('.dice-modal-overlay');
-        const closeBtn = document.getElementById('close-turners-mill-modal');
-        
-        const closeModal = () => {
-            modal.remove();
-        };
-        
-        overlay.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-    }
 
-    // Toggle Configuration visibility
-    toggleConfiguration() {
-        const gameSummary = document.getElementById('game-summary');
-        if (gameSummary) {
-            if (gameSummary.style.display === 'none') {
-                gameSummary.style.display = 'block';
-            } else {
-                gameSummary.style.display = 'none';
-            }
+    // Add modal to body
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
+
+    // Add event listeners
+    const modal = document.getElementById("turners-mill-modal");
+    const overlay = modal.querySelector(".dice-modal-overlay");
+    const closeBtn = document.getElementById("close-turners-mill-modal");
+
+    const closeModal = () => {
+      modal.remove();
+    };
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // ===== UI TOGGLE METHODS =====
+
+  // Toggle Configuration visibility
+  toggleConfiguration() {
+    const gameSummary = document.getElementById("game-summary");
+    if (gameSummary) {
+      if (gameSummary.style.display === "none") {
+        gameSummary.style.display = "block";
+        this.configVisible = true;
+      } else {
+        gameSummary.style.display = "none";
+        this.configVisible = false;
+      }
+    }
+  }
+
+  // Toggle Buildings visibility
+  toggleBuildings() {
+    const buildingsSection = document.getElementById("buildings-section");
+    const startGameBtn = document.getElementById("start-game-btn-final");
+
+    if (buildingsSection) {
+      if (buildingsSection.style.display === "none") {
+        buildingsSection.style.display = "block";
+        this.buildingsVisible = true;
+
+        // Hide Start Game button if we're in gameplay phase
+        if (this.currentPhase === "gameplay" && startGameBtn) {
+          startGameBtn.style.display = "none";
         }
+      } else {
+        buildingsSection.style.display = "none";
+        this.buildingsVisible = false;
+      }
+    }
+  }
+
+  // ===== GAMEPLAY METHODS =====
+
+  // Gameplay Phase - Start the actual game
+  startGameplay() {
+    this.currentPhase = "gameplay";
+    console.log("Starting New Bedford gameplay phase");
+
+    // Hide configuration and buildings
+    const gameSummary = document.getElementById("game-summary");
+    const buildingsSection = document.getElementById("buildings-section");
+
+    if (gameSummary) {
+      gameSummary.style.display = "none";
+      this.configVisible = false;
+    }
+    if (buildingsSection) {
+      buildingsSection.style.display = "none";
+      this.buildingsVisible = false;
     }
 
-    // Toggle Buildings visibility
-    toggleBuildings() {
-        const buildingsSection = document.getElementById('buildings-section');
-        const startGameBtn = document.getElementById('start-game-btn-final');
-        
-        if (buildingsSection) {
-            if (buildingsSection.style.display === 'none') {
-                buildingsSection.style.display = 'block';
-                
-                // Hide Start Game button if we're in gameplay phase
-                if (this.currentPhase === 'gameplay' && startGameBtn) {
-                    startGameBtn.style.display = 'none';
-                }
-            } else {
-                buildingsSection.style.display = 'none';
-            }
-        }
-    }
+    // Show toggle buttons
+    const toggleConfigBtn = document.getElementById("toggle-config-btn");
+    const toggleBuildingsBtn = document.getElementById("toggle-buildings-btn");
 
-    // FUTURE METHODS - Gameplay tracking, scoring, etc.
+    if (toggleConfigBtn) toggleConfigBtn.style.display = "inline-block";
+    if (toggleBuildingsBtn) toggleBuildingsBtn.style.display = "inline-block";
 
-    // Gameplay Phase - Start the actual game
-    startGameplay() {
-        this.currentPhase = 'gameplay';
-        console.log('Starting New Bedford gameplay phase');
-        
-        // Hide configuration and buildings
-        const gameSummary = document.getElementById('game-summary');
-        const buildingsSection = document.getElementById('buildings-section');
-        
-        if (gameSummary) gameSummary.style.display = 'none';
-        if (buildingsSection) buildingsSection.style.display = 'none';
-        
-        // Show toggle buttons
-        const toggleConfigBtn = document.getElementById('toggle-config-btn');
-        const toggleBuildingsBtn = document.getElementById('toggle-buildings-btn');
-        
-        if (toggleConfigBtn) toggleConfigBtn.style.display = 'inline-block';
-        if (toggleBuildingsBtn) toggleBuildingsBtn.style.display = 'inline-block';
-        
-        // Build ocean tokens display
-        const gameplaySection = document.getElementById('gameplay-section');
-        if (gameplaySection) {
-            const tokenTypes = [
-                { abbr: 'SW', name: 'Sperm Whale', image: 'SW.jpg' },
-                { abbr: 'BW', name: 'Bowhead Whale', image: 'BW.jpg' },
-                { abbr: 'RW', name: 'Right Whale', image: 'RW.jpg' },
-                { abbr: 'ES', name: 'Empty Sea', image: 'ES.jpg' }
-            ];
-            
-            // Add promo tokens if selected
-            if (this.gameConfig.promos.includes('ambergris')) {
-                tokenTypes.push({ abbr: 'AM', name: 'Ambergris', image: 'AM.jpg' });
-            }
-            if (this.gameConfig.promos.includes('blue-whale')) {
-                tokenTypes.push({ abbr: 'BlW', name: 'Blue Whale', image: 'BlW.jpg' });
-            }
-            if (this.gameConfig.promos.includes('castaway')) {
-                tokenTypes.push({ abbr: 'CA', name: 'Castaway', image: 'CA.jpg' });
-            }
-            if (this.gameConfig.promos.includes('white-whale')) {
-                tokenTypes.push({ abbr: 'WW', name: 'White Whale', image: 'WW.jpg' });
-            }
-            
-            const totalTokens = this.gameConfig.oceanBag.length;
-            
-            let tokensHTML = '<div class="ocean-tokens-grid">';
-            tokenTypes.forEach(token => {
-                const count = this.gameConfig.oceanBag.filter(t => t === token.abbr).length;
-                const percentage = totalTokens > 0 ? ((count / totalTokens) * 100).toFixed(1) : 0;
-                tokensHTML += `
+    // Build gameplay section
+    this.rebuildGameplaySection();
+  }
+
+  // Rebuild gameplay section (for state restoration and initial gameplay)
+  rebuildGameplaySection() {
+    // Build ocean tokens display
+    const gameplaySection = document.getElementById("gameplay-section");
+    if (gameplaySection) {
+      const tokenTypes = [
+        { abbr: "SW", name: "Sperm Whale", image: "SW.jpg" },
+        { abbr: "BW", name: "Bowhead Whale", image: "BW.jpg" },
+        { abbr: "RW", name: "Right Whale", image: "RW.jpg" },
+        { abbr: "ES", name: "Empty Sea", image: "ES.jpg" },
+      ];
+
+      // Add promo tokens if selected
+      if (this.gameConfig.promos.includes("ambergris")) {
+        tokenTypes.push({ abbr: "AM", name: "Ambergris", image: "AM.jpg" });
+      }
+      if (this.gameConfig.promos.includes("blue-whale")) {
+        tokenTypes.push({ abbr: "BlW", name: "Blue Whale", image: "BlW.jpg" });
+      }
+      if (this.gameConfig.promos.includes("castaway")) {
+        tokenTypes.push({ abbr: "CA", name: "Castaway", image: "CA.jpg" });
+      }
+      if (this.gameConfig.promos.includes("white-whale")) {
+        tokenTypes.push({ abbr: "WW", name: "White Whale", image: "WW.jpg" });
+      }
+
+      const totalTokens = this.gameConfig.oceanBag.length;
+
+      let tokensHTML = '<div class="ocean-tokens-grid">';
+      tokenTypes.forEach((token) => {
+        const count = this.gameConfig.oceanBag.filter(
+          (t) => t === token.abbr
+        ).length;
+        const percentage =
+          totalTokens > 0 ? ((count / totalTokens) * 100).toFixed(1) : 0;
+        tokensHTML += `
                     <div class="ocean-token-card" data-token="${token.abbr}" style="cursor: pointer;">
                         <img src="./assets/newbedford/tiles/${token.image}" alt="${token.name}" class="token-image">
                         <div class="token-info">
@@ -1352,17 +2230,19 @@ class NewBedfordGame {
                         </div>
                     </div>
                 `;
-            });
-            tokensHTML += '</div>';
-            
-            // Generate ships dropdown based on player count
-            const maxShips = this.gameConfig.playerCount * 2;
-            let shipsOptions = '';
-            for (let i = 0; i <= maxShips; i++) {
-                shipsOptions += `<option value="${i}">${i} Ship${i !== 1 ? 's' : ''}</option>`;
-            }
-            
-            gameplaySection.innerHTML = `
+      });
+      tokensHTML += "</div>";
+
+      // Generate ships dropdown based on player count
+      const maxShips = this.gameConfig.playerCount * 2;
+      let shipsOptions = "";
+      for (let i = 0; i <= maxShips; i++) {
+        shipsOptions += `<option value="${i}">${i} Ship${
+          i !== 1 ? "s" : ""
+        }</option>`;
+      }
+
+      gameplaySection.innerHTML = `
                 <h3>Play</h3>
                 <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; background: var(--background-color); padding: 20px; border-radius: 12px;">
                     <label for="ships-at-sea" style="font-weight: 600; color: var(--text-color); font-size: 1.1rem;">Ships at Sea:</label>
@@ -1373,65 +2253,61 @@ class NewBedfordGame {
                 </div>
                 ${tokensHTML}
             `;
-            
-            gameplaySection.style.display = 'block';
-            gameplaySection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            
-            // Add click listeners to token cards
-            const tokenCards = gameplaySection.querySelectorAll('.ocean-token-card');
-            tokenCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const tokenAbbr = card.getAttribute('data-token');
-                    this.showTokenModal(tokenAbbr);
-                });
-            });
-            
-            // Add click listener to draw tokens button
-            const drawTokensBtn = document.getElementById('draw-tokens-btn');
-            if (drawTokensBtn) {
-                drawTokensBtn.addEventListener('click', () => {
-                    const shipsAtSea = parseInt(document.getElementById('ships-at-sea')?.value || 1);
-                    this.drawTokens(shipsAtSea);
-                });
-            }
-        }
-        
-        // Show notification
-        if (window.showNotification) {
-            window.showNotification('Game started! Use Configuration and Buildings buttons to view setup.');
-        }
-        
-        // TODO: Implement gameplay tracking
-    }
 
-    // Show token adjustment modal
-    showTokenModal(tokenAbbr) {
-        const tokenNames = {
-            'SW': 'Sperm Whale',
-            'BW': 'Bowhead Whale',
-            'RW': 'Right Whale',
-            'ES': 'Empty Sea',
-            'AM': 'Ambergris',
-            'BlW': 'Blue Whale',
-            'CA': 'Castaway',
-            'WW': 'White Whale'
-        };
-        
-        const tokenName = tokenNames[tokenAbbr];
-        const currentCount = this.gameConfig.oceanBag.filter(t => t === tokenAbbr).length;
-        
-        const modalHTML = `
+      gameplaySection.style.display = "block";
+
+      // Add click listeners to token cards
+      const tokenCards = gameplaySection.querySelectorAll(".ocean-token-card");
+      tokenCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          const tokenAbbr = card.getAttribute("data-token");
+          this.showTokenModal(tokenAbbr);
+        });
+      });
+
+      // Add click listener to draw tokens button
+      const drawTokensBtn = document.getElementById("draw-tokens-btn");
+      if (drawTokensBtn) {
+        drawTokensBtn.addEventListener("click", () => {
+          const shipsAtSea = parseInt(
+            document.getElementById("ships-at-sea")?.value || 0
+          );
+          this.drawTokens(shipsAtSea);
+        });
+      }
+    }
+  }
+
+  // Show token adjustment modal
+  showTokenModal(tokenAbbr) {
+    const tokenNames = {
+      SW: "Sperm Whale",
+      BW: "Bowhead Whale",
+      RW: "Right Whale",
+      ES: "Empty Sea",
+      AM: "Ambergris",
+      BlW: "Blue Whale",
+      CA: "Castaway",
+      WW: "White Whale",
+    };
+
+    const tokenName = tokenNames[tokenAbbr];
+    const currentCount = this.gameConfig.oceanBag.filter(
+      (t) => t === tokenAbbr
+    ).length;
+
+    const modalHTML = `
             <div class="dice-modal show" id="token-modal">
                 <div class="dice-modal-overlay"></div>
                 <div class="dice-modal-content">
-                    <img src="./assets/newbedford/tiles/${tokenAbbr}.jpg" alt="${tokenName}" style="width: 100%; max-width: 300px; border-radius: 8px; margin: 0 auto 20px; display: block;">
+                    <img src="./assets/newbedford/tiles/${tokenAbbr}.jpg" alt="${tokenName}" style="width: 100%; max-width: 225px; border-radius: 8px; margin: 0 auto 20px; display: block;">
                     <h3>${tokenName}</h3>
                     <p style="text-align: center; font-size: 1.5rem; font-weight: 600; color: var(--primary-color); margin: 20px 0;">
                         Count: <span id="token-modal-count">${currentCount}</span>
                     </p>
                     <div style="display: flex; gap: 15px; justify-content: center; margin: 20px 0;">
-                        <button class="btn btn-secondary" id="token-decrease" style="font-size: 1.5rem; padding: 15px 30px;">−</button>
-                        <button class="btn btn-primary" id="token-increase" style="font-size: 1.5rem; padding: 15px 30px;">+</button>
+                        <button class="btn btn-secondary" id="token-decrease" style="font-size: 1.5rem; padding: 15px 0; flex: 1; max-width: 100px;">−</button>
+                        <button class="btn btn-primary" id="token-increase" style="font-size: 1.5rem; padding: 15px 0; flex: 1; max-width: 100px;">+</button>
                     </div>
                     <button class="btn btn-secondary" id="close-token-modal" style="width: 100%; margin-top: 10px;">
                         Close
@@ -1439,97 +2315,96 @@ class NewBedfordGame {
                 </div>
             </div>
         `;
-        
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        const modal = document.getElementById('token-modal');
-        const overlay = modal.querySelector('.dice-modal-overlay');
-        const closeBtn = document.getElementById('close-token-modal');
-        const decreaseBtn = document.getElementById('token-decrease');
-        const increaseBtn = document.getElementById('token-increase');
-        const countDisplay = document.getElementById('token-modal-count');
-        
-        let modalCount = currentCount;
-        
-        const updateCount = (change) => {
-            modalCount = Math.max(0, modalCount + change);
-            countDisplay.textContent = modalCount;
-            
-            // Update ocean bag
-            if (change > 0) {
-                this.gameConfig.oceanBag.push(tokenAbbr);
-            } else if (change < 0) {
-                const index = this.gameConfig.oceanBag.indexOf(tokenAbbr);
-                if (index > -1) {
-                    this.gameConfig.oceanBag.splice(index, 1);
-                }
-            }
-            
-            // Refresh the gameplay display
-            this.refreshGameplayDisplay();
-        };
-        
-        decreaseBtn.addEventListener('click', () => updateCount(-1));
-        increaseBtn.addEventListener('click', () => updateCount(1));
-        
-        const closeModal = () => {
-            modal.remove();
-        };
-        
-        overlay.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-    }
 
-    // Draw tokens from ocean bag
-    drawTokens(shipsAtSea) {
-        const tokensToDraw = shipsAtSea + 1;
-        
-        console.log('=== DRAWING TOKENS ===');
-        console.log('Ships at sea:', shipsAtSea);
-        console.log('Tokens to draw:', tokensToDraw);
-        console.log('Ocean bag before shuffle:', [...this.gameConfig.oceanBag]);
-        
-        // Shuffle the ocean bag
-        const shuffledBag = this.shuffleArray([...this.gameConfig.oceanBag]);
-        console.log('Ocean bag after shuffle:', [...shuffledBag]);
-        
-        // Draw tokens
-        const drawnTokens = shuffledBag.slice(0, tokensToDraw);
-        console.log('Drawn tokens:', drawnTokens);
-        
-        // Show draw modal
-        this.showDrawModal(drawnTokens);
-    }
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
 
-    // Show modal with drawn tokens
-    showDrawModal(drawnTokens) {
-        const tokenNames = {
-            'SW': 'Sperm Whale',
-            'BW': 'Bowhead Whale',
-            'RW': 'Right Whale',
-            'ES': 'Empty Sea',
-            'AM': 'Ambergris',
-            'BlW': 'Blue Whale',
-            'CA': 'Castaway',
-            'WW': 'White Whale'
-        };
-        
-        let tokensHTML = '<div class="drawn-tokens-grid">';
-        drawnTokens.forEach((tokenAbbr, index) => {
-            const tokenName = tokenNames[tokenAbbr];
-            tokensHTML += `
+    const modal = document.getElementById("token-modal");
+    const overlay = modal.querySelector(".dice-modal-overlay");
+    const closeBtn = document.getElementById("close-token-modal");
+    const decreaseBtn = document.getElementById("token-decrease");
+    const increaseBtn = document.getElementById("token-increase");
+    const countDisplay = document.getElementById("token-modal-count");
+
+    let modalCount = currentCount;
+
+    const updateCount = (change) => {
+      modalCount = Math.max(0, modalCount + change);
+      countDisplay.textContent = modalCount;
+
+      // Update ocean bag
+      if (change > 0) {
+        this.gameConfig.oceanBag.push(tokenAbbr);
+      } else if (change < 0) {
+        const index = this.gameConfig.oceanBag.indexOf(tokenAbbr);
+        if (index > -1) {
+          this.gameConfig.oceanBag.splice(index, 1);
+        }
+      }
+
+      // Refresh the gameplay display
+      this.refreshGameplayDisplay();
+    };
+
+    decreaseBtn.addEventListener("click", () => updateCount(-1));
+    increaseBtn.addEventListener("click", () => updateCount(1));
+
+    const closeModal = () => {
+      modal.remove();
+    };
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Draw tokens from ocean bag
+  drawTokens(shipsAtSea) {
+    const tokensToDraw = shipsAtSea + 1;
+
+    console.log("=== DRAWING TOKENS ===");
+    console.log("Ships at sea:", shipsAtSea);
+    console.log("Tokens to draw:", tokensToDraw);
+    console.log("Ocean bag before shuffle:", [...this.gameConfig.oceanBag]);
+
+    // Shuffle the ocean bag
+    const shuffledBag = this.shuffleArray([...this.gameConfig.oceanBag]);
+    console.log("Ocean bag after shuffle:", [...shuffledBag]);
+
+    // Draw tokens
+    const drawnTokens = shuffledBag.slice(0, tokensToDraw);
+    console.log("Drawn tokens:", drawnTokens);
+
+    // Show draw modal
+    this.showDrawModal(drawnTokens);
+  }
+
+  // Show modal with drawn tokens
+  showDrawModal(drawnTokens) {
+    const tokenNames = {
+      SW: "Sperm Whale",
+      BW: "Bowhead Whale",
+      RW: "Right Whale",
+      ES: "Empty Sea",
+      AM: "Ambergris",
+      BlW: "Blue Whale",
+      CA: "Castaway",
+      WW: "White Whale",
+    };
+
+    let tokensHTML = '<div class="drawn-tokens-grid">';
+    drawnTokens.forEach((tokenAbbr, index) => {
+      const tokenName = tokenNames[tokenAbbr];
+      tokensHTML += `
                 <div class="drawn-token-card" data-token="${tokenAbbr}" data-index="${index}">
                     <img src="./assets/newbedford/tiles/${tokenAbbr}.jpg" alt="${tokenName}" class="drawn-token-image">
-                    <p class="drawn-token-name">${tokenName}</p>
                 </div>
             `;
-        });
-        tokensHTML += '</div>';
-        
-        const modalHTML = `
+    });
+    tokensHTML += "</div>";
+
+    const modalHTML = `
             <div class="dice-modal show" id="draw-modal">
                 <div class="dice-modal-overlay"></div>
-                <div class="dice-modal-content" style="max-width: 600px;">
+                <div class="dice-modal-content" style="max-width: 700px; max-height: 85vh; overflow-y: auto;">
                     <button class="btn btn-secondary" id="close-draw-modal" style="width: 100%; margin-bottom: 20px;">
                         ← Return
                     </button>
@@ -1538,96 +2413,87 @@ class NewBedfordGame {
                 </div>
             </div>
         `;
-        
-        document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
-        const modal = document.getElementById('draw-modal');
-        const overlay = modal.querySelector('.dice-modal-overlay');
-        const closeBtn = document.getElementById('close-draw-modal');
-        
-        // Track which tokens have been taken
-        const takenTokens = new Set();
-        
-        // Add click listeners to drawn tokens
-        const drawnTokenCards = modal.querySelectorAll('.drawn-token-card');
-        drawnTokenCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const tokenAbbr = card.getAttribute('data-token');
-                const index = parseInt(card.getAttribute('data-index'));
-                const tokenKey = `${tokenAbbr}-${index}`;
-                
-                if (takenTokens.has(tokenKey)) {
-                    // Un-take the token
-                    card.style.opacity = '1';
-                    takenTokens.delete(tokenKey);
-                    
-                    // Add back to ocean bag
-                    this.gameConfig.oceanBag.push(tokenAbbr);
-                    console.log(`Added ${tokenAbbr} back to ocean bag. Total in bag:`, this.gameConfig.oceanBag.length);
-                } else {
-                    // Take the token
-                    card.style.opacity = '0.3';
-                    takenTokens.add(tokenKey);
-                    
-                    // Remove from ocean bag
-                    const bagIndex = this.gameConfig.oceanBag.indexOf(tokenAbbr);
-                    if (bagIndex > -1) {
-                        this.gameConfig.oceanBag.splice(bagIndex, 1);
-                        console.log(`Removed ${tokenAbbr} from ocean bag. Remaining in bag:`, this.gameConfig.oceanBag.length);
-                    }
-                }
-                
-                // Update the gameplay display
-                this.refreshGameplayDisplay();
-            });
-        });
-        
-        const closeModal = () => {
-            modal.remove();
-        };
-        
-        overlay.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-    }
 
-    // Refresh gameplay display (update token counts)
-    refreshGameplayDisplay() {
-        const gameplaySection = document.getElementById('gameplay-section');
-        if (!gameplaySection || this.currentPhase !== 'gameplay') return;
-        
-        const totalTokens = this.gameConfig.oceanBag.length;
-        
-        // Update each token card's count
-        const tokenCards = gameplaySection.querySelectorAll('.ocean-token-card');
-        tokenCards.forEach(card => {
-            const tokenAbbr = card.getAttribute('data-token');
-            const count = this.gameConfig.oceanBag.filter(t => t === tokenAbbr).length;
-            const percentage = totalTokens > 0 ? ((count / totalTokens) * 100).toFixed(1) : 0;
-            
-            const countElement = card.querySelector('.token-count');
-            if (countElement) {
-                countElement.textContent = `Count: ${count} (${percentage}%)`;
-            }
-        });
-    }
+    document.body.insertAdjacentHTML("beforeend", modalHTML);
 
-    takeTurn(playerId, action) {
-        console.log(`Player ${playerId} taking action: ${action}`);
-        // TODO: Implement turn logic
-    }
+    const modal = document.getElementById("draw-modal");
+    const overlay = modal.querySelector(".dice-modal-overlay");
+    const closeBtn = document.getElementById("close-draw-modal");
 
-    // Scoring Phase
-    calculateScore(playerId) {
-        console.log(`Calculating score for player ${playerId}`);
-        // TODO: Implement scoring logic
-        return 0;
-    }
+    // Track which tokens have been taken
+    const takenTokens = new Set();
 
-    endGame() {
-        this.currentPhase = 'scoring';
-        console.log('Ending New Bedford game');
-        // TODO: Implement end game logic
-    }
+    // Add click listeners to drawn tokens
+    const drawnTokenCards = modal.querySelectorAll(".drawn-token-card");
+    drawnTokenCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const tokenAbbr = card.getAttribute("data-token");
+        const index = parseInt(card.getAttribute("data-index"));
+        const tokenKey = `${tokenAbbr}-${index}`;
+
+        if (takenTokens.has(tokenKey)) {
+          // Un-take the token
+          card.style.opacity = "1";
+          takenTokens.delete(tokenKey);
+
+          // Add back to ocean bag
+          this.gameConfig.oceanBag.push(tokenAbbr);
+          console.log(
+            `Added ${tokenAbbr} back to ocean bag. Total in bag:`,
+            this.gameConfig.oceanBag.length
+          );
+        } else {
+          // Take the token
+          card.style.opacity = "0.3";
+          takenTokens.add(tokenKey);
+
+          // Remove from ocean bag
+          const bagIndex = this.gameConfig.oceanBag.indexOf(tokenAbbr);
+          if (bagIndex > -1) {
+            this.gameConfig.oceanBag.splice(bagIndex, 1);
+            console.log(
+              `Removed ${tokenAbbr} from ocean bag. Remaining in bag:`,
+              this.gameConfig.oceanBag.length
+            );
+          }
+        }
+
+        // Update the gameplay display
+        this.refreshGameplayDisplay();
+      });
+    });
+
+    const closeModal = () => {
+      modal.remove();
+    };
+
+    overlay.addEventListener("click", closeModal);
+    closeBtn.addEventListener("click", closeModal);
+  }
+
+  // Refresh gameplay display (update token counts)
+  refreshGameplayDisplay() {
+    const gameplaySection = document.getElementById("gameplay-section");
+    if (!gameplaySection || this.currentPhase !== "gameplay") return;
+
+    const totalTokens = this.gameConfig.oceanBag.length;
+
+    // Update each token card's count
+    const tokenCards = gameplaySection.querySelectorAll(".ocean-token-card");
+    tokenCards.forEach((card) => {
+      const tokenAbbr = card.getAttribute("data-token");
+      const count = this.gameConfig.oceanBag.filter(
+        (t) => t === tokenAbbr
+      ).length;
+      const percentage =
+        totalTokens > 0 ? ((count / totalTokens) * 100).toFixed(1) : 0;
+
+      const countElement = card.querySelector(".token-count");
+      if (countElement) {
+        countElement.textContent = `Count: ${count} (${percentage}%)`;
+      }
+    });
+  }
 }
 
 // Create global instance

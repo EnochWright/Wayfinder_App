@@ -606,6 +606,15 @@ input[type="checkbox"] {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.building-card-action {
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(66, 133, 244, 0.08));
+    border-left-color: var(--primary-color);
+}
+
+.building-card-action:hover {
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.08), rgba(66, 133, 244, 0.12));
+}
+
 .building-card-victory {
     background: linear-gradient(135deg, rgba(52, 168, 83, 0.08), rgba(52, 168, 83, 0.12));
     border-left-color: var(--secondary-color);
@@ -767,25 +776,24 @@ input[type="checkbox"] {
 /* Drawn Tokens Modal */
 .drawn-tokens-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin-top: 20px;
 }
 
 .drawn-token-card {
-    background: var(--background-color);
-    border-radius: 12px;
-    padding: 15px;
-    border: 3px solid var(--primary-color);
+    background: transparent;
+    border-radius: 8px;
+    padding: 5px;
+    border: none;
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
 }
 
 .drawn-token-card:hover {
-    border-color: var(--secondary-color);
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08);
+    filter: brightness(1.1);
 }
 
 .drawn-token-image {
@@ -2534,5 +2542,134 @@ select[multiple] option:checked {
     
     .railroad-price {
         font-size: 0.8rem;
+    }
+}
+
+/* Building Select Button Styles (for Score Calculator) */
+.building-select-btn {
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.building-select-btn:hover {
+    border-color: var(--primary-color);
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.building-select-btn.selected {
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, rgba(52, 168, 83, 0.1), rgba(52, 168, 83, 0.15));
+    box-shadow: 0 4px 12px rgba(52, 168, 83, 0.2);
+}
+
+.building-select-btn.selected:hover {
+    background: linear-gradient(135deg, rgba(52, 168, 83, 0.15), rgba(52, 168, 83, 0.2));
+}
+
+/* Dice Picker Grid Styles */
+.dice-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Whale Picker Grid Styles (New Bedford specific) */
+.whale-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+/* Money Picker Grid Styles (New Bedford specific - narrower for $ symbols) */
+.money-picker-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.dice-picker-btn {
+    padding: 15px;
+    background: white;
+    color: var(--text-color);
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dice-picker-btn:hover {
+    border-color: var(--primary-color);
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dice-picker-btn.selected {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+}
+
+.dice-picker-btn:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .dice-picker-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+    }
+    
+    .whale-picker-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+    
+    .money-picker-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .dice-picker-btn {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dice-picker-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+    }
+    
+    .whale-picker-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+    
+    .money-picker-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+    
+    .dice-picker-btn {
+        padding: 10px;
+        font-size: 1rem;
     }
 }
