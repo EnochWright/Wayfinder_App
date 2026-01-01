@@ -442,7 +442,6 @@ class NewBedfordGame {
           <div class="rail-baron-container">
               <button class="back-button" id="back-to-menu-score">← Back to Menu</button>
               <h2>Score Calculator</h2>
-              <p class="subtitle">Calculate your final score</p>
               
               <div class="roll-section">
                   <h3>Whale Tokens</h3>
@@ -504,11 +503,14 @@ class NewBedfordGame {
                   </div>
               </div>
               
-              <button class="btn btn-primary" id="calculate-score-btn" style="width: 100%; margin-top: 20px;">Calculate Score</button>
+              <button class="btn btn-primary" id="calculate-score-btn" style="width: 100%; margin-top: 0px; margin-bottom: 20px;">Calculate Score</button>
               
               <div class="roll-section" id="score-result" style="display: none;">
                   <h3>Final Score</h3>
                   <div id="score-breakdown"></div>
+                  <button class="btn btn-secondary" id="reset-score-btn" style="width: 100%; margin-top: 20px; background: #ea4335;">
+                      Reset Score
+                  </button>
               </div>
           </div>
       `;
@@ -569,6 +571,45 @@ class NewBedfordGame {
       document.getElementById('calculate-score-btn')?.addEventListener('click', () => {
           this.calculateFinalScore();
       });
+      
+      // Attach reset score button listener
+      document.getElementById('reset-score-btn')?.addEventListener('click', () => {
+          this.resetScore();
+      });
+  }
+
+  resetScore() {
+      // Reset all values
+      this.whaleScores = {
+          rightWhales: 0,
+          bowheadWhales: 0,
+          spermWhales: 0,
+          blueWhale: 0,
+          whiteWhale: 0
+      };
+      this.totalBuildings = 0;
+      this.totalMoney = 0;
+      
+      // Update displays
+      document.getElementById('right-whales-value').textContent = '0';
+      document.getElementById('bowhead-whales-value').textContent = '0';
+      document.getElementById('sperm-whales-value').textContent = '0';
+      document.getElementById('blue-whale-value').textContent = '0';
+      document.getElementById('white-whale-value').textContent = '0';
+      document.getElementById('total-buildings-value').textContent = '0';
+      document.getElementById('total-money-value').textContent = '$0';
+      
+      // Deselect all victory buildings
+      document.querySelectorAll('.building-select-btn.selected').forEach(btn => {
+          btn.classList.remove('selected');
+          btn.removeAttribute('data-variable-count');
+      });
+      
+      // Hide score result
+      const scoreResult = document.getElementById('score-result');
+      if (scoreResult) {
+          scoreResult.style.display = 'none';
+      }
   }
 
   attachWhaleButtonListeners() {

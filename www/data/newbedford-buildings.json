@@ -1,737 +1,592 @@
 {
-    "buildings":  [
-                      {
-                          "id":  1,
-                          "name":  "Almshouse",
-                          "players":  5,
-                          "usable2p":  false,
-                          "usable4p":  true,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "1W",
-                                       "2B"
-                                   ],
-                          "benefit":  "Take $3 from one other player. You may only take $3 if the player has at least $4 (you may not take a player\u0027s last dollar).",
-                          "points":  1
-                      },
-                      {
-                          "id":  2,
-                          "name":  "Bakery",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "2F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Add 4 food to your supply.",
-                          "points":  1
-                      },
-                      {
-                          "id":  3,
-                          "name":  "Bank",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "4B"
-                                   ],
-                          "benefit":  "Add $5 to your supply.",
-                          "points":  1
-                      },
-                      {
-                          "id":  4,
-                          "name":  "Brewery",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "3F",
-                                       "$3"
-                                   ],
-                          "benefit":  "Add $2 and 1 food to your supply for each 2 rounds remaining, rounding down. Do not count the current round.",
-                          "points":  1
-                      },
-                      {
-                          "id":  5,
-                          "name":  "Brickyard",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "4B"
-                                   ],
-                          "benefit":  "Add 3 brick to your supply.",
-                          "points":  1
-                      },
-                      {
-                          "id":  6,
-                          "name":  "Candleworks",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "victory",
-                          "cost":  [
-                                       "3F",
-                                       "3B"
-                                   ],
-                          "benefit":  "Earns 1 additional victory point for each Sperm Whale you have in your supply.",
-                          "points":  "1+"
-                      },
-                      {
-                          "id":  7,
-                          "name":  "Captain\u0027s House",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "3W",
-                                       "1F"
-                                   ],
-                          "benefit":  "Move one of your ships to the Return space and add food equal to the food cost marked for the space it was on to your supply. The ship must Return this round, but it Returns to the dock, without having to be Prepared.",
-                          "points":  1
-                      },
-                      {
-                          "id":  8,
-                          "name":  "Chandlery",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "2W",
-                                       "2F",
-                                       "2B"
-                                   ],
-                          "benefit":  "Add $1, 1 food, 1 wood, and 1 brick to your supply.",
-                          "points":  1
-                      },
-                      {
-                          "id":  9,
-                          "name":  "Chemist Shop",
-                          "players":  3,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "1W",
-                                       "1F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Take any 2 goods from 1 other player and give them 1 of yours. The good given must be different from the goods taken. The goods taken may be the same or different from each other.",
-                          "points":  1
-                      },
-                      {
-                          "id":  10,
-                          "name":  "Coffeehouse",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "3W",
-                                       "2B"
-                                   ],
-                          "benefit":  "Draw 2 Whale Tokens from the Ocean Bag. You may add 1 of them to your ship as if the ship selected the whale. The other token returns to the bag.",
-                          "points":  1
-                      },
-                      {
-                          "id":  11,
-                          "name":  "College",
-                          "players":  5,
-                          "usable2p":  false,
-                          "usable4p":  true,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "2F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Use a Building occupied by an opponent. Pay that player $1 in addition to paying the owner to use it. If the player using the Building is also the owner, pay the player $2.",
-                          "points":  1
-                      },
-                      {
-                          "id":  12,
-                          "name":  "Cooperage",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "4W"
-                                   ],
-                          "benefit":  "Add $1 for each Whale Token on one of your ships to your supply.",
-                          "points":  1
-                      },
-                      {
-                          "id":  13,
-                          "name":  "Counting House",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "victory",
-                          "cost":  [
-                                       "3W",
-                                       "2F"
-                                   ],
-                          "benefit":  "Earns 1 additional victory point for every 2 Right Whales you have.",
-                          "points":  "1+"
-                      },
-                      {
-                          "id":  14,
-                          "name":  "Courthouse",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "5W",
-                                       "1B"
-                                   ],
-                          "benefit":  "Build a Building, paying 2 fewer resources. The resources can be different.",
-                          "points":  1
-                      },
-                      {
-                          "id":  15,
-                          "name":  "Customhouse",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "3W",
-                                       "$3"
-                                   ],
-                          "benefit":  "If you occupy this space during the movement phase, you receive $4 if 1 ship Returns, $6 if 2 ships Return, and $10 if 3 ships Return. You receive nothing if you move your piece to a new space before ships Return.",
-                          "points":  1
-                      },
-                      {
-                          "id":  16,
-                          "name":  "Distillery",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "3F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Prepare a ship, paying 2 wood. Then add 3 food to your supply.",
-                          "points":  1
-                      },
-                      {
-                          "id":  17,
-                          "name":  "Dressmaker",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "victory",
-                          "cost":  [
-                                       "7W"
-                                   ],
-                          "benefit":  "Earns 1 additional victory point for every 2 Bowhead Whales in your supply.",
-                          "points":  "1+"
-                      },
-                      {
-                          "id":  18,
-                          "name":  "Dry Dock",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "2W",
-                                       "2B"
-                                   ],
-                          "benefit":  "Prepare and Launch a ship for 2 wood, plus the full food cost. Players do not receive the Dockyard or City Pier bonuses also.",
-                          "points":  1
-                      },
-                      {
-                          "id":  19,
-                          "name":  "Empty Lot",
-                          "players":  5,
-                          "usable2p":  false,
-                          "usable4p":  true,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "1W",
-                                       "2F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Move this tile on top of an Action Building. The covered Building can not be used while the Empty Lot is there. Only Action Buildings can be covered, not Victory Buildings. Both the Empty Lot and the covered Building still count towards the number of Buildings for scoring.",
-                          "points":  1
-                      },
-                      {
-                          "id":  20,
-                          "name":  "Fairhaven Bridge",
-                          "players":  3,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "5B"
-                                   ],
-                          "benefit":  "Use the Bridge Token to perform the action of 1 Building that has not yet been Built in the game. The Bridge Token acts like the player\u0027s worker, but placing the Bridge Token does not count as a new action.",
-                          "points":  1
-                      },
-                      {
-                          "id":  21,
-                          "name":  "Fire House",
-                          "players":  5,
-                          "usable2p":  false,
-                          "usable4p":  true,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "1F",
-                                       "3B"
-                                   ],
-                          "benefit":  "Add $2 or $3 to your supply for each player who owns at least 3 or 4 Buildings, respectively.",
-                          "points":  1
-                      },
-                      {
-                          "id":  22,
-                          "name":  "Harbor Office",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "2W",
-                                       "4F"
-                                   ],
-                          "benefit":  "First, Launch a ship. If you do, you must either Build a Building or sell at least 1 good.",
-                          "points":  1
-                      },
-                      {
-                          "id":  23,
-                          "name":  "Inn",
-                          "players":  3,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "2F",
-                                       "2B"
-                                   ],
-                          "benefit":  "After all players have taken their actions, but before the movement phase, the player picks up their pieces and places them on any two Town Board or Whaling Board Action Spaces. The player may not use Building Actions.",
-                          "points":  1
-                      },
-                      {
-                          "id":  24,
-                          "name":  "Insurance Co.",
-                          "players":  2,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "ships-log",
-                          "cost":  [
-                                       "1W",
-                                       "1B",
-                                       "$2"
-                                   ],
-                          "benefit":  "Add $3 to your supply. While you have a worker on this Building, you may ignore any negative Ship\u0027s Log events, unless you choose to have them affect you.",
-                          "points":  1
-                      },
-                      {
-                          "id":  25,
-                          "name":  "Library",
-                          "players":  2,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "ships-log",
-                          "cost":  [
-                                       "1W",
-                                       "1B"
-                                   ],
-                          "benefit":  "Select a currently available Ship\u0027s Log page. Add it to your Ship\u0027s Log as if you had selected it.",
-                          "points":  1
-                      },
-                      {
-                          "id":  26,
-                          "name":  "Lighthouse",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "2W",
-                                       "2B"
-                                   ],
-                          "benefit":  "Move 1 of your ships 1 space farther out on the whaling track and into the 1st position on the new space. Other ships retain their relative order.",
-                          "points":  1
-                      },
-                      {
-                          "id":  27,
-                          "name":  "Loading Dock",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "3W",
-                                       "1B"
-                                   ],
-                          "benefit":  "Move up to 3 different Whale Tokens between your ships. Add $1 to your supply for each token moved.",
-                          "points":  1
-                      },
-                      {
-                          "id":  28,
-                          "name":  "Lumber Mill",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "3W",
-                                       "1B"
-                                   ],
-                          "benefit":  "Sell wood only, but take $2 for each wood sold instead of $1.",
-                          "points":  1
-                      },
-                      {
-                          "id":  29,
-                          "name":  "Mansion",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "victory",
-                          "cost":  [
-                                       "4W",
-                                       "$10"
-                                   ],
-                          "benefit":  "Earn 4 additional victory points.",
-                          "points":  5
-                      },
-                      {
-                          "id":  30,
-                          "name":  "Market",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "1W",
-                                       "1F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Sell goods. Take double the cost of the first good of each type sold. All of these can be earned in the same action.",
-                          "points":  1
-                      },
-                      {
-                          "id":  31,
-                          "name":  "Mayor\u0027s House",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "3W",
-                                       "3F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Build a Building for full price, then use the Building by placing The Mayor Token on that Building. The Mayor Token acts like the player\u0027s worker, but placing The Mayor Token does not count as a new action.",
-                          "points":  1
-                      },
-                      {
-                          "id":  32,
-                          "name":  "Municipal Office",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "victory",
-                          "cost":  [
-                                       "4F",
-                                       "4B"
-                                   ],
-                          "benefit":  "Earn 1 additional victory point for each 2 Buildings owned.",
-                          "points":  "1+"
-                      },
-                      {
-                          "id":  33,
-                          "name":  "Newspaper",
-                          "players":  2,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "ships-log",
-                          "cost":  [
-                                       "2W",
-                                       "2F"
-                                   ],
-                          "benefit":  "Earns 1 additional victory point for each 2 pages in your Ship\u0027s Log.",
-                          "points":  "1+"
-                      },
-                      {
-                          "id":  34,
-                          "name":  "Perfumery",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "2F",
-                                       "2B"
-                                   ],
-                          "benefit":  "If there are at least 2 or more Sperm Whale Tokens remaining in the Ocean Bag add $5 to your supply. However, if there is only 1 Sperm Whale remaining in the Ocean Bag, add $3 to your supply instead.",
-                          "points":  1
-                      },
-                      {
-                          "id":  35,
-                          "name":  "Post Office",
-                          "players":  3,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "2W",
-                                       "1B"
-                                   ],
-                          "benefit":  "The owner takes $2 during each end of round phase. Use the action to move this Building to your corner of the board, becoming the owner. The Building cost does not need to be paid when using the action.",
-                          "points":  1
-                      },
-                      {
-                          "id":  36,
-                          "name":  "Publishing House",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "victory",
-                          "cost":  [
-                                       "1B",
-                                       "$6"
-                                   ],
-                          "benefit":  "Earns 1 additional victory point per Building you Built with the DHMG symbol.",
-                          "points":  "1+"
-                      },
-                      {
-                          "id":  37,
-                          "name":  "Rectory",
-                          "players":  5,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "victory",
-                          "cost":  [
-                                       "3W",
-                                       "3B"
-                                   ],
-                          "benefit":  "Earns 3 additional victory points. This can only be Built if another player has already Built the Seamen\u0027s Bethel. The same player cannot own both Buildings.",
-                          "points":  4
-                      },
-                      {
-                          "id":  38,
-                          "name":  "Refinery",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "3B"
-                                   ],
-                          "benefit":  "You may sell a Whale Token you own for twice its cost (i.e. Right Whale for $4, Bowhead Whale for $8, or Sperm Whale for $16). If you occupy this space when one of your ships Returns, you may sell a Whale Token on the ship.",
-                          "points":  1
-                      },
-                      {
-                          "id":  39,
-                          "name":  "Saltery",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "4W"
-                                   ],
-                          "benefit":  "Move your ship up to 3 spaces out on the whaling track. It costs nothing to moves 1 space, 2 food to move 2 spaces, or 4 food to move 3 spaces. It does not displace the current ships and may not move to a full ocean space.",
-                          "points":  1
-                      },
-                      {
-                          "id":  40,
-                          "name":  "Salvage Yard",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "victory",
-                          "cost":  [
-                                       "1F",
-                                       "$4"
-                                   ],
-                          "benefit":  "Earns 1 additional victory point for each 4 goods in your supply at the end of the game.",
-                          "points":  "1+"
-                      },
-                      {
-                          "id":  41,
-                          "name":  "Schoolhouse",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "2W",
-                                       "2F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Add 2 wood and 2 food to your supply.",
-                          "points":  1
-                      },
-                      {
-                          "id":  42,
-                          "name":  "Seamen\u0027s Bethel",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "victory",
-                          "cost":  [
-                                       "5W",
-                                       "5B"
-                                   ],
-                          "benefit":  "Earn 5 additional victory points.",
-                          "points":  6
-                      },
-                      {
-                          "id":  43,
-                          "name":  "Shanty",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "victory",
-                          "cost":  [
-                                       "1W"
-                                   ],
-                          "benefit":  "Earns 1 additional victory point. This can only be Built if you have no money.",
-                          "points":  2
-                      },
-                      {
-                          "id":  44,
-                          "name":  "Shipwright",
-                          "players":  3,
-                          "usable2p":  true,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "2W"
-                                   ],
-                          "benefit":  "Either Dock 1 ship for free, or Dock 2 ships by paying 1 wood in total.",
-                          "points":  1
-                      },
-                      {
-                          "id":  45,
-                          "name":  "Storehouse",
-                          "players":  3,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "rising-tide",
-                          "type":  "action",
-                          "cost":  [
-                                       "2W",
-                                       "2F",
-                                       "1B"
-                                   ],
-                          "benefit":  "Add either 3 food, 3 wood, or 2 bricks to your supply.",
-                          "points":  1
-                      },
-                      {
-                          "id":  46,
-                          "name":  "Tavern",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "3F",
-                                       "2B"
-                                   ],
-                          "benefit":  "Remove 1 or 2 Empty Sea Tokens that were drawn in the previous whaling phase, and take $4 or $6, respectively. These Empty Sea Tokens are removed from the game.",
-                          "points":  1
-                      },
-                      {
-                          "id":  47,
-                          "name":  "Tryworks",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "3B"
-                                   ],
-                          "benefit":  "When occupied, 1 of your ships may Return up to 3 Right Whales for free.",
-                          "points":  1
-                      },
-                      {
-                          "id":  48,
-                          "name":  "Turner\u0027s Mill",
-                          "players":  2,
-                          "usable2p":  true,
-                          "usable4p":  true,
-                          "game":  "base",
-                          "type":  "lonely-ocean",
-                          "cost":  [
-                                       "2W",
-                                       "2F"
-                                   ],
-                          "benefit":  "Repeat the action of the Captain\u0027s last worker. Pay the normal cost of the action plus $1.",
-                          "points":  1
-                      },
-                      {
-                          "id":  49,
-                          "name":  "Wharf",
-                          "players":  2,
-                          "usable2p":  false,
-                          "usable4p":  false,
-                          "game":  "base",
-                          "type":  "action",
-                          "cost":  [
-                                       "3W",
-                                       "1B"
-                                   ],
-                          "benefit":  "Launch a ship for half of the normal food cost, rounded up.",
-                          "points":  1
-                      }
-                  ]
+  "buildings": [
+    {
+      "id": 1,
+      "name": "Almshouse",
+      "players": 5,
+      "usable2p": false,
+      "usable4p": true,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["1W", "2B"],
+      "benefit": "Take $3 from one other player. You may only take $3 if the player has at least $4 (you may not take a player\u0027s last dollar).",
+      "points": 1
+    },
+    {
+      "id": 2,
+      "name": "Bakery",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["2F", "1B"],
+      "benefit": "Add 4 food to your supply.",
+      "points": 1
+    },
+    {
+      "id": 3,
+      "name": "Bank",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["4B"],
+      "benefit": "Add $5 to your supply.",
+      "points": 1
+    },
+    {
+      "id": 4,
+      "name": "Brewery",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["3F", "$3"],
+      "benefit": "Add $2 and 1 food to your supply for each 2 rounds remaining, rounding down. Do not count the current round.",
+      "points": 1
+    },
+    {
+      "id": 5,
+      "name": "Brickyard",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["4B"],
+      "benefit": "Add 3 brick to your supply.",
+      "points": 1
+    },
+    {
+      "id": 6,
+      "name": "Candleworks",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "victory",
+      "cost": ["3F", "3B"],
+      "benefit": "Earns 1 additional victory point for each Sperm Whale you have in your supply.",
+      "points": "1+"
+    },
+    {
+      "id": 7,
+      "name": "Captain\u0027s House",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["3W", "1F"],
+      "benefit": "Move one of your ships to the Return space and add food equal to the food cost marked for the space it was on to your supply. The ship must Return this round, but it Returns to the dock, without having to be Prepared.",
+      "points": 1
+    },
+    {
+      "id": 8,
+      "name": "Chandlery",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["2W", "2F", "2B"],
+      "benefit": "Add $1, 1 food, 1 wood, and 1 brick to your supply.",
+      "points": 1
+    },
+    {
+      "id": 9,
+      "name": "Chemist Shop",
+      "players": 3,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["1W", "1F", "1B"],
+      "benefit": "Take any 2 goods from 1 other player and give them 1 of yours. The good given must be different from the goods taken. The goods taken may be the same or different from each other.",
+      "points": 1
+    },
+    {
+      "id": 10,
+      "name": "Coffeehouse",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["3W", "2B"],
+      "benefit": "Draw 2 Whale Tokens from the Ocean Bag. You may add 1 of them to your ship as if the ship selected the whale. The other token returns to the bag.",
+      "points": 1
+    },
+    {
+      "id": 11,
+      "name": "College",
+      "players": 5,
+      "usable2p": false,
+      "usable4p": true,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["2F", "1B"],
+      "benefit": "Use a Building occupied by an opponent. Pay that player $1 in addition to paying the owner to use it. If the player using the Building is also the owner, pay the player $2.",
+      "points": 1
+    },
+    {
+      "id": 12,
+      "name": "Cooperage",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["4W"],
+      "benefit": "Add $1 for each Whale Token on one of your ships to your supply.",
+      "points": 1
+    },
+    {
+      "id": 13,
+      "name": "Counting House",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "victory",
+      "cost": ["3W", "2F"],
+      "benefit": "Earns 1 additional victory point for every 2 Right Whales you have.",
+      "points": "1+"
+    },
+    {
+      "id": 14,
+      "name": "Courthouse",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["5W", "1B"],
+      "benefit": "Build a Building, paying 2 fewer resources. The resources can be different.",
+      "points": 1
+    },
+    {
+      "id": 15,
+      "name": "Customhouse",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["3W", "$3"],
+      "benefit": "If you occupy this space during the movement phase, you receive $4 if 1 ship Returns, $6 if 2 ships Return, and $10 if 3 ships Return. You receive nothing if you move your piece to a new space before ships Return.",
+      "points": 1
+    },
+    {
+      "id": 16,
+      "name": "Distillery",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["3F", "1B"],
+      "benefit": "Prepare a ship, paying 2 wood. Then add 3 food to your supply.",
+      "points": 1
+    },
+    {
+      "id": 17,
+      "name": "Dressmaker",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "victory",
+      "cost": ["7W"],
+      "benefit": "Earns 1 additional victory point for every 2 Bowhead Whales in your supply.",
+      "points": "1+"
+    },
+    {
+      "id": 18,
+      "name": "Dry Dock",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["2W", "2B"],
+      "benefit": "Prepare and Launch a ship for 2 wood, plus the full food cost. Players do not receive the Dockyard or City Pier bonuses also.",
+      "points": 1
+    },
+    {
+      "id": 19,
+      "name": "Empty Lot",
+      "players": 5,
+      "usable2p": false,
+      "usable4p": true,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["1W", "2F", "1B"],
+      "benefit": "Move this tile on top of an Action Building. The covered Building can not be used while the Empty Lot is there. Only Action Buildings can be covered, not Victory Buildings. Both the Empty Lot and the covered Building still count towards the number of Buildings for scoring.",
+      "points": 1
+    },
+    {
+      "id": 20,
+      "name": "Fairhaven Bridge",
+      "players": 3,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["5B"],
+      "benefit": "Use the Bridge Token to perform the action of 1 Building that has not yet been Built in the game. The Bridge Token acts like the player\u0027s worker, but placing the Bridge Token does not count as a new action.",
+      "points": 1
+    },
+    {
+      "id": 21,
+      "name": "Fire House",
+      "players": 5,
+      "usable2p": false,
+      "usable4p": true,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["1F", "3B"],
+      "benefit": "Add $2 or $3 to your supply for each player who owns at least 3 or 4 Buildings, respectively.",
+      "points": 1
+    },
+    {
+      "id": 22,
+      "name": "Harbor Office",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["2W", "4F"],
+      "benefit": "First, Launch a ship. If you do, you must either Build a Building or sell at least 1 good.",
+      "points": 1
+    },
+    {
+      "id": 23,
+      "name": "Inn",
+      "players": 3,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["2F", "2B"],
+      "benefit": "After all players have taken their actions, but before the movement phase, the player picks up their pieces and places them on any two Town Board or Whaling Board Action Spaces. The player may not use Building Actions.",
+      "points": 1
+    },
+    {
+      "id": 24,
+      "name": "Insurance Co.",
+      "players": 2,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "ships-log",
+      "cost": ["1W", "1B", "$2"],
+      "benefit": "Add $3 to your supply. While you have a worker on this Building, you may ignore any negative Ship\u0027s Log events, unless you choose to have them affect you.",
+      "points": 1
+    },
+    {
+      "id": 25,
+      "name": "Library",
+      "players": 2,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "ships-log",
+      "cost": ["1W", "1B"],
+      "benefit": "Select a currently available Ship\u0027s Log page. Add it to your Ship\u0027s Log as if you had selected it.",
+      "points": 1
+    },
+    {
+      "id": 26,
+      "name": "Lighthouse",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["2W", "2B"],
+      "benefit": "Move 1 of your ships 1 space farther out on the whaling track and into the 1st position on the new space. Other ships retain their relative order.",
+      "points": 1
+    },
+    {
+      "id": 27,
+      "name": "Loading Dock",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["3W", "1B"],
+      "benefit": "Move up to 3 different Whale Tokens between your ships. Add $1 to your supply for each token moved.",
+      "points": 1
+    },
+    {
+      "id": 28,
+      "name": "Lumber Mill",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["3W", "1B"],
+      "benefit": "Sell wood only, but take $2 for each wood sold instead of $1.",
+      "points": 1
+    },
+    {
+      "id": 29,
+      "name": "Mansion",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "victory",
+      "cost": ["4W", "$10"],
+      "benefit": "Earn 4 additional victory points.",
+      "points": 5
+    },
+    {
+      "id": 30,
+      "name": "Market",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["1W", "1F", "1B"],
+      "benefit": "Sell goods. Take double the cost of the first good of each type sold. All of these can be earned in the same action.",
+      "points": 1
+    },
+    {
+      "id": 31,
+      "name": "Mayor\u0027s House",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["3W", "3F", "1B"],
+      "benefit": "Build a Building for full price, then use the Building by placing The Mayor Token on that Building. The Mayor Token acts like the player\u0027s worker, but placing The Mayor Token does not count as a new action.",
+      "points": 1
+    },
+    {
+      "id": 32,
+      "name": "Municipal Office",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "victory",
+      "cost": ["4F", "4B"],
+      "benefit": "Earn 1 additional victory point for each 2 Buildings owned.",
+      "points": "1+"
+    },
+    {
+      "id": 33,
+      "name": "Newspaper",
+      "players": 2,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "ships-log",
+      "cost": ["2W", "2F"],
+      "benefit": "Earns 1 additional victory point for each 2 pages in your Ship\u0027s Log.",
+      "points": "1+"
+    },
+    {
+      "id": 34,
+      "name": "Perfumery",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["2F", "2B"],
+      "benefit": "If there are at least 2 or more Sperm Whale Tokens remaining in the Ocean Bag add $5 to your supply. However, if there is only 1 Sperm Whale remaining in the Ocean Bag, add $3 to your supply instead.",
+      "points": 1
+    },
+    {
+      "id": 35,
+      "name": "Post Office",
+      "players": 3,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["2W", "1B"],
+      "benefit": "The owner takes $2 during each end of round phase. Use the action to move this Building to your corner of the board, becoming the owner. The Building cost does not need to be paid when using the action.",
+      "points": 1
+    },
+    {
+      "id": 36,
+      "name": "Publishing House",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "victory",
+      "cost": ["1B", "$6"],
+      "benefit": "Earns 1 additional victory point per Building you Built with the DHMG symbol.",
+      "points": "1+"
+    },
+    {
+      "id": 37,
+      "name": "Rectory",
+      "players": 5,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "victory",
+      "cost": ["3W", "3B"],
+      "benefit": "Earns 3 additional victory points. This can only be Built if another player has already Built the Seamen\u0027s Bethel. The same player cannot own both Buildings.",
+      "points": 4
+    },
+    {
+      "id": 38,
+      "name": "Refinery",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["3B"],
+      "benefit": "You may sell a Whale Token you own for twice its cost (i.e. Right Whale for $4, Bowhead Whale for $8, or Sperm Whale for $16). If you occupy this space when one of your ships Returns, you may sell a Whale Token on the ship.",
+      "points": 1
+    },
+    {
+      "id": 39,
+      "name": "Saltery",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["4W"],
+      "benefit": "Move your ship up to 3 spaces out on the whaling track. It costs nothing to moves 1 space, 2 food to move 2 spaces, or 4 food to move 3 spaces. It does not displace the current ships and may not move to a full ocean space.",
+      "points": 1
+    },
+    {
+      "id": 40,
+      "name": "Salvage Yard",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "victory",
+      "cost": ["1F", "$4"],
+      "benefit": "Earns 1 additional victory point for each 4 goods in your supply at the end of the game.",
+      "points": "1+"
+    },
+    {
+      "id": 41,
+      "name": "Schoolhouse",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["2W", "2F", "1B"],
+      "benefit": "Add 2 wood and 2 food to your supply.",
+      "points": 1
+    },
+    {
+      "id": 42,
+      "name": "Seamen\u0027s Bethel",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "victory",
+      "cost": ["5W", "5B"],
+      "benefit": "Earn 5 additional victory points.",
+      "points": 6
+    },
+    {
+      "id": 43,
+      "name": "Shanty",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "victory",
+      "cost": ["1W"],
+      "benefit": "Earns 1 additional victory point. This can only be Built if you have no money.",
+      "points": 2
+    },
+    {
+      "id": 44,
+      "name": "Shipwright",
+      "players": 3,
+      "usable2p": true,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["2W"],
+      "benefit": "Either Dock 1 ship for free, or Dock 2 ships by paying 1 wood in total.",
+      "points": 1
+    },
+    {
+      "id": 45,
+      "name": "Storehouse",
+      "players": 3,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "rising-tide",
+      "type": "action",
+      "cost": ["2W", "2F", "1B"],
+      "benefit": "Add either 3 food, 3 wood, or 2 bricks to your supply.",
+      "points": 1
+    },
+    {
+      "id": 46,
+      "name": "Tavern",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["3F", "2B"],
+      "benefit": "Remove 1 or 2 Empty Sea Tokens that were drawn in the previous whaling phase, and take $4 or $6, respectively. These Empty Sea Tokens are removed from the game.",
+      "points": 1
+    },
+    {
+      "id": 47,
+      "name": "Tryworks",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["3B"],
+      "benefit": "When occupied, 1 of your ships may Return up to 3 Right Whales for free.",
+      "points": 1
+    },
+    {
+      "id": 48,
+      "name": "Turner\u0027s Mill",
+      "players": 2,
+      "usable2p": true,
+      "usable4p": true,
+      "game": "base",
+      "type": "lonely-ocean",
+      "cost": ["2W", "2F"],
+      "benefit": "Repeat the action of the Captain\u0027s last worker. Pay the normal cost of the action plus $1.",
+      "points": 1
+    },
+    {
+      "id": 49,
+      "name": "Wharf",
+      "players": 2,
+      "usable2p": false,
+      "usable4p": false,
+      "game": "base",
+      "type": "action",
+      "cost": ["3W", "1B"],
+      "benefit": "Launch a ship for half of the normal food cost, rounded up.",
+      "points": 1
+    }
+  ]
 }

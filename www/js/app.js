@@ -45,12 +45,6 @@ function initGameModules() {
     if (window.CatanGame) {
         window.CatanGame.init();
     }
-    if (window.FleetCardGame) {
-        window.FleetCardGame.init();
-    }
-    if (window.FleetDiceGame) {
-        window.FleetDiceGame.init();
-    }
     if (window.NewBedfordGame) {
         window.NewBedfordGame.init();
     }
@@ -62,9 +56,6 @@ function initGameModules() {
     }
     if (window.Rising5Game) {
         window.Rising5Game.init();
-    }
-    if (window.StoneAgeGame) {
-        window.StoneAgeGame.init();
     }
 }
 
