@@ -2673,3 +2673,351 @@ select[multiple] option:checked {
         font-size: 1rem;
     }
 }
+
+/* Catan Container */
+.catan-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 10px;
+    container-type: inline-size;
+    container-name: catan-board;
+}
+
+.catan-container h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+/* Catan Map Generator Styles */
+.catan-map {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    background: linear-gradient(135deg, #e3f2fd 0%, #f1f8e9 100%);
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.hex-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+}
+
+.hex-row {
+    display: flex;
+    gap: 0;
+    justify-content: flex-start;
+    margin-top: calc(-16.67cqw * 0.287);
+}
+
+.hex-row:first-child {
+    margin-top: 0;
+}
+
+/* Honeycomb pattern - alternating rows offset by half hex width (BASE GAME ONLY) */
+.hex-grid:not(.hex-grid-56) .hex-row:nth-child(even) {
+    margin-left: 8.335cqw;
+}
+
+.hex-grid:not(.hex-grid-56) .hex-row:nth-child(odd) {
+    margin-left: 0;
+}
+
+/* First and last rows (3 tiles) need extra offset to center the hexagonal shape (BASE GAME ONLY) */
+.hex-grid:not(.hex-grid-56) .hex-row:nth-child(1),
+.hex-grid:not(.hex-grid-56) .hex-row:nth-child(5) {
+    margin-left: 16.67cqw;
+}
+
+.hex {
+    width: 16.67cqw;
+    height: calc(16.67cqw * 1.15);
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: -0.15cqw;
+}
+
+.hex:first-child {
+    margin-left: 0;
+}
+
+.hex:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.hex-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+.terrain-name {
+    font-size: 2cqw;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.number-token {
+    background: #f5f5dc;
+    border: 3px solid #8b7355;
+    border-radius: 50%;
+    width: 8cqw;
+    height: 8cqw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.number-token.number-red {
+    border-color: #d32f2f;
+}
+
+.number-token.number-red .number-value {
+    color: #d32f2f;
+}
+
+.number-value {
+    font-size: 2.5cqw;
+    font-weight: bold;
+    color: #333;
+    line-height: 1;
+}
+
+.number-pips {
+    font-size: 0.9cqw;
+    color: #666;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.robber-icon {
+    font-size: 4cqw;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Terrain Colors */
+.terrain-forest {
+    background: linear-gradient(135deg, #2e7d32 0%, #43a047 100%);
+}
+
+.terrain-pasture {
+    background: linear-gradient(135deg, #7cb342 0%, #9ccc65 100%);
+}
+
+.terrain-grain {
+    background: linear-gradient(135deg, #f9a825 0%, #fdd835 100%);
+}
+
+.terrain-hills {
+    background: linear-gradient(135deg, #d84315 0%, #ff5722 100%);
+}
+
+.terrain-mountains {
+    background: linear-gradient(135deg, #616161 0%, #9e9e9e 100%);
+}
+
+.terrain-desert {
+    background: linear-gradient(135deg, #f4a460 0%, #daa520 100%);
+}
+
+/* Responsive Catan Map */
+@media (max-width: 480px) {
+    .catan-map {
+        padding: 10px;
+        overflow-x: auto;
+    }
+    
+    .hex {
+        width: 70px;
+        height: 80px;
+        margin-left: -0.5px;
+    }
+    
+    .hex:first-child {
+        margin-left: 0;
+    }
+    
+    .hex-row {
+        gap: 0;
+        margin-top: -20px;
+    }
+    
+    .hex-row:first-child {
+        margin-top: 0;
+    }
+    
+    .hex-grid:not(.hex-grid-56) .hex-row:nth-child(even) {
+        margin-left: 35px;
+    }
+    
+    .hex-grid:not(.hex-grid-56) .hex-row:nth-child(odd) {
+        margin-left: 0;
+    }
+    
+    .hex-grid:not(.hex-grid-56) .hex-row:nth-child(1),
+    .hex-grid:not(.hex-grid-56) .hex-row:nth-child(5) {
+        margin-left: 70px;
+    }
+    
+    .terrain-name {
+        font-size: 0.5rem;
+        letter-spacing: 0.3px;
+    }
+    
+    .number-token {
+        width: 28px;
+        height: 28px;
+        border-width: 2px;
+    }
+    
+    .number-value {
+        font-size: 0.9rem;
+    }
+    
+    .number-pips {
+        font-size: 0.35rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .robber-icon {
+        font-size: 1.5rem;
+    }
+}
+
+/* Expansion Checkbox Styles */
+.expansion-checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 25px;
+        background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(52, 168, 83, 0.1));
+        border: 3px solid #ddd;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
+    
+    .expansion-checkbox-label:hover {
+        border-color: var(--primary-color);
+        background: linear-gradient(135deg, rgba(66, 133, 244, 0.15), rgba(52, 168, 83, 0.15));
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .expansion-checkbox {
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        accent-color: var(--primary-color);
+    }
+    
+    .expansion-checkbox-text {
+        font-size: 1.1rem;
+        color: var(--text-color);
+    }
+    
+    .expansion-checkbox-label:has(.expansion-checkbox:checked) {
+        border-color: var(--secondary-color);
+        background: linear-gradient(135deg, rgba(52, 168, 83, 0.2), rgba(66, 133, 244, 0.2));
+    }
+    
+    /* 5-6 Player Board Styles */
+    .hex-grid-56 {
+        transform: scale(1);
+        transform-origin: top center;
+    }
+    
+    .hex-56 {
+        width: 14.29cqw;
+        height: calc(14.29cqw * 1.14);
+    }
+    
+    /* 5-6 player vertical spacing - less overlap than base game */
+    .hex-grid-56 .hex-row {
+        margin-top: calc(-14.29cqw * 0.29);
+    }
+    
+    .hex-grid-56 .hex-row:first-child {
+        margin-top: 0;
+    }
+    
+    /* 5-6 player pattern: 3-4-5-6-5-4-3 - symmetrical hexagon */
+    /* Each row explicitly positioned - NO base even/odd rules */
+    .hex-grid-56 .hex-row:nth-child(1) {
+        margin-left: 21.435cqw !important;  /* Row 1: 3 tiles (14.29cqw * 1.5) */
+    }
+    
+    .hex-grid-56 .hex-row:nth-child(2) {
+        margin-left: 14.29cqw !important;   /* Row 2: 4 tiles (14.29cqw * 1) */
+    }
+    
+    .hex-grid-56 .hex-row:nth-child(3) {
+        margin-left: 7.145cqw !important;   /* Row 3: 5 tiles (14.29cqw * 0.5) */
+    }
+    
+    .hex-grid-56 .hex-row:nth-child(4) {
+        margin-left: 0 !important;          /* Row 4: 6 tiles - widest, centered */
+    }
+    
+    .hex-grid-56 .hex-row:nth-child(5) {
+        margin-left: 7.145cqw !important;   /* Row 5: 5 tiles */
+    }
+    
+    .hex-grid-56 .hex-row:nth-child(6) {
+        margin-left: 14.29cqw !important;   /* Row 6: 4 tiles */
+    }
+    
+    .hex-grid-56 .hex-row:nth-child(7) {
+        margin-left: 21.435cqw !important;  /* Row 7: 3 tiles */
+    }
+    
+    .hex-56 .terrain-name {
+        font-size: 1.286cqw;  /* 1.5cqw * 0.857 */
+    }
+    
+    .hex-56 .number-token {
+        width: 6.856cqw;      /* 8cqw * 0.857 */
+        height: 6.856cqw;
+        border-width: 2px;
+    }
+    
+    .hex-56 .number-value {
+        font-size: 2.143cqw;  /* 2.5cqw * 0.857 */
+    }
+    
+    .hex-56 .number-pips {
+        font-size: 0.771cqw;  /* 0.9cqw * 0.857 */
+    }
+    
+    .hex-56 .robber-icon {
+        font-size: 3.428cqw;  /* 4cqw * 0.857 */
+    }
+    
