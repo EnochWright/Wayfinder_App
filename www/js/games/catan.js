@@ -24,35 +24,35 @@ class CatanGame {
         if (!container) return;
 
         container.innerHTML = `
-            <div class="rail-baron-container">
+            <div class="catan-container">
                 <h2>Catan</h2>
                 
-                <div class="rail-baron-menu">
-                    <button class="rail-baron-menu-btn" id="btn-map-generator">
+                <div class="catan-menu">
+                    <button class="catan-menu-btn" id="btn-map-generator">
                         <span class="menu-icon">🗺️</span>
                         <span class="menu-title">Map Generator</span>
                         <span class="menu-desc">Generate game board setup</span>
                     </button>
                     
-                    <button class="rail-baron-menu-btn" id="btn-dice-roller" disabled>
+                    <button class="catan-menu-btn" id="btn-dice-roller" disabled>
                         <span class="menu-icon">🎲</span>
                         <span class="menu-title">Dice Roller</span>
                         <span class="menu-desc">Coming soon</span>
                     </button>
                     
-                    <button class="rail-baron-menu-btn" id="btn-resource-tracker" disabled>
+                    <button class="catan-menu-btn" id="btn-resource-tracker">
                         <span class="menu-icon">📦</span>
                         <span class="menu-title">Resource Tracker</span>
-                        <span class="menu-desc">Coming soon</span>
+                        <span class="menu-desc">Track your resources</span>
                     </button>
                     
-                    <button class="rail-baron-menu-btn" id="btn-dev-cards" disabled>
+                    <button class="catan-menu-btn" id="btn-dev-cards" disabled>
                         <span class="menu-icon">🃏</span>
                         <span class="menu-title">Development Cards</span>
                         <span class="menu-desc">Coming soon</span>
                     </button>
                     
-                    <button class="rail-baron-menu-btn" id="btn-score-tracker" disabled>
+                    <button class="catan-menu-btn" id="btn-score-tracker" disabled>
                         <span class="menu-icon">🏆</span>
                         <span class="menu-title">Score Tracker</span>
                         <span class="menu-desc">Coming soon</span>
@@ -606,7 +606,7 @@ class CatanGame {
         if (!container) return;
 
         container.innerHTML = `
-            <div class="rail-baron-container">
+            <div class="catan-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
                 <h2>🎲 Dice Roller</h2>
                 <p class="subtitle">Roll dice with statistics tracking</p>
@@ -628,21 +628,305 @@ class CatanGame {
         if (!container) return;
 
         container.innerHTML = `
-            <div class="rail-baron-container">
+            <div class="catan-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
                 <h2>📦 Resource Tracker</h2>
-                <p class="subtitle">Track resources for each player</p>
                 
-                <div class="roll-section">
-                    <h3>Coming Soon</h3>
-                    <p>Resource tracking functionality will be added in a future update.</p>
+                <div class="catan-section">
+                    <div class="catan-button-group" style="margin-bottom: 20px;">
+                        <button id="add-resource-btn" class="btn btn-primary">Add Resource</button>
+                    </div>
+                    
+                    <h3>Resources by Roll</h3>
+                    <div id="resource-roll-display" class="resource-roll-display"></div>
+                    
+                    <div class="catan-button-group">
+                        <button id="reset-resources-btn" class="btn btn-secondary">Reset Resources</button>
+                    </div>
                 </div>
             </div>
         `;
 
+        // Load existing resources from localStorage grouped by dice roll
+        const resourceDisplay = document.getElementById('resource-roll-display');
+        const loadResources = () => {
+            const savedResources = JSON.parse(localStorage.getItem('catan-resources') || '[]');
+            
+            // Group resources by dice roll
+            const resourcesByRoll = {};
+            savedResources.forEach((resource, index) => {
+                if (!resourcesByRoll[resource.diceRoll]) {
+                    resourcesByRoll[resource.diceRoll] = [];
+                }
+                resourcesByRoll[resource.diceRoll].push({...resource, index});
+            });
+            
+            // Sort dice rolls numerically
+            const sortedRolls = Object.keys(resourcesByRoll).sort((a, b) => parseInt(a) - parseInt(b));
+            
+            if (sortedRolls.length === 0) {
+                resourceDisplay.innerHTML = '<p class="no-resources">No resources added yet. Click "Add Resource" to get started.</p>';
+                return;
+            }
+            
+            // Generate HTML for each dice roll group
+            resourceDisplay.innerHTML = sortedRolls.map(roll => {
+                const resources = resourcesByRoll[roll];
+                
+                return `
+                    <div class="dice-roll-group">
+                        <div class="dice-roll-header">
+                            <div class="dice-roll-number">${roll}</div>
+                            <div class="dice-roll-pip">${this.getPips(parseInt(roll))}</div>
+                        </div>
+                        <div class="resource-items">
+                            <div class="resource-items-grid">
+                                ${resources.map(resource => `
+                                    <div class="resource-item ${resource.settlementType}" data-index="${resource.index}">
+                                        <div class="resource-image-wrapper" data-index="${resource.index}">
+                                            <img src="assets/catan/resources/${resource.resourceType}.jpg"
+                                                alt="${resource.resourceType}"
+                                                class="resource-image" />
+                                            ${resource.multiplier > 1 ?
+                                                `<span class="resource-multiplier">×${resource.multiplier}</span>` : ''}
+                                        </div>
+                                        <div class="resource-name">${resource.resourceType.charAt(0).toUpperCase() + resource.resourceType.slice(1)}</div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Add resource item click listeners to open management modal
+            document.querySelectorAll('.resource-image-wrapper').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    const index = item.getAttribute('data-index');
+                    const savedResources = JSON.parse(localStorage.getItem('catan-resources') || '[]');
+                    const resource = savedResources[index];
+                    this.showResourceManagementModal(resource, index, loadResources);
+                });
+            });
+        };
+
+        // Initial load of resources
+        loadResources();
+
+        // Add resource button handler
+        const addResourceBtn = document.getElementById('add-resource-btn');
+        addResourceBtn.addEventListener('click', () => {
+            this.showResourceInputModal(loadResources);
+        });
+
+        // Reset resources button handler
+        const resetResourcesBtn = document.getElementById('reset-resources-btn');
+        resetResourcesBtn.addEventListener('click', () => {
+            if (confirm('Are you sure you want to reset all resources?')) {
+                localStorage.removeItem('catan-resources');
+                loadResources();
+            }
+        });
+
+        // Back to menu button
         document.getElementById('back-to-menu')?.addEventListener('click', () => {
             this.showMainMenu();
         });
+    }
+
+    showResourceInputModal(onComplete) {
+        const modalHTML = `
+            <div class="dice-modal show" id="resource-input-modal">
+                <div class="dice-modal-overlay"></div>
+                <div class="dice-modal-content" style="max-height: 85vh; display: flex; flex-direction: column; max-width: 500px;">
+                    <h3 style="margin: 0 0 10px 0;">Add Resource</h3>
+                    <div style="overflow-y: auto; flex: 1; padding-top: 2px;">
+                        <div style="display: flex; flex-direction: column; gap: 15px; margin: 10px 0;">
+                            <div class="catan-input-section">
+                                <label>Dice Roll (2-12):</label>
+                                <div class="catan-dice-grid">
+                                    ${[2,3,4,5,6,8,9,10,11,12].map(num => `
+                                        <button class="catan-dice-btn" data-value="${num}">
+                                            ${num}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+                            
+                            <div class="catan-input-section">
+                                <label>Resource Type:</label>
+                                <div class="catan-resource-grid">
+                                    <button class="catan-resource-btn" data-value="brick">Brick</button>
+                                    <button class="catan-resource-btn" data-value="lumber">Lumber</button>
+                                    <button class="catan-resource-btn" data-value="ore">Ore</button>
+                                    <button class="catan-resource-btn" data-value="grain">Grain</button>
+                                    <button class="catan-resource-btn" data-value="wool">Wool</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="confirm-resource" style="width: 100%; margin-top: 15px;">Add Resource</button>
+                </div>
+            </div>
+        `;
+
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+        const modal = document.getElementById('resource-input-modal');
+        const overlay = modal.querySelector('.dice-modal-overlay');
+        const confirmBtn = document.getElementById('confirm-resource');
+        
+        let selectedDiceRoll = null;
+        let selectedResourceType = null;
+
+        // Dice roll selection
+        modal.querySelectorAll('.catan-dice-btn[data-value]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.querySelectorAll('.catan-dice-btn[data-value]').forEach(b => {
+                    b.classList.remove('selected');
+                });
+                btn.classList.add('selected');
+                selectedDiceRoll = btn.getAttribute('data-value');
+            });
+        });
+
+        // Resource type selection
+        modal.querySelectorAll('.catan-resource-btn[data-value]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                modal.querySelectorAll('.catan-resource-btn[data-value]').forEach(b => {
+                    b.classList.remove('selected');
+                });
+                btn.classList.add('selected');
+                selectedResourceType = btn.getAttribute('data-value');
+            });
+        });
+
+        // Confirm button
+        confirmBtn.addEventListener('click', () => {
+            if (!selectedDiceRoll) {
+                alert('Please select a dice roll');
+                return;
+            }
+            if (!selectedResourceType) {
+                alert('Please select a resource type');
+                return;
+            }
+
+            const savedResources = JSON.parse(localStorage.getItem('catan-resources') || '[]');
+            savedResources.push({
+                diceRoll: selectedDiceRoll,
+                settlementType: 'settlement',
+                resourceType: selectedResourceType,
+                multiplier: 1
+            });
+            localStorage.setItem('catan-resources', JSON.stringify(savedResources));
+
+            // Close modal and refresh resource list
+            modal.remove();
+            if (onComplete) onComplete();
+        });
+
+        // Close modal on overlay click
+        const closeModal = () => {
+            modal.remove();
+        };
+
+        overlay.addEventListener('click', closeModal);
+    }
+    
+    showResourceManagementModal(resource, index, onComplete) {
+        // Initialize multiplier from resource if it exists, otherwise derive from settlement type
+        const currentMultiplier = resource.multiplier || (resource.settlementType === 'city' ? 2 : 1);
+        const maxMultiplier = 10;
+        
+        // Create modal HTML matching New Bedford token modal style (with image)
+        const modalHTML = `
+            <div class="dice-modal show" id="resource-management-modal">
+                <div class="dice-modal-overlay"></div>
+                <div class="dice-modal-content" style="max-height: 85vh; display: flex; flex-direction: column;">
+                    <img src="assets/catan/resources/${resource.resourceType}.jpg" alt="${resource.resourceType}" style="width: 100%; max-width: 200px; border-radius: 8px; margin: 0 auto 15px; display: block;">
+                    <h3 style="margin: 0 0 10px 0;">${resource.resourceType.charAt(0).toUpperCase() + resource.resourceType.slice(1)}</h3>
+                    <p style="text-align: center; font-size: 1.1rem; color: var(--text-light); margin-bottom: 15px;">
+                        Dice Roll: ${resource.diceRoll}
+                    </p>
+                    <div style="overflow-y: auto; flex: 1; margin-bottom: 15px; padding-top: 2px;">
+                        <div class="catan-multiplier-picker-grid">
+                            ${Array.from({length: maxMultiplier}, (_, i) => {
+                                const value = i + 1;
+                                return `
+                                    <button class="catan-multiplier-picker-btn ${value === currentMultiplier ? 'selected' : ''}" data-value="${value}">
+                                        ${value}
+                                    </button>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px; width: 100%;">
+                        <button class="btn btn-secondary" id="remove-resource" style="flex: 1; background: #ea4335; min-width: 0; padding: 12px 8px; font-size: 0.95rem;">
+                            Remove
+                        </button>
+                        <button class="btn btn-secondary" id="cancel-resource-changes" style="flex: 1; min-width: 0; padding: 12px 8px; font-size: 0.95rem;">
+                            Cancel
+                        </button>
+                        <button class="btn btn-primary" id="save-resource-changes" style="flex: 1; min-width: 0; padding: 12px 8px; font-size: 0.95rem;">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        document.body.insertAdjacentHTML('beforeend', modalHTML);
+        
+        const modal = document.getElementById('resource-management-modal');
+        const overlay = modal.querySelector('.dice-modal-overlay');
+        const cancelBtn = document.getElementById('cancel-resource-changes');
+        const saveBtn = document.getElementById('save-resource-changes');
+        const removeBtn = document.getElementById('remove-resource');
+        const pickerBtns = modal.querySelectorAll('.catan-multiplier-picker-btn');
+        
+        let selectedMultiplier = currentMultiplier;
+        
+        // Add click listeners to picker buttons
+        pickerBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                selectedMultiplier = parseInt(btn.getAttribute('data-value'));
+                
+                // Update button selection
+                pickerBtns.forEach(b => b.classList.remove('selected'));
+                btn.classList.add('selected');
+            });
+        });
+        
+        // Save changes
+        saveBtn.addEventListener('click', () => {
+            const savedResources = JSON.parse(localStorage.getItem('catan-resources') || '[]');
+            
+            // Update both multiplier and settlement type (for backward compatibility)
+            savedResources[index].multiplier = selectedMultiplier;
+            savedResources[index].settlementType = selectedMultiplier > 1 ? 'city' : 'settlement';
+            
+            localStorage.setItem('catan-resources', JSON.stringify(savedResources));
+            modal.remove();
+            onComplete();
+        });
+        
+        // Remove resource
+        removeBtn.addEventListener('click', () => {
+            const savedResources = JSON.parse(localStorage.getItem('catan-resources') || '[]');
+            savedResources.splice(index, 1);
+            localStorage.setItem('catan-resources', JSON.stringify(savedResources));
+            modal.remove();
+            onComplete();
+        });
+        
+        // Cancel changes
+        const closeModal = () => {
+            modal.remove();
+        };
+        
+        cancelBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
     }
 
     showDevCards() {
@@ -650,12 +934,12 @@ class CatanGame {
         if (!container) return;
 
         container.innerHTML = `
-            <div class="rail-baron-container">
+            <div class="catan-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
                 <h2>🃏 Development Cards</h2>
                 <p class="subtitle">Track the development card deck</p>
                 
-                <div class="roll-section">
+                <div class="catan-section">
                     <h3>Coming Soon</h3>
                     <p>Development card tracking functionality will be added in a future update.</p>
                 </div>
@@ -672,12 +956,12 @@ class CatanGame {
         if (!container) return;
 
         container.innerHTML = `
-            <div class="rail-baron-container">
+            <div class="catan-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
-                <h2>� Score Tracker</h2>
+                <h2>🏆 Score Tracker</h2>
                 <p class="subtitle">Track victory points for all players</p>
                 
-                <div class="roll-section">
+                <div class="catan-section">
                     <h3>Coming Soon</h3>
                     <p>Score tracking functionality will be added in a future update.</p>
                 </div>
