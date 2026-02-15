@@ -1,28 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="A basic Capacitor PWA app">
     <meta name="theme-color" content="#4285f4">
-    
+
     <title>Wayfinder</title>
-    
+
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    
+
     <!-- iOS Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Wayfinder">
-    
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="apple-touch-icon" href="assets/icon.png">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <!-- Navigation Menu -->
     <nav class="navbar">
@@ -52,6 +54,9 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="#scoretracker" class="nav-link" data-page="scoretracker">Score Tracker</a>
+                </li>
+                <li class="nav-item">
                     <a href="#about" class="nav-link" data-page="about">About</a>
                 </li>
             </ul>
@@ -60,7 +65,7 @@
 
     <div class="container">
 
-        
+
         <main id="main-content">
             <!-- Home Page -->
             <div id="page-home" class="page active">
@@ -71,7 +76,7 @@
                 <div class="card">
                     <h3>Games</h3>
                     <ul>
-                        <li><strong>Alchemists</strong> - Planned</li>
+                        <li><strong>Alchemists</strong> - In Progress</li>
                         <li><strong>Catan</strong> - In Progress</li>
                         <li><strong>New Bedford</strong> - In Progress</li>
                         <li><strong>Rail Baron</strong> - Finished</li>
@@ -88,10 +93,7 @@
 
             <!-- Alchemists Page -->
             <div id="page-alchemists" class="page">
-                <div class="card">
-                    <h2>Alchemists</h2>
-                    <p>Alchemists companion features coming soon!</p>
-                </div>
+                <!-- Content injected by alchemists.js -->
             </div>
 
             <!-- Rail Baron Page -->
@@ -120,36 +122,63 @@
                 </div>
             </div>
 
+            <!-- Score Tracker Page -->
+            <div id="page-scoretracker" class="page">
+                <div class="card">
+                    <h2>Score Tracker</h2>
+                    <p>Coming Soon</p>
+                </div>
+            </div>
+
             <!-- About Page -->
             <div id="page-about" class="page">
                 <div class="card">
                     <h2>About Wayfinder</h2>
-                    <p>Wayfinder is a multi-game companion app designed to enhance your board gaming experience. It provides tools and features to assist with game setup, gameplay tracking, and scoring across multiple board games.</p>
-                    <p>Wayfinder is created by Enoch Wright. Free and always will be.</p>
+                    <p>Wayfinder is a multi-game companion app designed to enhance your board gaming experience. It
+                        provides tools and features to assist with game setup, gameplay tracking, and scoring across
+                        multiple board games.</p>
+                    <p>Wayfinder is created by Enoch Wright.</p>
+                    <p>Available for free and always will be.</p>
                 </div>
-                
+
                 <div class="card">
                     <h3>Legal Notice</h3>
-                    <p>This application is provided free of charge and is released as open-source software. It is offered "as is," without warranty of any kind, express or implied. Use of this application is at your own risk.</p>
-                    <p>All game names and related content are trademarks of their respective publishers. This application is an independent, unofficial companion and is not affiliated with, endorsed by, or sponsored by any game publisher or designer.</p>
+                    <p>This application is provided free of charge and is released as open-source software. It is
+                        offered "as is," without warranty of any kind, express or implied. Use of this application is at
+                        your own risk.</p>
+                    <p>All game names and related content are trademarks of their respective publishers. This
+                        application is an independent, unofficial companion and is not affiliated with, endorsed by, or
+                        sponsored by any game publisher or designer.</p>
                 </div>
-                
+
                 <div class="card">
                     <h3>History</h3>
-                    <p>In 2011, I was introduced to the Rail Baron board game and became deeply invested in it. However, looking up payoffs during gameplay was tedious and time-consuming. To solve this problem, I created a basic webpage that automated the payoff lookups. This webpage remained online until December 2025.</p>
-                    <p>In 2018, I developed a simple app for New Bedford that streamlined the complicated building setup process and eliminated the need to pull tiles from a bag during gameplay.</p>
-                    <p>In 2020, I went to purchase Rising 5 and discovered the app was no longer available in the Android Play Store. This led me to researching and trying to reverse engineer board game apps so that I could always have them and never make the game obsolete.</p>
-                    <p>These projects laid the foundation for Wayfinder, bringing together multiple board game companions into a single, comprehensive application that is open-source and will ensure people will be able to play their games for years to come.</p>
+                    <p>In 2011, I was introduced to the Rail Baron board game and became deeply invested in it. However,
+                        looking up payoffs during gameplay was tedious and time-consuming. To solve this problem, I
+                        created a basic webpage that automated the payoff lookups. This webpage remained online until
+                        December 2025.</p>
+                    <p>In 2018, I developed a simple app for New Bedford that streamlined the complicated building setup
+                        process and eliminated the need to pull tiles from a bag during gameplay.</p>
+                    <p>In 2020, I went to purchase Rising 5 and discovered the app was no longer available in the
+                        Android Play Store. This led me to researching and trying to reverse engineer board game apps so
+                        that I could always have them and never make the game obsolete.</p>
+                    <p>These projects laid the foundation for Wayfinder, bringing together multiple board game
+                        companions into a single, comprehensive application that is open-source and will ensure people
+                        will be able to play their games for years to come.</p>
                 </div>
 
                 <div class="card">
                     <h3>Support Development</h3>
-                    <p>If you enjoy using Wayfinder and would like to support its continued development, consider buying me a coffee! Your support helps keep this project free and open-source.</p>
+                    <p>If you enjoy using Wayfinder and would like to support its continued development, consider buying
+                        me a coffee! Your support helps keep this project free and open-source.</p>
                     <div style="text-align: center; margin-top: 20px;">
-                        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="enochwright" data-color="#FFDD00" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
+                        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+                            data-name="bmc-button" data-slug="enochwright" data-color="#FFDD00" data-emoji=""
+                            data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000"
+                            data-font-color="#000000" data-coffee-color="#ffffff"></script>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <h3>Technology Stack</h3>
                     <div class="tech-stack">
@@ -167,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card">
                     <h3>Version Information</h3>
                     <p><strong>App Version:</strong> 1.0.0</p>
@@ -175,30 +204,28 @@
                 </div>
             </div>
         </main>
-        
+
         <footer>
             <p>Enoch Wright 2025</p>
         </footer>
     </div>
-    
+
     <!-- Capacitor Core - Load from CDN for web -->
     <script src="https://cdn.jsdelivr.net/npm/@capacitor/core@6.0.0/dist/capacitor.js"></script>
-    
+
     <!-- Data Manager -->
     <script src="js/data-manager.js"></script>
-    
+
     <!-- Game Modules -->
     <script src="js/games/alchemists.js"></script>
     <script src="js/games/catan.js"></script>
-    <script src="js/games/fleet-card.js"></script>
-    <script src="js/games/fleet-dice.js"></script>
     <script src="js/games/newbedford.js"></script>
     <script src="js/games/planetx.js"></script>
     <script src="js/games/railbaron.js"></script>
     <script src="js/games/rising5.js"></script>
-    <script src="js/games/stoneage.js"></script>
-    
+
     <!-- App Script -->
     <script src="js/app.js"></script>
 </body>
+
 </html>

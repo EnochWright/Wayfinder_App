@@ -135,6 +135,7 @@ body {
         opacity: 0;
         transform: translateY(-10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -236,7 +237,7 @@ body {
     .nav-toggle.active .hamburger::after {
         transform: rotate(-45deg);
     }
-    
+
     /* Mobile Dropdown */
     .dropdown-menu {
         position: static;
@@ -245,12 +246,12 @@ body {
         margin: 5px 0;
         border-radius: 8px;
     }
-    
+
     .dropdown-item {
         color: white;
         padding: 10px 30px;
     }
-    
+
     .dropdown-item:hover {
         background-color: rgba(255, 255, 255, 0.2);
     }
@@ -383,15 +384,15 @@ footer {
     header h1 {
         font-size: 2rem;
     }
-    
+
     .subtitle {
         font-size: 1rem;
     }
-    
+
     .card {
         padding: 20px;
     }
-    
+
     .container {
         padding: 15px;
     }
@@ -421,6 +422,7 @@ footer {
         transform: translateX(-50%) translateY(100px);
         opacity: 0;
     }
+
     to {
         transform: translateX(-50%) translateY(0);
         opacity: 1;
@@ -474,6 +476,7 @@ footer {
         opacity: 0;
         transform: translateY(10px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -578,7 +581,7 @@ input[type="checkbox"] {
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .stat-number {
         font-size: 2rem;
     }
@@ -978,6 +981,7 @@ select[multiple] option:checked {
 }
 
 @media (max-width: 600px) {
+
     .radio-group,
     .checkbox-group {
         margin-left: 0;
@@ -1005,7 +1009,7 @@ select[multiple] option:checked {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .btn-secondary {
         width: 100%;
     }
@@ -1180,7 +1184,7 @@ select[multiple] option:checked {
     font-size: 1.5rem;
 }
 
-.roll-section > p {
+.roll-section>p {
     color: var(--text-light);
     margin-bottom: 20px;
     font-size: 0.95rem;
@@ -1290,7 +1294,7 @@ select[multiple] option:checked {
     accent-color: var(--primary-color);
 }
 
-.parity-option input[type="radio"]:checked + .parity-label {
+.parity-option input[type="radio"]:checked+.parity-label {
     color: var(--primary-color);
 }
 
@@ -1431,6 +1435,7 @@ select[multiple] option:checked {
         opacity: 0;
         transform: translateY(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1658,25 +1663,25 @@ select[multiple] option:checked {
         align-items: flex-start;
         padding: 20px;
     }
-    
+
     .railroad-detail-header h3 {
         font-size: 1.5rem;
     }
-    
+
     .railroad-detail-price {
         font-size: 1.1rem;
         width: 100%;
         text-align: center;
     }
-    
+
     .railroad-detail-body {
         padding: 20px;
     }
-    
+
     .railroad-detail-label {
         font-size: 1rem;
     }
-    
+
     .railroad-detail-value {
         font-size: 0.95rem;
         padding-left: 24px;
@@ -1688,15 +1693,15 @@ select[multiple] option:checked {
         padding: 12px 16px;
         font-size: 1rem;
     }
-    
+
     .railroad-detail-header h3 {
         font-size: 1.3rem;
     }
-    
+
     .railroad-detail-item {
         padding: 12px;
     }
-    
+
     .railroad-detail-value {
         padding-left: 20px;
     }
@@ -1732,7 +1737,7 @@ select[multiple] option:checked {
     .city-railroads-list {
         padding-left: 24px;
     }
-    
+
     .city-railroad-badge {
         font-size: 0.85rem;
         padding: 5px 10px;
@@ -1743,7 +1748,7 @@ select[multiple] option:checked {
     .city-railroads-list {
         padding-left: 20px;
     }
-    
+
     .city-railroad-badge {
         font-size: 0.8rem;
         padding: 4px 8px;
@@ -1878,6 +1883,7 @@ select[multiple] option:checked {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -1888,6 +1894,7 @@ select[multiple] option:checked {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -2038,124 +2045,124 @@ select[multiple] option:checked {
     .rail-baron-container h2 {
         font-size: 1.5rem;
     }
-    
+
     .rail-baron-container.width-wide,
     .rail-baron-container.width-full {
         max-width: 100%;
     }
-    
+
     .map-viewer-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 15px;
     }
-    
+
     .width-toggle-buttons {
         width: 100%;
         justify-content: space-between;
     }
-    
+
     .width-toggle-btn {
         flex: 1;
         padding: 10px 12px;
         font-size: 0.85rem;
     }
-    
+
     .rail-baron-menu {
         max-width: 100%;
     }
-    
+
     .rail-baron-menu-btn {
         padding: 25px;
     }
-    
+
     .rail-baron-menu-btn .menu-icon {
         font-size: 2.5rem;
     }
-    
+
     .rail-baron-menu-btn .menu-title {
         font-size: 1.3rem;
     }
-    
+
     .roll-section {
         padding: 20px;
     }
-    
+
     .roll-section h3 {
         font-size: 1.3rem;
     }
-    
+
     .manual-input {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
     }
-    
+
     .dice-value-selector {
         width: 100%;
     }
-    
+
     .dice-value-btn {
         width: 100%;
     }
-    
+
     .parity-selector {
         width: 100%;
         justify-content: space-around;
     }
-    
+
     .button-group {
         flex-direction: column;
         width: 100%;
     }
-    
+
     .rail-baron-container .btn-primary,
     .rail-baron-container .btn-secondary {
         width: 100%;
         min-width: unset;
     }
-    
+
     .roll-details {
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .history-entry {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
-    
+
     .history-time {
         min-width: unset;
     }
-    
+
     .dice-modal-content {
         padding: 20px;
         max-width: 90%;
     }
-    
+
     .dice-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
     }
-    
+
     .dice-grid-btn {
         padding: 18px;
         font-size: 1.3rem;
     }
-    
+
     .city-modal-content {
         max-width: 95%;
         padding: 20px;
         max-height: 85vh;
     }
-    
+
     .city-grid {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         gap: 8px;
     }
-    
+
     .city-grid-btn {
         padding: 12px 8px;
         font-size: 0.9rem;
@@ -2166,51 +2173,51 @@ select[multiple] option:checked {
     .rail-baron-container h2 {
         font-size: 1.3rem;
     }
-    
+
     .rail-baron-menu-btn {
         padding: 20px;
     }
-    
+
     .rail-baron-menu-btn .menu-icon {
         font-size: 2rem;
     }
-    
+
     .rail-baron-menu-btn .menu-title {
         font-size: 1.2rem;
     }
-    
+
     .roll-section {
         padding: 15px;
     }
-    
+
     .result-box strong {
         font-size: 1.2rem;
     }
-    
+
     .dice-modal-content h3 {
         font-size: 1.2rem;
     }
-    
+
     .dice-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
     }
-    
+
     .dice-grid-btn {
         padding: 15px;
         font-size: 1.2rem;
     }
-    
+
     .city-grid {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 6px;
     }
-    
+
     .city-grid-btn {
         padding: 10px 6px;
         font-size: 0.85rem;
     }
-    
+
     .city-region-title {
         font-size: 1.1rem;
     }
@@ -2302,8 +2309,13 @@ select[multiple] option:checked {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .map-canvas {
@@ -2476,42 +2488,42 @@ select[multiple] option:checked {
     .map-canvas-wrapper {
         max-height: 50vh;
     }
-    
+
     .map-zoom-controls {
         top: 10px;
         right: 10px;
         padding: 8px;
         gap: 6px;
     }
-    
+
     .zoom-btn {
         width: 36px;
         height: 36px;
         font-size: 1.3rem;
     }
-    
+
     .zoom-level {
         font-size: 0.8rem;
         padding: 4px 0;
     }
-    
+
     .map-controls-panel {
         padding: 20px;
     }
-    
+
     .controls-header {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     .toggle-all-buttons {
         width: 100%;
     }
-    
+
     .toggle-btn {
         flex: 1;
     }
-    
+
     .railroad-toggles {
         grid-template-columns: 1fr;
         max-height: 300px;
@@ -2522,24 +2534,24 @@ select[multiple] option:checked {
     .map-controls-panel {
         padding: 15px;
     }
-    
+
     .controls-header h3 {
         font-size: 1.1rem;
     }
-    
+
     .toggle-btn {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
-    
+
     .railroad-toggle-item {
         padding: 12px;
     }
-    
+
     .railroad-name {
         font-size: 0.9rem;
     }
-    
+
     .railroad-price {
         font-size: 0.8rem;
     }
@@ -2635,17 +2647,17 @@ select[multiple] option:checked {
         grid-template-columns: repeat(5, 1fr);
         gap: 8px;
     }
-    
+
     .whale-picker-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
     }
-    
+
     .money-picker-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 8px;
     }
-    
+
     .dice-picker-btn {
         padding: 12px;
         font-size: 1.1rem;
@@ -2657,17 +2669,17 @@ select[multiple] option:checked {
         grid-template-columns: repeat(4, 1fr);
         gap: 6px;
     }
-    
+
     .whale-picker-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 6px;
     }
-    
+
     .money-picker-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 6px;
     }
-    
+
     .dice-picker-btn {
         padding: 10px;
         font-size: 1rem;
@@ -2851,59 +2863,59 @@ select[multiple] option:checked {
         padding: 10px;
         overflow-x: auto;
     }
-    
+
     .hex {
         width: 70px;
         height: 80px;
         margin-left: -0.5px;
     }
-    
+
     .hex:first-child {
         margin-left: 0;
     }
-    
+
     .hex-row {
         gap: 0;
         margin-top: -20px;
     }
-    
+
     .hex-row:first-child {
         margin-top: 0;
     }
-    
+
     .hex-grid:not(.hex-grid-56) .hex-row:nth-child(even) {
         margin-left: 35px;
     }
-    
+
     .hex-grid:not(.hex-grid-56) .hex-row:nth-child(odd) {
         margin-left: 0;
     }
-    
+
     .hex-grid:not(.hex-grid-56) .hex-row:nth-child(1),
     .hex-grid:not(.hex-grid-56) .hex-row:nth-child(5) {
         margin-left: 70px;
     }
-    
+
     .terrain-name {
         font-size: 0.5rem;
         letter-spacing: 0.3px;
     }
-    
+
     .number-token {
         width: 28px;
         height: 28px;
         border-width: 2px;
     }
-    
+
     .number-value {
         font-size: 0.9rem;
     }
-    
+
     .number-pips {
         font-size: 0.35rem;
         letter-spacing: 0.5px;
     }
-    
+
     .robber-icon {
         font-size: 1.5rem;
     }
@@ -2911,407 +2923,419 @@ select[multiple] option:checked {
 
 /* Expansion Checkbox Styles */
 .expansion-checkbox-label {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        padding: 15px 25px;
-        background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(52, 168, 83, 0.1));
-        border: 3px solid #ddd;
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        font-weight: 600;
-        font-size: 1.1rem;
-        color: var(--text-color);
-    }
-    
-    .expansion-checkbox-label:hover {
-        border-color: var(--primary-color);
-        background: linear-gradient(135deg, rgba(66, 133, 244, 0.15), rgba(52, 168, 83, 0.15));
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .expansion-checkbox {
-        width: 24px;
-        height: 24px;
-        cursor: pointer;
-        accent-color: var(--primary-color);
-    }
-    
-    .expansion-checkbox-text {
-        font-size: 1.1rem;
-        color: var(--text-color);
-    }
-    
-    .expansion-checkbox-label:has(.expansion-checkbox:checked) {
-        border-color: var(--secondary-color);
-        background: linear-gradient(135deg, rgba(52, 168, 83, 0.2), rgba(66, 133, 244, 0.2));
-    }
-    
-    /* 5-6 Player Board Styles */
-    .hex-grid-56 {
-        transform: scale(1);
-        transform-origin: top center;
-    }
-    
-    .hex-56 {
-        width: 14.29cqw;
-        height: calc(14.29cqw * 1.14);
-    }
-    
-    /* 5-6 player vertical spacing - less overlap than base game */
-    .hex-grid-56 .hex-row {
-        margin-top: calc(-14.29cqw * 0.29);
-    }
-    
-    .hex-grid-56 .hex-row:first-child {
-        margin-top: 0;
-    }
-    
-    /* 5-6 player pattern: 3-4-5-6-5-4-3 - symmetrical hexagon */
-    /* Each row explicitly positioned - NO base even/odd rules */
-    .hex-grid-56 .hex-row:nth-child(1) {
-        margin-left: 21.435cqw !important;  /* Row 1: 3 tiles (14.29cqw * 1.5) */
-    }
-    
-    .hex-grid-56 .hex-row:nth-child(2) {
-        margin-left: 14.29cqw !important;   /* Row 2: 4 tiles (14.29cqw * 1) */
-    }
-    
-    .hex-grid-56 .hex-row:nth-child(3) {
-        margin-left: 7.145cqw !important;   /* Row 3: 5 tiles (14.29cqw * 0.5) */
-    }
-    
-    .hex-grid-56 .hex-row:nth-child(4) {
-        margin-left: 0 !important;          /* Row 4: 6 tiles - widest, centered */
-    }
-    
-    .hex-grid-56 .hex-row:nth-child(5) {
-        margin-left: 7.145cqw !important;   /* Row 5: 5 tiles */
-    }
-    
-    .hex-grid-56 .hex-row:nth-child(6) {
-        margin-left: 14.29cqw !important;   /* Row 6: 4 tiles */
-    }
-    
-    .hex-grid-56 .hex-row:nth-child(7) {
-        margin-left: 21.435cqw !important;  /* Row 7: 3 tiles */
-    }
-    
-    .hex-56 .terrain-name {
-        font-size: 1.286cqw;  /* 1.5cqw * 0.857 */
-    }
-    
-    .hex-56 .number-token {
-        width: 6.856cqw;      /* 8cqw * 0.857 */
-        height: 6.856cqw;
-        border-width: 2px;
-    }
-    
-    .hex-56 .number-value {
-        font-size: 2.143cqw;  /* 2.5cqw * 0.857 */
-    }
-    
-    .hex-56 .number-pips {
-        font-size: 0.771cqw;  /* 0.9cqw * 0.857 */
-    }
-    
-    .hex-56 .robber-icon {
-        font-size: 3.428cqw;  /* 4cqw * 0.857 */
-    }
-    
-    /* Catan Resource Tracker Styles */
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 25px;
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(52, 168, 83, 0.1));
+    border: 3px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.expansion-checkbox-label:hover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.15), rgba(52, 168, 83, 0.15));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.expansion-checkbox {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+}
+
+.expansion-checkbox-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.expansion-checkbox-label:has(.expansion-checkbox:checked) {
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, rgba(52, 168, 83, 0.2), rgba(66, 133, 244, 0.2));
+}
+
+/* 5-6 Player Board Styles */
+.hex-grid-56 {
+    transform: scale(1);
+    transform-origin: top center;
+}
+
+.hex-56 {
+    width: 14.29cqw;
+    height: calc(14.29cqw * 1.14);
+}
+
+/* 5-6 player vertical spacing - less overlap than base game */
+.hex-grid-56 .hex-row {
+    margin-top: calc(-14.29cqw * 0.29);
+}
+
+.hex-grid-56 .hex-row:first-child {
+    margin-top: 0;
+}
+
+/* 5-6 player pattern: 3-4-5-6-5-4-3 - symmetrical hexagon */
+/* Each row explicitly positioned - NO base even/odd rules */
+.hex-grid-56 .hex-row:nth-child(1) {
+    margin-left: 21.435cqw !important;
+    /* Row 1: 3 tiles (14.29cqw * 1.5) */
+}
+
+.hex-grid-56 .hex-row:nth-child(2) {
+    margin-left: 14.29cqw !important;
+    /* Row 2: 4 tiles (14.29cqw * 1) */
+}
+
+.hex-grid-56 .hex-row:nth-child(3) {
+    margin-left: 7.145cqw !important;
+    /* Row 3: 5 tiles (14.29cqw * 0.5) */
+}
+
+.hex-grid-56 .hex-row:nth-child(4) {
+    margin-left: 0 !important;
+    /* Row 4: 6 tiles - widest, centered */
+}
+
+.hex-grid-56 .hex-row:nth-child(5) {
+    margin-left: 7.145cqw !important;
+    /* Row 5: 5 tiles */
+}
+
+.hex-grid-56 .hex-row:nth-child(6) {
+    margin-left: 14.29cqw !important;
+    /* Row 6: 4 tiles */
+}
+
+.hex-grid-56 .hex-row:nth-child(7) {
+    margin-left: 21.435cqw !important;
+    /* Row 7: 3 tiles */
+}
+
+.hex-56 .terrain-name {
+    font-size: 1.286cqw;
+    /* 1.5cqw * 0.857 */
+}
+
+.hex-56 .number-token {
+    width: 6.856cqw;
+    /* 8cqw * 0.857 */
+    height: 6.856cqw;
+    border-width: 2px;
+}
+
+.hex-56 .number-value {
+    font-size: 2.143cqw;
+    /* 2.5cqw * 0.857 */
+}
+
+.hex-56 .number-pips {
+    font-size: 0.771cqw;
+    /* 0.9cqw * 0.857 */
+}
+
+.hex-56 .robber-icon {
+    font-size: 3.428cqw;
+    /* 4cqw * 0.857 */
+}
+
+/* Catan Resource Tracker Styles */
+.catan-resource-tracker {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.catan-resource-tracker h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resource-input-section {
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.resource-input-section .input-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.resource-input-section .input-row label {
+    margin-bottom: 8px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.resource-input-section .input-row input,
+.resource-input-section .input-row select {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+#add-resource-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.resource-list-section {
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.resource-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.resource-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    transition: all 0.2s ease;
+}
+
+.resource-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-details {
+    flex-grow: 1;
+    margin-right: 10px;
+    color: var(--text-color);
+}
+
+.remove-resource-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #d32f2f;
+    transition: color 0.2s ease;
+}
+
+.remove-resource-btn:hover {
+    color: #b71c1c;
+}
+
+#reset-resources-btn {
+    width: 100%;
+    margin-top: 15px;
+    background: #ea4335;
+    color: white;
+}
+
+#reset-resources-btn:hover {
+    background: #c5221f;
+}
+
+@media (max-width: 600px) {
     .catan-resource-tracker {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
-        background: var(--card-background);
-        border-radius: var(--border-radius);
-        box-shadow: var(--shadow);
-    }
-    
-    .catan-resource-tracker h2 {
-        color: var(--primary-color);
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    .resource-input-section {
-        background: var(--background-color);
-        border-radius: 8px;
         padding: 15px;
-        margin-bottom: 20px;
+        width: 95%;
     }
-    
-    .resource-input-section .input-row {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 15px;
-    }
-    
-    .resource-input-section .input-row label {
-        margin-bottom: 8px;
-        color: var(--text-light);
-        font-weight: 500;
-    }
-    
-    .resource-input-section .input-row input,
-    .resource-input-section .input-row select {
-        padding: 10px;
-        border: 2px solid #ddd;
-        border-radius: 8px;
-        font-size: 1rem;
-    }
-    
-    #add-resource-btn {
-        width: 100%;
-        padding: 12px;
-        margin-top: 10px;
-    }
-    
-    .resource-list-section {
-        background: var(--background-color);
-        border-radius: 8px;
-        padding: 15px;
-    }
-    
-    .resource-list {
-        list-style-type: none;
-        padding: 0;
-        max-height: 300px;
-        overflow-y: auto;
-    }
-    
-    .resource-list li {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background: white;
-        margin-bottom: 10px;
-        padding: 12px;
-        border-radius: 8px;
-        border-left: 4px solid var(--primary-color);
-        transition: all 0.2s ease;
-    }
-    
-    .resource-list li:hover {
-        transform: translateX(5px);
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .resource-details {
-        flex-grow: 1;
-        margin-right: 10px;
-        color: var(--text-color);
-    }
-    
-    .remove-resource-btn {
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-size: 18px;
-        color: #d32f2f;
-        transition: color 0.2s ease;
-    }
-    
-    .remove-resource-btn:hover {
-        color: #b71c1c;
-    }
-    
-    #reset-resources-btn {
-        width: 100%;
-        margin-top: 15px;
-        background: #ea4335;
-        color: white;
-    }
-    
-    #reset-resources-btn:hover {
-        background: #c5221f;
-    }
-    
-    @media (max-width: 600px) {
-        .catan-resource-tracker {
-            padding: 15px;
-            width: 95%;
-        }
-    }
+}
 
 /* Catan Menu Styles */
 .catan-menu {
-   display: flex;
-   flex-direction: column;
-   gap: 20px;
-   max-width: 600px;
-   margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .catan-menu-btn {
-   background: white;
-   border: 3px solid #ddd;
-   border-radius: 16px;
-   padding: 30px;
-   cursor: pointer;
-   transition: all 0.3s ease;
-   text-align: left;
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+    border: 3px solid #ddd;
+    border-radius: 16px;
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .catan-menu-btn:not(:disabled):hover {
-   border-color: var(--secondary-color);
-   transform: translateY(-5px);
-   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-   background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
 }
 
 .catan-menu-btn:disabled {
-   opacity: 0.5;
-   cursor: not-allowed;
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .catan-menu-btn .menu-icon {
-   font-size: 3rem;
-   display: block;
-   margin-bottom: 10px;
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
 }
 
 .catan-menu-btn .menu-title {
-   font-size: 1.5rem;
-   font-weight: bold;
-   color: var(--secondary-color);
-   display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    display: block;
 }
 
 .catan-menu-btn .menu-desc {
-   font-size: 1rem;
-   color: var(--text-light);
-   display: block;
+    font-size: 1rem;
+    color: var(--text-light);
+    display: block;
 }
 
 /* Catan Section */
 .catan-section {
-   background: var(--card-background);
-   border-radius: var(--border-radius);
-   padding: 25px;
-   margin-bottom: 25px;
-   box-shadow: var(--shadow);
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
 }
 
 .catan-section h3 {
-   color: var(--secondary-color);
-   margin-bottom: 10px;
-   font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
 }
 
 /* Catan Modal Styles */
 .catan-modal {
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   z-index: 9999;
-   display: none;
-   align-items: center;
-   justify-content: center;
-   padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .catan-modal.show {
-   display: flex;
+    display: flex;
 }
 
 .catan-modal-overlay {
-   position: absolute;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   background: rgba(0, 0, 0, 0.5);
-   animation: fadeIn 0.2s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.2s ease;
 }
 
 .catan-modal-content {
-   position: relative;
-   background: white;
-   border-radius: 16px;
-   padding: 25px;
-   width: 90%;
-   max-width: 450px;
-   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-   animation: slideUp 0.3s ease;
-   z-index: 10000;
-   max-height: 80vh;
-   overflow-y: auto;
-   overflow-x: hidden;
+    position: relative;
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+    z-index: 10000;
+    max-height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .catan-modal-content h3 {
-   margin: 0 0 15px 0;
-   color: var(--secondary-color);
-   text-align: center;
-   font-size: 1.5rem;
+    margin: 0 0 15px 0;
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 /* Catan Input Sections */
 .catan-input-section {
-   display: flex;
-   flex-direction: column;
-   gap: 8px;
-   margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
 }
 
 .catan-input-section label {
-   font-size: 1rem;
-   color: var(--text-light);
-   font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
 }
 
 /* Catan Dice Grid */
 .catan-dice-grid {
-   display: grid;
-   grid-template-columns: repeat(4, 1fr);
-   gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
 }
 
 .catan-resource-grid {
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
 }
 
 .catan-dice-btn,
 .catan-resource-btn {
-   padding: 12px 8px;
-   background: white;
-   color: var(--text-color);
-   border: 2px solid #ddd;
-   border-radius: 10px;
-   font-size: 1.1rem;
-   font-weight: 600;
-   cursor: pointer;
-   transition: all 0.2s ease;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-   text-align: center;
+    padding: 12px 8px;
+    background: white;
+    color: var(--text-color);
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
 
 .catan-dice-btn:hover,
 .catan-resource-btn:hover {
-   border-color: var(--secondary-color);
-   background: #f8f9fa;
-   transform: translateY(-2px);
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .catan-dice-btn.selected,
 .catan-resource-btn.selected {
-   background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-   color: white;
-   border-color: var(--secondary-color);
-   box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
 }
 
 /* Catan Resource Roll Display Styles */
@@ -3468,7 +3492,7 @@ select[multiple] option:checked {
     padding: 2px 6px;
     font-size: 0.9rem;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 480px) {
@@ -3477,7 +3501,7 @@ select[multiple] option:checked {
         top: 5px;
         right: 5px;
     }
-    
+
     .resource-image-wrapper {
         position: relative;
     }
@@ -3504,7 +3528,7 @@ select[multiple] option:checked {
     color: #4caf50;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 5;
 }
 
@@ -3521,7 +3545,7 @@ select[multiple] option:checked {
         max-width: 100px;
         max-height: 100px;
     }
-    
+
     .resource-items-grid {
         grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
         gap: 10px;
@@ -3535,16 +3559,16 @@ select[multiple] option:checked {
         max-width: 90px;
         max-height: 90px;
     }
-    
+
     .resource-items-grid {
         grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 8px;
     }
-    
+
     .resource-item {
         padding: 6px;
     }
-    
+
     .resource-multiplier {
         font-size: 0.75rem;
         padding: 2px 5px;
@@ -3579,7 +3603,7 @@ select[multiple] option:checked {
     color: #d32f2f;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 5;
 }
 
@@ -3607,34 +3631,34 @@ select[multiple] option:checked {
     .dice-roll-header {
         padding: 10px 15px;
     }
-    
+
     .dice-roll-number {
         font-size: 1.5rem;
     }
-    
+
     .dice-roll-pip {
         font-size: 1rem;
     }
-    
+
     .resource-items-grid {
         grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
         gap: 10px;
     }
-    
+
     .resource-item {
         padding: 6px;
     }
-    
+
     .resource-image {
         width: 100%;
         max-width: 100px;
         max-height: 100px;
     }
-    
+
     .resource-name {
         font-size: 0.8rem;
     }
-    
+
     .catan-button-group {
         flex-direction: column;
         gap: 10px;
@@ -3643,172 +3667,788 @@ select[multiple] option:checked {
 
 /* Catan Settlement Selection */
 .catan-selector {
-   display: flex;
-   flex-direction: column;
-   gap: 10px;
-   width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
 }
 
 .catan-option {
-   display: flex;
-   align-items: center;
-   gap: 10px;
-   padding: 12px 15px;
-   border: 2px solid #ddd;
-   border-radius: 10px;
-   background: white;
-   cursor: pointer;
-   transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .catan-option:hover {
-   border-color: var(--secondary-color);
-   background: #f8f9fa;
-   transform: translateY(-2px);
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .catan-option input[type="radio"] {
-   width: 20px;
-   height: 20px;
-   cursor: pointer;
-   accent-color: var(--secondary-color);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: var(--secondary-color);
 }
 
 .catan-option:has(input[type="radio"]:checked) {
-   border-color: var(--secondary-color);
-   background: linear-gradient(135deg, rgba(52, 168, 83, 0.1), rgba(66, 133, 244, 0.1));
+    border-color: var(--secondary-color);
+    background: linear-gradient(135deg, rgba(52, 168, 83, 0.1), rgba(66, 133, 244, 0.1));
 }
 
 .option-label {
-   font-size: 1rem;
-   color: var(--text-color);
+    font-size: 1rem;
+    color: var(--text-color);
 }
 
 /* Responsive Styles for Catan UI */
 @media (max-width: 768px) {
-   .catan-menu-btn {
-       padding: 25px;
-   }
-   
-   .catan-menu-btn .menu-icon {
-       font-size: 2.5rem;
-   }
-   
-   .catan-menu-btn .menu-title {
-       font-size: 1.3rem;
-   }
-   
-   .catan-section {
-       padding: 20px;
-   }
-   
-   .catan-section h3 {
-       font-size: 1.3rem;
-   }
-   
-   .catan-modal-content {
-       padding: 20px;
-   }
-   
-   .catan-dice-grid {
-       grid-template-columns: repeat(3, 1fr);
-   }
+    .catan-menu-btn {
+        padding: 25px;
+    }
+
+    .catan-menu-btn .menu-icon {
+        font-size: 2.5rem;
+    }
+
+    .catan-menu-btn .menu-title {
+        font-size: 1.3rem;
+    }
+
+    .catan-section {
+        padding: 20px;
+    }
+
+    .catan-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .catan-modal-content {
+        padding: 20px;
+    }
+
+    .catan-dice-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
-   .catan-menu-btn {
-       padding: 20px;
-   }
-   
-   .catan-menu-btn .menu-icon {
-       font-size: 2rem;
-   }
-   
-   .catan-menu-btn .menu-title {
-       font-size: 1.2rem;
-   }
-   
-   
-   .catan-section {
-       padding: 15px;
-   }
-   
-   .catan-dice-grid {
-       grid-template-columns: repeat(3, 1fr);
-       gap: 6px;
-   }
-   
-   .catan-resource-grid {
-       grid-template-columns: repeat(2, 1fr);
-       gap: 6px;
-   }
-   
-   .catan-dice-btn,
-   .catan-resource-btn {
-       padding: 10px 6px;
-       font-size: 0.9rem;
-   }
+    .catan-menu-btn {
+        padding: 20px;
+    }
+
+    .catan-menu-btn .menu-icon {
+        font-size: 2rem;
+    }
+
+    .catan-menu-btn .menu-title {
+        font-size: 1.2rem;
+    }
+
+
+    .catan-section {
+        padding: 15px;
+    }
+
+    .catan-dice-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .catan-resource-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+
+    .catan-dice-btn,
+    .catan-resource-btn {
+        padding: 10px 6px;
+        font-size: 0.9rem;
+    }
 }
 
 /* Catan Resource Multiplier Picker Grid - Catan-specific version of whale picker */
 .catan-multiplier-picker-grid {
-   display: grid;
-   grid-template-columns: repeat(5, 1fr);
-   gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
 }
 
 .catan-multiplier-picker-btn {
-   padding: 15px;
-   background: white;
-   color: var(--text-color);
-   border: 2px solid #ddd;
-   border-radius: 10px;
-   font-size: 1.2rem;
-   font-weight: 600;
-   cursor: pointer;
-   transition: all 0.2s ease;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    background: white;
+    color: var(--text-color);
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .catan-multiplier-picker-btn:hover {
-   border-color: var(--secondary-color);
-   background: #f8f9fa;
-   transform: translateY(-2px);
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+    background: #f8f9fa;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .catan-multiplier-picker-btn.selected {
-   background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-   color: white;
-   border-color: var(--secondary-color);
-   box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border-color: var(--secondary-color);
+    box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
 }
 
 .catan-multiplier-picker-btn:active {
-   transform: translateY(0);
+    transform: translateY(0);
 }
 
 @media (max-width: 768px) {
-   .catan-multiplier-picker-grid {
-       grid-template-columns: repeat(4, 1fr);
-       gap: 8px;
-   }
-   
-   .catan-multiplier-picker-btn {
-       padding: 12px;
-       font-size: 1.1rem;
-   }
+    .catan-multiplier-picker-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .catan-multiplier-picker-btn {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 480px) {
-   .catan-multiplier-picker-grid {
-       grid-template-columns: repeat(3, 1fr);
-       gap: 6px;
-   }
-   
-   .catan-multiplier-picker-btn {
-       padding: 10px;
-       font-size: 1rem;
-   }
+    .catan-multiplier-picker-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .catan-multiplier-picker-btn {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* Catan Dice Roller Styles */
+.dice-roller-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.dice-area {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.dice-container {
+    display: flex;
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.die {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    border: 1px solid #e0e0e0;
+}
+
+
+.die .pip {
+    background: #333;
+}
+
+.die.rolling {
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+
+    25% {
+        transform: rotate(5deg) translate(2px, 2px);
+    }
+
+    50% {
+        transform: rotate(-5deg) translate(-2px, -2px);
+    }
+
+    75% {
+        transform: rotate(5deg) translate(-2px, 2px);
+    }
+
+    100% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+}
+
+.pip {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dice-total {
+    text-align: center;
+}
+
+.total-label {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.total-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+.btn-large:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    background: #7caaf9;
+}
+
+.roll-history-section {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.roll-history-section h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.roll-history-container {
+    max-height: 200px;
+    overflow-y: auto;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* slightly increased from 8px */
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item.recent-roll {
+    background-color: rgba(66, 133, 244, 0.1);
+    /* Light blue highlight */
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.history-item.hist-red .history-total {
+    color: #ea4335;
+}
+
+.history-total {
+    font-weight: 700;
+    width: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.history-dice {
+    color: var(--text-light);
+    letter-spacing: 1px;
+    flex: 1;
+    text-align: center;
+}
+
+.history-time {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.empty-history {
+    text-align: center;
+    color: var(--text-light);
+    padding: 20px;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .catan-multiplier-picker-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    .catan-multiplier-picker-btn {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .catan-multiplier-picker-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .catan-multiplier-picker-btn {
+        padding: 10px;
+        font-size: 1rem;
+    }
+}
+
+/* Catan Dice Roller Styles */
+.dice-roller-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.dice-area {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.dice-container {
+    display: flex;
+    gap: 30px;
+    perspective: 1000px;
+}
+
+.die {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    border: 1px solid #e0e0e0;
+}
+
+
+.die .pip {
+    background: #333;
+}
+
+.die.rolling {
+    animation: shake 0.5s infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+
+    25% {
+        transform: rotate(5deg) translate(2px, 2px);
+    }
+
+    50% {
+        transform: rotate(-5deg) translate(-2px, -2px);
+    }
+
+    75% {
+        transform: rotate(5deg) translate(-2px, 2px);
+    }
+
+    100% {
+        transform: rotate(0deg) translate(0, 0);
+    }
+}
+
+.pip {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #333;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dice-total {
+    text-align: center;
+}
+
+.total-label {
+    display: block;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.total-value {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-color);
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.btn-large {
+    padding: 16px 40px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+}
+
+.btn-large:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+    background: #7caaf9;
+}
+
+.roll-history-section {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    padding: 20px;
+}
+
+.roll-history-section h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.roll-history-container {
+    max-height: 200px;
+    overflow-y: auto;
+    background: #fafafa;
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* slightly increased from 8px */
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+.history-item:last-child {
+    border-bottom: none;
+}
+
+.history-item.recent-roll {
+    background-color: rgba(66, 133, 244, 0.1);
+    /* Light blue highlight */
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.history-item.hist-red .history-total {
+    color: #ea4335;
+}
+
+.history-total {
+    font-weight: 700;
+    width: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.history-dice {
+    color: var(--text-light);
+    letter-spacing: 1px;
+    flex: 1;
+    text-align: center;
+}
+
+.history-time {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+
+/* Alchemists Game Styles */
+.hidden {
+    display: none !important;
+}
+
+/* Alchemists Test on Student Styles */
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) !important;
+    /* Force 4 columns */
+    gap: 5px;
+    /* Reduced gap */
+}
+
+/* Removed media query */
+
+.ingredient-select-btn {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.2s;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+}
+
+.ingredient-select-btn:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.ingredient-select-btn img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.1));
+}
+
+.ingredient-select-btn.selected {
+    opacity: 1;
+    transform: scale(1.15);
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.8));
+}
+
+.ingredient-slot {
+    width: 140px;
+    height: 180px;
+    border: 3px dashed #bbb;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #ddd;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    gap: 30px;
+}
+
+.btn-large {
+    font-size: 1.5rem;
+    padding: 15px 40px;
+}
+
+.setup-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-group .btn {
+    flex: 1;
+    background: var(--background-color);
+    color: var(--text-color);
+    box-shadow: none;
+    border: 2px solid transparent;
+}
+
+.btn-group .btn.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+#game-code-input {
+    flex: 2;
+    padding: 12px;
+    border: 2px solid var(--background-color);
+    border-radius: 8px;
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+#game-code-input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn-block {
+    width: 100%;
+}
+
+.btn-text {
+    background: none;
+    color: var(--text-light);
+    box-shadow: none;
+}
+
+.btn-text:hover {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--text-color);
+}
+
+/* Gameplay Actions */
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.btn-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: white;
+    color: var(--text-color);
+    border: 2px solid var(--background-color);
+    border-radius: 12px;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-action .icon {
+    font-size: 2rem;
+}
+
+.btn-action .label {
+    font-weight: 600;
+}
+
+/* Game Info Bar */
+.info-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    background: var(--background-color);
+}
+
+.game-info {
+    font-size: 1.1rem;
+}
+
+.btn-danger {
+    background: #ea4335;
+}
+
+.btn-danger:hover {
+    background: #d93025;
+}
+
+@media (max-width: 480px) {
+    .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

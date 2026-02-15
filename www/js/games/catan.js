@@ -26,36 +26,21 @@ class CatanGame {
         container.innerHTML = `
             <div class="catan-container">
                 <h2>Catan</h2>
-                
                 <div class="catan-menu">
                     <button class="catan-menu-btn" id="btn-map-generator">
                         <span class="menu-icon">🗺️</span>
                         <span class="menu-title">Map Generator</span>
                         <span class="menu-desc">Generate game board setup</span>
                     </button>
-                    
-                    <button class="catan-menu-btn" id="btn-dice-roller" disabled>
+                    <button class="catan-menu-btn" id="btn-dice-roller">
                         <span class="menu-icon">🎲</span>
                         <span class="menu-title">Dice Roller</span>
-                        <span class="menu-desc">Coming soon</span>
+                        <span class="menu-desc">Roll dice & track history</span>
                     </button>
-                    
                     <button class="catan-menu-btn" id="btn-resource-tracker">
                         <span class="menu-icon">📦</span>
                         <span class="menu-title">Resource Tracker</span>
                         <span class="menu-desc">Track your resources</span>
-                    </button>
-                    
-                    <button class="catan-menu-btn" id="btn-dev-cards" disabled>
-                        <span class="menu-icon">🃏</span>
-                        <span class="menu-title">Development Cards</span>
-                        <span class="menu-desc">Coming soon</span>
-                    </button>
-                    
-                    <button class="catan-menu-btn" id="btn-score-tracker" disabled>
-                        <span class="menu-icon">🏆</span>
-                        <span class="menu-title">Score Tracker</span>
-                        <span class="menu-desc">Coming soon</span>
                     </button>
                 </div>
             </div>
@@ -65,19 +50,19 @@ class CatanGame {
         document.getElementById('btn-map-generator')?.addEventListener('click', () => {
             this.showMapGenerator();
         });
-        
+
         document.getElementById('btn-dice-roller')?.addEventListener('click', () => {
             this.showDiceRoller();
         });
-        
+
         document.getElementById('btn-resource-tracker')?.addEventListener('click', () => {
             this.showResourceTracker();
         });
-        
+
         document.getElementById('btn-dev-cards')?.addEventListener('click', () => {
             this.showDevCards();
         });
-        
+
         document.getElementById('btn-score-tracker')?.addEventListener('click', () => {
             this.showScoreTracker();
         });
@@ -164,9 +149,9 @@ class CatanGame {
             this.generate56DefaultMap();
             return;
         }
-        
+
         this.currentMap = 'default';
-        
+
         // Base game default setup from rules (Page 3, Illustration A/R)
         const tiles = [
             // Row 1 (top, 3 tiles): mountain, farm, trees
@@ -200,7 +185,7 @@ class CatanGame {
 
     generate56DefaultMap() {
         this.currentMap = 'default';
-        
+
         // 5-6 Player Beginners Map from expansion rules (Page 5)
         // 30 tiles total in 3-4-5-6-5-4-3 pattern
         const tiles = [
@@ -251,9 +236,9 @@ class CatanGame {
             this.generate56VariableMap();
             return;
         }
-        
+
         this.currentMap = 'variable';
-        
+
         // Base game terrain counts
         const terrains = [
             'forest', 'forest', 'forest', 'forest',
@@ -263,13 +248,13 @@ class CatanGame {
             'mountains', 'mountains', 'mountains',
             'desert'
         ];
-        
+
         // Number tokens in alphabetical order (A-R)
         const numbers = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11];
-        
+
         // Shuffle terrains
         this.shuffleArray(terrains);
-        
+
         // Counter-clockwise spiral from top-left corner
         const spiralOrder = [
             0,    // Start top-left
@@ -281,10 +266,10 @@ class CatanGame {
             14, 10, 5,  // Inner ring up-right
             9     // Center
         ];
-        
+
         // Create tiles with terrains
         const tiles = terrains.map(terrain => ({ terrain, number: null }));
-        
+
         // Place numbers in counter-clockwise spiral, skipping desert
         let numberIndex = 0;
         for (const tileIndex of spiralOrder) {
@@ -293,16 +278,16 @@ class CatanGame {
                 numberIndex++;
             }
         }
-        
+
         // Check for adjacent red numbers
         this.ensureNoAdjacentRedNumbers(tiles);
-        
+
         this.displayMap(tiles);
     }
 
     generate56VariableMap() {
         this.currentMap = 'variable';
-        
+
         // 5-6 player terrain counts: 6 forest, 6 pasture, 6 grain, 5 hills, 5 mountains, 2 desert
         const terrains = [
             'forest', 'forest', 'forest', 'forest', 'forest', 'forest',
@@ -312,20 +297,20 @@ class CatanGame {
             'mountains', 'mountains', 'mountains', 'mountains', 'mountains',
             'desert', 'desert'
         ];
-        
+
         // 28 number tokens in ALPHABETICAL order (A through Y, then ZA, ZB, ZC)
         // A-2, B-5, C-4, D-6, E-3, F-9, G-8, H-11, I-11, J-10, K-6, L-3, M-8, N-4, O-8, P-10, Q-11, R-12, S-10, T-5, U-4, V-9, W-5, X-9, Y-12, ZA-3, ZB-2, ZC-6
         const numbers = [2, 5, 4, 6, 3, 9, 8, 11, 11, 10, 6, 3, 8, 4, 8, 10, 11, 12, 10, 5, 4, 9, 5, 9, 12, 3, 2, 6];
-        
+
         // Shuffle terrains
         this.shuffleArray(terrains);
-        
+
         // Counter-clockwise spiral for 30 tiles
         const spiralOrder = this.get56SpiralOrder();
-        
+
         // Create tiles with terrains
         const tiles = terrains.map(terrain => ({ terrain, number: null }));
-        
+
         // Place numbers in counter-clockwise spiral, skipping deserts
         let numberIndex = 0;
         for (const tileIndex of spiralOrder) {
@@ -334,10 +319,10 @@ class CatanGame {
                 numberIndex++;
             }
         }
-        
+
         // Check for adjacent red numbers
         this.ensure56NoAdjacentRedNumbers(tiles);
-        
+
         this.displayMap56(tiles);
     }
 
@@ -346,9 +331,9 @@ class CatanGame {
             this.generate56RandomMap();
             return;
         }
-        
+
         this.currentMap = 'random';
-        
+
         // Base game terrain counts
         const terrains = [
             'forest', 'forest', 'forest', 'forest',
@@ -358,41 +343,41 @@ class CatanGame {
             'mountains', 'mountains', 'mountains',
             'desert'
         ];
-        
+
         // Number tokens
         const numbers = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11];
-        
+
         // Shuffle both
         this.shuffleArray(terrains);
         this.shuffleArray(numbers);
-        
+
         // Create tiles
         const tiles = [];
         let numberIndex = 0;
-        
+
         for (let i = 0; i < terrains.length; i++) {
             const terrain = terrains[i];
             const tile = { terrain };
-            
+
             if (terrain === 'desert') {
                 tile.number = null;
             } else {
                 tile.number = numbers[numberIndex];
                 numberIndex++;
             }
-            
+
             tiles.push(tile);
         }
-        
+
         // Check for adjacent red numbers
         this.ensureNoAdjacentRedNumbers(tiles);
-        
+
         this.displayMap(tiles);
     }
 
     generate56RandomMap() {
         this.currentMap = 'random';
-        
+
         // 5-6 player terrain counts
         const terrains = [
             'forest', 'forest', 'forest', 'forest', 'forest', 'forest',
@@ -402,35 +387,35 @@ class CatanGame {
             'mountains', 'mountains', 'mountains', 'mountains', 'mountains',
             'desert', 'desert'
         ];
-        
+
         // 28 number tokens
         const numbers = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11, 6, 11, 4, 8, 10, 5, 2, 6, 3, 9];
-        
+
         // Shuffle both
         this.shuffleArray(terrains);
         this.shuffleArray(numbers);
-        
+
         // Create tiles
         const tiles = [];
         let numberIndex = 0;
-        
+
         for (let i = 0; i < terrains.length; i++) {
             const terrain = terrains[i];
             const tile = { terrain };
-            
+
             if (terrain === 'desert') {
                 tile.number = null;
             } else {
                 tile.number = numbers[numberIndex];
                 numberIndex++;
             }
-            
+
             tiles.push(tile);
         }
-        
+
         // Check for adjacent red numbers
         this.ensure56NoAdjacentRedNumbers(tiles);
-        
+
         this.displayMap56(tiles);
     }
 
@@ -474,20 +459,20 @@ class CatanGame {
             [13, 14, 16, 18], // 17
             [14, 15, 17] // 18
         ];
-        
+
         const redNumbers = [6, 8];
         let swapped = true;
         let attempts = 0;
         const maxAttempts = 100;
-        
+
         while (swapped && attempts < maxAttempts) {
             swapped = false;
             attempts++;
-            
+
             for (let i = 0; i < tiles.length; i++) {
                 if (redNumbers.includes(tiles[i].number)) {
                     const neighbors = adjacencies[i] || [];
-                    
+
                     for (const neighborIdx of neighbors) {
                         if (redNumbers.includes(tiles[neighborIdx].number)) {
                             // Find a non-adjacent tile to swap with
@@ -515,14 +500,14 @@ class CatanGame {
     displayMap(tiles) {
         const mapDisplay = document.getElementById('map-display');
         const mapContainer = document.getElementById('catan-map');
-        
+
         if (!mapDisplay || !mapContainer) return;
-        
+
         mapDisplay.style.display = 'block';
-        
+
         // Create hexagonal grid layout in honeycomb pattern
         let html = '<div class="hex-grid">';
-        
+
         // Catan board: 3, 4, 5, 4, 3 tiles per row
         const rows = [
             { start: 0, count: 3 },  // Row 1
@@ -531,16 +516,16 @@ class CatanGame {
             { start: 12, count: 4 }, // Row 4
             { start: 16, count: 3 }  // Row 5
         ];
-        
+
         rows.forEach((row, rowIndex) => {
             html += `<div class="hex-row">`;
-            
+
             for (let i = 0; i < row.count; i++) {
                 const tileIndex = row.start + i;
                 const tile = tiles[tileIndex];
                 const terrainClass = `terrain-${tile.terrain}`;
                 const numberClass = (tile.number === 6 || tile.number === 8) ? 'number-red' : '';
-                
+
                 html += `
                     <div class="hex ${terrainClass}">
                         <div class="hex-content">
@@ -555,12 +540,12 @@ class CatanGame {
                     </div>
                 `;
             }
-            
+
             html += '</div>';
         });
-        
+
         html += '</div>';
-        
+
         mapContainer.innerHTML = html;
         mapDisplay.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
@@ -609,18 +594,221 @@ class CatanGame {
             <div class="catan-container">
                 <button class="back-button" id="back-to-menu">← Back to Menu</button>
                 <h2>🎲 Dice Roller</h2>
-                <p class="subtitle">Roll dice with statistics tracking</p>
                 
-                <div class="roll-section">
-                    <h3>Coming Soon</h3>
-                    <p>Dice rolling functionality will be added in a future update.</p>
+                <div class="dice-roller-content">
+                    <div class="dice-area">
+                        <div class="dice-container">
+                            <div class="die" id="die-1">
+                                <span class="pip"></span><span class="pip"></span><span class="pip"></span>
+                                <span class="pip"></span><span class="pip"></span><span class="pip"></span>
+                            </div>
+                            <div class="die" id="die-2">
+                                <span class="pip"></span><span class="pip"></span><span class="pip"></span>
+                                <span class="pip"></span><span class="pip"></span><span class="pip"></span>
+                            </div>
+                        </div>
+                        <div class="dice-total">
+                            <span class="total-label">Total</span>
+                            <span class="total-value" id="dice-total-display">12</span>
+                        </div>
+                    </div>
+
+                    <div class="roll-controls">
+                        <button class="btn btn-primary btn-large" id="roll-button">ROLL DICE</button>
+                    </div>
+
+                    <div class="roll-history-section">
+                        <h3>Roll History</h3>
+                        <div class="roll-history-container">
+                            <div class="roll-history-list" id="roll-history-list">
+                                <!-- History items will go here -->
+                                <div class="empty-history">No rolls yet</div>
+                            </div>
+                        </div>
+                        <button class="btn btn-secondary btn-small" id="clear-history" style="margin-top: 10px;">Clear History</button>
+                    </div>
                 </div>
             </div>
         `;
 
+        this.rollHistory = [];
+        this.isRolling = false;
+
+        // Initial visual state
+        setTimeout(() => {
+            this.updateDieVisual(document.getElementById('die-1'), 6);
+            this.updateDieVisual(document.getElementById('die-2'), 6);
+        }, 100);
+
         document.getElementById('back-to-menu')?.addEventListener('click', () => {
             this.showMainMenu();
         });
+
+        document.getElementById('roll-button')?.addEventListener('click', () => {
+            this.rollDice();
+        });
+
+        document.getElementById('clear-history')?.addEventListener('click', () => {
+            this.rollHistory = [];
+            this.updateRollHistory();
+        });
+    }
+
+    rollDice() {
+        if (this.isRolling) return;
+        this.isRolling = true;
+
+        const die1El = document.getElementById('die-1');
+        const die2El = document.getElementById('die-2');
+        const totalEl = document.getElementById('dice-total-display');
+        const rollBtn = document.getElementById('roll-button');
+
+        if (!die1El || !die2El) return;
+
+        // Visual roll animation
+        rollBtn.disabled = true;
+        rollBtn.classList.add('disabled');
+        die1El.classList.add('rolling');
+        die2El.classList.add('rolling');
+
+        let rolls = 0;
+        const maxRolls = 15;
+        const interval = setInterval(() => {
+            const d1 = Math.floor(Math.random() * 6) + 1;
+            const d2 = Math.floor(Math.random() * 6) + 1;
+
+            this.updateDieVisual(die1El, d1);
+            this.updateDieVisual(die2El, d2);
+            totalEl.textContent = d1 + d2;
+
+            rolls++;
+            if (rolls >= maxRolls) {
+                clearInterval(interval);
+                this.finalizeRoll();
+            }
+        }, 80);
+    }
+
+    finalizeRoll() {
+        const d1 = Math.floor(Math.random() * 6) + 1;
+        const d2 = Math.floor(Math.random() * 6) + 1;
+        const total = d1 + d2;
+
+        const die1El = document.getElementById('die-1');
+        const die2El = document.getElementById('die-2');
+        const totalEl = document.getElementById('dice-total-display');
+        const rollBtn = document.getElementById('roll-button');
+
+        die1El.classList.remove('rolling');
+        die2El.classList.remove('rolling');
+
+        this.updateDieVisual(die1El, d1);
+        this.updateDieVisual(die2El, d2);
+        totalEl.textContent = total;
+
+        // Highlight critical rolls
+        if (total === 7) {
+            totalEl.style.color = '#ea4335'; // Red for robber
+        } else {
+            totalEl.style.color = 'var(--text-color)';
+        }
+
+        this.addToHistory(total, d1, d2);
+
+        this.isRolling = false;
+        rollBtn.disabled = false;
+        rollBtn.classList.remove('disabled');
+    }
+
+    updateDieVisual(element, value) {
+        if (!element) return;
+
+        // Map pips visibility based on dice value
+        // We use flexbox/grid on the die and hide/show pips or change their positions
+        // Actually, simpler to just set the class 'face-{value}' and handle simple pip patterns with CSS or just text content for simplicity if strict CSS is hard
+        // But the user asked for visual simulation. A simple way is to use unicode or just numbers.
+        // Let's stick to the content text approach for now but with pips if possible.
+        // I will use 'data-value' and let CSS handle the pips layout if I were doing pure CSS pips,
+        // but for robustness without complex CSS, I'll use simple unicode dice or just dots.
+
+        // Let's use the HTML pip structure I added in the innerHTML: 6 spans.
+        // Wait, standard dice have up to 6 pips.
+        // I'll just change the class to show the correct face
+        element.setAttribute('data-value', value);
+
+        // Clear existing content
+        element.innerHTML = '';
+
+        // Add pips based on value (standard dice positions)
+        // 1: Center
+        // 2: Top-left, Bottom-right
+        // 3: Output 1 & 2
+        // 4: Top-left, Top-right, Bottom-left, Bottom-right
+        // 5: Output 4 & Center
+        // 6: Output 4 & Middle-left, Middle-right
+
+        const positions = this.getPipPositions(value);
+        positions.forEach(pos => {
+            const pip = document.createElement('span');
+            pip.className = 'pip';
+            pip.style.cssText = pos;
+            element.appendChild(pip);
+        });
+    }
+
+    getPipPositions(value) {
+        // Return style strings for absolute positioning of pips or grid areas
+        // A simple way is to use a 3x3 grid logic
+        const center = 'top: 50%; left: 50%; transform: translate(-50%, -50%);';
+        const topLeft = 'top: 20%; left: 20%;';
+        const topRight = 'top: 20%; right: 20%;';
+        const midLeft = 'top: 50%; left: 20%; transform: translateY(-50%);';
+        const midRight = 'top: 50%; right: 20%; transform: translateY(-50%);';
+        const bottomLeft = 'bottom: 20%; left: 20%;';
+        const bottomRight = 'bottom: 20%; right: 20%;';
+
+        switch (value) {
+            case 1: return [center];
+            case 2: return [topLeft, bottomRight]; // Or top-right, bottom-left
+            case 3: return [topLeft, center, bottomRight];
+            case 4: return [topLeft, topRight, bottomLeft, bottomRight];
+            case 5: return [topLeft, topRight, center, bottomLeft, bottomRight];
+            case 6: return [topLeft, topRight, midLeft, midRight, bottomLeft, bottomRight];
+            default: return [];
+        }
+    }
+
+    addToHistory(total, d1, d2) {
+        this.rollHistory.unshift({ total, d1, d2, timestamp: new Date() });
+        if (this.rollHistory.length > 20) this.rollHistory.pop();
+        this.updateRollHistory();
+    }
+
+    updateRollHistory() {
+        const list = document.getElementById('roll-history-list');
+        if (!list) return;
+
+        if (this.rollHistory.length === 0) {
+            list.innerHTML = '<div class="empty-history">No rolls yet</div>';
+            return;
+        }
+
+        list.innerHTML = this.rollHistory.map((roll, index) => {
+            // Emphasize the most recent roll
+            const recentClass = index === 0 ? 'recent-roll' : '';
+            const redClass = roll.total === 7 ? 'hist-red' : '';
+            return `
+                <div class="history-item ${recentClass} ${redClass}">
+                    <span class="history-total">${roll.total}</span>
+                    <span class="history-dice">
+                        <span class="hist-die">${roll.d1}</span>
+                        +
+                        <span class="hist-die">${roll.d2}</span>
+                    </span>
+                    <span class="history-time">${roll.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>
+                </div>
+            `;
+        }).join('');
     }
 
     showResourceTracker() {
@@ -651,28 +839,28 @@ class CatanGame {
         const resourceDisplay = document.getElementById('resource-roll-display');
         const loadResources = () => {
             const savedResources = JSON.parse(localStorage.getItem('catan-resources') || '[]');
-            
+
             // Group resources by dice roll
             const resourcesByRoll = {};
             savedResources.forEach((resource, index) => {
                 if (!resourcesByRoll[resource.diceRoll]) {
                     resourcesByRoll[resource.diceRoll] = [];
                 }
-                resourcesByRoll[resource.diceRoll].push({...resource, index});
+                resourcesByRoll[resource.diceRoll].push({ ...resource, index });
             });
-            
+
             // Sort dice rolls numerically
             const sortedRolls = Object.keys(resourcesByRoll).sort((a, b) => parseInt(a) - parseInt(b));
-            
+
             if (sortedRolls.length === 0) {
                 resourceDisplay.innerHTML = '<p class="no-resources">No resources added yet. Click "Add Resource" to get started.</p>';
                 return;
             }
-            
+
             // Generate HTML for each dice roll group
             resourceDisplay.innerHTML = sortedRolls.map(roll => {
                 const resources = resourcesByRoll[roll];
-                
+
                 return `
                     <div class="dice-roll-group">
                         <div class="dice-roll-header">
@@ -688,7 +876,7 @@ class CatanGame {
                                                 alt="${resource.resourceType}"
                                                 class="resource-image" />
                                             ${resource.multiplier > 1 ?
-                                                `<span class="resource-multiplier">×${resource.multiplier}</span>` : ''}
+                        `<span class="resource-multiplier">×${resource.multiplier}</span>` : ''}
                                         </div>
                                         <div class="resource-name">${resource.resourceType.charAt(0).toUpperCase() + resource.resourceType.slice(1)}</div>
                                     </div>
@@ -698,7 +886,7 @@ class CatanGame {
                     </div>
                 `;
             }).join('');
-            
+
             // Add resource item click listeners to open management modal
             document.querySelectorAll('.resource-image-wrapper').forEach(item => {
                 item.addEventListener('click', (e) => {
@@ -745,7 +933,7 @@ class CatanGame {
                             <div class="catan-input-section">
                                 <label>Dice Roll (2-12):</label>
                                 <div class="catan-dice-grid">
-                                    ${[2,3,4,5,6,8,9,10,11,12].map(num => `
+                                    ${[2, 3, 4, 5, 6, 8, 9, 10, 11, 12].map(num => `
                                         <button class="catan-dice-btn" data-value="${num}">
                                             ${num}
                                         </button>
@@ -775,7 +963,7 @@ class CatanGame {
         const modal = document.getElementById('resource-input-modal');
         const overlay = modal.querySelector('.dice-modal-overlay');
         const confirmBtn = document.getElementById('confirm-resource');
-        
+
         let selectedDiceRoll = null;
         let selectedResourceType = null;
 
@@ -833,12 +1021,12 @@ class CatanGame {
 
         overlay.addEventListener('click', closeModal);
     }
-    
+
     showResourceManagementModal(resource, index, onComplete) {
         // Initialize multiplier from resource if it exists, otherwise derive from settlement type
         const currentMultiplier = resource.multiplier || (resource.settlementType === 'city' ? 2 : 1);
         const maxMultiplier = 10;
-        
+
         // Create modal HTML matching New Bedford token modal style (with image)
         const modalHTML = `
             <div class="dice-modal show" id="resource-management-modal">
@@ -851,14 +1039,14 @@ class CatanGame {
                     </p>
                     <div style="overflow-y: auto; flex: 1; margin-bottom: 15px; padding-top: 2px;">
                         <div class="catan-multiplier-picker-grid">
-                            ${Array.from({length: maxMultiplier}, (_, i) => {
-                                const value = i + 1;
-                                return `
+                            ${Array.from({ length: maxMultiplier }, (_, i) => {
+            const value = i + 1;
+            return `
                                     <button class="catan-multiplier-picker-btn ${value === currentMultiplier ? 'selected' : ''}" data-value="${value}">
                                         ${value}
                                     </button>
                                 `;
-                            }).join('')}
+        }).join('')}
                         </div>
                     </div>
                     <div style="display: flex; gap: 8px; width: 100%;">
@@ -875,42 +1063,42 @@ class CatanGame {
                 </div>
             </div>
         `;
-        
+
         document.body.insertAdjacentHTML('beforeend', modalHTML);
-        
+
         const modal = document.getElementById('resource-management-modal');
         const overlay = modal.querySelector('.dice-modal-overlay');
         const cancelBtn = document.getElementById('cancel-resource-changes');
         const saveBtn = document.getElementById('save-resource-changes');
         const removeBtn = document.getElementById('remove-resource');
         const pickerBtns = modal.querySelectorAll('.catan-multiplier-picker-btn');
-        
+
         let selectedMultiplier = currentMultiplier;
-        
+
         // Add click listeners to picker buttons
         pickerBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 selectedMultiplier = parseInt(btn.getAttribute('data-value'));
-                
+
                 // Update button selection
                 pickerBtns.forEach(b => b.classList.remove('selected'));
                 btn.classList.add('selected');
             });
         });
-        
+
         // Save changes
         saveBtn.addEventListener('click', () => {
             const savedResources = JSON.parse(localStorage.getItem('catan-resources') || '[]');
-            
+
             // Update both multiplier and settlement type (for backward compatibility)
             savedResources[index].multiplier = selectedMultiplier;
             savedResources[index].settlementType = selectedMultiplier > 1 ? 'city' : 'settlement';
-            
+
             localStorage.setItem('catan-resources', JSON.stringify(savedResources));
             modal.remove();
             onComplete();
         });
-        
+
         // Remove resource
         removeBtn.addEventListener('click', () => {
             const savedResources = JSON.parse(localStorage.getItem('catan-resources') || '[]');
@@ -919,12 +1107,12 @@ class CatanGame {
             modal.remove();
             onComplete();
         });
-        
+
         // Cancel changes
         const closeModal = () => {
             modal.remove();
         };
-        
+
         cancelBtn.addEventListener('click', closeModal);
         overlay.addEventListener('click', closeModal);
     }
@@ -1029,7 +1217,7 @@ class CatanGame {
             [23, 24, 27, 29], // 28
             [24, 25, 26, 28] // 29
         ];
-        
+
         this.swapAdjacentRedNumbers(tiles, adjacencies);
     }
 
@@ -1038,15 +1226,15 @@ class CatanGame {
         let swapped = true;
         let attempts = 0;
         const maxAttempts = 100;
-        
+
         while (swapped && attempts < maxAttempts) {
             swapped = false;
             attempts++;
-            
+
             for (let i = 0; i < tiles.length; i++) {
                 if (redNumbers.includes(tiles[i].number)) {
                     const neighbors = adjacencies[i] || [];
-                    
+
                     for (const neighborIdx of neighbors) {
                         if (redNumbers.includes(tiles[neighborIdx].number)) {
                             // Find a non-adjacent tile to swap with
@@ -1074,14 +1262,14 @@ class CatanGame {
     displayMap56(tiles) {
         const mapDisplay = document.getElementById('map-display');
         const mapContainer = document.getElementById('catan-map');
-        
+
         if (!mapDisplay || !mapContainer) return;
-        
+
         mapDisplay.style.display = 'block';
-        
+
         // Create hexagonal grid for 5-6 player board
         let html = '<div class="hex-grid hex-grid-56">';
-        
+
         // 5-6 player board: 3, 4, 5, 6, 5, 4, 3 tiles per row (30 total)
         const rows = [
             { start: 0, count: 3 },   // Row 1
@@ -1092,16 +1280,16 @@ class CatanGame {
             { start: 23, count: 4 },  // Row 6
             { start: 27, count: 3 }   // Row 7
         ];
-        
+
         rows.forEach((row, rowIndex) => {
             html += `<div class="hex-row">`;
-            
+
             for (let i = 0; i < row.count; i++) {
                 const tileIndex = row.start + i;
                 const tile = tiles[tileIndex];
                 const terrainClass = `terrain-${tile.terrain}`;
                 const numberClass = (tile.number === 6 || tile.number === 8) ? 'number-red' : '';
-                
+
                 html += `
                     <div class="hex hex-56 ${terrainClass}">
                         <div class="hex-content">
@@ -1116,12 +1304,12 @@ class CatanGame {
                     </div>
                 `;
             }
-            
+
             html += '</div>';
         });
-        
+
         html += '</div>';
-        
+
         mapContainer.innerHTML = html;
         mapDisplay.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
