@@ -1279,6 +1279,10 @@ showDestinationRoller() {
     }
 
     displayRegionRoll(diceTotal, parity, isAuto, diceRoll = null, parityRoll = null) {
+        if (!this.regionRolls) {
+            console.error('Region rolls data not loaded');
+            return;
+        }
         const regionRoll = this.regionRolls.find(r => r.number === diceTotal);
         if (!regionRoll) return;
 

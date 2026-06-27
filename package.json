@@ -4,7 +4,7 @@
   "description": "Your companion app for board games",
   "main": "index.js",
   "scripts": {
-    "dev": "npx http-server www -p 8080",
+    "dev": "npx live-server www --port=8080 --no-browser",
     "build": "echo 'No build step required for vanilla JS'",
     "sync": "npx cap sync",
     "open:android": "npx cap open android",

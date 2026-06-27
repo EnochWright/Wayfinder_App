@@ -1,0 +1,35 @@
+<svg viewBox="0 0 220 110" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;overflow:visible;">
+  <defs>
+    <style>
+:root {
+  --base: #e23b3b;
+  --side: #b02e2e;
+  --dark: #9a2828;
+  --darker: #7a2020;
+}
+    </style>
+  </defs>
+
+  <!-- Container body -->
+  <rect x="12" y="14" width="196" height="82" rx="7" fill="var(--side)" />
+  <rect x="16" y="18" width="188" height="74" rx="5" fill="var(--base)" />
+
+  <!-- Corrugation ribs -->
+  <rect x="24" y="26" width="172" height="3" rx="1.5" fill="var(--dark)" opacity="0.55" />
+  <rect x="24" y="34" width="172" height="3" rx="1.5" fill="var(--dark)" opacity="0.55" />
+  <rect x="24" y="42" width="172" height="3" rx="1.5" fill="var(--dark)" opacity="0.55" />
+  <rect x="24" y="50" width="172" height="3" rx="1.5" fill="var(--dark)" opacity="0.55" />
+  <rect x="24" y="58" width="172" height="3" rx="1.5" fill="var(--dark)" opacity="0.55" />
+  <rect x="24" y="66" width="172" height="3" rx="1.5" fill="var(--dark)" opacity="0.55" />
+  <rect x="24" y="74" width="172" height="3" rx="1.5" fill="var(--dark)" opacity="0.55" />
+  <rect x="24" y="82" width="172" height="3" rx="1.5" fill="var(--dark)" opacity="0.55" />
+
+  <!-- Top highlight -->
+  <rect x="16" y="18" width="188" height="26" rx="5" fill="#ffffff" opacity="0.14" />
+
+  <!-- Corner castings -->
+  <rect x="10" y="12" width="18" height="18" rx="3" fill="var(--darker)" />
+  <rect x="192" y="12" width="18" height="18" rx="3" fill="var(--darker)" />
+  <rect x="10" y="80" width="18" height="18" rx="3" fill="var(--darker)" />
+  <rect x="192" y="80" width="18" height="18" rx="3" fill="var(--darker)" />
+</svg>

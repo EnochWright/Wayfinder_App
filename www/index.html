@@ -22,7 +22,8 @@
     <link rel="apple-touch-icon" href="assets/icon.png">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/container-game.css">
 </head>
 
 <body>
@@ -34,7 +35,9 @@
                 <span class="nav-title">Wayfinder</span>
             </div>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-                <span class="hamburger"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
@@ -47,6 +50,8 @@
                     <ul class="dropdown-menu" id="games-menu">
                         <li><a href="#alchemists" class="dropdown-item" data-page="alchemists">Alchemists</a></li>
                         <li><a href="#catan" class="dropdown-item" data-page="catan">Catan</a></li>
+                        <li><a href="#campingseason" class="dropdown-item" data-page="campingseason">Camping Season</a></li>
+                        <li><a href="#container" class="dropdown-item" data-page="container">Container</a></li>
                         <li><a href="#newbedford" class="dropdown-item" data-page="newbedford">New Bedford</a></li>
                         <li><a href="#railbaron" class="dropdown-item" data-page="railbaron">Rail Baron</a></li>
                         <li><a href="#rising5" class="dropdown-item" data-page="rising5">Rising 5</a></li>
@@ -77,8 +82,10 @@
                     <h3>Games</h3>
                     <ul>
                         <li><strong>Alchemists</strong> - In Progress</li>
-                        <li><strong>Catan</strong> - In Progress</li>
-                        <li><strong>New Bedford</strong> - In Progress</li>
+                        <li><strong>Catan</strong> - Finished</li>
+                        <li><strong>Camping Season</strong> - Planned</li>
+                        <li><strong>Container</strong> - Planned</li>
+                        <li><strong>New Bedford</strong> - Finished</li>
                         <li><strong>Rail Baron</strong> - Finished</li>
                         <li><strong>Rising 5</strong> - Planned</li>
                         <li><strong>Search for Planet X</strong> - Planned</li>
@@ -106,6 +113,11 @@
                 <div id="catan-content"></div>
             </div>
 
+            <!-- Container Page -->
+            <div id="page-container" class="page">
+                <div id="container-content"></div>
+            </div>
+
             <!-- Rising 5 Page -->
             <div id="page-rising5" class="page">
                 <div class="card">
@@ -120,6 +132,11 @@
                     <h2>Search for Planet X</h2>
                     <p>Search for Planet X companion features coming soon!</p>
                 </div>
+            </div>
+
+            <!-- Camping Season Page -->
+            <div id="page-campingseason" class="page">
+                <div id="campingseason-content"></div>
             </div>
 
             <!-- Score Tracker Page -->
@@ -219,8 +236,19 @@
     <!-- Game Modules -->
     <script src="js/games/alchemists.js"></script>
     <script src="js/games/catan.js"></script>
+
+    <!-- Container Automa engine (load order matters) -->
+    <script src="js/games/container/constants.js"></script>
+    <script src="js/games/container/state.js"></script>
+    <script src="js/games/container/engine.js"></script>
+    <script src="js/games/container/ai.js"></script>
+    <script src="js/games/container/ui.js"></script>
+    <script src="js/games/container/main.js"></script>
+
+    <script src="js/games/container.js"></script>
     <script src="js/games/newbedford.js"></script>
     <script src="js/games/planetx.js"></script>
+    <script src="js/games/campingseason.js"></script>
     <script src="js/games/railbaron.js"></script>
     <script src="js/games/rising5.js"></script>
 

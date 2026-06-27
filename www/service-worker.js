@@ -2,7 +2,7 @@ const CACHE_NAME = 'capacitor-pwa-v1';
 const urlsToCache = [
   '/',
   '/index.html',
-  '/styles.css',
+  '/css/styles.css',
   '/js/app.js',
   '/js/capacitor.js',
   '/manifest.json'
@@ -38,38 +38,24 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event - network first, then cache
 self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then((response) => {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
+        // Clone the response
+        const responseToCache = response.clone();
 
-        // Clone the request
-        const fetchRequest = event.request.clone();
+        caches.open(CACHE_NAME)
+          .then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
 
-        return fetch(fetchRequest).then((response) => {
-          // Check if valid response
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
-
-          // Clone the response
-          const responseToCache = response.clone();
-
-          caches.open(CACHE_NAME)
-            .then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
-
-          return response;
-        }).catch(() => {
-          // If both cache and network fail, show offline page
-          return caches.match('/index.html');
-        });
+        return response;
+      })
+      .catch(() => {
+        // If network fails, serve from cache
+        return caches.match(event.request);
       })
   );
 });

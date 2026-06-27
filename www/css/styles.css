@@ -1,4 +1,4 @@
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -32,7 +32,7 @@ body {
     left: 0;
     right: 0;
     height: var(--nav-height);
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -163,38 +163,19 @@ body {
 .nav-toggle {
     display: none;
     flex-direction: column;
+    gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 5px;
 }
 
-.hamburger {
+.hamburger-line {
+    display: block;
     width: 25px;
     height: 3px;
     background-color: white;
     border-radius: 3px;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-}
-
-.hamburger::before {
-    transform: translateY(-8px);
-}
-
-.hamburger::after {
-    transform: translateY(8px);
 }
 
 /* Mobile Menu Styles */
@@ -209,7 +190,7 @@ body {
         left: -100%;
         width: 100%;
         flex-direction: column;
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        background: var(--primary-color);
         padding: 20px;
         gap: 10px;
         transition: left 0.3s ease;
@@ -223,19 +204,6 @@ body {
     .nav-link {
         padding: 12px 20px;
         font-size: 1.1rem;
-    }
-
-    /* Hamburger Animation */
-    .nav-toggle.active .hamburger {
-        background-color: transparent;
-    }
-
-    .nav-toggle.active .hamburger::before {
-        transform: rotate(45deg);
-    }
-
-    .nav-toggle.active .hamburger::after {
-        transform: rotate(-45deg);
     }
 
     /* Mobile Dropdown */
@@ -275,7 +243,7 @@ body {
 header {
     text-align: center;
     padding: 40px 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border-radius: var(--border-radius);
     margin-bottom: 30px;
@@ -306,7 +274,6 @@ main {
 }
 
 .card:hover {
-    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -353,7 +320,6 @@ main {
 
 .btn:hover {
     background: #3367d6;
-    transform: scale(1.02);
 }
 
 .btn:active {
@@ -494,7 +460,7 @@ footer {
 .stat-item {
     text-align: center;
     padding: 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     border-radius: 12px;
     color: white;
 }
@@ -605,7 +571,6 @@ input[type="checkbox"] {
 }
 
 .building-card:hover {
-    transform: translateY(-2px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -746,7 +711,6 @@ input[type="checkbox"] {
 
 .ocean-token-card:hover {
     border-color: var(--primary-color);
-    transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -795,7 +759,6 @@ input[type="checkbox"] {
 }
 
 .drawn-token-card:hover {
-    transform: scale(1.08);
     filter: brightness(1.1);
 }
 
@@ -884,7 +847,6 @@ input[type="checkbox"] {
 .help-btn:hover {
     background: white;
     color: var(--primary-color);
-    transform: scale(1.1);
     box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
 }
 
@@ -1078,7 +1040,6 @@ select[multiple] option:checked {
     background: white;
     border-color: var(--primary-color);
     color: var(--primary-color);
-    transform: translateX(-3px);
 }
 
 .width-toggle-buttons {
@@ -1137,7 +1098,6 @@ select[multiple] option:checked {
 
 .rail-baron-menu-btn:not(:disabled):hover {
     border-color: var(--primary-color);
-    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
 }
@@ -1244,7 +1204,6 @@ select[multiple] option:checked {
 .dice-value-btn:hover {
     border-color: var(--primary-color);
     background: #f8f9fa;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1283,7 +1242,6 @@ select[multiple] option:checked {
 .parity-option:hover {
     border-color: var(--primary-color);
     background: #f8f9fa;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -1332,12 +1290,11 @@ select[multiple] option:checked {
 }
 
 .rail-baron-container .btn-primary {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
 }
 
 .rail-baron-container .btn-primary:hover {
-    background: linear-gradient(135deg, #3367d6, #2d8f47);
-    transform: translateY(-3px);
+    background: #3367d6;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -1351,7 +1308,6 @@ select[multiple] option:checked {
 
 .rail-baron-container .btn-secondary:hover {
     background: linear-gradient(135deg, #4a4d50, #6b7075);
-    transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -1375,7 +1331,6 @@ select[multiple] option:checked {
 
 .btn-reset:hover {
     background: #c5221f;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -1479,7 +1434,6 @@ select[multiple] option:checked {
 }
 
 .history-entry:hover {
-    transform: translateX(5px);
     background: #e3f2fd;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -1593,7 +1547,7 @@ select[multiple] option:checked {
 }
 
 .railroad-detail-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     padding: 25px;
     display: flex;
@@ -1719,7 +1673,7 @@ select[multiple] option:checked {
 .city-railroad-badge {
     display: inline-block;
     padding: 6px 12px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border-radius: 6px;
     font-size: 0.9rem;
@@ -1729,7 +1683,6 @@ select[multiple] option:checked {
 }
 
 .city-railroad-badge:hover {
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -1858,7 +1811,7 @@ select[multiple] option:checked {
 
 .dice-grid-btn {
     padding: 20px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border: none;
     border-radius: 12px;
@@ -1870,7 +1823,6 @@ select[multiple] option:checked {
 }
 
 .dice-grid-btn:hover {
-    transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -1940,7 +1892,6 @@ select[multiple] option:checked {
 .city-select-btn:hover {
     border-color: var(--primary-color);
     background: #f8f9fa;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -2026,7 +1977,6 @@ select[multiple] option:checked {
 .city-grid-btn:hover {
     border-color: var(--primary-color);
     background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(52, 168, 83, 0.1));
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -2273,7 +2223,6 @@ select[multiple] option:checked {
 
 .zoom-btn:hover {
     background: #3367d6;
-    transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -2394,7 +2343,6 @@ select[multiple] option:checked {
 
 .toggle-btn.show-all:hover {
     background: #2d8f47;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -2405,7 +2353,6 @@ select[multiple] option:checked {
 
 .toggle-btn.hide-all:hover {
     background: #c5221f;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -2575,7 +2522,6 @@ select[multiple] option:checked {
 .building-select-btn:hover {
     border-color: var(--primary-color);
     background: #f8f9fa;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -2627,12 +2573,11 @@ select[multiple] option:checked {
 .dice-picker-btn:hover {
     border-color: var(--primary-color);
     background: #f8f9fa;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .dice-picker-btn.selected {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     color: white;
     border-color: var(--primary-color);
     box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
@@ -2765,7 +2710,6 @@ select[multiple] option:checked {
 }
 
 .hex:hover {
-    transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     z-index: 10;
 }
@@ -2939,8 +2883,7 @@ select[multiple] option:checked {
 
 .expansion-checkbox-label:hover {
     border-color: var(--primary-color);
-    background: linear-gradient(135deg, rgba(66, 133, 244, 0.15), rgba(52, 168, 83, 0.15));
-    transform: translateY(-2px);
+    background: rgba(66, 133, 244, 0.15);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -2957,8 +2900,8 @@ select[multiple] option:checked {
 }
 
 .expansion-checkbox-label:has(.expansion-checkbox:checked) {
-    border-color: var(--secondary-color);
-    background: linear-gradient(135deg, rgba(52, 168, 83, 0.2), rgba(66, 133, 244, 0.2));
+    border-color: var(--primary-color);
+    background: rgba(66, 133, 244, 0.15);
 }
 
 /* 5-6 Player Board Styles */
@@ -3120,7 +3063,6 @@ select[multiple] option:checked {
 }
 
 .resource-list li:hover {
-    transform: translateX(5px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -3185,10 +3127,9 @@ select[multiple] option:checked {
 }
 
 .catan-menu-btn:not(:disabled):hover {
-    border-color: var(--secondary-color);
-    transform: translateY(-5px);
+    border-color: var(--primary-color);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(52, 168, 83, 0.05));
+    background: rgba(66, 133, 244, 0.05);
 }
 
 .catan-menu-btn:disabled {
@@ -3205,7 +3146,7 @@ select[multiple] option:checked {
 .catan-menu-btn .menu-title {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     display: block;
 }
 
@@ -3225,7 +3166,7 @@ select[multiple] option:checked {
 }
 
 .catan-section h3 {
-    color: var(--secondary-color);
+    color: var(--primary-color);
     margin-bottom: 10px;
     font-size: 1.5rem;
 }
@@ -3275,7 +3216,7 @@ select[multiple] option:checked {
 
 .catan-modal-content h3 {
     margin: 0 0 15px 0;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     text-align: center;
     font-size: 1.5rem;
 }
@@ -3324,18 +3265,17 @@ select[multiple] option:checked {
 
 .catan-dice-btn:hover,
 .catan-resource-btn:hover {
-    border-color: var(--secondary-color);
+    border-color: var(--primary-color);
     background: #f8f9fa;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .catan-dice-btn.selected,
 .catan-resource-btn.selected {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: var(--primary-color);
     color: white;
-    border-color: var(--secondary-color);
-    box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
 }
 
 /* Catan Resource Roll Display Styles */
@@ -3358,7 +3298,7 @@ select[multiple] option:checked {
 }
 
 .resource-roll-display::-webkit-scrollbar-thumb {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     border-radius: 4px;
 }
 
@@ -3382,7 +3322,6 @@ select[multiple] option:checked {
 }
 
 .dice-roll-group:hover {
-    transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -3392,7 +3331,7 @@ select[multiple] option:checked {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: var(--primary-color);
     color: white;
     padding: 20px;
     min-width: 60px;
@@ -3441,7 +3380,6 @@ select[multiple] option:checked {
 }
 
 .resource-item:hover {
-    transform: translateY(-5px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -3512,7 +3450,7 @@ select[multiple] option:checked {
     bottom: 5px;
     left: 5px;
     background: white;
-    border: 2px solid #4caf50;
+    border: 2px solid var(--primary-color);
     border-radius: 50%;
     width: calc(5vw + 18px);
     max-width: 36px;
@@ -3525,7 +3463,7 @@ select[multiple] option:checked {
     font-size: calc(2.5vw + 12px);
     max-font-size: 24px;
     font-weight: bold;
-    color: #4caf50;
+    color: var(--primary-color);
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -3533,9 +3471,8 @@ select[multiple] option:checked {
 }
 
 .upgrade-resource-btn:hover {
-    background: #4caf50;
+    background: var(--primary-color);
     color: white;
-    transform: scale(1.1);
 }
 
 /* Responsive scaling for mobile */
@@ -3610,7 +3547,6 @@ select[multiple] option:checked {
 .remove-resource-btn:hover {
     background: #d32f2f;
     color: white;
-    transform: scale(1.1);
 }
 
 .catan-button-group {
@@ -3686,9 +3622,8 @@ select[multiple] option:checked {
 }
 
 .catan-option:hover {
-    border-color: var(--secondary-color);
+    border-color: var(--primary-color);
     background: #f8f9fa;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -3696,12 +3631,12 @@ select[multiple] option:checked {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: var(--secondary-color);
+    accent-color: var(--primary-color);
 }
 
 .catan-option:has(input[type="radio"]:checked) {
-    border-color: var(--secondary-color);
-    background: linear-gradient(135deg, rgba(52, 168, 83, 0.1), rgba(66, 133, 244, 0.1));
+    border-color: var(--primary-color);
+    background: rgba(66, 133, 244, 0.1);
 }
 
 .option-label {
@@ -3796,17 +3731,16 @@ select[multiple] option:checked {
 }
 
 .catan-multiplier-picker-btn:hover {
-    border-color: var(--secondary-color);
+    border-color: var(--primary-color);
     background: #f8f9fa;
-    transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .catan-multiplier-picker-btn.selected {
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    background: var(--primary-color);
     color: white;
-    border-color: var(--secondary-color);
-    box-shadow: 0 4px 12px rgba(52, 168, 83, 0.3);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
 }
 
 .catan-multiplier-picker-btn:active {
@@ -4276,7 +4210,6 @@ select[multiple] option:checked {
 
 .ingredient-select-btn:hover {
     opacity: 1;
-    transform: scale(1.05);
 }
 
 .ingredient-select-btn img {
@@ -4294,7 +4227,7 @@ select[multiple] option:checked {
 
 .ingredient-slot {
     width: 140px;
-    height: 180px;
+    aspect-ratio: 87 / 132;
     border: 3px dashed #bbb;
     border-radius: 8px;
     display: flex;
@@ -4413,7 +4346,6 @@ select[multiple] option:checked {
 }
 
 .btn-action:hover {
-    transform: translateY(-2px);
     border-color: var(--primary-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -4451,4 +4383,48 @@ select[multiple] option:checked {
     .action-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Camping Season Specific Styles */
+.guest-bag-container {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guest-bag-container:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.guest-bag-token-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guest-bag-token-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.drawn-token-card {
+    transition: transform 0.2s ease;
+}
+
+.drawn-token-card:hover {
+}
+
+.token-adjust-btn,
+.token-adjust-btn-bag {
+    transition: background-color 0.2s ease;
+}
+
+.token-adjust-btn:hover,
+.token-adjust-btn-bag:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.return-token-btn {
+    transition: background-color 0.2s ease;
+}
+
+.return-token-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
 }

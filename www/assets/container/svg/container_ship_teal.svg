@@ -1,0 +1,76 @@
+<svg viewBox="0 0 484 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;overflow:visible;">
+  <defs>
+    <style>
+:root {
+    --base: #16b3ad;
+    --deck: #39beb9;
+    --light: #65cdc9;
+    --dark: #108480;
+    --darker: #0d6864;
+    --edge: #8bd9d6;
+  }
+    </style>
+  </defs>
+
+  <g transform="translate(484 0) rotate(90)">
+    <!-- Outer hull -->
+    <path
+      d="M100,8 C151,30 168,72 168,122 L168,434 Q168,472 128,474 L72,474 Q32,472 32,434 L32,122 C32,72 49,30 100,8 Z"
+      fill="var(--base)"
+      stroke="var(--darker)"
+      stroke-width="2.5"
+    />
+
+    <!-- Inner deck -->
+    <path
+      d="M100,23 C143,42 156,76 156,120 L156,430 Q156,460 124,462 L76,462 Q44,460 44,430 L44,120 C44,76 57,42 100,23 Z"
+      fill="var(--deck)"
+    />
+
+    <!-- Bow highlight -->
+    <path
+      d="M100,24 C121,33 133,52 139,74 L61,74 C67,52 79,33 100,24 Z"
+      fill="var(--light)"
+      opacity="0.55"
+    />
+
+    <!-- Front detail -->
+    <rect x="84" y="92" width="32" height="22" rx="3" fill="var(--dark)" opacity="0.65" />
+
+    <!-- Five container compartments -->
+    <rect x="54" y="128" width="92" height="44" rx="4" fill="var(--darker)" />
+    <rect x="59" y="133" width="82" height="34" rx="2.5" fill="var(--dark)" />
+
+    <rect x="54" y="178" width="92" height="44" rx="4" fill="var(--darker)" />
+    <rect x="59" y="183" width="82" height="34" rx="2.5" fill="var(--dark)" />
+
+    <rect x="54" y="228" width="92" height="44" rx="4" fill="var(--darker)" />
+    <rect x="59" y="233" width="82" height="34" rx="2.5" fill="var(--dark)" />
+
+    <rect x="54" y="278" width="92" height="44" rx="4" fill="var(--darker)" />
+    <rect x="59" y="283" width="82" height="34" rx="2.5" fill="var(--dark)" />
+
+    <rect x="54" y="328" width="92" height="44" rx="4" fill="var(--darker)" />
+    <rect x="59" y="333" width="82" height="34" rx="2.5" fill="var(--dark)" />
+
+    <!-- Cabin -->
+    <rect x="57" y="388" width="86" height="60" rx="6" fill="var(--light)" stroke="var(--darker)" stroke-width="1.75" />
+    <rect x="66" y="398" width="68" height="18" rx="3" fill="var(--dark)" />
+    <rect x="68" y="401" width="64" height="6" rx="2" fill="var(--edge)" opacity="0.5" />
+
+    <!-- Cabin dots/windows -->
+    <circle cx="78" cy="432" r="4" fill="var(--darker)" />
+    <circle cx="100" cy="432" r="4" fill="var(--darker)" />
+    <circle cx="122" cy="432" r="4" fill="var(--darker)" />
+
+    <!-- Side highlight -->
+    <path
+      d="M100,23 C143,42 156,76 156,120 L156,430"
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="2"
+      opacity="0.18"
+      stroke-linecap="round"
+    />
+  </g>
+</svg>
